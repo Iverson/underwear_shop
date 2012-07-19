@@ -1,7 +1,13 @@
 UnderwearShop::Application.routes.draw do
+  get "pictures/index"
+
   devise_for :users
 
   resources :projects
+  resources :countrys, :only => [:index, :destroy]
+  resources :brands, :only => [:index, :new, :create]
+  resources :sections
+  resources :pictures
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

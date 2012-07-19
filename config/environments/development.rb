@@ -1,4 +1,7 @@
 UnderwearShop::Application.configure do
+  
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+  
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -36,4 +39,5 @@ UnderwearShop::Application.configure do
   config.assets.debug = true
   
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  
 end
