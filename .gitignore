@@ -14,3 +14,4 @@ doc/
 *~
 .project
 .DS_Store
+public/system/*
