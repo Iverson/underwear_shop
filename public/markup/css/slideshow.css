@@ -1,0 +1,231 @@
+/*
+ * jQuery Nivo Slider v2.5.2
+ * http://nivo.dev7studios.com
+ *
+ * Copyright 2011, Gilbert Pellegrom
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * March 2010
+ */
+/* The Nivo Slider styles */
+.nivoSlider {
+	position: relative;
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display: none;
+}
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:6;
+	display:none;
+	height:100%;
+	width:100%;
+}
+
+#slideshow0 {
+	top:11px;
+	left:10px;
+}
+/* The slices and boxes in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:5;
+	height:100%;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+}
+/* Caption styles */
+.nivo-caption {
+	position:absolute;
+	overflow:hidden;
+	padding-left:0px;
+	left:278px;
+	top:6px;
+	color:#f1f1f1;
+	opacity:1!important; /* Overridden by captionOpacity setting */
+	z-index:8;
+	border-radius:0 0 6px 6px;
+}
+.nivo-directionNav { display:none !important;}
+.nivo-caption p{ position:relative;}
+.nivo-caption p h1{ color:#fff; font-size:23px; text-transform:uppercase;font-weight:600; padding-top:17px;  padding-bottom:0; position:absolute; left:0px; top:0px; margin-bottom:0;font-family: 'Open Sans', sans-serif;opacity:1;
+filter: alpha(opacity=100);}
+.nivo-caption p p{ color:#82756b; font-size:11px; line-height:15px; height:20px; text-transform: uppercase; font-weight:600;font-family: 'Open Sans', sans-serif;position:absolute; left:0px; top:50px;opacity:1;
+filter: alpha(opacity=100);}
+.nivo-caption p  a{
+	background: url('../i/banner-button.png') left top repeat-x;
+	font-weight:bold;
+	padding:7px 13px 7px 13px;
+	font-size:18px;
+	color:#fff;
+	text-transform:uppercase;
+	text-decoration:none;
+	opacity:1;
+    filter: alpha(opacity=100);
+	border-bottom:1px solid #0a0a0a;
+	border-radius:5px;
+	display:inline-block;
+	font-family:'Open Sans', sans-serif;
+}
+.nivo-caption p  a:hover{ background-position:0 bottom; border-color:#202020;}
+.nivo-caption p {
+	height:320px;
+	width:245px;
+	margin:0;
+}
+.nivo-caption p span {  display:inline-block; }
+.nivo-caption p span.first { font-size:53px; line-height:64px; color:#fff; font-family:'Open Sans', sans-serif; font-weight:600px;}
+.nivo-caption p span.second { font-size:83px; line-height:100px; color:#fff; font-family:'Open Sans', sans-serif; font-weight:700px; letter-spacing:-3px;}
+.nivo-caption p span.third { font-size:45px; line-height:54px; color:#fff; font-family:'Open Sans', sans-serif; font-weight:600px; position:relative; top:-28px;}
+.nivo-caption p span.four { font-size:19px; line-height:23px; color:#a1ddfc; font-family:'Open Sans', sans-serif; font-weight:600px; margin-left:-51px;}
+.nivo-caption p .name { font-size:23px; line-height:27px; color:#fa467f; font-family:'Open Sans', sans-serif; font-weight:600px; margin-bottom:16px;}
+.nivo-caption p span { line-height:18px;}
+.nivo-caption a {
+	display:inline !important;
+}
+.but-container {
+	float:left;
+	margin-top:25px;
+}	
+.nivo-html-caption {
+	display:none;
+}
+/* Direction nav styles (e.g. Next & Prev) */
+.nivo-directionNav a {
+	position:absolute;
+	top:45%;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-prevNav {
+	left:0px;
+}
+.nivo-nextNav {
+	right:0px;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav a {
+	position:relative;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-controlNav a.active {
+	font-weight:bold;
+}
+/* slider theme */
+.slideshow {
+	margin-bottom:10px;
+	background:url(../i/slideshow-bg.png) no-repeat;
+	width:549px;
+	height:393px;
+}
+.slideshow a {
+	border: 0;
+	display: block;
+}
+.nivo-controlNav {
+	position: absolute;
+	left:283px;
+	border-radius:2px; 
+	text-align: center;
+	bottom:19px;
+	z-index:9;
+	width:115px;
+}
+.nivo-controlNav a:hover{ background-position:0 0;}
+.nivo-controlNav a {
+	vertical-align: top;
+	display: block;
+	text-indent:-9999px;
+ 	text-decoration:none;
+	font-size:0px; 
+	cursor:pointer;
+	float:left; 
+	margin-right:10px;
+	background:url(../i/pags.png) right top no-repeat;
+	width:13px;
+	height:13px;
+}
+.nivo-controlNav a.active {
+	color:#d41c0a;
+	background-position:0 0;
+	cursor:default;
+}
+.nivo-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background:url('../i/arrows.png') no-repeat;
+	text-indent:-9999px;
+	border:0;
+}
+a.nivo-nextNav {
+	background-position:-30px 0;
+	right:15px;
+}
+a.nivo-prevNav {
+	left:15px;
+}
+.nivo-caption {
+	text-shadow:none;
+	font-family: Helvetica, Arial, sans-serif;
+}
+.nivo-caption a {
+	color:#efe9d1;
+	text-decoration:underline;
+}
+.nivo-control a {
+	display:block;
+	width:13px;
+	height:13px;
+}
+
+#loopedCarousel{ position:relative; padding-left:30px;}
+#loopedCarousel .container {height:242px; width:480px!important; overflow:hidden; position:relative; }
+.slides {position:absolute; top:10px; left:0; width:500px;}
+.slides .name { padding-bottom:7px;}
+.slides .name a{ color:#2fa1bc; text-decoration:underline;}
+.slides .name a:hover{ text-decoration:underline; color:#f83b01;}
+.slides .price{ color:#f65423; font-weight:bold;}
+.slides .price .price-old{ font-weight:normal; font-size:11px; text-decoration:line-through; display:block; }
+.slides > div {width:140px;display:block; padding-right:21px; text-align:center; }
+#loopedCarousel .pagination{ display:none;}
+#loopedCarousel .previous{background: url('../i/prev.png') left top no-repeat; width:19px; height:28px; position:absolute; left:-2px; top:102px; font-size:0; line-height:0; text-indent:-9999px;  }
+#loopedCarousel .previous:hover{ background-position:0 -28px;}
+#loopedCarousel .next{background: url('../i/next.png') left top no-repeat; width:19px; height:28px; position:absolute; right:0px; top:102px; font-size:0; line-height:0; text-indent:-9999px;  }
+#loopedCarousel .next:hover{ background-position:0 -28px;}
+.hover-spesial{ position:absolute; left:30px; top:100px;
+background: url('../i/hover-special.png') left top no-repeat; width:103px; height:29px;
+
+-moz-transition: all 0.8s ease 0s;
+ -webkit-transition: all 0.8s ease 0s;
+ -o-transition: all 0.8s ease 0s;
+
+-webkit-transform: scale(0) rotate(0deg);
+   -moz-transform:scale(0) rotate(0deg);
+   -o-transform: scale(0) rotate(0deg);
+   -ms-transform:scale(0) rotate(0deg);
+   transform:scale(0) rotate(0deg);
+}
+ .product-col:hover .hover-spesial{ display:block;
+
+-webkit-transform: scale(1) rotate(720deg);
+   -moz-transform: scale(1) rotate(720deg);
+   -o-transform: scale(1) rotate(720deg);
+   -ms-transform: scale(1) rotate(720deg);
+   transform: scale(1) rotate(720deg);
+}
