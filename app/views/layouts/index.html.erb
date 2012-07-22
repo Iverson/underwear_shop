@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Underwear Online Store</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %><%= javascript_include_tag "application" %><%= csrf_meta_tags %>
+
+    <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/assets/ie.css" /><![endif]-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
+</head>
+<body class="common-home">
+    <div class="main-shining">
+        <div class="top-bg">
+            <div class="top-container">
+                <ul class="links">
+                    <li class="first"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=common/home">Home</a></li>
+                    <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/wishlist" id="wishlist-total">Wish list <span>(1)</span></a></li>
+                    <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/account">My account</a></li>
+                    <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=checkout/cart">Shopping cart</a></li>
+                    <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=checkout/checkout">Checkout</a></li>
+                    <li class="last"> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/login">login</a> </li>
+                </ul>
+                <ul class="soc-links">
+                    <li class="first"><a href="http://twitter.com">twitter</a></li>
+                    <li class="second"><a href="http://facebook.com">facebook</a></li>
+                </ul>
+                <form action="http://livedemo00.template-help.com/opencart_38941/index.php?route=module/currency" method="post" enctype="multipart/form-data">
+                    <div id="currency"><span> Currency</span> <a title="Euro" onClick="$('input[name=\'currency_code\']').attr('value', 'EUR').submit(); $(this).parent().parent().submit();"><span>€</span></a> <a title="Pound Sterling" onClick="$('input[name=\'currency_code\']').attr('value', 'GBP').submit(); $(this).parent().parent().submit();"><span>£</span></a> <a title="US Dollar"><span class="act">$</span></a>
+                        <input type="hidden" name="currency_code" value="" />
+                        <input type="hidden" name="redirect" value="http://livedemo00.template-help.com/opencart_38941/index.php?route=common/home" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="main-container">
+            <p id="back-top"> <a href="#top"><span></span></a> </p>
+            <div class="row-1">
+                <div id="header">
+                    <div class="header-top">
+                        <div class="wrapper">
+                            <div id="welcome"> Welcome visitor you can <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/login">Create an account</a> </div>
+                        </div>
+                    </div>
+                    <div class="header-top1">
+                        <div class="cart-position">
+                            <div class="cart-inner">
+                                <div id="cart" class="">
+                                    <div class="heading"> <a><span class="sc-button"></span> <span class="fr">
+                                        <h4>Shopping Cart</h4>
+                                        <span id="cart-total">2 item(s) - $59.88</span></span></a> </div>
+                                        <div class="content">
+                                            <div class="mini-cart-info">
+                                                <table class="cart">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=55"><img title="Lorem ipsum dolor sit amet" alt="Lorem ipsum dolor sit amet" src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Penn State College T-Shirt 1 copy-70x84.png"></a></td>
+                                                            <td class="name"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=55">Lorem ipsum dolor sit amet</a>
+                                                                <div> </div>
+                                                                <span class="quantity">x&nbsp;1</span> <span class="total">$28.51</span></td>
+                                                                <!--td class="quantity">x&nbsp;</td--> 
+                                                                <!--td class="total"></td-->
+                                                                <td class="remove"><span><img onclick="$('#cart').load('index.php?route=module/cart&amp;remove=55 #cart &gt; *');" title="Remove" alt="Remove" src="catalog/view/theme/theme014/image/close.png"></span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=51"><img title="Dolor sit amet conse" alt="Dolor sit amet conse" src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation ACDC Gray T-Shirt 1 copy-70x84.png"></a></td>
+                                                                <td class="name"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=51">Dolor sit amet conse</a>
+                                                                    <div> </div>
+                                                                    <span class="quantity">x&nbsp;1</span> <span class="total">$31.38</span></td>
+                                                                    <!--td class="quantity">x&nbsp;</td--> 
+                                                                    <!--td class="total"></td-->
+                                                                    <td class="remove"><span><img onclick="$('#cart').load('index.php?route=module/cart&amp;remove=51 #cart &gt; *');" title="Remove" alt="Remove" src="catalog/view/theme/theme014/image/close.png"></span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div>
+                                                        <table class="total">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="right" class="total-right"><b>Sub-Total:</b></td>
+                                                                    <td align="left" class="total-left"><span class="t-price">$47.56</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="right" class="total-right"><b>Eco Tax (-2.00):</b></td>
+                                                                    <td align="left" class="total-left"><span class="t-price">$4.00</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="right" class="total-right"><b>VAT (17.5%):</b></td>
+                                                                    <td align="left" class="total-left"><span class="t-price">$8.32</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="right" class="total-right"><b>Total:</b></td>
+                                                                    <td align="left" class="total-left"><span class="t-price">$59.88</span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="checkout"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=checkout/cart" class="button"><span>View Cart</span></a> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=checkout/checkout" class="button"><span>Checkout</span></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div id="logo"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=common/home"><img src="/assets/logo.png" title="T-Shirt" alt="T-Shirt" /></a></div>
+                            </div>
+                        </div>
+                        <div id="container">
+                            <div id="notification"> </div>
+                            <div id="column-left"> 
+                                <script type="text/javascript">
+                                $(document).ready(function(){
+                                    $(".act-cat").toggle( 
+                                        function() { 
+                                            $(this).next('.level-2-cat').slideToggle("slow"),{
+                                                duration: 'slow',
+                                                easing: 'easeOutBounce'
+                                            };
+                                        }, 
+                                        function() { 
+                                            $(this).next('.level-2-cat').slideToggle("slow"),{
+                                                duration: 'slow',
+                                                easing: 'easeOutBounce'
+                                            };
+                                        } 
+                                    );
+                                    $('.box-category li').last().addClass('last');
+
+                                });
+
+                                </script>
+                                <div class="box category">
+                                    <div class="box-content">
+                                        <div class="box-content-image">
+                                            <div class="box-heading">Categories</div>
+                                            <div class="box-category">
+                                                <ul>
+                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=59">MUSIC T-SHIRTS</a> <span  class="act-cat"></span>
+                                                        <ul class="level-2-cat">
+                                                            <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=59_89">Lorem ipsum </a> </li>
+                                                            <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=59_67">Dolor sit</a> </li>
+                                                            <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=59_62">Conse ctetur</a> </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=68">COOL T-SHIRTS</a> </li>
+                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=81">VINTAGE T-SHIRTS</a> </li>
+                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=69">BAR T-SHIRTS</a> </li>
+                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=70">DINER T-SHIRTS</a> </li>
+                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=99">FISHING T-SHIRTS</a> </li>
+                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=73">BIKER T-SHIRTS</a> </li>
+                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=111">SURF T-SHIRTS</a> </li>
+                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=112">COFFEE T-SHIRTS</a> </li>
+                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=113">BREWERY T-SHIRTS</a> </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box sidebarsearch"> 
+
+                                <!--div class="box-heading">Search</div-->
+                                <div class="box-content">
+                                    <div id="sidebarsearch">
+                                        <div class="button-sidebarsearch" ></div>
+                                        <span>
+                                            <input type="text" name="sidebar_name" value="Search"  onclick="this.value = '';" onkeydown="this.style.color = '#000000';" />
+                                        </span> </div>
+                                    </div>
+                                </div>
+                                <script type="text/javascript">
+                                (function($){$.fn.equalHeights=function(minHeight,maxHeight){tallest=(minHeight)?minHeight:0;this.each(function(){if($(this).height()>tallest){tallest=$(this).height()}});if((maxHeight)&&tallest>maxHeight)tallest=maxHeight;return this.each(function(){$(this).height(tallest)})}})(jQuery)
+                                $(window).load(function(){
+                                    if($(".maxheight-best").length){
+                                        $(".maxheight-best").equalHeights()}
+                                    })
+
+                                    </script> 
+                                    <script type="text/javascript">
+                                    $(document).ready(function(){
+                                        $(function(){
+                                            $('.box-product-2  li ').last().addClass('last');
+                                        });
+                                    }); 
+                                    </script>
+                                    <div class="box  bestsellers">
+                                        <div class="box-content">
+                                            <div class="box-content-image">
+                                                <div class="box-heading">Bestsellers</div>
+                                                <div class="box-product-2">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="name maxheight-best"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=54">Set magna ipsum dolor sit conse</a></div>
+                                                            <div class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=54"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Pronto Blue White Graphic Tee 1 copy-60x72.png" alt="Set magna ipsum dolor sit conse" /></a></div>
+                                                            <div class="extra-wrap">
+                                                                <div class="price"> <span class="price-new">$25.50</span> <span class="price-off">16%<span> off</span></span> </div>
+
+                                                                <!--div class="cart"><a onclick="addToCart('54');" class="button"><span>Add to Cart</span></a></div--> 
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="name maxheight-best"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=55">Lorem ipsum dolor sit amet</a></div>
+                                                            <div class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=55"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Penn State College T-Shirt 1 copy-60x72.png" alt="Lorem ipsum dolor sit amet" /></a></div>
+                                                            <div class="extra-wrap">
+                                                                <div class="price"> $28.51 </div>
+                                                                <!--div class="cart"><a onclick="addToCart('55');" class="button"><span>Add to Cart</span></a></div--> 
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="name maxheight-best"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=45">Dolor sit conse ctetur adipisi set</a></div>
+                                                            <div class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=45"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation Aerosmith Ivory T-Shirt 1 copy-60x72.png" alt="Dolor sit conse ctetur adipisi set" /></a></div>
+                                                            <div class="extra-wrap">
+                                                                <div class="price"> <span class="price-new">$24.33</span> <span class="price-off">5%<span> off</span></span> </div>
+                                                                <!--div class="cart"><a onclick="addToCart('45');" class="button"><span>Add to Cart</span></a></div--> 
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="name maxheight-best"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=44"> Ipsum dolor sit amet conse</a></div>
+                                                            <div class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=44"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Classic Laundry Green Graphic T-Shirt 1 copy-60x72.png" alt=" Ipsum dolor sit amet conse" /></a></div>
+                                                            <div class="extra-wrap">
+                                                                <div class="price"> <span class="price-new">$300.00</span> <span class="price-off">99%<span> off</span></span> </div>
+                                                                <!--div class="cart"><a onclick="addToCart('44');" class="button"><span>Add to Cart</span></a></div--> 
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="column-right"> 
+                                    <script type="text/javascript">
+                                    (function($){$.fn.equalHeights=function(minHeight,maxHeight){tallest=(minHeight)?minHeight:0;this.each(function(){if($(this).height()>tallest){tallest=$(this).height()}});if((maxHeight)&&tallest>maxHeight)tallest=maxHeight;return this.each(function(){$(this).height(tallest)})}})(jQuery)
+                                    $(window).load(function(){
+                                        if($(".maxheight-spec").length){
+                                            $(".maxheight-spec").equalHeights()}
+                                        })
+                                        </script>
+                                        <div class="box specials">
+                                            <div class="box-content">
+                                                <div class="box-content-image">
+                                                    <div class="box-heading special-heading">Specials</div>
+                                                    <div class="box-product">
+                                                        <ul>
+                                                            <li class="special-container1">
+                                                                <div class="name maxheight-spec"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=44"> Ipsum dolor sit amet conse</a></div>
+                                                                <div class="image2"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=44"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Classic Laundry Green Graphic T-Shirt 1 copy-60x72.png" alt=" Ipsum dolor sit amet conse" /></a></div>
+                                                                <div class="extra-wrap">
+                                                                    <div class="price"> <span class="save">save</span><span class="price-off">99%</span> </div>
+                                                                    <!--div class="cart"><a data-id="44;" class="button addToCart"><span>Add to Cart</span></a></div--> 
+                                                                </div>
+                                                            </li>
+                                                            <li class="special-container2">
+                                                                <div class="name maxheight-spec"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=53">Aperce sit conse ipsum ctetur adipisi</a></div>
+                                                                <div class="image2"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=53"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Funkalicious Print T-Shirt  2 copy-60x72.png" alt="Aperce sit conse ipsum ctetur adipisi" /></a></div>
+                                                                <div class="extra-wrap">
+                                                                    <div class="price"> <span class="save">save</span><span class="price-off">7%</span> </div>
+                                                                    <!--div class="cart"><a data-id="53;" class="button addToCart"><span>Add to Cart</span></a></div--> 
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script type="text/javascript">
+                                        $(function(){
+                                            $('.info-list li').last().addClass('last');
+                                        });
+                                        </script>
+                                        <div class="box info">
+                                            <div class="box-content">
+                                                <div class="box-content-image">
+                                                    <div class="box-heading">Information</div>
+                                                    <ul class="info-list">
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=4">About</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=6">Delivery</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=3">Privacy Policy</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=5">Terms &amp; Conditions</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/contact">Contact Us</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/sitemap">Site Map</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="content"> <%= yield %> </div>
+                                    <div class="clear"></div>
+                                    <div class="footer-wrap">
+                                        <div id="footer">
+                                            <div class="wrapper">
+                                                <div class="column col-1">
+                                                    <h3>Information</h3>
+                                                    <ul>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=4">About</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=6">Delivery</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=3">Privacy Policy</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=5">Terms &amp; Conditions</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="column col-2">
+                                                    <h3>Customer Service</h3>
+                                                    <ul>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/contact">Contact Us</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/return/insert">Returns</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/sitemap">Site Map</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="column col-3">
+                                                    <h3>Extras</h3>
+                                                    <ul>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/manufacturer">Brands</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/voucher">Gift Vouchers</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=affiliate/account">Affiliates</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/special">Specials</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="column col-4">
+                                                    <h3>My Account</h3>
+                                                    <ul>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/account">My Account</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/order">Order History</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/wishlist">Wish List</a></li>
+                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/newsletter">Newsletter</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wrapper">
+                                            <div id="powered">
+                                                <div class="footer-logo"></div>
+                                                <span>Powered By <a href="http://www.opencart.com">OpenCart</a> T-Shirt &copy; 2012</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+</body>
+</html>

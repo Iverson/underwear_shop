@@ -4,12 +4,13 @@
   <tr>
     <th>Name</th>
   </tr>
-
-<% @sections.each do |section| %>
   <tr>
-    <td><%= section.name %></td>
+    <td>
+        <ul class="b-sections-tree">
+            <%= nested_sections @sections.arrange(:order => :id) %>
+        </ul>
+    </td>
   </tr>
-<% end %>
 </table>
 
 <br />

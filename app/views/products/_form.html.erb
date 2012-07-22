@@ -1,0 +1,74 @@
+<%= form_for @product, :html => { :multipart => true } do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div>Attaches</div>
+  
+  <div class="">
+      <%= f.fields_for :pictures do |picture_fields| %>
+      
+          <% if picture_fields.object.new_record? %>
+              <p><%= picture_fields.file_field :image %></p>
+          <% end %>
+
+      <% end %>
+  </div>
+  
+  <div class="">
+      
+      <%= f.fields_for :pictures do |p| %>
+          <% unless p.object.new_record? %>
+              <div class="thumbnail">
+                  <%= link_to( image_tag(p.object.image.url(:small)), p.object.image.url(:medium) ) %>
+                  <%= p.check_box :_destroy %>
+              </div>
+
+          <% end %>        
+
+      <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+      <%= f.label :price %><br />
+      <%= f.text_field :price %>
+  </div>
+  <div class="field">
+      <%= f.label :discount %><br />
+      <%= f.text_field :discount %>
+  </div>
+  <div class="field">
+      <%= f.label :section_id %><br />
+      <%= f.select :section_id, grouped_options_for_select(@grouped_options, @product.section_id), :include_blank => true , :id => :product_section_id %>
+  </div>
+
+  <div class="field">
+      <%= f.label :brand_id %><br />
+      <%= collection_select(:product, :brand_id, Brand.all, :id, :name) %>
+  </div>
+  <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area(:description, :size => "27x6") %>
+  </div>
+
+  <div class="field">
+      <%= f.label :state_id %><br />
+      <%= collection_select(:state, :state_id, State.all, :id, :name, { :selected => 2 }) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

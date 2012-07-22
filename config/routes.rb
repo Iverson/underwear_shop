@@ -1,6 +1,4 @@
 UnderwearShop::Application.routes.draw do
-  get "pictures/index"
-
   devise_for :users
 
   resources :projects
@@ -8,6 +6,8 @@ UnderwearShop::Application.routes.draw do
   resources :brands, :only => [:index, :new, :create]
   resources :sections
   resources :pictures
+  resources :index, :only => [:index]
+  resources :products
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,7 +58,7 @@ UnderwearShop::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'projects#index'
+  root :to => 'index#index'
 
   # See how all your routes lay out with "rake routes"
 

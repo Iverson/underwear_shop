@@ -1,5 +1,6 @@
 class Picture < ActiveRecord::Base
   attr_accessible :product_id, :image
+  belongs_to :product, :dependent => :destroy
   
   has_attached_file :image, 
                     :styles => { :medium => "300x300#", :small => "150x150#" },

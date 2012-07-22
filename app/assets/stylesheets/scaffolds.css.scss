@@ -54,3 +54,25 @@ div {
   ul li {
     font-size: 12px;
     list-style: square; } }
+
+.b-sections-tree {
+	padding: 0;
+	.b-sections-tree {
+		margin-left: 20px;
+	}
+}
+
+.b-sections-tree__item {
+	position:relative;
+	padding: 0px 100px 10px 0;
+	list-style: none;
+	zoom: 1;
+}
+
+	.b-sections-tree__item__actions {
+		position:absolute;
+		left: 100%;
+		top: 0px;
+		margin-left: -80px;
+		width: 200px;
+	}

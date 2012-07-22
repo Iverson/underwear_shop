@@ -1,0 +1,21 @@
+inline-block elements {
+	display: inline;
+}
+
+/*
+:first-child {
+	
+	zoom: expression(
+        	runtimeStyle.zoom = 1,
+       		firstChild.className = firstChild.className + " first-child");	
+    ); 
+}
+
+:before:after {
+	zoom: expression(
+       	runtimeStyle.zoom = 1,
+    	insertBefore(
+           	createElement("ie-before"), firstChild),
+			appendChild(createElement("ie-after"))
+ 		);
+}*/

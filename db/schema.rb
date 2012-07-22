@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719150812) do
+ActiveRecord::Schema.define(:version => 20120722165339) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,19 @@ ActiveRecord::Schema.define(:version => 20120719150812) do
     t.integer  "product_id"
   end
 
+  create_table "products", :force => true do |t|
+    t.integer  "section_id"
+    t.integer  "brand_id"
+    t.decimal  "price",           :precision => 6, :scale => 2
+    t.string   "name"
+    t.text     "description"
+    t.integer  "discount",                                      :default => 0, :null => false
+    t.integer  "state_id",                                      :default => 2, :null => false
+    t.datetime "created_at",                                                   :null => false
+    t.datetime "updated_at",                                                   :null => false
+    t.decimal  "purchaise_price", :precision => 6, :scale => 2
+  end
+
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.string   "desc"
@@ -45,6 +58,15 @@ ActiveRecord::Schema.define(:version => 20120719150812) do
   end
 
   create_table "sections", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "ancestry"
+  end
+
+  add_index "sections", ["ancestry"], :name => "index_sections_on_ancestry"
+
+  create_table "states", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

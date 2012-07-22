@@ -7,3 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 require File.expand_path('../seed/country_seeds.rb', __FILE__)
+require File.expand_path('../seed/state_seeds.rb', __FILE__)
