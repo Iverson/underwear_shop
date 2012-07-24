@@ -49,13 +49,6 @@
         });
 
     });
-    </script>
-    <script type="text/javascript">
-    (function($){$.fn.equalHeights=function(minHeight,maxHeight){tallest=(minHeight)?minHeight:0;this.each(function(){if($(this).height()>tallest){tallest=$(this).height()}});if((maxHeight)&&tallest>maxHeight)tallest=maxHeight;return this.each(function(){$(this).height(tallest)})}})(jQuery)
-    $(window).load(function(){
-        if($(".maxheight").length){
-            $(".maxheight").equalHeights()}
-        })
     </script-->
 
     
@@ -63,64 +56,28 @@
         <div class="box new-products">
             <div class="box-content">
                 <div class="box-shining">
-                    <div class="box-heading">New products</div>
+                    <div class="box-heading">Новинки</div>
                     <div class="box-product">
                         <ul>
+                            <% @products.each do |product| %>
                             <li >
                                 <div class="padd-both">
                                     <div class="image2">
-                                        <a href="#"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Penn State College T-Shirt 1 copy-163x196.png" alt="" /></a>
+                                        <a href="#"><%= image_tag( product.pictures.first.image.url(:medium) ) %></a>
                                     </div>
-                                    <div class="price"> $28.51 </div>
+                                    <div class="price"> <%= product.price %>р </div>
                                     <div class="name maxheight">
-                                        <a href="#">Lorem ipsum dolor sit amet</a>
+                                        <%= link_to product.name, product %>
                                     </div>
                                     <div class="cart"> 
-                                        <a href="#" class="button addToCart"><span>Add to Cart</span></a>
-                                        <a href="#" class="button details"><span>Details</span></a>
+                                        <a href="#" class="button addToCart"><span>В корзину</span></a>
+                                        <%= link_to(product, :class => "button details") do %>
+                                            <span>Детально</span>
+                                        <% end %>
                                     </div>
                                 </div>
                             </li>
-                            <li >
-                                <div class="padd-both">
-                                    <div class="image2"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=54"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Pronto Blue White Graphic Tee 1 copy-163x196.png" alt="Set magna ipsum dolor sit conse" /></a></div>
-                                    <div class="price"> $30.02 </div>
-                                    <div class="name maxheight"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=54">Set magna ipsum dolor sit conse</a></div>
-                                    <div class="cart"> <a data-id="54;" class="button addToCart"><span>Add to Cart</span></a> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=54" class="button details"><span>Details</span></a> </div>
-                                </div>
-                            </li>
-                            <li class="last-in-line">
-                                <div class="padd-both">
-                                    <div class="image2"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=53"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Funkalicious Print T-Shirt  2 copy-163x196.png" alt="Aperce sit conse ipsum ctetur adipisi" /></a></div>
-                                    <div class="price"> $35.55 </div>
-                                    <div class="name maxheight"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=53">Aperce sit conse ipsum ctetur adipisi</a></div>
-                                    <div class="cart"> <a data-id="53;" class="button addToCart"><span>Add to Cart</span></a> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=53" class="button details"><span>Details</span></a> </div>
-                                </div>
-                            </li>
-                            <li class="first-in-line">
-                                <div class="padd-both">
-                                    <div class="image2"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=52"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Mad Gringo Mustard Tee 1 copy-163x196.png" alt="Esse cillum dolore eu fugiat" /></a></div>
-                                    <div class="price"> $33.31 </div>
-                                    <div class="name maxheight"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=52">Esse cillum dolore eu fugiat</a></div>
-                                    <div class="cart"> <a data-id="52;" class="button addToCart"><span>Add to Cart</span></a> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=52" class="button details"><span>Details</span></a> </div>
-                                </div>
-                            </li>
-                            <li >
-                                <div class="padd-both">
-                                    <div class="image2"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=51"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation ACDC Gray T-Shirt 1 copy-163x196.png" alt="Dolor sit amet conse" /></a></div>
-                                    <div class="price"> $34.37 </div>
-                                    <div class="name maxheight"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=51">Dolor sit amet conse</a></div>
-                                    <div class="cart"> <a data-id="51;" class="button addToCart"><span>Add to Cart</span></a> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=51" class="button details"><span>Details</span></a> </div>
-                                </div>
-                            </li>
-                            <li class="last-in-line">
-                                <div class="padd-both">
-                                    <div class="image2"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=50"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/UCLA College T-Shirt 1 copy-163x196.png" alt="ipsum dolor sit amet conse ctetur adipisicing" /></a></div>
-                                    <div class="price"> $78.38 </div>
-                                    <div class="name maxheight"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=50">ipsum dolor sit amet conse ctetur adipisicing</a></div>
-                                    <div class="cart"> <a data-id="50;" class="button addToCart"><span>Add to Cart</span></a> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=50" class="button details"><span>Details</span></a> </div>
-                                </div>
-                            </li>
+                            <% end %>
                         </ul>
                     </div>
                 </div>
@@ -128,4 +85,3 @@
         </div>
     </div>
 </div>
-<h1 style="display: none;">T-Shirt</h1>

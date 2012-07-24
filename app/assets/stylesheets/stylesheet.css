@@ -658,10 +658,6 @@ label {
 /*********************************************************************************************************************************************************************************/
 /*******************************************************************************new products**************************************************************************************/
 
-.new-products ul li.first-in-line {
-	clear:both;
-}
-
 .new-products ul li .name a, .featured ul li .name a {
 	display:inline;	
 	color:#a1ddfc;
@@ -671,16 +667,16 @@ label {
 /*********************************************************************************************************************************************************************************/
 /*******************************************************************************featured products*********************************************************************************/
 .new-products ul li, .featured ul li {
-	float:left;	
-	width:163px;
+	display:inline-block;
+	width:160px;
 	margin-right:10px;
 	text-align:left;
 	position:relative;
 	margin-bottom:10px;
+	vertical-align:top;
 }
-.new-products ul li.last-in-line , .featured ul li.last-in-line { background:none;} 
 .new-products ul li .image2, .featured ul li .image2 {  height:196px;}
-.featured ul li.last-in-line, .new-products ul li.last-in-line { margin-right:0;}
+
 .box.new-products .box-content, .box.featured .box-content {
 	padding:0;
 	border:none;
@@ -1078,16 +1074,17 @@ a.button {
 	line-height:17px;
 	font-weight:bold;
 	white-space:nowrap;
+	letter-spacing: -0.2px;
 }
 .common-home .center-col a.button  {
-	width:94px;
+	width:81px;
 	text-align:center;
 	border-radius:0 0 0 4px;
 	float:left;
 }	
 .center-col a.button.details {
 	border-left:1px solid #000;
-	width:68px;
+	width:78px;
 	border-radius:0 0 4px 0;
 	float:left;
 }
@@ -1095,7 +1092,7 @@ a.button.details span { color:#fff; }
 a.button span {
 	color: #FFFFFF;
 	display: inline-block;
-	padding:8px 10px 9px 10px;
+	padding:8px 10px 9px 9px;
 	
 }
 a.button-2 {

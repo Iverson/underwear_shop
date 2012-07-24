@@ -11,11 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120722165339) do
+ActiveRecord::Schema.define(:version => 20120724211327) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
-    t.integer  "country_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -25,6 +24,28 @@ ActiveRecord::Schema.define(:version => 20120722165339) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "order_items", :force => true do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.string   "name"
+    t.decimal  "price"
+    t.integer  "count"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "order_states", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "order_state_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "pictures", :force => true do |t|
@@ -48,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20120722165339) do
     t.datetime "created_at",                                                   :null => false
     t.datetime "updated_at",                                                   :null => false
     t.decimal  "purchaise_price", :precision => 6, :scale => 2
+    t.integer  "country_id"
   end
 
   create_table "projects", :force => true do |t|

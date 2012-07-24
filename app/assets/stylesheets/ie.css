@@ -1,5 +1,6 @@
-inline-block elements {
+.new-products ul li, .featured ul li {
 	display: inline;
+	zoom: 1;
 }
 
 /*

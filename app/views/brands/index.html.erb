@@ -3,13 +3,11 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Country</th>
   </tr>
 
 <% @brands.each do |brand| %>
   <tr>
     <td><%= brand.name %></td>
-    <td><%= brand.country.name %></td>
   </tr>
 <% end %>
 </table>

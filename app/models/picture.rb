@@ -1,9 +1,9 @@
 class Picture < ActiveRecord::Base
   attr_accessible :product_id, :image
-  belongs_to :product, :dependent => :destroy
+  belongs_to :product
   
   has_attached_file :image, 
-                    :styles => { :medium => "300x300#", :small => "150x150#" },
+                    :styles => { :medium => "160x190#", :small => "50x50#" },
                     :url  => "/system/products/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/system/products/:id/:style/:basename.:extension"
                     

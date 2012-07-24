@@ -2,7 +2,6 @@ class SectionsController < ApplicationController
   def index
     #@sections = Section.all
     @sections = Section
-    @section = Section.new
 
     respond_to do |format|
       format.html # index.html.erb
