@@ -58,7 +58,7 @@ div {
 .b-sections-tree {
 	padding: 0;
 	.b-sections-tree {
-		margin-left: 20px;
+		margin: 10px 0 0 20px;
 	}
 }
 
@@ -75,4 +75,9 @@ div {
 		top: 0px;
 		margin-left: -80px;
 		width: 200px;
+		display:none;
+	}
+	
+	.b-sections-tree__item:hover > .b-sections-tree__item__actions {
+		display:block;
 	}

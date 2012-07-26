@@ -117,19 +117,18 @@
                                 $(document).ready(function(){
                                     $(".act-cat").toggle( 
                                         function() { 
-                                            $(this).next('.level-2-cat').slideToggle("slow"),{
+                                            $(this).next('.b-sections-menu').slideToggle("slow"),{
                                                 duration: 'slow',
                                                 easing: 'easeOutBounce'
                                             };
                                         }, 
                                         function() { 
-                                            $(this).next('.level-2-cat').slideToggle("slow"),{
+                                            $(this).next('.b-sections-menu').slideToggle("slow"),{
                                                 duration: 'slow',
                                                 easing: 'easeOutBounce'
                                             };
                                         } 
                                     );
-                                    $('.box-category li').last().addClass('last');
 
                                 });
 
@@ -137,26 +136,9 @@
                                 <div class="box category">
                                     <div class="box-content">
                                         <div class="box-content-image">
-                                            <div class="box-heading">Categories</div>
+                                            <div class="box-heading">Каталог</div>
                                             <div class="box-category">
-                                                <ul>
-                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=59">MUSIC T-SHIRTS</a> <span  class="act-cat"></span>
-                                                        <ul class="level-2-cat">
-                                                            <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=59_89">Lorem ipsum </a> </li>
-                                                            <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=59_67">Dolor sit</a> </li>
-                                                            <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=59_62">Conse ctetur</a> </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=68">COOL T-SHIRTS</a> </li>
-                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=81">VINTAGE T-SHIRTS</a> </li>
-                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=69">BAR T-SHIRTS</a> </li>
-                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=70">DINER T-SHIRTS</a> </li>
-                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=99">FISHING T-SHIRTS</a> </li>
-                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=73">BIKER T-SHIRTS</a> </li>
-                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=111">SURF T-SHIRTS</a> </li>
-                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=112">COFFEE T-SHIRTS</a> </li>
-                                                    <li> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/category&amp;path=113">BREWERY T-SHIRTS</a> </li>
-                                                </ul>
+                                                <%= menu_sections_tree Section.arrange(:order => :id) %>
                                             </div>
                                         </li>
                                     </div>

@@ -59,6 +59,9 @@
                     <div class="box-heading">Новинки</div>
                     <div class="box-product">
                         <ul>
+                            <% if @products.length == 0 %>
+                                Товары в каталоге отсутствуют.
+                            <% end %>
                             <% @products.each do |product| %>
                             <li >
                                 <div class="padd-both">

@@ -8,26 +8,8 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     5.times { @product.pictures.build }
-    @grouped_options = []
     
     @roots = Section.roots
-    
-    @roots.each do |item|
-      @item_arr = []
-      @children_arr = []
-      @item_arr.push(item.name)
-      
-      item.children.each do |child|
-        
-        child.subtree.each do |tree_item|
-          @children_arr.push([tree_item.name, tree_item.id])
-        end
-        
-      end
-      @item_arr.push(@children_arr)
-      
-      @grouped_options.push(@item_arr)
-    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -39,28 +21,9 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     (5 - @product.pictures.length).times { @product.pictures.build }
-    
-    @grouped_options = []
-    
+  
     @roots = Section.roots
-    
-    @roots.each do |item|
-      @item_arr = []
-      @children_arr = []
-      @item_arr.push(item.name)
-      
-      item.children.each do |child|
-        
-        child.subtree.each do |tree_item|
-          @children_arr.push([tree_item.name, tree_item.id])
-        end
-        
-      end
-      @item_arr.push(@children_arr)
-      
-      @grouped_options.push(@item_arr)
-    end
-    
+   
   end
 
   def show
