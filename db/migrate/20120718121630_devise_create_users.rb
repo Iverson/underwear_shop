@@ -38,6 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :first_name, :null => false
       t.string :last_name, :null => false
       t.integer :phone, :null => false
+      t.boolean :terms_of_service, :null => false
 
 
       t.timestamps

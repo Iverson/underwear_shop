@@ -21,7 +21,7 @@
                 <ul class="links">
                     <li class="first"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=common/home">Домой</a></li>
                     <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/wishlist" id="wishlist-total">Избранное <span>(0)</span></a></li>
-                    <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/account">Мой профиль</a></li>
+                    <li><%= link_to "Мой профиль", edit_user_registration_path %></li>
                     <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=checkout/cart">Корзина</a></li>
                     <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=checkout/checkout">Checkout</a></li>
                     
@@ -132,7 +132,12 @@
                                     <p class="warning"><%= alert %></p>
                                 <% end %>
                             </div>
-                            <div id="column-left"> 
+                            <div id="column-left">
+                                <% if @profile %>
+                                    <%= render "shared/profile_menu" %>
+                                <% end %>
+                                
+                                
                                 <script type="text/javascript">
                                 $(document).ready(function(){
                                     $(".act-cat").toggle( 

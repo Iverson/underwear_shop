@@ -1217,7 +1217,7 @@ a.button {
 	white-space:nowrap;
 	letter-spacing: -0.2px;
 }
-.common-home .center-col a.button  {
+.new-products ul li a.button  {
 	width:81px;
 	text-align:center;
 	border-radius:0 0 0 4px;
@@ -3491,10 +3491,9 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
 	padding-top: 9px;
 }
 
-.checkbox {
-	margin: 0 3px 0 0;
+.checkbox, .boolean input {
+	margin: 0 7px 0 0;
 	border:none;
-	vertical-align:middle;
 }
 
 .b-btn {

@@ -1,5 +1,9 @@
 class BrandsController < ApplicationController
+  layout "admin"
+  
   def index
+    
+    
     @brands = Brand.all
 
     respond_to do |format|
