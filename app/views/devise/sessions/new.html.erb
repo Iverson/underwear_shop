@@ -1,17 +1,48 @@
-<h2>Sign in</h2>
+<div class="breadcrumb"> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=common/home">Home</a> » <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/account">Account</a> » <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/login">Login</a> </div>
+<h1>Войти</h1>
+<div class="box-container">
+	<div class="login-content">
+		<div class="right">
+			<h2>Я Новый Покупатель</h2>
+			<div class="content">
+				<p><b>Регистрация</b></p>
+				<div class="margin_b25">Вы сможете отслеживайть статус Вашего заказа online, просматривайть историю Ваших заказов, сохранять товар в Избранное и наслаждаться полным спектром возможностей сервиса на Sapato.ru!</div>
+				
+				<%= link_to("Зарегистрироваться", new_user_registration_path, :class => "b-btn") %>
+            </div>
+		</div>
+		<div class="left b-auth">
+            <div class="margin_b15">
+			    <h2>Я Уже Зарегистрирован</h2>
+			</div>
+			
+			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			    <%= devise_error_messages! %>
+			    
+                <div class="b-input">
+                    <%= f.input :email %>
+                </div>
+                
+                <div class="b-input">
+                    <%= f.input :password, :label => "Пароль" %>
+                    
+                </div>
+                
+                
+              <% if devise_mapping.rememberable? -%>
+                <div class="margin_b20"><%= f.check_box :remember_me, :class => "checkbox" %> <%= f.label :remember_me, "Запомнить меня" %></div>
+              <% end -%>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+              <p class="b-auth__forgotpass f-right"><%= link_to "Забыли пароль?", new_password_path(resource_name) %></p>
+              <div><%= f.submit "Войти", :class => "b-btn" %></div>
+            <% end %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+            
+		</div>
+	</div>
+</div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+
+

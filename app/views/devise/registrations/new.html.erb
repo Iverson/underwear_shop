@@ -1,18 +1,91 @@
-<h2>Sign up</h2>
+<div class="breadcrumb"> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=common/home">Home</a> » <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/account">Account</a> » <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/register">Register</a> </div>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<h1>Регистрация</h1>
+<div class="box-container">
+    <p>Если вы уже зарегистрированы, <%= link_to "войдите", new_user_session_path %> под своей учетной записью.</p>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+    <h2>Ваши персональные данные</h2>
+    <div class="content">
+        <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+        <table class="form b-register-form">
+            <tbody>
+                <tr>
+                    <td><span class="i-required">*</span> Имя:</td>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+                    <td>
+                        <div class="b-input">
+                            <%= f.input :first_name, :label => false %>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="i-required">*</span> Фамилия:</td>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+                    <td>
+                        <div class="b-input">
+                            <%= f.input :last_name, :label => false %>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="i-required">*</span> E-Mail:</td>
 
-<%= render "devise/shared/links" %>
+                    <td>
+                        <div class="b-input">
+                            <%= f.input :email, :label => false %>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="i-required">*</span> Телефон:</td>
+
+                    <td>
+                        <div class="b-input">
+                            <%= f.input :phone, :label => false %>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="i-required">*</span> Пароль:</td>
+
+                    <td>
+                        <div class="b-input">
+                            <%= f.password_field :password %>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="i-required">*</span> Подтвердите пароль:</td>
+
+                    <td>
+                        <div class="b-input">
+                            <%= f.password_field :password_confirmation %>
+                        </div>
+                    </td>
+                </tr>
+                <!--tr>
+                    <td></td>
+                    <td>
+                        <%#= f.check_box :name => "agree_pp", :class => "checkbox" %> <%#= f.label "Я прочитал и согласен с" %>
+                        <%#= link_to "правилами пользования", "#" %>
+                       
+                    </td>
+                </tr-->
+                <tr>
+                    <td></td>
+                    <td>
+                        <div class="buttons">
+                            <%= f.button :submit, "Зарегистрироваться", :class => "b-btn" %>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <% end %>
+
+
+    </div>
+	
+</div>

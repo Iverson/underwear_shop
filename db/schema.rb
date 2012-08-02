@@ -14,14 +14,14 @@
 ActiveRecord::Schema.define(:version => 20120724211327) do
 
   create_table "brands", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "countries", :force => true do |t|
-    t.string   "iso"
-    t.string   "name"
+    t.string   "iso",        :null => false
+    t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -59,10 +59,10 @@ ActiveRecord::Schema.define(:version => 20120724211327) do
   end
 
   create_table "products", :force => true do |t|
-    t.integer  "section_id"
-    t.integer  "brand_id"
+    t.integer  "section_id",                                                   :null => false
+    t.integer  "brand_id",                                                     :null => false
     t.decimal  "price",           :precision => 6, :scale => 2
-    t.string   "name"
+    t.string   "name",                                                         :null => false
     t.text     "description"
     t.integer  "discount",                                      :default => 0, :null => false
     t.integer  "state_id",                                      :default => 2, :null => false
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(:version => 20120724211327) do
   end
 
   create_table "sections", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "ancestry"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(:version => 20120724211327) do
   add_index "sections", ["ancestry"], :name => "index_sections_on_ancestry"
 
   create_table "states", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -105,6 +105,9 @@ ActiveRecord::Schema.define(:version => 20120724211327) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "first_name",                             :null => false
+    t.string   "last_name",                              :null => false
+    t.integer  "phone",                                  :null => false
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end

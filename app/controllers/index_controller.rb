@@ -1,5 +1,4 @@
 class IndexController < ApplicationController
-  layout 'index'
   
   def index
     @products = Product.limit(6)

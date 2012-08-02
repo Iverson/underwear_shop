@@ -1,4 +1,4 @@
-.new-products ul li, .featured ul li {
+.new-products ul li, .featured ul li, .b-btn {
 	display: inline;
 	zoom: 1;
 }
