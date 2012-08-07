@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(:version => 20120805194224) do
   end
 
   create_table "orders", :force => true do |t|
-    t.integer  "order_state_id", :default => 1
+    t.integer  "order_state_id", :default => 1, :null => false
     t.integer  "address_id"
     t.integer  "user_id"
     t.datetime "created_at",                    :null => false

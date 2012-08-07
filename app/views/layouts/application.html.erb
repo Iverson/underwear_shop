@@ -4,7 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Underwear Online Store</title>
     <%= stylesheet_link_tag    :reset, :stylesheet, :slideshow %>
-    <%= javascript_include_tag "application" %><%= csrf_meta_tags %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
 
     <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/assets/ie.css" /><![endif]-->
 
@@ -59,157 +60,103 @@
                     </div>
                     <div class="header-top1">
                         <div class="cart-position">
-                            <div class="cart-inner">
-                                <div id="cart" class="">
-                                    <div class="heading"> <a><span class="sc-button"></span> <span class="fr">
-                                        <h4>Shopping Cart</h4>
-                                        <span id="cart-total">2 item(s) - $59.88</span></span></a> </div>
-                                        <div class="content">
-                                            <div class="mini-cart-info">
-                                                <table class="cart">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=55"><img title="Lorem ipsum dolor sit amet" alt="Lorem ipsum dolor sit amet" src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Penn State College T-Shirt 1 copy-70x84.png"></a></td>
-                                                            <td class="name"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=55">Lorem ipsum dolor sit amet</a>
-                                                                <div> </div>
-                                                                <span class="quantity">x&nbsp;1</span> <span class="total">$28.51</span></td>
-                                                                <!--td class="quantity">x&nbsp;</td--> 
-                                                                <!--td class="total"></td-->
-                                                                <td class="remove"><span><img onclick="$('#cart').load('index.php?route=module/cart&amp;remove=55 #cart &gt; *');" title="Remove" alt="Remove" src="catalog/view/theme/theme014/image/close.png"></span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=51"><img title="Dolor sit amet conse" alt="Dolor sit amet conse" src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation ACDC Gray T-Shirt 1 copy-70x84.png"></a></td>
-                                                                <td class="name"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=51">Dolor sit amet conse</a>
-                                                                    <div> </div>
-                                                                    <span class="quantity">x&nbsp;1</span> <span class="total">$31.38</span></td>
-                                                                    <!--td class="quantity">x&nbsp;</td--> 
-                                                                    <!--td class="total"></td-->
-                                                                    <td class="remove"><span><img onclick="$('#cart').load('index.php?route=module/cart&amp;remove=51 #cart &gt; *');" title="Remove" alt="Remove" src="catalog/view/theme/theme014/image/close.png"></span></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div>
-                                                        <table class="total">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td align="right" class="total-right"><b>Sub-Total:</b></td>
-                                                                    <td align="left" class="total-left"><span class="t-price">$47.56</span></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="right" class="total-right"><b>Eco Tax (-2.00):</b></td>
-                                                                    <td align="left" class="total-left"><span class="t-price">$4.00</span></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="right" class="total-right"><b>VAT (17.5%):</b></td>
-                                                                    <td align="left" class="total-left"><span class="t-price">$8.32</span></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td align="right" class="total-right"><b>Total:</b></td>
-                                                                    <td align="left" class="total-left"><span class="t-price">$59.88</span></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="checkout"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=checkout/cart" class="button"><span>View Cart</span></a> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=checkout/checkout" class="button"><span>Checkout</span></a></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div class="cart-inner js-cart">
+                                <%= render 'shared/cart' %>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div id="logo"><a href="/"><img src="/assets/logo.png" title="YoungLovers" alt="YoungLovers" /></a></div>
+                    </div>
+                </div>
+
+                <div id="container">
+
+                    <div id="notification">
+                        <% if notice %>
+                        <p class="attention"><%= notice %></p>
+                        <% end %>
+                        <% if alert %>
+                        <p class="warning"><%= alert %></p>
+                        <% end %>
+                    </div>
+                    <div id="column-left">
+                        <% if @profile %>
+                        <%= render "shared/profile_menu" %>
+                        <% end %>
+
+
+                        <script type="text/javascript">
+                        $(document).ready(function(){
+                            $(".act-cat").toggle( 
+                                function() { 
+                                    $(this).next('.b-sections-menu').slideToggle("slow"),{
+                                        duration: 'slow',
+                                        easing: 'easeOutBounce'
+                                    };
+                                }, 
+                                function() { 
+                                    $(this).next('.b-sections-menu').slideToggle("slow"),{
+                                        duration: 'slow',
+                                        easing: 'easeOutBounce'
+                                    };
+                                } 
+                            );
+
+                        });
+
+                        </script>
+                        <div class="box category">
+                            <div class="box-content">
+                                <div class="box-content-image">
+                                    <div class="box-heading">Каталог</div>
+                                    <div class="box-category">
+                                        <%= menu_sections_tree Section.arrange(:order => :id) %>
                                     </div>
-                                    <div class="clear"></div>
-                                </div>
-                                <div id="logo"><a href="/"><img src="/assets/logo.png" title="YoungLovers" alt="YoungLovers" /></a></div>
+                                </li>
                             </div>
                         </div>
-                        
-                        <div id="container">
-                            
-                            <div id="notification">
-                                <% if notice %>
-                                    <p class="attention"><%= notice %></p>
-                                <% end %>
-                                <% if alert %>
-                                    <p class="warning"><%= alert %></p>
-                                <% end %>
-                            </div>
-                            <div id="column-left">
-                                <% if @profile %>
-                                    <%= render "shared/profile_menu" %>
-                                <% end %>
-                                
-                                
-                                <script type="text/javascript">
-                                $(document).ready(function(){
-                                    $(".act-cat").toggle( 
-                                        function() { 
-                                            $(this).next('.b-sections-menu').slideToggle("slow"),{
-                                                duration: 'slow',
-                                                easing: 'easeOutBounce'
-                                            };
-                                        }, 
-                                        function() { 
-                                            $(this).next('.b-sections-menu').slideToggle("slow"),{
-                                                duration: 'slow',
-                                                easing: 'easeOutBounce'
-                                            };
-                                        } 
-                                    );
+                    </div>
+                    <div class="box sidebarsearch"> 
 
+                        <!--div class="box-heading">Search</div-->
+                        <div class="box-content">
+                            <div id="sidebarsearch">
+                                <div class="button-sidebarsearch" ></div>
+                                <span>
+                                    <input type="text" name="sidebar_name" value="Search"  onclick="this.value = '';" onkeydown="this.style.color = '#000000';" />
+                                </span> </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                        (function($){$.fn.equalHeights=function(minHeight,maxHeight){tallest=(minHeight)?minHeight:0;this.each(function(){if($(this).height()>tallest){tallest=$(this).height()}});if((maxHeight)&&tallest>maxHeight)tallest=maxHeight;return this.each(function(){$(this).height(tallest)})}})(jQuery)
+                        $(window).load(function(){
+                            if($(".maxheight-best").length){
+                                $(".maxheight-best").equalHeights()}
+                            })
+
+                            </script> 
+                            <script type="text/javascript">
+                            $(document).ready(function(){
+                                $(function(){
+                                    $('.box-product-2  li ').last().addClass('last');
                                 });
-
-                                </script>
-                                <div class="box category">
-                                    <div class="box-content">
-                                        <div class="box-content-image">
-                                            <div class="box-heading">Каталог</div>
-                                            <div class="box-category">
-                                                <%= menu_sections_tree Section.arrange(:order => :id) %>
-                                            </div>
-                                        </li>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box sidebarsearch"> 
-
-                                <!--div class="box-heading">Search</div-->
+                            }); 
+                            </script>
+                            <div class="box  bestsellers">
                                 <div class="box-content">
-                                    <div id="sidebarsearch">
-                                        <div class="button-sidebarsearch" ></div>
-                                        <span>
-                                            <input type="text" name="sidebar_name" value="Search"  onclick="this.value = '';" onkeydown="this.style.color = '#000000';" />
-                                        </span> </div>
-                                    </div>
-                                </div>
-                                <script type="text/javascript">
-                                (function($){$.fn.equalHeights=function(minHeight,maxHeight){tallest=(minHeight)?minHeight:0;this.each(function(){if($(this).height()>tallest){tallest=$(this).height()}});if((maxHeight)&&tallest>maxHeight)tallest=maxHeight;return this.each(function(){$(this).height(tallest)})}})(jQuery)
-                                $(window).load(function(){
-                                    if($(".maxheight-best").length){
-                                        $(".maxheight-best").equalHeights()}
-                                    })
+                                    <div class="box-content-image">
+                                        <div class="box-heading">Bestsellers</div>
+                                        <div class="box-product-2">
+                                            <ul>
+                                                <li>
+                                                    <div class="name maxheight-best"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=54">Set magna ipsum dolor sit conse</a></div>
+                                                    <div class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=54"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Pronto Blue White Graphic Tee 1 copy-60x72.png" alt="Set magna ipsum dolor sit conse" /></a></div>
+                                                    <div class="extra-wrap">
+                                                        <div class="price"> <span class="price-new">$25.50</span> <span class="price-off">16%<span> off</span></span> </div>
 
-                                    </script> 
-                                    <script type="text/javascript">
-                                    $(document).ready(function(){
-                                        $(function(){
-                                            $('.box-product-2  li ').last().addClass('last');
-                                        });
-                                    }); 
-                                    </script>
-                                    <div class="box  bestsellers">
-                                        <div class="box-content">
-                                            <div class="box-content-image">
-                                                <div class="box-heading">Bestsellers</div>
-                                                <div class="box-product-2">
-                                                    <ul>
-                                                        <li>
-                                                            <div class="name maxheight-best"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=54">Set magna ipsum dolor sit conse</a></div>
-                                                            <div class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=54"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Pronto Blue White Graphic Tee 1 copy-60x72.png" alt="Set magna ipsum dolor sit conse" /></a></div>
-                                                            <div class="extra-wrap">
-                                                                <div class="price"> <span class="price-new">$25.50</span> <span class="price-off">16%<span> off</span></span> </div>
-
-                                                                <!--div class="cart"><a onclick="addToCart('54');" class="button"><span>Add to Cart</span></a></div--> 
-                                                            </div>
-                                                        </li>
+                                                        <!--div class="cart"><a onclick="addToCart('54');" class="button"><span>Add to Cart</span></a></div--> 
+                                                    </div>
+                                                </li>
                                                         <li>
                                                             <div class="name maxheight-best"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=55">Lorem ipsum dolor sit amet</a></div>
                                                             <div class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=55"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Penn State College T-Shirt 1 copy-60x72.png" alt="Lorem ipsum dolor sit amet" /></a></div>

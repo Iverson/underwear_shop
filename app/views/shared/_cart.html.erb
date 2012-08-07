@@ -1,0 +1,52 @@
+<div id="cart" class="">
+    <div class="heading"> <a><span class="sc-button"></span> <span class="fr">
+        <h4>Корзина</h4>
+        <span id="cart-total"><%= @cart['count'] %> товар(ов) - <%= @cart['summ'] %>р</span></span></a> </div>
+        <div class="content">
+            <% if @cart['count'] > 0 %>
+            
+            <div class="mini-cart-info">
+                <table class="cart">
+                    <tbody>
+                        <% @cart['items'].each do |id, cart_item| %>
+                            <tr>
+                                <td class="image">
+                                    <%= link_to(product_path(cart_item['id'])) do %>
+                                        <%= image_tag( cart_item['img'], {:width => 70} ) %>
+                                    <% end %>
+                                </td>
+                                <td class="name">
+                                    <%= link_to( cart_item['name'], product_path(cart_item['id']) ) %>
+                                    <span class="quantity">x&nbsp;<%= cart_item['count'] %></span> <span class="total"><%= cart_item['price'] %>р</span>
+                                </td>
+                                    <!--td class="quantity">x&nbsp;</td--> 
+                                    <!--td class="total"></td-->
+                                    <td class="remove"><span><img class="js-removeFromCart" rel="<%= cart_item['id'] %>" title="Удалить" alt="Удалить" src="/assets/close.png"></span>
+                                </td>
+                            </tr>
+                        <% end %>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table class="total">
+                    <tbody>
+                        <tr>
+                            <td align="right" class="total-right"><b>Итого:</b></td>
+                            <td align="left" class="total-left"><span class="t-price"><%= @cart['summ'] %>р</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="checkout">
+                <a href="#" class="button"><span>Детально</span></a>
+                <a href="#" class="button"><span>Заказать</span></a></div>
+            
+            <% else %>
+                <div class="empty">Ваша корзина пуста</div>
+            <% end %>
+            
+        </div>
+    </div>
+</div>

@@ -10,6 +10,9 @@ UnderwearShop::Application.routes.draw do
   resources :products
   resources :orders
   
+  post 'cart/add' => 'cart#cart_add_item'
+  post 'cart/remove' => 'cart#cart_remove_item'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
