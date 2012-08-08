@@ -40,8 +40,8 @@
                 </table>
             </div>
             <div class="checkout">
-                <a href="#" class="button"><span>Детально</span></a>
-                <a href="#" class="button"><span>Заказать</span></a></div>
+                <%= link_to 'Детально', cart_index_path, :class => 'button' %>
+                <%= link_to 'Заказать', cart_checkout_path, :class => 'button' %>
             
             <% else %>
                 <div class="empty">Ваша корзина пуста</div>

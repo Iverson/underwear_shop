@@ -76,7 +76,9 @@
 		</table>
 	</div>
 	<div class="buttons">
-		<div class="right"><a class="button" href="#"><span>Заказать</span></a></div>
+		<div class="right">
+		    <%= link_to 'Заказать', cart_checkout_path, :class => 'button' %>
+		</div>
 		<div class="center"><a class="button" href="/"><span>Продолжить покупки</span></a></div>
 	</div>
 </div>

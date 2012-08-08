@@ -14,6 +14,7 @@ UnderwearShop::Application.routes.draw do
   post 'cart/add' => 'cart#add_item'
   post 'cart/remove' => 'cart#remove_item'
   post 'cart/update' => 'cart#update'
+  get 'cart/checkout' => 'cart#checkout'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

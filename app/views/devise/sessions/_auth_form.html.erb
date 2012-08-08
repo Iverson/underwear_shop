@@ -1,0 +1,28 @@
+<div class="left b-auth">
+    <div class="margin_b15">
+	    <h2>Я Уже Зарегистрирован</h2>
+	</div>
+	
+	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	    <%= devise_error_messages! %>
+	    
+        <div class="b-input">
+            <%= f.input :email %>
+        </div>
+        
+        <div class="b-input">
+            <%= f.input :password, :label => "Пароль" %>
+            
+        </div>
+        
+        
+      <% if devise_mapping.rememberable? -%>
+        <div class="margin_b20"><%= f.check_box :remember_me, :class => "checkbox" %> <%= f.label :remember_me, "Запомнить меня" %></div>
+      <% end -%>
+
+      <p class="b-auth__forgotpass f-right"><%= link_to "Забыли пароль?", new_password_path(resource_name), :class => "orange" %></p>
+      <div><%= f.submit "Войти", :class => "b-btn" %></div>
+    <% end %>
+
+    
+</div>

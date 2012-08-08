@@ -1216,26 +1216,22 @@ a.button {
 	font-weight:bold;
 	white-space:nowrap;
 	letter-spacing: -0.2px;
+	color: #FFFFFF;
+	padding:8px 10px 9px 9px;
 }
-.new-products ul li a.button  {
-	width:81px;
+.new-products ul li a.button {
+	width:62px;
 	text-align:center;
 	border-radius:0 0 0 4px;
 	float:left;
 }	
 .center-col a.button.details {
 	border-left:1px solid #000;
-	width:78px;
+	width:59px;
 	border-radius:0 0 4px 0;
 	float:left;
 }
-a.button.details span { color:#fff; }
-a.button span {
-	color: #FFFFFF;
-	display: inline-block;
-	padding:8px 10px 9px 9px;
-	
-}
+
 a.button-2 {
 	display: inline-block;	
 	color: #FFFFFF;
@@ -1255,7 +1251,7 @@ a.button-2 {
 	border-radius:2px 2px 2px 2px;
 }
 a.button-2:hover {	background: url('/assets/button-bg.png') 0 bottom repeat-x #596b55; border-bottom-color:#4a5947;}
-a.button:hover span {	color:#aee75c;}
+a.button:hover {	color:#aee75c;}
 
 .buttons {
 	overflow: auto;
@@ -2988,9 +2984,9 @@ background: url(/assets/tail-manuf.gif) 0 0 repeat-x #F8F8F8;
 
 
 /* checkout */
-.checkout-content.opt .left h2{ color:#f83b01; padding-bottom:0px;}
-.checkout-content.opt .right h2{ padding-bottom:0;}
-.checkout-content.opt .right  a{ color:#f83b01;}
+.checkout-content.opt .right h2{ color:#f83b01; padding-bottom:0px;}
+.checkout-content.opt .left h2{ padding-bottom:0;}
+
 .checkout-content.opt .left {
     background: url("/assets/login-content-left.gif") right bottom no-repeat  #FFFFFF;
     border: 1px solid #DFE1E4;
@@ -3536,4 +3532,8 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
 
 .b-cart-update-item {
 	vertical-align:middle;
+}
+
+.orange {
+	color:#f83b01;
 }
