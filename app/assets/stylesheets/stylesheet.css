@@ -2854,7 +2854,7 @@ a.button-inf-left span {
 
 }
 a{ outline:none;}
-.shop-cart{
+.shop-cart {
 	border-top: 1px solid #E7E7E7;
 	border-left: 1px solid #E7E7E7;
 	border-right: 1px solid #E7E7E7;
@@ -2879,11 +2879,7 @@ background: url(/assets/tail-manuf.gif) 0 0 repeat-x #F8F8F8;
 .cart-info thead .name, .cart-info thead .model {
 	text-align:left;
 }
-.cart-info thead .quantity, .cart-info thead .price, .cart-info thead .total {
-	text-align:left;
-	font-family:"Times New Roman", Times, serif;
-	font-size:14px;
-}
+
 .cart-info tbody td {
 	vertical-align: middle;
 	border-right: 1px solid #E7E7E7;
@@ -3410,7 +3406,7 @@ input#sub_category, input#description { position:relative; top:2px;}
 /******************************************************************************************************************************************/
 /*************************************************************************updated cart****************************************************/
 .mt5 { margin-top:5px;}
-.cart-info tbody .quantity > input {
+.cart-info tbody .quantity .count {
 	width:45px;
 	margin-top:5px;
 	}
@@ -3521,4 +3517,23 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
 
 .b-register-form {
 	width: 500px !important;
+}
+
+.button_to {
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.b-cart-remove-item {
+	display:inline-block;
+	width: 27px;
+	height: 23px;
+	vertical-align:middle;
+	background:url(/assets/remove.png);
+	border:none;
+	cursor: pointer;
+}
+
+.b-cart-update-item {
+	vertical-align:middle;
 }

@@ -8,7 +8,6 @@ $(document).ready(function() {
 	function animateProduct(image,cart)
 	{
 		var image_offset = image.offset();
-		console.log(image);
 
 		$("body").append('<img src="' + image.attr('src') + '" id="temp" style="position: absolute; z-index:9999; top:'+image_offset.top+'px; left:'+image_offset.left+'px" />');
 
@@ -27,13 +26,18 @@ $(document).ready(function() {
 		});
 	}
 	
+	$('.b-cart-remove-item').click(function()
+	{
+		$(this).closest('.quantity').find('.js-cartRemoveItemHidden').click();
+	});
+	
 	$('.js-addToCart').click(function()
 	{
 		var sender = this;
 		
 		$.ajax({
 			type: "POST",
-			url: "/cart/add",
+			url: "/cart/add.json",
 			headers: {
 				'X-CSRF-Token': token
 			},
@@ -41,7 +45,7 @@ $(document).ready(function() {
 			success: function(data)
 			{
 				animateProduct($(sender).closest('.padd-both').find(".image2 img") , $("#cart"));
-				$('.js-cart').empty().append(data);
+				$('.js-cart').empty().append(data.html);
 			},
 			error: function(data)
 			{
@@ -56,16 +60,15 @@ $(document).ready(function() {
 	{
 		$.ajax({
 			type: "POST",
-			url: "/cart/remove",
+			url: "/cart/remove.json",
 			headers: {
 				'X-CSRF-Token': token
 			},
 			data: {id: $(this).attr('rel')},
 			success: function(data)
 			{
-				$('.js-cart').empty().append(data).ready(function()
+				$('.js-cart').empty().append(data.html).ready(function()
 				{
-					console.log(cart);
 					$('#cart').addClass('active');
 				});
 			},

@@ -1,0 +1,93 @@
+<div class="breadcrumb"> 
+    <a href="#">Home</a> » <a href="#" class="last">Shopping Cart</a> 
+</div>
+<h1>Корзина</h1>
+
+<% if @cart['count'] > 0 %>
+
+<div class="cart-info">
+    <div class="shop-cart">
+        <table>
+            <thead>
+                <tr>
+                    <td class="image">Фото</td>
+                    <td class="name">Название</td>
+                    <td class="model">Артикул</td>
+                    <td class="quantity">Количество</td>
+                    <td class="unit_price">Цена за шт.</td>
+                    <td style="border-right:none;" class="total">Цена</td>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                <% @cart['items'].each do |id, cart_item| %>
+                <tr>
+                    <td class="image">
+                        <%= link_to(product_path(cart_item['id'])) do %>
+                        <%= image_tag( cart_item['img'], {:width => 70} ) %>
+                        <% end %>
+                    </td>
+                    <td class="name">
+                        <%= link_to( cart_item['name'], product_path(cart_item['id']) ) %>
+                    </td>
+                    <td class="model"><%= cart_item['id'] %></td>
+                    <td class="quantity">
+                        <%= form_tag(:controller => "cart", :action => "update", :method => "post") do %>
+                            <%= text_field_tag(:count, cart_item['count'], :size => 1, :class => "count") %>
+                            <%= text_field_tag(:id, cart_item['id'], :type => "hidden") %>
+                            <div class="wrapper mt5">
+                                <%= image_submit_tag("/assets/update.png", :class => 'b-cart-update-item') %>
+                                <%= image_tag( "/assets/remove.png", {:class => "b-cart-remove-item"} ) %>
+                            </div>
+                        <% end %>
+                        <div>
+                            
+                           <%= button_to "", { :action => "remove_item", :id => cart_item['id'] }, {:confirm => "Вы уверены?", :method => :post, :class => "js-cartRemoveItemHidden hidden" } %>
+                        </div>
+                    </td>
+                    <td class="price"><%= cart_item['price'] %>р</td>
+                    <td style="border-right:0;" class="total"><%= cart_item['price']*cart_item['count'] %>р</td>
+                </tr>
+                <% end %>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="cart-bottom">
+	<div class="cart-total">
+		<table id="total">
+			<tbody>
+				<tr class="row-table-1">
+					<td class="right cart-total-name"><b>Под-итог:</b></td>
+					<td class="right cart-total1 "><%= @cart['summ'] %>р</td>
+				</tr>
+				<tr class="row-table-2">
+					<td class="right cart-total-name"><b>Доставка:</b></td>
+					<td class="right cart-total1 ">250р</td>
+				</tr>
+				<tr class="row-table-4">
+					<td class="right cart-total-name"><b>Итого:</b></td>
+					<td class="right cart-total1 last"><%= @cart['summ'] %>р</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="buttons">
+		<div class="right"><a class="button" href="#"><span>Заказать</span></a></div>
+		<div class="center"><a class="button" href="/"><span>Продолжить покупки</span></a></div>
+	</div>
+</div>
+
+<% else %>
+
+	<div class="box-container">
+        <div class="content">Ваша корзина пуста</div>
+        <div class="buttons">
+          <div class="right"><a class="button" href="/"><span>Продолжить покупки</span></a></div>
+        </div>
+      </div>
+       
+<% end %>

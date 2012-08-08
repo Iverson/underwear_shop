@@ -22,8 +22,8 @@
                 <ul class="links">
                     <li class="first"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=common/home">Домой</a></li>
                     <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/wishlist" id="wishlist-total">Избранное <span>(0)</span></a></li>
-                    <li><%= link_to "Мой профиль", edit_user_registration_path %></li>
-                    <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=checkout/cart">Корзина</a></li>
+                    <li><%= link_to 'Мой профиль', edit_user_registration_path %></li>
+                    <li><%= link_to 'Корзина', cart_index_path %></li>
                     <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=checkout/checkout">Checkout</a></li>
                     
                 <% if user_signed_in? %>

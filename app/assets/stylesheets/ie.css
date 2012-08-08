@@ -1,4 +1,4 @@
-.new-products ul li, .featured ul li, .b-btn {
+.new-products ul li, .featured ul li, .b-btn, .b-cart-remove-item, .button_to {
 	display: inline;
 	zoom: 1;
 }
