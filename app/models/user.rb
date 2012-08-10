@@ -15,4 +15,12 @@ class User < ActiveRecord::Base
   validates :password, :presence => true, :confirmation => true
   validates :password_confirmation, :presence => true
   validates :terms_of_service, :acceptance => { :accept => true }
+  
+  has_one :address
+  
+  accepts_nested_attributes_for :address
+  
+  after_create() do
+    Address.create({:address => "", :city => "", :phone => "", :fio => self.first_name + " " + self.last_name, :user_id => self.id})
+  end
 end

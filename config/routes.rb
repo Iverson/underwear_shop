@@ -1,6 +1,12 @@
 UnderwearShop::Application.routes.draw do
+  
   devise_for :users
 
+  resources :passwords, :only => [:edit, :update]
+  
+  get 'users/address' => 'address#edit'
+  post 'users/address' => 'address#update'
+  
   resources :projects
   resources :countrys, :only => [:index, :destroy]
   resources :brands, :only => [:index, :new, :create]

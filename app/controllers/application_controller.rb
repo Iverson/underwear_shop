@@ -7,12 +7,14 @@ class ApplicationController < ActionController::Base
     session[:cart] ||= {'summ' => 0, 'count' => 0, 'items' => {}, 'checkout_step' => 1}
     
     if user_signed_in?
-      @checkout_step = 2
+      
+      if session[:cart]['checkout_step'] < 2
+        session[:cart]['checkout_step'] = 2
+      end
+      
     else
-      @checkout_step = 1
+      session[:cart]['checkout_step'] = 1
     end
-    
-    session[:cart]['checkout_step'] = @checkout_step
     
     @cart = session[:cart]
   end
