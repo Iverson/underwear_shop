@@ -270,7 +270,7 @@ form {
 	.b-input label {
 		display:block;
 		margin-bottom: 4px;
-		color:#666;
+		color:#191919;
 		zoom: 1;
 	}
 
@@ -1071,7 +1071,7 @@ label {
 	float: right;
 	cursor: pointer;
 }
-.i-required {
+.i-required, .b-input abbr {
 	color: #ff7409;
 	font-weight: bold;
 }
@@ -1255,7 +1255,7 @@ a.button:hover {	color:#aee75c;}
 
 .buttons {
 	overflow: auto;
-	padding: 6px;
+	padding: 15px 0;
 	margin-bottom: 20px;
 	
 }

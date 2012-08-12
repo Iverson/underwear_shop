@@ -5,9 +5,8 @@
 
     <h2>Ваш адрес</h2>
     <div class="content">
-        <%= simple_form_for(@address, :url => users_address_path, :html => { :method => :put }) do |f| %>
+        <%= simple_form_for(@address, :as => "address", :url => users_address_path, :html => { :method => :put }) do |f| %>
         
-        <%= f.hidden_field :user_id, :label => false %>
         <table class="form b-register-form">
             <tbody>
                 <tr>
@@ -15,7 +14,7 @@
 
                     <td>
                         <div class="b-input">
-                            <%= f.input :city, :label => false, :input_html => { :disabled => true, :value => "Москва" } %>
+                            <%= f.input :city, :label => false %>
                         </div>
                     </td>
                 </tr>

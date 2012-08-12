@@ -66,6 +66,12 @@ class CartController < ApplicationController
   end
   
   def checkout
+    if user_signed_in?
+      @address = Address.new
+      @address.order.build
+    else
+      #@address = Order.new
+    end
     
     respond_to do |format|
       format.html

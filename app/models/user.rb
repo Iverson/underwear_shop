@@ -21,6 +21,6 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :address
   
   after_create() do
-    Address.create({:address => "", :city => "", :phone => "", :fio => self.first_name + " " + self.last_name, :user_id => self.id})
+    Address.create({:address => "", :city => "", :phone => self.phone, :fio => self.first_name + " " + self.last_name, :user_id => self.id})
   end
 end

@@ -5,7 +5,7 @@ UnderwearShop::Application.routes.draw do
   resources :passwords, :only => [:edit, :update]
   
   get 'users/address' => 'address#edit'
-  post 'users/address' => 'address#update'
+  put 'users/address' => 'address#update'
   
   resources :projects
   resources :countrys, :only => [:index, :destroy]
