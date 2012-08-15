@@ -9,3 +9,4 @@
 require File.expand_path('../seed/country_seeds.rb', __FILE__)
 require File.expand_path('../seed/state_seeds.rb', __FILE__)
 require File.expand_path('../seed/order_state_seeds.rb', __FILE__)
+require File.expand_path('../seed/delivery_seeds.rb', __FILE__)

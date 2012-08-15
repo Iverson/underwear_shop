@@ -1,2 +1,36 @@
-<h1>Orders#index</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+<% @profile = true %>
+
+<h1>Мои заказы</h1>
+
+<div class="box-container">
+    
+    <% if @orders.length > 0 %>
+    
+    <div class="count-item">
+        <% @orders.each do |order| %>
+ 
+            <div class="order-list">
+        		<div class="heading-order-list">
+        			<div class="order-id"><b>Номер заказа:</b> <span>#<%= order.id %></span></div>
+        			<div class="order-status"><b>Статус:</b> <span><%= order.order_state.name %></span></div>
+        		</div>
+        		<div class="order-content">
+        			<div>
+        			    <b>Дата:</b> <span><%= order.updated_at %></span><br>
+        				<b>Товаров:</b> <strong><%= order.order_items.length %></strong>
+        			</div>
+        			<div>
+        			    <b>Получатель:</b> <span><%= order.address.fio %></span><br>
+        				<b>Сумма:</b> <span class="or-price">$59.56</span>
+        			</div>
+        			<div class="order-info"><%= link_to "Смотреть", order, :class => "button" %>&nbsp;&nbsp;<a href="#"><img title="Reorder" alt="Reorder" src="/assets/reorder.png"></a></div>
+        		</div>
+        	</div>
+        <% end %>
+    	
+    </div>
+    
+    <% else %>
+    <div class="content">Вы еще ничего не заказывали в нашем магазине, сделайте это сейчас.</div>
+   <% end %>
+</div>

@@ -1,6 +1,43 @@
 <div id="shipping-method" class="js-checkoutStepCont">
 	<div class="checkout-heading">
 		<div class="marker-chekout">Шаг 3: Способ доставки</div>
+		<a class="#">Изменить »</a>
 	</div>
-	<div class="checkout-content"></div>
+    <div class="checkout-content">
+        <%= simple_form_for(@order, :as => "order", :url => "/order/update", :html => { :method => :post }) do |f| %>
+        
+        <p>Выберите способ доставки вашего заказа.</p>
+        <table class="radio">
+            <% Delivery.all.each do |d, i| %>
+  
+            <tr class="highlight">
+                <td width="23">
+                    <% if @order.delivery_id == d.id %>
+                        <%= f.radio_button("delivery_id", d.id, {:checked => true}) %>
+                    <% else %>
+                        <%= f.radio_button("delivery_id", d.id,) %>
+                    <% end %>
+                </td>
+                <td>
+                    <p class="margin_b5">
+                        <label for="order_delivery_id_<%= d.id %>"><b><%= d.name %></b></label>
+                    </p>
+                </td>
+                <td width="50"></td>
+                <td style="text-align: right;"><label for="flat.flat"><%= d.price %>руб</label></td>
+            </tr>
+            <% end %>
+        </table>
+        <br>
+        <b>Комментарий к заказу</b>
+        <div class="b-input">
+            <%= f.input :comment, :label => false %>
+        </div>
+        <div class="buttons">
+            <div class="right">
+                <%= f.button :submit, "Продолжить", :class => "b-btn" %>
+            </div>
+        </div>
+        <% end %>
+    </div>
 </div>

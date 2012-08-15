@@ -1,8 +1,12 @@
 class Address < ActiveRecord::Base
-  attr_accessible :address, :city, :fio, :phone, :email, :user_id, :orders_attributes
+  attr_accessible :address, :city, :fio, :phone, :email, :user_id, :order_id
   
-  belongs_to :user
-  has_one :order
+  belongs_to :addressable, :polymorphic => true
   
-  accepts_nested_attributes_for :order
+  validates :address, :presence => true
+  validates :city, :presence => true
+  validates :phone, :presence => true
+  validates :fio, :presence => true
+  validates :email, :presence => true
+  
 end

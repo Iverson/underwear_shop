@@ -5,7 +5,8 @@
     <h2>Ваши персональные данные</h2>
     <div class="content">
         <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-
+        
+        <%= hidden_field_tag(:redirect, params[:redirect]) %>
         <table class="form b-register-form">
             <tbody>
                 <tr>

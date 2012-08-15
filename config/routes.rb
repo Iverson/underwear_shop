@@ -1,6 +1,6 @@
 UnderwearShop::Application.routes.draw do
   
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   resources :passwords, :only => [:edit, :update]
   
@@ -17,10 +17,16 @@ UnderwearShop::Application.routes.draw do
   resources :orders
   resources :cart, :only => [:index]
   
+  post 'order/create' => 'orders#create'
+  post 'order/update' => 'orders#update'
+  post 'order/confirm' => 'orders#confirm'
+  get 'users/orders' => 'orders#index'
+  
   post 'cart/add' => 'cart#add_item'
   post 'cart/remove' => 'cart#remove_item'
   post 'cart/update' => 'cart#update'
   get 'cart/checkout' => 'cart#checkout'
+  get 'cart/finish' => 'cart#finish'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

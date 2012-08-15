@@ -8,5 +8,9 @@ class Product < ActiveRecord::Base
   has_many :orders
   has_many :order_item
   
+  validates :name, :presence => true
+  validates :price, :presence => true
+  validates :section_id, :presence => true
+  
   accepts_nested_attributes_for :pictures, :allow_destroy => true
 end

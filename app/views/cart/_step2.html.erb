@@ -1,13 +1,16 @@
 <div id="payment-address" class="js-checkoutStepCont">
 	<div class="checkout-heading">
 		<div class="marker-chekout"><span>Шаг 2: Ваши данные и адрес доставки</span></div>
+		<a class="#">Изменить »</a>
 	</div>
-	<div class="checkout-content" style="display: block;">
-	<%= simple_form_for(@order, :as => "order", :url => "#", :html => { :method => :post }) do |f| %>
+	<div class="checkout-content">
+	
+	<%= simple_form_for(@order, :as => "order", :url => @order_action, :html => { :method => :post }) do |f| %>
       <div class="left">
         <h2>Ваши персональные данные</h2>
         
         <%= f.fields_for :address do |address_fields| %>
+        
         
         <div class="b-input margin_b10">
             <%= address_fields.input :fio, :label => "ФИО" %>
@@ -26,20 +29,17 @@
         <h2>Ваш адрес</h2>
         
         <div class="b-input margin_b10">
-            <%= address_fields.input :address, :label => "Адрес" %>
-        </div>
-        
-        <div class="b-input margin_b10">
             <%= address_fields.input :city, :label => "Город" %>
         </div>
         
-        <div class="b-input">
-            <%#= f.input :comment, :label => "Комментарий" %>
+        <div class="b-input margin_b10">
+            <%= address_fields.input :address, :label => "Адрес" %>
         </div>
+        <% end %>
         
       </div>
       
-      <% end %>
+      
 
       <div class="buttons">
         <div class="right"><%= f.button :submit, "Продолжить", :class => "b-btn" %></div>

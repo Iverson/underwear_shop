@@ -267,6 +267,11 @@ form {
 		color:#111;
 	}
 	
+	.b-input textarea {
+		height: 86px;
+		padding: 5px 8px;
+	}
+	
 	.b-input label {
 		display:block;
 		margin-bottom: 4px;
@@ -1256,7 +1261,7 @@ a.button:hover {	color:#aee75c;}
 .buttons {
 	overflow: auto;
 	padding: 15px 0;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 	
 }
 .buttons .left {
@@ -3019,6 +3024,13 @@ background: url(/assets/tail-manuf.gif)  0 0 repeat-x #F8F8F8;
 	margin-top:-15px;
 	font-weight: normal;
 	text-decoration: none;
+	display:none;
+}
+.complete .checkout-heading a {
+	display:block;
+}
+.active .checkout-heading a {
+	display:none;
 }
 .cart-total-name {
 	border-bottom:1px solid #E7E7E7;
@@ -3057,7 +3069,6 @@ background: url(/assets/tail-manuf.gif)  0 0 repeat-x #F8F8F8;
 }
 .right-bg .wrapper {overflow:visible;}
 .login-padd{ padding-top:12px;}
-.checkout-content .right a span{ padding-top:2px; padding-bottom:3px;}
 .checkout-content .right input.d1{ width:320px; margin-top:5px;}
 .checkout-content .right {
 	float: right;
@@ -3083,7 +3094,6 @@ background: url(/assets/tail-manuf.gif)  0 0 repeat-x #F8F8F8;
 	background-color: #F7F7F7;
 	border-bottom: 1px solid #DDDDDD;
 	font-size:14px;
-	font-family:"Times New Roman", Times, serif;
 }
 .checkout-product thead .name, .checkout-product thead .model {
 	text-align:center;
@@ -3467,7 +3477,7 @@ input#sub_category, input#description { position:relative; top:2px;}
 .cart-total-name {
     color: #191919 !important;
 }
-#shipping-method textarea, #payment-method textarea { min-width:700px; max-width:700px;}
+
 /*****************************************************************************************************************************************/
 .pp_gallery ul li.selected a{ border:1px solid #999!important;}
 .pp_gallery ul a { border:1px solid #000!important; background:#fff;  margin-top:0px;}
@@ -3505,6 +3515,11 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
 	padding: 0 10px;
 	border:none;
 	color:#FFFFFF;
+}
+
+.b-btn_mini {
+	height: 22px;
+	line-height: 22px;
 }
 
 .b-btn:hover {

@@ -6,7 +6,7 @@
             <ul class="acount">
                 <li><%= link_to "Мои данные", edit_user_registration_path %></li>
                 <li><%= link_to "Мой адрес", users_address_path %></li>
-                <li><a href="#">История заказов</a></li>
+                <li><%= link_to "Мои заказы", orders_path %></li>
                 <li><%= link_to "Сменить пароль", edit_password_path(current_user) %></li>
             </ul>
         </div>

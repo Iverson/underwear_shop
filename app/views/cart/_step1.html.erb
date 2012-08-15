@@ -1,6 +1,10 @@
 <div id="checkout" class="js-checkoutStepCont">
 	<div class="checkout-heading">
 		<div class="marker-chekout">Шаг 1: Параметры заказа</div>
+		
+		<% if !user_signed_in? %>
+		<a class="#">Изменить »</a>
+		<% end %>
 	</div>
 	<div class="checkout-content opt">
 		<div class="right">
@@ -10,17 +14,19 @@
 				<div class="p1">
 					<label for="register">
 						<input type="radio" checked="checked" id="register" value="register" name="account">
-						<b>Зарегистрироваться</b> </label>
+						<b>Зарегистрироваться</b>
+					</label>
 				</div>
 			</div>
 			<div class="extra-wrap">
 				<label for="guest">
 					<input type="radio" id="guest" value="guest" name="account">
-					<b>Без регистрации</b> </label>
+					<b>Без регистрации</b>
+				</label>
 			</div>
 			<br>
 			<p class="login-padd">Зарегистрировавшись, вы сможете совершать покупки быстрее и удобней, просматривать историю Ваших заказов и сохранять товары в Избранное</p>
-			<a class="button" id="button-account"><span>Continue</span></a><br>
+			<%= link_to "Продолжить", new_user_registration_path + "?redirect=" + cart_checkout_path, :class => "b-btn", :id =>  "button-account"%>
 			<br>
 		</div>
 		

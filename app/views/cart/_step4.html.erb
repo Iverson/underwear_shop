@@ -1,6 +1,62 @@
 <div id="confirm" class="js-checkoutStepCont">
-	<div class="checkout-heading">
-		<div class="marker-chekout">Шаг 4: Подтверждение</div>
-	</div>
-	<div class="checkout-content"></div>
+    <div class="checkout-heading">
+        <div class="marker-chekout">Шаг 4: Подтверждение</div>
+        <a class="#">Изменить »</a>
+    </div>
+    <div class="checkout-content">
+        <div class="checkout-product">
+            <table>
+                <thead>
+                    <tr>
+                        <td class="name">Название</td>
+                        <td class="model">Артикул</td>
+                        <td class="quantity">Количество</td>
+                        <td class="price">Цена за шт.</td>
+                        <td class="total">Цена</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @cart['items'].each do |id, cart_item| %>
+                    <tr>
+                        <td class="name">
+                            <%= link_to( cart_item['name'], product_path(cart_item['id']) ) %>
+                        </td>
+                        <td class="model"><%= cart_item['id'] %></td>
+                        <td class="quantity"><%= cart_item['count'] %></td>
+                        <td class="price"><%= cart_item['price'] %>р</td>
+                        <td class="total"><%= cart_item['price']*cart_item['count'] %>р</td>
+                    </tr>
+                    <% end %>
+                </tbody>
+                
+                <% if @order.delivery %>
+                <tfoot>
+                    <tr>
+                        <td class="price" colspan="4"><b>Под-итог:</b></td>
+                        <td class="total"><%= @cart['summ'] %>р</td>
+                    </tr>
+                    <tr>
+                        <td class="price" colspan="4"><b>Доставка:</b></td>
+                        <td class="total"><%= @order.delivery.price %>р</td>
+                    </tr>
+                    <tr>
+                        <td class="price" colspan="4"><b>Итого:</b></td>
+                        <td class="total"><%= @cart['summ'] + @order.delivery.price %>р</td>
+                    </tr>
+                </tfoot>
+                <% end %>
+            </table>
+        </div>
+        <div class="payment">
+            <%= simple_form_for(@order, :as => "order", :url => "/order/confirm", :html => { :method => :post }) do |f| %>
+            
+            <%= f.hidden_field :order_state_id, :value => 2 %>
+            <div class="buttons">
+                <div class="right">
+                    <%= f.button :submit, "Подтвердить заказ", :class => "b-btn" %>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
 </div>

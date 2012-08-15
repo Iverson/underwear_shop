@@ -1,10 +1,10 @@
 class AddressController < ApplicationController
   def edit
-    @address = Address.where(user_id: current_user.id).first_or_initialize
+    @address = current_user.address
   end
   
   def update
-    @address = Address.find(1)
+    @address = current_user.address
     
     respond_to do |format|
       if @address.update_attributes(params[:address])

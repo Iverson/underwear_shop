@@ -1,7 +1,7 @@
 <div class="breadcrumb"> 
 	<a href="#">Home</a> &raquo; <a href="#">Shopping Cart</a> &raquo; <a href="#">Checkout</a> 
 </div>
-<h1>Оформление заказа, шаг: <%= @cart['checkout_step'] %></h1>
+<h1>Оформление заказа, шаг: <%= @cart['checkout_step'] %>, order_id: <%= @cart['order_id'] %></h1>
 
 <div class="checkout">
 	
@@ -17,26 +17,40 @@
 </div>
 
 <script type="text/javascript"><!--
-$('#checkout .checkout-content input[name=\'account\']').live('change', function() {
-    if ($(this).attr('value') == 'register') {
-        $('#payment-address .checkout-heading span').html('Шаг 2: Account &amp; Billing Details');
-    } else {
-        $('#payment-address .checkout-heading span').html('Шаг 2: Billing Details');
-    }
-});
-
-$('.checkout-heading a').live('click', function() {
-    $('.checkout-content').slideUp('slow');
-
-    $(this).parent().parent().find('.checkout-content').slideDown('slow');
-});
-
+    
 var checkoutStep = <%= @cart['checkout_step'] %>;
 
+
 $(document).ready(function() {
-    console.log($('.js-checkoutStepCont').eq(checkoutStep-1));
     
-    $('.js-checkoutStepCont').eq(checkoutStep-1).find('.checkout-content').slideDown('slow');
+    
+    checkoutTabs = $('.js-checkoutStepCont');
+    
+    $('#button-account').click(function()
+    {
+        if ( $('#checkout .checkout-content input#register')[0].checked ) {
+
+        } else {
+            checkoutTabs.filter('.active').removeClass('active').find('.checkout-content').slideUp('slow');
+            checkoutTabs.eq(1).addClass('active').find('.checkout-content').slideDown('slow');
+            $(checkoutTabs[0]).addClass('complete');
+            
+            return false;
+        }
+    });
+
+    $('.checkout-heading a').live('click', function() {
+        $('.checkout-content').slideUp('slow');
+        
+        checkoutTabs.removeClass('active');
+        $(this).parent().parent().addClass('active').find('.checkout-content').slideDown('slow');
+    });
+    
+    checkoutTabs.removeClass('active').eq(checkoutStep-1).addClass('active').find('.checkout-content').slideDown('slow');
+    for (i=0; i<checkoutStep; i++)
+    {
+        $(checkoutTabs[i]).addClass('complete');
+    }
 });		
 
 
