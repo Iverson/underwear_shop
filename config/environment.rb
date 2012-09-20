@@ -6,3 +6,4 @@ UnderwearShop::Application.initialize!
 
 Date::DATE_FORMATS[:default] = '%d/%m/%Y'
 Time::DATE_FORMATS[:default]= '%d/%m/%Y %H:%M:%S'
+ActiveRecord::Base.include_root_in_json = false

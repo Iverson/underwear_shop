@@ -8,4 +8,8 @@ class Order < ActiveRecord::Base
   belongs_to :user
   
   accepts_nested_attributes_for :address
+  
+  def summ
+    self.order_items.sum(:price)
+  end
 end

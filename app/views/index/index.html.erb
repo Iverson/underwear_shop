@@ -57,13 +57,22 @@
             <div class="box-content">
                 <div class="box-shining">
                     <div class="box-heading">Новинки</div>
+                    
+                    <script type="text/javascript">
+                        $(function(){
+                            var Products = new ProductsCollection;
+                            //Products.reset(<%= @products.to_json.html_safe %>);
+                        });
+                        
+                    </script>
+                   
                     <div class="box-product">
                         <ul>
                             <% if @products.length == 0 %>
                                 Товары в каталоге отсутствуют.
                             <% end %>
                             <% @products.each do |product| %>
-                            <li >
+                            <li>
                                 <div class="padd-both">
                                     <div class="image2">
                                         <a href="#"><%= image_tag( product.pictures.first.image.url(:medium) ) %></a>

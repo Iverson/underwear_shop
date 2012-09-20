@@ -21,7 +21,7 @@
         			</div>
         			<div>
         			    <b>Получатель:</b> <span><%= order.address.fio %></span><br>
-        				<b>Сумма:</b> <span class="or-price">$59.56</span>
+        				<b>Сумма:</b> <span class="or-price"><%= order.summ %></span>
         			</div>
         			<div class="order-info"><%= link_to "Смотреть", order, :class => "button" %>&nbsp;&nbsp;<a href="#"><img title="Reorder" alt="Reorder" src="/assets/reorder.png"></a></div>
         		</div>

@@ -8,11 +8,11 @@
         
         <p>Выберите способ доставки вашего заказа.</p>
         <table class="radio">
-            <% Delivery.all.each do |d, i| %>
+            <% Delivery.all.each_with_index do |d, i| %>
   
             <tr class="highlight">
                 <td width="23">
-                    <% if @order.delivery_id == d.id %>
+                    <% if @order.delivery_id == d.id || (i == 0 && !@order.delivery_id ) %>
                         <%= f.radio_button("delivery_id", d.id, {:checked => true}) %>
                     <% else %>
                         <%= f.radio_button("delivery_id", d.id,) %>
