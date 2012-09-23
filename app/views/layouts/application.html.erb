@@ -60,10 +60,17 @@
                             
                         </div>
                     </div>
+                    <script type="text/javascript">
+                        $(function(){
+                            var cart = <%= @cart.to_json.html_safe %>
+                            $('.js-cart').empty().append( JST['templates/cart']({cart: cart}) );
+                        });
+                        
+                    </script>
                     <div class="header-top1">
                         <div class="cart-position">
                             <div class="cart-inner js-cart">
-                                <%= render 'shared/cart' %>
+                               
                             </div>
                             <div class="clear"></div>
                         </div>

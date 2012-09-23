@@ -846,7 +846,6 @@ label {
 	font-family:'Open Sans', sans-serif;
 	min-width:72px;
 	border-radius:5px 0 0 0;
-	z-index:99999;
 	}
 .new-products ul li:hover .price, .featured ul li:hover .price { background:#8ab152;}
 /*********************************************************************************************************************************************************************************/
@@ -3551,4 +3550,10 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
 
 .orange {
 	color:#f83b01;
+}
+
+.box-product-animate {
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
 }

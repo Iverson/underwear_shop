@@ -19,7 +19,7 @@ class CartController < ApplicationController
     
     respond_to do |format|
       format.html { render :partial => 'shared/cart' }
-      format.json { render json: { 'html' => render_to_string(:partial => 'shared/cart.html.erb') } }
+      format.json { render json: @cart.to_json.html_safe }
     end
   end
   
@@ -33,7 +33,7 @@ class CartController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to cart_index_url, notice: 'Товар удален из корзины' }
-      format.json { render json: { 'html' => render_to_string(:partial => 'shared/cart.html.erb') } }
+      format.json { render json: @cart.to_json.html_safe }
     end
   end
   

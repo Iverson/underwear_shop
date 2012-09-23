@@ -7,17 +7,20 @@
         <li>
             <div class="padd-both">
                 <div class="image2">
-                    <a href="#"></a>
+                    <a href="<%= Routes.product_path(product.get('id')) %>">
+                        <img src="<%= product.get('preview_url') %>" alt="" />
+                    </a>
                 </div>
                 <div class="price"> <%= product.get('price') %>р </div>
                 <div class="name maxheight">
-                    <%= product.get('name') %>
+                    <a href="<%= Routes.product_path(product.get('id')) %>"><%= product.get('name') %></a>
+                    
                 </div>
                 <div class="cart"> 
                     <a href="#" class="button addToCart js-addToCart" rel="<%= product.get('id') %>"><span>В корзину</span></a>
-                    
+                    <a href="<%= Routes.product_path(product.get('id')) %>" class="button details">
                         <span>Детально</span>
-                    
+                    </a>
                 </div>
             </div>
         </li>

@@ -9,15 +9,15 @@ $(document).ready(function() {
 	{
 		var image_offset = image.offset();
 
-		$("body").append('<img src="' + image.attr('src') + '" id="temp" style="position: absolute; z-index:9999; top:'+image_offset.top+'px; left:'+image_offset.left+'px" />');
+		$("body").append('<img class="box-product-animate" src="' + image.attr('src') + '" id="temp" style="position: absolute; z-index:9999; top:'+image_offset.top+'px; left:'+image_offset.left+'px" />');
 
 		var cart_offset = cart.offset();
 		params = {
 			top : cart_offset.top + 'px',
 			left : cart_offset.left + 'px',
-			opacity : 0.0,
-			width : cart.width(),
-			height : cart.height()
+			opacity : 0.0
+			//width : cart.width(),
+			//height : cart.height()
 		};
 
 		$('#temp').animate(params, 'slow', false, function()
@@ -31,7 +31,7 @@ $(document).ready(function() {
 		$(this).closest('.quantity').find('.js-cartRemoveItemHidden').click();
 	});
 	
-	$('.js-addToCart').click(function()
+	$('.js-addToCart').live('click', function()
 	{
 		var sender = this;
 		
@@ -45,7 +45,7 @@ $(document).ready(function() {
 			success: function(data)
 			{
 				animateProduct($(sender).closest('.padd-both').find(".image2 img") , $("#cart"));
-				$('.js-cart').empty().append(data.html);
+				$('.js-cart').empty().append( JST['templates/cart']({cart: data}) );
 			},
 			error: function(data)
 			{
@@ -67,7 +67,7 @@ $(document).ready(function() {
 			data: {id: $(this).attr('rel')},
 			success: function(data)
 			{
-				$('.js-cart').empty().append(data.html).ready(function()
+				$('.js-cart').empty().append( JST['templates/cart']({cart: data}) ).ready(function()
 				{
 					$('#cart').addClass('active');
 				});

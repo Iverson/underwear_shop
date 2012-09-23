@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require js-routes
 //= require libs/json2
 //= require libs/underscore
 //= require libs/backbone

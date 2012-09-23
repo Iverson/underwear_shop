@@ -13,4 +13,10 @@ class Product < ActiveRecord::Base
   validates :section_id, :presence => true
   
   accepts_nested_attributes_for :pictures, :allow_destroy => true
+  
+  def preview_url
+    pictures.first.image.url(:medium)
+  end
+
+
 end

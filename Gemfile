@@ -26,6 +26,7 @@ gem 'paperclip'
 gem 'ancestry'
 gem 'simple_form'
 gem 'ejs'
+gem 'js-routes'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

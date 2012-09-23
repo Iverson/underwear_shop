@@ -15,15 +15,12 @@ ActiveRecord::Schema.define(:version => 20120813134729) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "order_id"
-    t.text     "address",          :null => false
-    t.string   "city",             :null => false
-    t.string   "phone",            :null => false
-    t.string   "fio",              :null => false
-    t.integer  "addressable_id"
-    t.string   "addressable_type"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.string   "address",    :null => false
+    t.string   "city",       :null => false
+    t.string   "phone",      :null => false
+    t.string   "fio",        :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "email"
   end
 
@@ -65,9 +62,8 @@ ActiveRecord::Schema.define(:version => 20120813134729) do
 
   create_table "orders", :force => true do |t|
     t.integer  "order_state_id", :default => 1, :null => false
+    t.integer  "address_id"
     t.integer  "user_id"
-    t.integer  "delivery_id"
-    t.text     "comment"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
@@ -131,7 +127,7 @@ ActiveRecord::Schema.define(:version => 20120813134729) do
     t.string   "last_sign_in_ip"
     t.string   "first_name",                             :null => false
     t.string   "last_name",                              :null => false
-    t.string   "phone",                                  :null => false
+    t.integer  "phone",                                  :null => false
     t.boolean  "terms_of_service",                       :null => false
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false

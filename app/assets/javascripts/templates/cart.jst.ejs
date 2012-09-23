@@ -1,0 +1,53 @@
+<div id="cart" class="">
+    <div class="heading"> <a><span class="sc-button"></span> <span class="fr">
+        <h4>Корзина</h4>
+        <span id="cart-total"><%= cart['count'] %> товар(ов) - <%= cart['summ'] %>р</span></span></a> </div>
+        <div class="content">
+            <% if (cart['count'] > 0) { %>
+            
+            <div class="mini-cart-info">
+                <table class="cart">
+                    <tbody>
+                        <% for (i in cart['items']) { %>
+                        
+                            <tr>
+                                <td class="image">
+                                    <a href="<%= Routes.product_path(cart['items'][i].id) %>">
+                                        <img src="<%= cart['items'][i].img %>" width="70" alt="" />
+                                    </a>
+                                </td>
+                                <td class="name">
+                                    <a href="<%= Routes.product_path(cart['items'][i].id) %>"><%= cart['items'][i].name %></a>
+                                    <span class="quantity">x&nbsp;<%= cart['items'][i].count %></span> <span class="total"><%= cart['items'][i].price %>р</span>
+                                </td>
+                                    <!--td class="quantity">x&nbsp;</td--> 
+                                    <!--td class="total"></td-->
+                                    <td class="remove"><span><img class="js-removeFromCart" rel="<%= cart['items'][i].id %>" title="Удалить" alt="Удалить" src="/assets/close.png"></span>
+                                </td>
+                            </tr>
+                        <% } %>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table class="total">
+                    <tbody>
+                        <tr>
+                            <td align="right" class="total-right"><b>Итого:</b></td>
+                            <td align="left" class="total-left"><span class="t-price"><%= cart['summ'] %>р</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="checkout">
+                <a class="button" href="<%= Routes.cart_index_path() %>">Детально</a>
+                <a class="button" href="<%= Routes.cart_checkout_path() %>">Заказать</a>
+            
+            <% } else { %>
+                <div class="empty">Ваша корзина пуста</div>
+            <% } %>
+            
+        </div>
+    </div>
+</div>
