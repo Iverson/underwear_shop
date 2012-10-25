@@ -2,6 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
+    breadcrumbs:
+        homepage: "Главная"
+        profile: "Профиль"
+        cart: "Корзина"
     activerecord:
         errors:
           # The values :model, :attribute and :value are always available for interpolation

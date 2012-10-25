@@ -1,0 +1,44 @@
+<%= render "shared/breadcrumbs" %>
+
+<h1><%= @section.name %></h1>
+
+<div class="product-filter">
+    <div class="sort"><b>Сортировать:</b>
+        <select onChange="location = this.value;">
+            <option value="#" selected="selected">По умолчанию</option>
+            <option value="#">По цене</option>
+            <option value="#">По размеру</option>
+        </select>
+    </div>
+    <div class="limit"><b>Показывать:</b>
+        <select onChange="location = this.value;">
+            <option value="#" selected="selected">12</option>
+            <option value="#">25</option>
+            <option value="#">Все</option>
+        </select>
+    </div>
+    <div class="product-compare"><a href="#" id="compare-total">Сравнить товары (0)</a></div>
+    <div class="display js-productsViewModeSelect">
+        <b>Вид:</b>
+        <div id="list_a" class="item" data-mode="list"></div> 
+        <div id="grid_a" class="item active" data-mode="grid"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var SectionProducts = new SectionProductsCollection;
+        SectionProducts.reset(<%= @section.products.to_json(:methods => [:preview_catalog]).html_safe %>);
+    });
+</script>
+
+<div class="b-section-products js-productsList grid">
+    
+
+</div>
+<%
+=begin
+<div class="pagination">
+    <div class="results">Showing 1 to 12 of 12 (1 Pages)</div>
+</div>
+=end
+%>

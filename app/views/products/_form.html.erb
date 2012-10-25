@@ -17,6 +17,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+      <%= f.label :uri %><br />
+      <%= f.text_field :uri %>
+  </div>
+  <div class="field">
       <%= f.label :price %><br />
       <%= f.text_field :price %>
   </div>
@@ -26,7 +30,8 @@
   </div>
   <div class="field">
       <%= f.label :section_id %><br />
-      <%= f.select :section_id, grouped_options_for_select(sections_for_select(@roots), @product.section_id), :include_blank => true , :id => :product_section_id %>
+      <%#= f.select :section_id, grouped_options_for_select(sections_for_select(@roots), @product.section_id), :include_blank => true , :id => :product_section_id %>
+      <%= collection_select(:product, :section_id, Section.all, :id, :name) %>
   </div>
   
   <div>Attaches</div>

@@ -1,6 +1,8 @@
 # coding: utf-8
 class CartController < ApplicationController
   
+  
+  
   def add_item
     @product = Product.find(params[:id])
     
@@ -38,7 +40,8 @@ class CartController < ApplicationController
   end
   
   def index
-
+    add_breadcrumb I18n.t("breadcrumbs.cart"), cart_index_url
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @section }
@@ -80,9 +83,9 @@ class CartController < ApplicationController
       @order = Order.new
 
       if user_signed_in?
-        @order.build_address({:address => current_user.address.address, :phone => current_user.phone, :city => current_user.address.city, :fio => current_user.fio, :email => current_user.email})
+        #@order.build_address({:address => current_user.address.address, :phone => current_user.phone, :city => current_user.address.city, :fio => current_user.fio, :email => current_user.email})
       else
-        @order.build_address()
+        #@order.build_address()
       end
       
     end

@@ -1,6 +1,5 @@
-<div class="breadcrumb"> 
-	<a href="#">Home</a> &raquo; <a href="#">Shopping Cart</a> &raquo; <a href="#">Checkout</a> 
-</div>
+<%= render "shared/breadcrumbs" %>
+
 <h1>Оформление заказа, шаг: <%= @cart['checkout_step'] %>, order_id: <%= @cart['order_id'] %></h1>
 
 <div class="checkout">

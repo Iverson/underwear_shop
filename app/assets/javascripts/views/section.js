@@ -1,6 +1,6 @@
-var CatalogView = Backbone.View.extend({
+var SectionView = Backbone.View.extend({
 	
-	el: ".box-product",
+	el: ".js-productsList",
 	
 	initialize: function (args) {
 		//_.bindAll(this, 'changeName');
@@ -10,7 +10,7 @@ var CatalogView = Backbone.View.extend({
 	},
 		
 	render: function() {
-		this.$el.html( JST['templates/products']({products: this.collection}) );
+		this.$el.html( JST['templates/section']({products: this.collection}) );
 		return this;
 	}
 	

@@ -1,4 +1,7 @@
-    <%= link_to section.name, section %> 
+    
     <% if sub_sections.length > 0 %>
+        <b><%= section.name %></b>
         <span class="act-cat"></span>
+    <% else %>
+        <%= link_to section.name, section %> 
     <% end %>

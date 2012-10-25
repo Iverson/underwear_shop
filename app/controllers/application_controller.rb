@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   
   before_filter :init_cart
   
+  add_breadcrumb I18n.t("breadcrumbs.homepage"), "/"
+  
   def init_cart
     session[:cart] ||= {'summ' => 0, 'count' => 0, 'items' => {}, 'checkout_step' => 1, 'order_id' => 0}
     

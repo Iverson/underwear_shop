@@ -1,0 +1,35 @@
+<% if (products.length == 0) { %>
+    В данной категории нет товаров.
+<% } else { %>
+    <% products.each(function(product) { %>
+    
+    <div class="b-section-products__item js-product">
+        <div class="image">
+            <a href="<%= Routes.product_path(product.get('uri')) %>">
+                <img class="js-productImage" src="<%= product.get('preview_catalog') %>" alt="" />
+            </a>
+        </div>
+        
+        <div class="actions">
+            <div class="price"> 
+                <span class="price-new"><%= product.get('price') %>р</span> <!--span class="price-old">$100,000.00</span-->
+            </div>
+            <div class="actions-buttons">
+                <div class="cart">
+                    <a href="#" class="button js-addToCart" rel="<%= product.get('id') %>"><span>В корзину</span></a>
+                </div>
+                <div class="wishlist"><a class="tip"  onclick="addToWishList('44');">В избранное</a><span class="tooltip">В избранное</span></div>
+                <div class="compare"><a class="tip2"  onclick="addToCompare('44');">Сравнить</a><span class="tooltip2">Сравнить</span></div>
+            </div>
+        </div>
+        
+        <div class="name">
+            <a href="<%= Routes.product_path(product.get('uri')) %>"><%= product.get('name') %></a>
+        </div>
+        
+        <div class="description">
+            <%= product.get('description') %>
+        </div>
+    </div>
+    <% }); %>
+<% } %>

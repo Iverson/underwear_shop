@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.where(:uri => params[:id]).first
     (5 - @product.pictures.length).times { @product.pictures.build }
   
     @roots = Section.roots
@@ -29,6 +29,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.where(:uri => params[:id]).first
   end
 
   # DELETE /products/1

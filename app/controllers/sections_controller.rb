@@ -1,3 +1,4 @@
+# coding: utf-8
 class SectionsController < ApplicationController
   layout "admin"
   
@@ -13,10 +14,13 @@ class SectionsController < ApplicationController
   # GET /sections/1
   # GET /sections/1.json
   def show
-    @section = Section.find(params[:id])
+    
+    @section = Section.where(:uri => params[:id]).first
+    
+    add_breadcrumb @section.name, section_url
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => "application" } # show.html.erb
       format.json { render json: @section }
     end
   end
@@ -34,7 +38,7 @@ class SectionsController < ApplicationController
   
   # GET /section/1/edit
   def edit
-    @section = Section.find(params[:id])
+    @section = Section.where(:uri => params[:id]).first
   end
   
   # POST /sections
