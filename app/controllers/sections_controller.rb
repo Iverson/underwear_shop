@@ -14,8 +14,14 @@ class SectionsController < ApplicationController
   # GET /sections/1
   # GET /sections/1.json
   def show
+    @per_page = params[:limit] || 5
+    
+    if @per_page == 'all'
+      @per_page = nil
+    end
     
     @section = Section.where(:uri => params[:id]).first
+    @products = @section.products.order(params[:sort_by]).paginate(:page => params[:page], :per_page => @per_page)
     
     add_breadcrumb @section.name, section_url
 

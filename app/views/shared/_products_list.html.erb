@@ -1,0 +1,41 @@
+<% if @products.empty? %>
+
+    Товаров нет.
+    
+<% else %>
+
+    <% @products.each do |product| %>
+    
+    <div class="b-section-products__item js-product">
+        <div class="image">
+            <a href="<%= product_path(product.uri) %>">
+                <img class="js-productImage" src="<%= product.preview_catalog %>" alt="" />
+            </a>
+        </div>
+        
+        <div class="actions">
+            <div class="price"> 
+                <span class="price-new"><%= product.price %>р</span> <!--span class="price-old">$100,000.00</span-->
+            </div>
+            <div class="actions-buttons">
+                <div class="cart">
+                    <a href="#" class="button js-addToCart" rel="<%= product.id %>"><span>В корзину</span></a>
+                </div>
+                <div class="wishlist"><a class="tip"  onclick="addToWishList('44');">В избранное</a><span class="tooltip">В избранное</span></div>
+                <div class="compare"><a class="tip2"  onclick="addToCompare('44');">Сравнить</a><span class="tooltip2">Сравнить</span></div>
+            </div>
+        </div>
+        
+        <div class="name">
+            <a href="<%= product_path(product.uri) %>"><%= product.name %></a>
+        </div>
+        
+        <div class="description">
+            <%= product.description %>
+        </div>
+    </div>
+    <% end %>
+    
+    <%= will_paginate @products %>
+    
+<% end %>

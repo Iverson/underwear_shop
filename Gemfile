@@ -29,6 +29,7 @@ gem 'ejs'
 gem 'js-routes'
 gem 'breadcrumbs_on_rails'
 gem 'russian'
+gem 'will_paginate'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

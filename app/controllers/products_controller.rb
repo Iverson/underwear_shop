@@ -30,6 +30,14 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.where(:uri => params[:id]).first
+    
+    add_breadcrumb @product.section.name, section_url(@product.section)
+    add_breadcrumb @product.name, product_url
+    
+    respond_to do |format|
+      format.html { render :layout => "application" } # show.html.erb
+      format.json { render json: @product }
+    end
   end
 
   # DELETE /products/1
@@ -63,7 +71,7 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.json
   def update
-    @product = Product.find(params[:id])
+    @product = Product.where(:uri => params[:id]).first
 
     respond_to do |format|
       if @product.update_attributes(params[:product])

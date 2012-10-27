@@ -1043,7 +1043,7 @@ label {
 .box-product.spec-box ul li .description{ font-size:11px; color:#414141; line-height:17px;}
 .box-product.spec-box ul li.last{ margin-right:0;}
 .breadcrumb a.last{ font-weight:bold;}
-.breadcrumb a{ font-size:12px; color:#191919; text-decoration:none;}
+.breadcrumb a{ font-size:12px; color:#191919; text-decoration:none; font-weight:normal;}
 .breadcrumb {
 	background: url('/assets/box-heading.jpg') left top repeat-x #D6D3CC;
 	color:#000;
@@ -1052,6 +1052,7 @@ label {
 	font-size:12px;
 	border-bottom:1px solid #CBCBCB;
 	margin-bottom:10px;
+	font-weight:normal;
 }
 .success, .warning, .attention, .information {
 	padding: 10px 10px 10px 33px;
@@ -1165,9 +1166,17 @@ table.list .center {
 	padding-bottom:8px;
 	display: inline-block;
 	width: 100%;
-	margin-bottom:20px;
 	
 }
+
+.pagination a, .pagination em, .pagination span {
+	margin-right: 5px;
+}
+
+.pagination .current {
+	font-style:normal;
+}
+
 .pagination a.button-order-right { margin-right:10px;}
 .account-order .button-order-right{ float:right; margin-top:-3px; }
 .account-order .pagination{ margin-bottom:25px; font-weight:bold;}
@@ -3604,3 +3613,4 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 }
+

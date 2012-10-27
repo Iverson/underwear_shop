@@ -2,6 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
+    will_paginate:
+        previous_label: "&#8592; Назад"
+        next_label: "Вперед &#8594;"
+        page_gap: "&hellip;"
     breadcrumbs:
         homepage: "Главная"
         profile: "Профиль"
