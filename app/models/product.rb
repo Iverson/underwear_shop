@@ -7,6 +7,7 @@ class Product < ActiveRecord::Base
   has_many :pictures, :dependent => :destroy
   has_many :orders
   has_many :order_item
+  has_many :favorites, :dependent => :destroy
   
   validates :name, :presence => true
   validates :price, :presence => true

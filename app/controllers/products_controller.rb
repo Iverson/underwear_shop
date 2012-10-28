@@ -83,4 +83,25 @@ class ProductsController < ApplicationController
       end
     end
   end
+  
+  def to_favorite
+    
+    if !Favorite.exists?(:user_id => params[:params][:user_id], :product_id => params[:params][:product_id])
+      @favorite = Favorite.new(params[:params])
+      @favorite.save
+      
+      @response = {:add => true, :count => current_user.favorites.length}
+    else
+      @response = {:add => false}
+    end
+
+    respond_to do |format|
+      format.json { render json: @response.to_json.html_safe, status: :created, location: products_url }
+    end
+  end
+  
+  def favorites
+    
+  end
+  
 end

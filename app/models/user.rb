@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   
   has_one :address, :as => :addressable
   has_many :orders
+  has_many :favorites, :dependent => :destroy
   
   accepts_nested_attributes_for :address
   

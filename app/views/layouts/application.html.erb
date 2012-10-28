@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Underwear Online Store</title>
     <link href="/assets/favicon.png" rel="icon" />
-    <%= stylesheet_link_tag    :reset, :stylesheet, :slideshow %>
+    <%= stylesheet_link_tag    :reset, :stylesheet, :slideshow, :fancybox %>
     <%= javascript_include_tag "application" %>
     
     <%= csrf_meta_tags %>
@@ -16,6 +16,14 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
+    
+    <% if user_signed_in? %>
+    <script type="text/javascript">
+        User = {
+            id: <%= current_user.id %>
+        }
+    </script>
+    <% end %>
 </head>
 <body class="">
     <div class="main-shining">
@@ -23,7 +31,17 @@
             <div class="top-container">
                 <ul class="links">
                     <li class="first"><a href="/">Домой</a></li>
-                    <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/wishlist" id="wishlist-total">Избранное <span>(0)</span></a></li>
+                    <li>
+                        <%= link_to (favorites_index_path) do %>
+                            Избранное <span>
+                            <% if user_signed_in? %>
+                                (<span class="js-favoritesCounter"><%= current_user.favorites.length %></span>)
+                            <% else %>
+                                (0)
+                            <% end %>
+                            </span>
+                        <% end %>
+                    </li>
                     <li><%= link_to 'Мой профиль', edit_user_registration_path %></li>
                     <li><%= link_to 'Корзина', cart_index_path %></li>
                     <li><%= link_to 'Заказать', cart_checkout_path %></li>
@@ -81,13 +99,15 @@
                 <div id="container">
 
                     <div id="notification">
-                        <% if notice %>
-                        <p class="attention"><%= notice %></p>
-                        <% end %>
-                        <% if alert %>
-                        <p class="warning"><%= alert %></p>
-                        <% end %>
+                        
                     </div>
+                    <% if notice %>
+                        <p class="attention"><%= notice %></p>
+                    <% end %>
+                    <% if alert %>
+                        <p class="warning"><%= alert %></p>
+                    <% end %>
+                    
                     <div id="column-left">
                         <% if @profile %>
                         <%= render "shared/profile_menu" %>
@@ -136,21 +156,7 @@
                                 </span> </div>
                             </div>
                         </div>
-                        <script type="text/javascript">
-                        (function($){$.fn.equalHeights=function(minHeight,maxHeight){tallest=(minHeight)?minHeight:0;this.each(function(){if($(this).height()>tallest){tallest=$(this).height()}});if((maxHeight)&&tallest>maxHeight)tallest=maxHeight;return this.each(function(){$(this).height(tallest)})}})(jQuery)
-                        $(window).load(function(){
-                            if($(".maxheight-best").length){
-                                $(".maxheight-best").equalHeights()}
-                            })
-
-                            </script> 
-                            <script type="text/javascript">
-                            $(document).ready(function(){
-                                $(function(){
-                                    $('.box-product-2  li ').last().addClass('last');
-                                });
-                            }); 
-                            </script>
+                 
                             <div class="box  bestsellers">
                                 <div class="box-content">
                                     <div class="box-content-image">
@@ -196,55 +202,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+                                <%= @right %>
                                 <% if @right %>
-                                <div id="column-right"> 
-
-                                    <div class="box specials">
-                                        <div class="box-content">
-                                            <div class="box-content-image">
-                                                <div class="box-heading special-heading">Specials</div>
-                                                <div class="box-product">
-                                                    <ul>
-                                                        <li class="special-container1">
-                                                            <div class="name maxheight-spec"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=44"> Ipsum dolor sit amet conse</a></div>
-                                                            <div class="image2"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=44"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Classic Laundry Green Graphic T-Shirt 1 copy-60x72.png" alt=" Ipsum dolor sit amet conse" /></a></div>
-                                                            <div class="extra-wrap">
-                                                                <div class="price"> <span class="save">save</span><span class="price-off">99%</span> </div>
-                                                                <!--div class="cart"><a data-id="44;" class="button addToCart"><span>Add to Cart</span></a></div--> 
-                                                            </div>
-                                                        </li>
-                                                        <li class="special-container2">
-                                                            <div class="name maxheight-spec"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=53">Aperce sit conse ipsum ctetur adipisi</a></div>
-                                                            <div class="image2"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=53"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Funkalicious Print T-Shirt  2 copy-60x72.png" alt="Aperce sit conse ipsum ctetur adipisi" /></a></div>
-                                                            <div class="extra-wrap">
-                                                                <div class="price"> <span class="save">save</span><span class="price-off">7%</span> </div>
-                                                                <!--div class="cart"><a data-id="53;" class="button addToCart"><span>Add to Cart</span></a></div--> 
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="box info">
-                                        <div class="box-content">
-                                            <div class="box-content-image">
-                                                <div class="box-heading">Information</div>
-                                                <ul class="info-list">
-                                                    <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=4">About</a></li>
-                                                    <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=6">Delivery</a></li>
-                                                    <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=3">Privacy Policy</a></li>
-                                                    <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=5">Terms &amp; Conditions</a></li>
-                                                    <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/contact">Contact Us</a></li>
-                                                    <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/sitemap">Site Map</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
+                                    <%= render 'shared/right_column' %>
                                 <% end %>
 
                                 <div id="content">

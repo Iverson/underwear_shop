@@ -1,0 +1,62 @@
+<%= render "shared/breadcrumbs" %>
+
+<h1>Избранное</h1>
+<div class="box-container">
+    <% if current_user.favorites.length > 0 %>
+    <div class="wishlist-product">
+        <div class="table-radius">
+            <table>
+                <thead>
+                    <tr>
+                        <td class="remove"> Удалить </td>
+                        <td class="image">Изображение</td>
+                        <td class="name">Название</td>
+                        <td class="model">Артикул</td>
+
+                        <td class="stock">В наличии</td>
+                        <td class="price">Цена</td>
+                        <td class="action"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% current_user.favorites.each do |item| %>
+                    <tr>
+                        <td class="remove">
+                            <%= link_to(item, method: :delete, data: { confirm: 'Вы уверены?' }) do %>
+                                <img src="/assets/remove.png" alt="Remove" title="Remove" />
+                            <% end %>
+                        </td>
+                        <td class="image">
+                            <%= link_to(item.product) do %>
+                                <%= image_tag item.product.pictures.first.image.url(:small) %>
+                            <% end %>           
+                        </td>
+                        <td class="name">
+                            <%= link_to item.product.name, item.product %>
+                        </td>
+                        <td class="model"><%= item.product.id %></td>
+                        <td class="stock"><div class="prod-stock">В наличии</div></td>
+
+                        <td class="price">              
+                            <div class="price">
+                                <b><%= item.product.price %>р</b>
+                            </div>
+                        </td>
+                        <td class="action">
+                            <a href="#" class="button js-addToCart" rel="<%= item.product.id %>"><span>В корзину</span></a>
+                        </td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <% else %>
+        У вас нет товаров в избранном.
+    <% end %>
+    
+    <div class="buttons">
+        <div class="right"><a href="/" class="button-cont-right"><span>Продолжить покупки</span></a></div>
+    </div>
+</div>

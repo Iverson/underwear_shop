@@ -10,9 +10,10 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
+//= require libs/jquery.min
 //= require jquery_ujs
 //= require js-routes
+//= require libs/jquery.fancybox.pack
 //= require libs/json2
 //= require libs/underscore
 //= require libs/backbone

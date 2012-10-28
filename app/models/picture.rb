@@ -3,7 +3,7 @@ class Picture < ActiveRecord::Base
   belongs_to :product
   
   has_attached_file :image, 
-                    :styles => { :medium => "160x190#", :catalog => "120x150#", :small => "70x90#" },
+                    :styles => { :small => "70x90#", :medium => "160x190#", :catalog => "120x150#", :detail => "300x360#", :zoom => "600x720#"  },
                     :url  => "/system/products/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/system/products/:id/:style/:basename.:extension"
                     
