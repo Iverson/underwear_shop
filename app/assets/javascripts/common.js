@@ -18,7 +18,7 @@ $(function() {
 	{
 		var image_offset = image.offset();
 
-		$("body").append('<img class="box-product-animate" src="' + image.attr('src') + '" id="temp" style="position: absolute; z-index:9999; top:'+image_offset.top+'px; left:'+image_offset.left+'px" />');
+		$("body").append('<img class="box-product-animate js-imgClone" src="' + image.attr('src') + '" style="position: absolute; z-index:9999; top:'+image_offset.top+'px; left:'+image_offset.left+'px" />');
 
 		var cart_offset = cart.offset();
 		params = {
@@ -29,9 +29,9 @@ $(function() {
 			//height : cart.height()
 		};
 
-		$('#temp').animate(params, 'slow', false, function()
+		$('.js-imgClone:last').animate(params, 'slow', false, function()
 		{
-			$('#temp').remove();
+			$(this).remove();
 		});
 	}
 	
