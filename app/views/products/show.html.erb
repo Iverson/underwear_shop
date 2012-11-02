@@ -3,58 +3,56 @@
 <div class="product-info">
     <div class="wrapper indent-bot">
         <div class="fleft left spacing">
-            <div class="zoom-top">      <a href="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 2-600x720.png" title="Dolor sit amet"  data-gal="prettyPhoto[gallery]" ><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 2-300x360.png" title="Dolor sit amet" alt="Dolor sit amet" /></a></div>
-            <div class="zoom-top">      <a href="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 3-600x720.png" title="Dolor sit amet"  data-gal="prettyPhoto[gallery]" ><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 3-300x360.png" title="Dolor sit amet" alt="Dolor sit amet" /></a></div>
-            <div class="zoom-top">      <a href="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 1 copy-600x720.png" title="Dolor sit amet"  data-gal="prettyPhoto[gallery]" ><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 1 copy-300x360.png" title="Dolor sit amet" alt="Dolor sit amet" /></a></div>
-
+            <div class="zoom-top js-productZoom" data-gallery="gallery-<%= @product.id %>"></div>
 
             <div class="image"> 
-                <a href="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 1 copy-600x720.png" title="Dolor sit amet" class = 'cloud-zoom' id='zoom1' rel="position: 'right' ,showTitle:true, adjustX:-0, adjustY:-4" >
-                    <img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 1 copy-300x360.png" title="Dolor sit amet" alt="Dolor sit amet" />
-                </a>
-                <a href="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 1 copy-600x720.png" title="Dolor sit amet">
-                    <img id="image" src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 1 copy-300x360.png" title="Dolor sit amet" alt="Dolor sit amet" />
+                <a href="<%= @product.preview_zoom %>" class="js-jqzoom" title="<%= @product.name %>" rel="gal1">  
+                    <img src="<%= @product.preview_detail %>" title="IMAGE TITLE">  
                 </a>
             </div>
-            <div class="image-additional">
+            <div id="gallery-<%= @product.id %>" class="image-additional">
 
-
-                <a href="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 2-600x720.png" title="Dolor sit amet" class="cloud-zoom-gallery" rel="useZoom: 'zoom1', smallImage: 'http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 2-300x360.png' "><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 2-90x108.png" title="Dolor sit amet" alt="Dolor sit amet" /></a>
-                <a href="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 3-600x720.png" title="Dolor sit amet" class="cloud-zoom-gallery" rel="useZoom: 'zoom1', smallImage: 'http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 3-300x360.png' "><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 3-90x108.png" title="Dolor sit amet" alt="Dolor sit amet" /></a>
-                <a href="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 1 copy-600x720.png" title="Dolor sit amet" class="cloud-zoom-gallery" rel="useZoom: 'zoom1', smallImage: 'http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 1 copy-300x360.png' "><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation 3 Days of Peace and Music Carbon Gray T-Shirt 1 copy-90x108.png" title="Dolor sit amet" alt="Dolor sit amet" /></a>
+                <% @product.pictures.each_with_index do |img, i| %>
+                    <a href="<%= img.image.url(:detail) %>" title="<%= @product.name %>" rel="item-<%= @product.id %>" class="js-fancybox"></a>
+                    <a href="javascript:void(0);" class="<% if i == 0 %>zoomThumbActive<% end %>" rel="{gallery: 'gal1', smallimage: '<%= img.image.url(:detail) %>',largeimage: '<%= img.image.url(:zoom) %>'}">
+                        <%= image_tag img.image.url(:small) %>
+                    </a>
+                <% end %>
             </div>
 
         </div>
         <div class="extra-wrap">
-            <h1>Dolor sit amet</h1>
+            <h1><%= @product.name %></h1>
             <div class="description">
 
-                <span>Brand:</span> <a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/manufacturer/product&amp;manufacturer_id=14">Ut enim ad</a><br />
-                <span>Product Code:</span> 564313<br />
-                <span>Reward Points:</span> 300<br />
-                <div class="padd-avalib"> <div class="extra-wrap"> <span class="prod-stock-2">Availability:</span> <div class="prod-stock">In Stock</div></div></div>
+                <span>Брэнд:</span> <a href="#"><%= @product.brand.name %></a><br />
+                <span>Производитель:</span> <a href="#"><%= @product.country.name %></a><br />
+                <span>Артикул:</span> <%= @product.brand.id %><br />
+
+                <div class="padd-avalib"> <div class="extra-wrap"> <span class="prod-stock-2">Наличие:</span> <div class="prod-stock">На складе</div></div></div>
 
                 <div class="price">
-                    <span class="text-price">Price:</span>
-                    <span class="price-new">$10.23</span><span class="price-old">$13.75</span> 
-                    <span class="price-tax">Ex Tax: $7.00</span><br />
-                    <span class="reward"><small>Price in reward points: 400</small></span><br />
+                    <span class="text-price">Цена:</span>
+                    <span class="price-new"><%= @product.price %>р</span><!--span class="price-old">$13.75</span--> 
+                    <!--span class="reward"><small>Price in reward points: 400</small></span><br /-->
                 </div>
                 <div class="cart">
 
                     <div class="prod-row">
                         <div class="cart-top">
                             <div class="cart-top-padd">
-                                <label>Qty:</label>
+                                <label>Кол-во:</label>
                                 <input type="text" name="quantity" size="2" value="1" />
                                 <input type="hidden" name="product_id" size="2" value="47" />
                             </div>
-                            <a id="button-cart" class="button-prod" >Add to Cart</a>
+                            <a id="button-cart" class="button-prod" >В корзину</a>
 
                         </div>
                     </div>
-                    <div class="extra-button"><div class="wishlist"><a class="tip"  onclick="addToWishList('47');" title="Add to Wish List">Add to Wish List</a></div>
-                    <div class="compare"><a class="tip2"  onclick="addToCompare('47');" title="Add to Compare">Add to Compare</a></div>
+                    <div class="extra-button">
+                        <div class="wishlist"><a class="tip js-AddToFavorite" rel="<%= @product.id %>">В избранное</a><span class="tooltip">В избранное</span></div>
+                        <div class="compare"><a class="tip2"  onclick="addToCompare('44');">Сравнить</a><span class="tooltip2">Сравнить</span></div>
+                    </div>
                 </div>
             </div>
             <div class="review">
@@ -84,15 +82,10 @@
     </div>
 </div>
 <div class="wrapper">
-    <div id="tab-description" class="tab-content"><div class="std">
-        <p>
-            <strong>Actually this part</strong> of clothes is very unique and original. <em>It is a way of self-expression because nowadays</em> making some logo or phrase has become very popular. Obviously that T-shirts are the part of modern culture and they have a great influence on teens because of their <strong>freedom and epatage</strong>.</p>
-
-            <p>
-                The history of T-shirt is very interesting. <strong>The T-shirt</strong> has been a part of clothing since ancient Egypt. A type of modern T-shirt was developed in England in the end of 19th century. The idea of a T-shirt came to the USA during the World War II when American soldiers saw the cotton undershirts of European soldiers. That is short story of T-shirts origin.</p>
-                <p>
-                    We are offering you our unique and original products. Our store has a largest choice of different high quality T-shirts. <strong>You can buy it</strong> at fair price and get special discount which means that our shop is saving your money.</p>
-                </div>
+    <div id="tab-description" class="tab-content">
+        <div class="std">
+            <%= @product.description %>
+        </div>
 
             </div>
             <div id="tab-attribute" class="tab-content">

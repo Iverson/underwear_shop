@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require js-routes
 //= require libs/jquery.fancybox.pack
+//= require libs/jquery.jqzoom-core-pack
 //= require libs/json2
 //= require libs/underscore
 //= require libs/backbone

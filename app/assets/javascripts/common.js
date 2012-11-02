@@ -267,9 +267,19 @@ $(function() {
 	    }
 	});
 	
+	/* Cloudzoom */
+	
+	$('.js-jqzoom').jqzoom({
+		zoomType: 'reverse',
+		zoomWidth: 395,
+		zoomHeight: 460,
+		xOffset: 20
+	});
+	
+	
 	$('.js-productZoom').click(function()
 	{
-		$(this).parent().find('.js-fancybox:first').click();
+		$('#' + $(this).data('gallery') + ' .js-fancybox:first').click();
 		
 		return false;
 	});

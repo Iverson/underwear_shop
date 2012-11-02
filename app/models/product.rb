@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
   belongs_to :country
   belongs_to :section
   belongs_to :state
+  belongs_to :brand
   has_many :pictures, :dependent => :destroy
   has_many :orders
   has_many :order_item
@@ -21,6 +22,14 @@ class Product < ActiveRecord::Base
   
   def preview_catalog
     pictures.first.image.url(:catalog)
+  end
+  
+  def preview_detail
+    pictures.first.image.url(:detail)
+  end
+  
+  def preview_zoom
+    pictures.first.image.url(:zoom)
   end
   
   before_save() do
