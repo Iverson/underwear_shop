@@ -2030,6 +2030,7 @@ background:url(/assets/tail-manuf.gif) 0px 0px repeat-x #f8f8f8;
 .list .b-section-products__item .image {
 	float: left;
 	margin-right:10px;
+	position:relative;
 }
 .list .b-section-products__item .image img {
 	padding: 3px;
@@ -2192,7 +2193,7 @@ position:relative; margin-left:-5px;
 	text-align:center;
 }
 
-	.grid .b-section-products__item .image .zoom-top {
+	.b-section-products__item .image .zoom-top {
 		position:absolute;
 		right: 25px;
 		top: 0;
@@ -2201,7 +2202,11 @@ position:relative; margin-left:-5px;
 		display:none;
 	}
 	
-	.grid .b-section-products__item .image:hover .zoom-top {
+	.list .b-section-products__item .image .zoom-top {
+		right: 0;
+	}
+	
+	.b-section-products__item .image:hover .zoom-top {
 		display:block;
 	}
 

@@ -56,6 +56,7 @@ $(function() {
 				}
 				
 				$('.js-cart').empty().append( JST['templates/cart']({cart: data}) );
+				showNoti( JST['templates/notis/cart_add']({add: true}) );
 			},
 			error: function(data)
 			{
@@ -77,6 +78,8 @@ $(function() {
 				{
 					$('#cart').addClass('active');
 				});
+				
+				showNoti( JST['templates/notis/cart_add']({add: false}) );
 			},
 			error: function(data)
 			{
@@ -105,11 +108,8 @@ $(function() {
 					
 				}
 				
-				$('#notification').empty().append( JST['templates/noti'](data) ).ready(function()
-				{
-					$(this).find('.js-noti').fadeIn('slow');
-					setTimeout(removeNoti, 5000);
-				});
+				showNoti( JST['templates/notis/favorite'](data) );
+				
 			},
 			error: function(data)
 			{
@@ -118,58 +118,6 @@ $(function() {
 		});
 		
 		return false;
-	});
-	
-	/* Search */
-	$('.button-search').bind('click', function() {
-		url = $('base').attr('href') + 'index.php?route=product/search';
-				 
-		var filter_name = $('input[name=\'filter_name\']').attr('value');
-		
-		if (filter_name) {
-			url += '&filter_name=' + encodeURIComponent(filter_name);
-		}
-		
-		location = url;
-	});
-	/* Sidebar Search */
-	$('.button-sidebarsearch').bind('click', function() {
-		url = 'index.php?route=product/search';
-		 
-		var filter_name = $('input[name=\'sidebar_name\']').attr('value')
-		
-		if (filter_name) {
-			url += '&filter_name=' + encodeURIComponent(filter_name);
-		}
-		
-		location = url;
-	});
-	
-	$('input[name=\'sidebar_name\']').keydown(function(e) {
-		if (e.keyCode == 13) {
-			url = 'index.php?route=product/search';
-			 
-			var filter_name = $('input[name=\'sidebar_name\']').attr('value')
-			
-			if (filter_name) {
-				url += '&filter_name=' + encodeURIComponent(filter_name);
-			}
-			
-			location = url;
-		}
-	});
-	$('#header input[name=\'filter_name\']').bind('keydown', function(e) {
-		if (e.keyCode == 13) {
-			url = $('base').attr('href') + 'index.php?route=product/search';
-			 
-			var filter_name = $('input[name=\'filter_name\']').attr('value');
-			
-			if (filter_name) {
-				url += '&filter_name=' + encodeURIComponent(filter_name);
-			}
-			
-			location = url;
-		}
 	});
 	
 	/* Mini Cart */
@@ -195,6 +143,16 @@ $(function() {
 		$('.js-noti').fadeOut('slow', function() {
 			$(this).remove();
 		});
+	}
+	
+	function showNoti(html)
+	{
+		$('#notification').empty().append( html ).ready(function()
+		{
+			$(this).find('.js-noti').fadeIn('slow');
+			setTimeout(removeNoti, 4000);
+		});
+		
 	}
 	
 	$('.success img, .warning img, .attention img, .information img').live('click', function() {

@@ -4,10 +4,9 @@
     <div class="wrapper indent-bot">
         <div class="fleft left spacing">
             <div class="zoom-top js-productZoom" data-gallery="gallery-<%= @product.id %>"></div>
-
             <div class="image"> 
-                <a href="<%= @product.preview_zoom %>" class="js-jqzoom" title="<%= @product.name %>" rel="gal1">  
-                    <img src="<%= @product.preview_detail %>" title="IMAGE TITLE">  
+                <a href="<%= @product.preview(:zoom) %>" class="js-jqzoom" title="<%= @product.name %>" rel="gal1">  
+                    <img src="<%= @product.preview(:detail) %>" title="IMAGE TITLE">  
                 </a>
             </div>
             <div id="gallery-<%= @product.id %>" class="image-additional">
@@ -45,7 +44,7 @@
                                 <input type="text" name="quantity" size="2" value="1" />
                                 <input type="hidden" name="product_id" size="2" value="47" />
                             </div>
-                            <a id="button-cart" class="button-prod" >В корзину</a>
+                            <a id="button-cart" class="button-prod js-addToCart" rel="<%= @product.id %>">В корзину</a>
 
                         </div>
                     </div>

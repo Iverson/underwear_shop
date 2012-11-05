@@ -16,20 +16,14 @@ class Product < ActiveRecord::Base
   
   accepts_nested_attributes_for :pictures, :allow_destroy => true
   
+  def preview(size)
+    if pictures.exists?
+      pictures.first.image(size)
+    end
+  end
+  
   def preview_medium
-    pictures.first.image.url(:medium)
-  end
-  
-  def preview_catalog
-    pictures.first.image.url(:catalog)
-  end
-  
-  def preview_detail
-    pictures.first.image.url(:detail)
-  end
-  
-  def preview_zoom
-    pictures.first.image.url(:zoom)
+    preview(:medium)
   end
   
   before_save() do

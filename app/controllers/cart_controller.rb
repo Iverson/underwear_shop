@@ -21,7 +21,7 @@ class CartController < ApplicationController
     
     respond_to do |format|
       format.html { render :partial => 'shared/cart' }
-      format.json { render json: @cart.to_json.html_safe }
+      format.json { render json: @cart.to_json().html_safe }
     end
   end
   

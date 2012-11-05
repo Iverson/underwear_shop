@@ -9,7 +9,7 @@
     <div class="b-section-products__item js-product">
         <div class="image">
             <a href="<%= product_path(product.uri) %>">
-                <img class="js-productImage" src="<%= product.preview_catalog %>" alt="" />
+                <img class="js-productImage" src="<%= product.preview(:catalog) %>" alt="" />
             </a>
             
             <a href="#" class="zoom-top js-productZoom" data-gallery="gallery-<%= product.id %>"></a>

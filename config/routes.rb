@@ -1,5 +1,9 @@
 UnderwearShop::Application.routes.draw do
   
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   get "favorites/index"
 
   devise_for :users, :controllers => { :registrations => "registrations" }
@@ -9,10 +13,7 @@ UnderwearShop::Application.routes.draw do
   get 'users/address' => 'address#edit'
   put 'users/address' => 'address#update'
   
-  resources :projects
-  resources :countrys, :only => [:index, :destroy]
-  resources :brands, :only => [:index, :new, :create]
-  resources :sections
+  resources :sections, :only => [:show]
   resources :pictures
   resources :index, :only => [:index]
   resources :products

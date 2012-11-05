@@ -18,6 +18,9 @@
 //= require libs/json2
 //= require libs/underscore
 //= require libs/backbone
+//= require_tree ./libs
 //= require_tree ./models
 //= require_tree ./templates
-//= require_tree .
+//= require_tree ./views
+//= require_tree ./collections
+//= require common
