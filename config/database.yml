@@ -20,5 +20,5 @@ production:
   encoding: unicode
   database: underwear_shop_staging
   pool: 5
-  username: underwear
+  username: postgres
   password:  miracle999
