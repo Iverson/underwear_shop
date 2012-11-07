@@ -56,6 +56,8 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    capistrano-ext (1.2.1)
+      capistrano (>= 1.0.0)
     cocaine (0.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -196,6 +198,7 @@ DEPENDENCIES
   ancestry
   breadcrumbs_on_rails
   capistrano
+  capistrano-ext
   coffee-rails (~> 3.2.1)
   devise
   ejs

@@ -45,6 +45,7 @@ gem 'unicorn'
 # Deploy with Capistrano
 group :development do
   gem "capistrano"
+  gem 'capistrano-ext'
   gem "rvm-capistrano"
 end
 
