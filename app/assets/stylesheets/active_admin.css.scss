@@ -13,11 +13,20 @@
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
-//
-//   body.active_admin {
-//      .status_tag { background: #6090DB; }
-//   }
-//
+	
+body.active_admin form fieldset > ol > li fieldset ol {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+body.active_admin form fieldset > ol > li fieldset ol li {
+	padding: 5px 0;
+}
+
+body.active_admin form .b-aa-sizes-form input {
+	width: 50px;
+}
+
 // Notice that Active Admin CSS rules are nested within a
 // 'body.active_admin' selector to prevent conflicts with
 // other pages in the app. It is best to wrap your changes in a 

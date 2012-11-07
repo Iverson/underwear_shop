@@ -4,32 +4,36 @@ class CartController < ApplicationController
   
   
   def add_item
-    @product = Product.find(params[:id])
+    @product_instance = ProductInstance.find(params[:instance])
+    @product = @product_instance.product
+    @count = params[:count] || 1
+    @@count = @count.to_i
     
-    if @cart['items'].has_key?(params[:id])
-      @cart['items'][params[:id]]['count'] += 1
+    if @cart['items'].has_key?(params[:instance])
+      @cart['items'][params[:instance]]['count'] += @count
     else
-      @cart['items'][params[:id]] = @product.attributes
-      @cart['items'][params[:id]]['count'] = 1
-      @cart['items'][params[:id]]['img'] = @product.pictures.first.image.url(:medium)
+      @cart['items'][params[:instance]] = @product.attributes
+      @cart['items'][params[:instance]]['instance'] = @product_instance.attributes
+      @cart['items'][params[:instance]]['count'] = @count
+      @cart['items'][params[:instance]]['img'] = @product.pictures.first.image.url(:medium)
     end
     
-    @cart['count'] += 1
-    @cart['summ'] += @cart['items'][params[:id]]['price']
+    @cart['count'] += @count
+    @cart['summ'] += @cart['items'][params[:instance]]['price']*@count
     
     session[:cart] = @cart
     
     respond_to do |format|
-      format.html { render :partial => 'shared/cart' }
+      format.html { redirect_to cart_index_url, notice: 'Товар добавлен в корзину.' }
       format.json { render json: @cart.to_json().html_safe }
     end
   end
   
   def remove_item
-    @cart['count'] -= @cart['items'][params[:id]]['count']
-    @cart['summ'] -= @cart['items'][params[:id]]['price']*@cart['items'][params[:id]]['count']
+    @cart['count'] -= @cart['items'][params[:instance]]['count']
+    @cart['summ'] -= @cart['items'][params[:instance]]['price']*@cart['items'][params[:instance]]['count']
     
-    @cart['items'].delete(params[:id])
+    @cart['items'].delete(params[:instance])
     
     session[:cart] = @cart
     

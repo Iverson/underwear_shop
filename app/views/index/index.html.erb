@@ -61,7 +61,7 @@
                     <script type="text/javascript">
                         $(function(){
                             var Products = new ProductsCollection;
-                            Products.reset(<%= @products.to_json(:methods => [:preview_medium]).html_safe %>);
+                            Products.reset(<%= @products.to_json(:methods => [:preview_medium, :fast_to_cart]).html_safe %>);
                         });
                         
                     </script>

@@ -1,8 +1,18 @@
 ActiveAdmin.register Section do
-  before_filter do
+  around_filter do |controller, action|
     Section.class_eval do
       def to_param
         id.to_s
+      end
+    end
+
+    begin
+      action.call
+    ensure
+      Section.class_eval do
+        def to_param
+          "#{uri}"
+        end
       end
     end
   end

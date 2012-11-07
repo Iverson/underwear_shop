@@ -27,12 +27,12 @@
                             <% end %>
                         </td>
                         <td class="image">
-                            <%= link_to(item.product) do %>
+                            <%= link_to(product_path(item.product.uri)) do %>
                                 <%= image_tag item.product.pictures.first.image.url(:small) %>
                             <% end %>           
                         </td>
                         <td class="name">
-                            <%= link_to item.product.name, item.product %>
+                            <%= link_to item.product.name, product_path(item.product.uri) %>
                         </td>
                         <td class="model"><%= item.product.id %></td>
                         <td class="stock"><div class="prod-stock">В наличии</div></td>

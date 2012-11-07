@@ -40,13 +40,11 @@ $(function() {
 		$(this).closest('.quantity').find('.js-cartRemoveItemHidden').click();
 	});
 	
-	$('.js-addToCart').live('click', function()
+	function addToCart(id, sender)
 	{
-		var sender = this;
-		
 		$.ajax({
 			url: "/cart/add.json",
-			data: {id: $(this).attr('rel')},
+			data: {instance: id},
 			success: function(data)
 			{
 				var img = $(sender).closest('.js-product').find(".js-productImage");
@@ -63,6 +61,18 @@ $(function() {
 				console.log('Error: ' + data);
 			}
 		});
+	}
+	
+	$('.js-addToCart').live('click', function()
+	{
+		var sender = this;
+		
+		if ($(this).data('fastadd'))
+		{
+			addToCart($(this).data('fastadd'), this)
+		} else {
+			
+		}
 		
 		return false;
 	});
@@ -71,7 +81,7 @@ $(function() {
 	{
 		$.ajax({
 			url: "/cart/remove.json",
-			data: {id: $(this).attr('rel')},
+			data: {instance: $(this).attr('rel')},
 			success: function(data)
 			{
 				$('.js-cart').empty().append( JST['templates/cart']({cart: data}) ).ready(function()
@@ -94,6 +104,9 @@ $(function() {
 	
 	$('.js-AddToFavorite').live('click', function()
 	{
+		if (User.id)
+		{
+		
 		var sender = this;
 		
 		$.ajax({
@@ -116,6 +129,10 @@ $(function() {
 				console.log('Error: ' + data);
 			}
 		});
+		
+		} else {
+			showNoti( JST['templates/shared/noti']({text: 'Вы не авторизованы.'}) );
+		}
 		
 		return false;
 	});
@@ -240,6 +257,15 @@ $(function() {
 		$('#' + $(this).data('gallery') + ' .js-fancybox:first').click();
 		
 		return false;
+	});
+	
+	/* Tabs */
+	
+	$('#tabs a').tabs();
+	
+	$('.js-submit').click(function()
+	{
+		$(this).closest('form').submit();
 	});
 		
 });

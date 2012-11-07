@@ -34,6 +34,13 @@ ActiveAdmin.register Product do
       f.input :description
       f.input :state
       
+      f.inputs "Sizes" do
+        f.has_many :product_instances, :class => "b-aa-sizes-form " do |p|
+          p.input :size
+          p.input :count
+        end 
+      end
+      
       f.inputs "Product images" do
         f.has_many :pictures do |p|
           p.input :image, :as => :file, :label => "Image",:hint => p.object.image.nil? ? p.template.content_tag(:span, "No Image Yet") : p.template.image_tag(p.object.image.url(:small))

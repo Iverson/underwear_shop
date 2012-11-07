@@ -12,17 +12,18 @@
                         
                             <tr>
                                 <td class="image">
-                                    <a href="<%= Routes.product_path(cart['items'][i].id) %>">
+                                    <a href="<%= Routes.product_path(cart['items'][i].uri) %>">
                                         <img src="<%= cart['items'][i].img %>" width="70" alt="" />
                                     </a>
                                 </td>
                                 <td class="name">
-                                    <a href="<%= Routes.product_path(cart['items'][i].id) %>"><%= cart['items'][i].name %></a>
+                                    <a href="<%= Routes.product_path(cart['items'][i].uri) %>"><%= cart['items'][i].name %></a>
                                     <span class="quantity">x&nbsp;<%= cart['items'][i].count %></span> <span class="total"><%= cart['items'][i].price %>р</span>
+                                    <div class="">(<%= cart['items'][i].instance.size %>)</div>
                                 </td>
                                     <!--td class="quantity">x&nbsp;</td--> 
                                     <!--td class="total"></td-->
-                                    <td class="remove"><span><img class="js-removeFromCart" rel="<%= cart['items'][i].id %>" title="Удалить" alt="Удалить" src="/assets/close.png"></span>
+                                    <td class="remove"><span><img class="js-removeFromCart" rel="<%= cart['items'][i].instance.id %>" title="Удалить" alt="Удалить" src="/assets/close.png"></span>
                                 </td>
                             </tr>
                         <% } %>
