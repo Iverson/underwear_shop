@@ -15,7 +15,7 @@ development:
 #  pool: 5
 #  timeout: 5000
 
-staging:
+test:
   adapter: postgresql
   encoding: unicode
   database: underwear_shop_staging
