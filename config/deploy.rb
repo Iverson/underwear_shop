@@ -1,8 +1,9 @@
-set :rvm_type, :system
+set :rvm_type, :user
 set :stages, %w(staging production)
 set :default_stage, "staging"
-set :rvm_ruby_string, 'ruby 1.9.2p320'
+set :rvm_ruby_string, 'ruby 1.9.2-p320'
 require 'capistrano/ext/multistage'
+require "rvm/capistrano"                               # Load RVM's capistrano plugin.
 
 default_run_options[:pty] = true
 
@@ -23,7 +24,7 @@ set(:rake) { "bundle exec rake" }
 # we need to delay its assignment until they're loaded
 
 
-
+before 'deploy:setup', 'rvm:install_ruby'
 after "deploy:update_code", "deploy:migrate"
 
 namespace :deploy do
