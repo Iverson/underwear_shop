@@ -1,6 +1,6 @@
 set :rvm_type, :system
 set :stages, %w(staging production)
-set :default_stage, "production"
+set :default_stage, "staging"
 set :rvm_ruby_string, 'ruby 1.9.2p320'
 require 'capistrano/ext/multistage'
 

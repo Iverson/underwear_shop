@@ -1,5 +1,5 @@
 set :deploy_to, "/var/www/#{application}-prod"
-set :domain, "yonglovers.ru"
+set :domain, "62.76.186.158"
 set :user, "myuser"
 set :rails_env, "production"
 set :gem_home, "/home/myuser/ruby/gems/"
