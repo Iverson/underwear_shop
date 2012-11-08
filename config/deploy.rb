@@ -17,13 +17,12 @@ set :deploy_via, :remote_cache
 
 # this is useful in a shared hosting environment, where you have your own JAVA_HOME or GEM_HOME.
 # otherwise, just set RAILS_ENV
-set(:rake) { "RAILS_ENV=#{rails_env} /usr/bin/env rake" }
+set(:rake) { "bundle exec rake" }
 
 # since :domain is defined in another file (staging.rb and production.rb),
 # we need to delay its assignment until they're loaded
-set(:domain) { "#{domain}" }
 
-server domain, :app, :web, :db, :primary => true
+
 
 after "deploy:update_code", "deploy:migrate"
 
