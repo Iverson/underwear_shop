@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
+  before_filter :require_http_basic_auth if Rails.env == "staging"
   before_filter :init_cart
+  
   
   add_breadcrumb I18n.t("breadcrumbs.homepage"), "/"
   
@@ -19,6 +21,12 @@ class ApplicationController < ActionController::Base
   
   def after_sign_up_path_for(resource)
     "http://google.com"
+  end
+  
+  def require_http_basic_auth
+    authenticate_or_request_with_http_basic 'Staging' do |name, password|
+      name == 'zeleniy' && password == 'slonik'
+    end
   end
   
 end
