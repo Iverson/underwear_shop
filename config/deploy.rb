@@ -38,7 +38,6 @@ namespace :deploy do
 end
 
 # for some reason, this isn't enabled by default
-after "deploy:update", "deploy:cleanup"
-after :deploy, "deploy:restart"
+after "deploy", "deploy:cleanup"
 
 # here is an example task which uses rake, as defined above
