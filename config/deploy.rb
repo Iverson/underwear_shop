@@ -30,8 +30,10 @@ after "deploy:update_code", "deploy:migrate"
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
+  
+  desc "Restarting mod_rails with restart.txt"
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+    run "touch #{current_path}/tmp/restart.txt"
   end
 end
 
