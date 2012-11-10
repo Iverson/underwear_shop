@@ -31,7 +31,7 @@ namespace :deploy do
   task :start do ; end
   task :stop do ; end
   
-  desc "Restarting mod_rails with restart.txt"
+  desc "Restart Application"
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{current_path}/tmp/restart.txt"
   end
@@ -39,5 +39,6 @@ end
 
 # for some reason, this isn't enabled by default
 after "deploy:update", "deploy:cleanup"
+after :deploy, "deploy:restart"
 
 # here is an example task which uses rake, as defined above
