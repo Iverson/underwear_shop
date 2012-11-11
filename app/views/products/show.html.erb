@@ -25,7 +25,7 @@
             <div class="description">
 
                 <span>Брэнд:</span> <a href="#"><%= @product.brand.name %></a><br />
-                <span>Производитель:</span> <a href="#"><%= @product.country.name %></a><br />
+                <span>Производитель:</span> <%= @product.country.name %><br />
                 <span>Артикул:</span> <%= @product.brand.id %><br />
 
                 <div class="padd-avalib"> <div class="extra-wrap"> <span class="prod-stock-2">Наличие:</span> <div class="prod-stock">На складе</div></div></div>
@@ -41,11 +41,16 @@
                 <%= form_tag(:controller => "cart", :action => "add_item", :method => "post") do %>
                 <div class="b-sizes">
                     <span>Выберите размер:</span>
-                    <% @product.product_instances.each_with_index do |size, i| %>
-                        <%= label_tag "instance_#{size.id}", :class => "b-sizes__item" do %>
-                            <%= radio_button_tag :instance, size.id, i==0 ? true : false %> <%= size.size %>
+                    <% if @product.sizes? %>
+                        <% @product.product_instances.each_with_index do |size, i| %>
+                            <%= label_tag "instance_#{size.id}", :class => "b-sizes__item" do %>
+                                <%= radio_button_tag :instance, size.id, i==0 ? true : false %> <%= size.size %>
+                            <% end %>
+
                         <% end %>
-                        
+                    <% else %>
+                        размер единый
+                        <%= radio_button_tag :instance, @product.product_instances.first.id, true, :class => "hidden"  %>
                     <% end %>
                 </div>
                 

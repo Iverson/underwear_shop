@@ -34,6 +34,10 @@ ActiveAdmin.register Product do
       f.input :description
       f.input :state
       
+      if f.object.new_record?
+        f.object.product_instances.build(:size => "all")
+      end
+      
       f.inputs "Sizes" do
         f.has_many :product_instances, :class => "b-aa-sizes-form " do |p|
           p.input :size
@@ -48,7 +52,8 @@ ActiveAdmin.register Product do
         end 
       end
       
-    end    
+    end
+    
     f.buttons
   end
 end

@@ -830,7 +830,7 @@ label {
 	
 }
 .featured .image { background:#FFF;}
-.featured .name, .new-products .name { padding:10px 10px 12px 14px; background:url(/assets/name-bg.gif) repeat-x #252525;}
+.featured .name, .new-products .name { padding:10px 10px 12px 14px; background:url(/assets/name-bg.gif) repeat-x #252525; height: 34px;}
 .featured .price-old { margin-top:-3px; }
 .box.new-products .box-heading { padding-left:0; padding-bottom:17px;}
 .new-products .box-product .price, .featured .box-product .price {
@@ -2344,8 +2344,7 @@ position:relative; margin-left:-5px;
 	border-bottom: 1px solid #E7E7E7;
 	padding:15px 5px 10px 0px;
 	line-height: 20px;
-    color: #A6A4A4;
-	font-weight:bold;
+	color:#252525;
 }
 .product-info .description strong{ color:#A6A4A4; font-weight:bold; font-size:12px; font-family:Arial, Helvetica, sans-serif}
 .product-info .description span {

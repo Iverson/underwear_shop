@@ -19,7 +19,9 @@
                                 <td class="name">
                                     <a href="<%= Routes.product_path(cart['items'][i].uri) %>"><%= cart['items'][i].name %></a>
                                     <span class="quantity">x&nbsp;<%= cart['items'][i].count %></span> <span class="total"><%= cart['items'][i].price %>р</span>
+                                    <% if (cart['items'][i].instance.size != "all") { %>
                                     <div class="">(<%= cart['items'][i].instance.size %>)</div>
+                                    <% } %>
                                 </td>
                                     <!--td class="quantity">x&nbsp;</td--> 
                                     <!--td class="total"></td-->

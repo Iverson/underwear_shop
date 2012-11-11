@@ -7,7 +7,7 @@ class CartController < ApplicationController
     @product_instance = ProductInstance.find(params[:instance])
     @product = @product_instance.product
     @count = params[:count] || 1
-    @@count = @count.to_i
+    @count = @count.to_i
     
     if @cart['items'].has_key?(params[:instance])
       @cart['items'][params[:instance]]['count'] += @count

@@ -29,8 +29,16 @@ class Product < ActiveRecord::Base
   end
   
   def fast_to_cart
-    if product_instances.length == 1
+    if !sizes?
       product_instances.first.id
+    end
+  end
+  
+  def sizes?
+    if product_instances.length == 1 && product_instances.first.size == "all"
+      false
+    else
+      true
     end
   end
   
