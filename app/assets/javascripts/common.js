@@ -8,6 +8,10 @@ $(function() {
 		headers: {
 			'X-CSRF-Token': token
 		},
+		error: function (request, status, error)
+		{
+			showNoti( JST['templates/shared/error']({text: error}) );
+		}
 	});
 	
 	/* Cart */
@@ -43,7 +47,7 @@ $(function() {
 	function addToCart(id, sender)
 	{
 		$.ajax({
-			url: "/cart/add.json",
+			url: Routes.cart_add_path({format: 'json'}),
 			data: {instance: id},
 			success: function(data)
 			{
@@ -55,10 +59,23 @@ $(function() {
 				
 				$('.js-cart').empty().append( JST['templates/cart']({cart: data}) );
 				showNoti( JST['templates/notis/cart_add']({add: true}) );
-			},
-			error: function(data)
+			}
+		});
+	}
+	
+	var activeButton;
+	
+	function selectProductSize(product, sender)
+	{
+		clearPopups();
+		
+		$.ajax({
+			type: "GET",
+			url: Routes.products_instances_path({format: 'json'}),
+			data: {id: product},
+			success: function(data)
 			{
-				console.log('Error: ' + data);
+				$('body').append( JST['templates/shared/popup']({instances: data}) );
 			}
 		});
 	}
@@ -66,13 +83,24 @@ $(function() {
 	$('.js-addToCart').live('click', function()
 	{
 		var sender = this;
-		
 		if ($(this).data('fastadd'))
 		{
 			addToCart($(this).data('fastadd'), this)
 		} else {
+			activeButton = this;
+			selectProductSize($(this).data('product'), this);
 			
 		}
+		
+		return false;
+	});
+	
+	$('.js-selectedSize').live('click', function()
+	{
+		var instance = $('.b-popup__select-size input:checked').val();
+		
+		clearPopups();
+		addToCart(instance, activeButton);
 		
 		return false;
 	});
@@ -80,7 +108,7 @@ $(function() {
 	$('.js-removeFromCart').live('click', function()
 	{
 		$.ajax({
-			url: "/cart/remove.json",
+			url: Routes.cart_remove_path({format: 'json'}),
 			data: {instance: $(this).attr('rel')},
 			success: function(data)
 			{
@@ -90,10 +118,6 @@ $(function() {
 				});
 				
 				showNoti( JST['templates/notis/cart_add']({add: false}) );
-			},
-			error: function(data)
-			{
-				console.log('Error: ' + data);
 			}
 		});
 		
@@ -110,7 +134,7 @@ $(function() {
 		var sender = this;
 		
 		$.ajax({
-			url: "/favorite/add.json",
+			url: Routes.favorite_add_path({format: 'json'}),
 			data: {params: {product_id: $(this).attr('rel'), user_id: User.id}},
 			success: function(data)
 			{
@@ -123,10 +147,6 @@ $(function() {
 				
 				showNoti( JST['templates/notis/favorite'](data) );
 				
-			},
-			error: function(data)
-			{
-				console.log('Error: ' + data);
 			}
 		});
 		
@@ -161,6 +181,21 @@ $(function() {
 			$(this).remove();
 		});
 	}
+	
+	function clearPopups()
+	{
+		$('.b-popup').remove();
+	}
+	
+	$('.js-popupClose').live('click', function()
+	{
+		$(this).closest('.b-popup').fadeOut('fast', function()
+		{
+			$(this).remove();
+		})
+		
+		return false;
+	});
 	
 	function showNoti(html)
 	{

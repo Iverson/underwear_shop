@@ -1,8 +1,8 @@
 <div class="success js-noti">
     <% if (add) {%>
-        Товар добавлен в <a href="#">корзину</a>.
+        Товар добавлен в <a href="<%= Routes.cart_index_path() %>">корзину</a>.
     <% } else { %>
-        Товар удален из <a href="#">корзины</a>.
+        Товар удален из <a href="<%= Routes.cart_index_path() %>">корзины</a>.
     <% } %>
     <span class="close"><img class="close" alt="" src="/assets/close.png" /></span>
 </div>

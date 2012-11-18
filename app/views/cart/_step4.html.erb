@@ -9,6 +9,7 @@
                 <thead>
                     <tr>
                         <td class="name">Название</td>
+						<td class="ta-center">Размер</td>
                         <td class="model">Артикул</td>
                         <td class="quantity">Количество</td>
                         <td class="price">Цена за шт.</td>
@@ -21,6 +22,7 @@
                         <td class="name">
                             <%= link_to( cart_item['name'], product_path(cart_item['id']) ) %>
                         </td>
+						<td class="ta-center"><%= cart_item['instance']['size'] %></td>
                         <td class="model"><%= cart_item['id'] %></td>
                         <td class="quantity"><%= cart_item['count'] %></td>
                         <td class="price"><%= cart_item['price'] %>р</td>

@@ -16,7 +16,7 @@
             
             <div id="gallery-<%= product.id %>">
             <% product.pictures.each do |img| %>
-                <a href="<%= img.image.url(:detail) %>" title="<%= product.name %>" rel="item-<%= product.id %>" class="js-fancybox"></a>
+                <a href="<%= img.image.url(:zoom) %>" title="<%= product.name %>" rel="item-<%= product.id %>" class="js-fancybox"></a>
             <% end %>
             </div>
         </div>
@@ -27,7 +27,7 @@
             </div>
             <div class="actions-buttons">
                 <div class="cart">
-                    <a href="#" class="button js-addToCart" data-fastadd="<%= product.fast_to_cart %>" rel=""><span>В корзину</span></a>
+                    <a href="#" class="button js-addToCart" data-product="<%= product.id %>" data-fastadd="<%= product.fast_to_cart %>" rel=""><span>В корзину</span></a>
                 </div>
                 <div class="wishlist"><a class="tip js-AddToFavorite" rel="<%= product.id %>">В избранное</a><span class="tooltip">В избранное</span></div>
                 <!--div class="compare"><a class="tip2"  onclick="addToCompare('44');">Сравнить</a><span class="tooltip2">Сравнить</span></div-->

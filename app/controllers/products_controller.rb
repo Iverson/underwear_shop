@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  layout "admin"
   
   def index
     @products = Product.all
@@ -100,8 +99,12 @@ class ProductsController < ApplicationController
     end
   end
   
-  def favorites
+  def instances
+    @product_instances = ProductInstance.where(:product_id => params[:id])
     
+    respond_to do |format|
+      format.json { render json: @product_instances }
+    end
   end
   
 end

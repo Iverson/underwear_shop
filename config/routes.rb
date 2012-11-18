@@ -16,7 +16,10 @@ UnderwearShop::Application.routes.draw do
   resources :sections, :only => [:show]
   resources :pictures
   resources :index, :only => [:index]
+  
+  get 'products/instances' => 'products#instances'
   resources :products
+  
   resources :orders
   resources :cart, :only => [:index]
   

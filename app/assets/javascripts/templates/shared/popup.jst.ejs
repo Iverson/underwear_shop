@@ -1,0 +1,21 @@
+<div class="b-popup">
+	<div class="b-popup__t">Выберите размер:</div>
+	
+	<div class="b-popup__select-size">
+	<% for (var i in instances) { %>
+		<% var checked = ((i != 0) ? "checked" : ""); %>
+		<label for="instance_<%= instances[i].id %>" class="checkbox">
+			<input type="radio" id="instance_<%= instances[i].id %>" name="instance" checked="<%= checked %>" value="<%= instances[i].id %>" />
+			<%= instances[i].size %>
+		</label>
+
+	<% } %>
+	</div>
+	
+	<div class="b-popup__actions">
+		<a data-fastadd="" data-product="1" class="b-btn b-btn_mini js-selectedSize" href="#">В корзину</a>
+		<a class="b-btn b-btn_mini js-popupClose" href="#">Отменить</a>
+	</div>
+    
+    <span class="b-popup__close js-popupClose"><img class="close" alt="" src="/assets/close.png" /></span>
+</div>

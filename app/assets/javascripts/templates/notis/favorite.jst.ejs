@@ -1,8 +1,8 @@
 <div class="success js-noti">
     <% if (add) {%>
-        Товар добавлен в <a href="#">избранное</a>.
+        Товар добавлен в <a href="<%= Routes.favorites_path() %>">избранное</a>.
     <% } else { %>
-        Товар уже находится у вас в <a href="#">избранном</a>.
+        Товар уже находится у вас в <a href="<%= Routes.favorites_path() %>">избранном</a>.
     <% } %>
     <span class="close"><img class="close" alt="" src="/assets/close.png" /></span>
 </div>

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :require_http_basic_auth if Rails.env == "staging"
   before_filter :init_cart
-  
+  before_filter :bestsellers
   
   add_breadcrumb I18n.t("breadcrumbs.homepage"), "/"
   
@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
     end
     
     @cart = session[:cart]
+  end
+  
+  def bestsellers
+    @bestsellers = Product.order('order_items_count desc').limit(3)
   end
   
   def after_sign_up_path_for(resource)

@@ -1,0 +1,27 @@
+					<div class="box  bestsellers">
+						<div class="box-content">
+							<div class="box-content-image">
+								<div class="box-heading">Хиты продаж</div>
+								<div class="box-product-2">
+									<ul>
+										<% @bestsellers.each do |bs| %>
+										<li>
+											<div class="name maxheight-best"><%= link_to bs.name, bs %></div>
+											<div class="image">
+												<%= link_to bs do %>
+													<%= image_tag bs.preview(:small), :width => "50" %>
+												<% end %>
+											</div>
+											<div class="extra-wrap">
+												
+												<div class="price"> <span class="price-new"><%= bs.price %>р</span> </div>
+
+												<div class="section"><%= bs.section.name %></div>
+											</div>
+										</li>
+										<% end %>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>

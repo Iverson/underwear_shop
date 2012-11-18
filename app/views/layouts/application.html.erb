@@ -150,119 +150,80 @@
                     <div class="box sidebarsearch"> 
 
                         <!--div class="box-heading">Search</div-->
-                        <div class="box-content">
-                            <div id="sidebarsearch">
-                                <div class="button-sidebarsearch" ></div>
-                                <span>
-                                    <input type="text" name="sidebar_name" value="Search"  onclick="this.value = '';" onkeydown="this.style.color = '#000000';" />
-                                </span> </div>
-                            </div>
-                        </div>
-                 
-                            <div class="box  bestsellers">
-                                <div class="box-content">
-                                    <div class="box-content-image">
-                                        <div class="box-heading">Bestsellers</div>
-                                        <div class="box-product-2">
-                                            <ul>
-                                                <li>
-                                                    <div class="name maxheight-best"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=54">Set magna ipsum dolor sit conse</a></div>
-                                                    <div class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=54"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Pronto Blue White Graphic Tee 1 copy-60x72.png" alt="Set magna ipsum dolor sit conse" /></a></div>
-                                                    <div class="extra-wrap">
-                                                        <div class="price"> <span class="price-new">$25.50</span> <span class="price-off">16%<span> off</span></span> </div>
+						<div class="box-content">
+							<div id="sidebarsearch">
+								<div class="button-sidebarsearch" ></div>
+								<span>
+									<input type="text" name="sidebar_name" value="Search"  onclick="this.value = '';" onkeydown="this.style.color = '#000000';" />
+								</span> 
+							</div>
+						</div>
+					</div>
+					
+					<%= render :partial => 'shared/bestsellers' %>
 
-                                                        <!--div class="cart"><a onclick="addToCart('54');" class="button"><span>Add to Cart</span></a></div--> 
-                                                    </div>
-                                                </li>
-                                                        <li>
-                                                            <div class="name maxheight-best"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=55">Lorem ipsum dolor sit amet</a></div>
-                                                            <div class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=55"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Penn State College T-Shirt 1 copy-60x72.png" alt="Lorem ipsum dolor sit amet" /></a></div>
-                                                            <div class="extra-wrap">
-                                                                <div class="price"> $28.51 </div>
-                                                                <!--div class="cart"><a onclick="addToCart('55');" class="button"><span>Add to Cart</span></a></div--> 
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="name maxheight-best"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=45">Dolor sit conse ctetur adipisi set</a></div>
-                                                            <div class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=45"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Live Nation Aerosmith Ivory T-Shirt 1 copy-60x72.png" alt="Dolor sit conse ctetur adipisi set" /></a></div>
-                                                            <div class="extra-wrap">
-                                                                <div class="price"> <span class="price-new">$24.33</span> <span class="price-off">5%<span> off</span></span> </div>
-                                                                <!--div class="cart"><a onclick="addToCart('45');" class="button"><span>Add to Cart</span></a></div--> 
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="name maxheight-best"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=44"> Ipsum dolor sit amet conse</a></div>
-                                                            <div class="image"><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/product&amp;product_id=44"><img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/Classic Laundry Green Graphic T-Shirt 1 copy-60x72.png" alt=" Ipsum dolor sit amet conse" /></a></div>
-                                                            <div class="extra-wrap">
-                                                                <div class="price"> <span class="price-new">$300.00</span> <span class="price-off">99%<span> off</span></span> </div>
-                                                                <!--div class="cart"><a onclick="addToCart('44');" class="button"><span>Add to Cart</span></a></div--> 
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <%= @right %>
-                                <% if @right %>
-                                    <%= render 'shared/right_column' %>
-                                <% end %>
+				</div>
+				
+				<%= @right %>
+				
+				<% if @right %>
+					<%= render 'shared/right_column' %>
+				<% end %>
 
-                                <div id="content">
-                                    
-                                    <%= yield %> 
+				<div id="content">
 
-                                </div>
-                                <div class="clear"></div>
+					<%= yield %> 
 
-                                    <div class="footer-wrap">
-                                        <div id="footer">
-                                            <div class="wrapper">
-                                                <div class="column col-1">
-                                                    <h3>Information</h3>
-                                                    <ul>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=4">About</a></li>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=6">Delivery</a></li>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=3">Privacy Policy</a></li>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=5">Terms &amp; Conditions</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="column col-2">
-                                                    <h3>Customer Service</h3>
-                                                    <ul>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/contact">Contact Us</a></li>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/return/insert">Returns</a></li>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/sitemap">Site Map</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="column col-3">
-                                                    <h3>Extras</h3>
-                                                    <ul>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/manufacturer">Brands</a></li>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/voucher">Gift Vouchers</a></li>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=affiliate/account">Affiliates</a></li>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/special">Specials</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="column col-4">
-                                                    <h3>My Account</h3>
-                                                    <ul>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/account">My Account</a></li>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/order">Order History</a></li>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/wishlist">Wish List</a></li>
-                                                        <li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/newsletter">Newsletter</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="wrapper">
-                                            <div id="powered">
-                                                <div class="footer-logo"></div>
-                                                <span>Powered By <a href="http://www.opencart.com">OpenCart</a> T-Shirt &copy; 2012</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+				</div>
+				<div class="clear"></div>
+
+				<div class="footer-wrap">
+					<div id="footer">
+						<div class="wrapper">
+							<div class="column col-1">
+								<h3>Information</h3>
+								<ul>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=4">About</a></li>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=6">Delivery</a></li>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=3">Privacy Policy</a></li>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=5">Terms &amp; Conditions</a></li>
+								</ul>
+							</div>
+							<div class="column col-2">
+								<h3>Customer Service</h3>
+								<ul>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/contact">Contact Us</a></li>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/return/insert">Returns</a></li>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/sitemap">Site Map</a></li>
+								</ul>
+							</div>
+							<div class="column col-3">
+								<h3>Extras</h3>
+								<ul>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/manufacturer">Brands</a></li>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/voucher">Gift Vouchers</a></li>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=affiliate/account">Affiliates</a></li>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/special">Specials</a></li>
+								</ul>
+							</div>
+							<div class="column col-4">
+								<h3>My Account</h3>
+								<ul>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/account">My Account</a></li>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/order">Order History</a></li>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/wishlist">Wish List</a></li>
+									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/newsletter">Newsletter</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="wrapper">
+						<div id="powered">
+							<div class="footer-logo"></div>
+							<span>Powered By <a href="http://www.opencart.com">OpenCart</a> T-Shirt &copy; 2012</span></div>
+						</div>
+					</div>
+				</div>
+			</div>
 </body>
 </html>

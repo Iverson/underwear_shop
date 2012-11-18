@@ -151,7 +151,7 @@ td, th, input, textarea, select, a {
 	left:0;
 	width:100%;
 	min-width:970px;
-	z-index:999999;
+	z-index:1000;
 }
 
 .top-container {
@@ -714,7 +714,7 @@ label {
 }
 /*************************************************************************************bestsellers**********************************************************************************/
 .bestsellers .image {
-	margin:0 3px 8px 0px;
+	margin:0 8px 8px 0px;
 	text-align:center;
 	float:left;
 }
@@ -723,14 +723,26 @@ label {
 	padding-right:0;
 	padding-bottom:8px;
 }
+
+.bestsellers .extra-wrap {
+	padding-top: 10px;
+}
 .bestsellers .price { 
 	display:block;
 	color:#d94574;
 	font-size:24px;
 	line-height:39px;
 	font-family:'Open Sans', sans-serif;
-	font-weight:700;
+	font-weight:normal;
 	margin-top:-5px;
+}
+.bestsellers .section {
+	padding-top: 6px;
+	color:#252525;
+	overflow:hidden;
+	width: 100%;
+	white-space: nowrap;
+	position:relative;
 }
 .bestsellers .price-off {
     color: #252525;
@@ -1071,6 +1083,7 @@ label {
 .attention {
 	background: #FFF5CC url('/assets/attention.png') 10px center no-repeat;
 	border: 1px solid #F2DD8C;
+	padding-left: 36px !important;
 }
 .success .close, .warning .close, .attention .close, .information .close {
 	float: right;
@@ -3382,10 +3395,11 @@ input#sub_category, input#description { position:relative; top:2px;}
 .success {color:#000}
 .success a:hover{ text-decoration:none; }
 .success a{ text-decoration:underline; color:#252525}
-.success span:hover img{ margin-top:-11px;}
+.success span:hover img, .b-popup__close:hover img { margin-top:-11px;}
 .success p{ margin-bottom:11px; font-size:24px; color:#1b1b1b;}
-.success span{ width:11px; height:11px; overflow:hidden; position:absolute; right:8px; top:8px;}
-.success {
+.success span, .b-popup__close { width:11px; height:11px; overflow:hidden; position:absolute; right:8px; top:8px;}
+.b-popup__close img {float:left; cursor: pointer}
+.success, .b-popup {
 	width:170px;
 	position:fixed;
 	left:50%;
@@ -3643,4 +3657,35 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
 	font-size: 14px;
 	line-height: 1.2em;
 	margin-left: 8px;
+}
+
+.b-xhr-error__text {
+	color:#ff0000;
+}
+
+.b-popup {
+	width: 300px;
+	display:block;
+	margin-left: -150px;
+}
+
+	.b-popup__t {
+		color:#111;
+		font-size: 16px;
+		line-height: 1.2em;
+		margin-bottom: 15px;
+	}
+
+	.b-popup__actions {
+		margin-top: 15px;
+		zoom: 1;
+	}
+	
+		.b-popup__actions .b-btn {
+			margin-right: 15px;
+		}
+
+.checkbox input {
+	margin: 0 4px 0 0;
+	vertical-align:middle;
 }
