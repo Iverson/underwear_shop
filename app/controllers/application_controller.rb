@@ -20,7 +20,10 @@ class ApplicationController < ActionController::Base
   end
   
   def bestsellers
-    @bestsellers = Product.order('order_items_count desc').limit(3)
+    if OrderItem.count > 0
+      @bestsellers = Product.order('order_items_count desc').limit(3)
+    end
+    
   end
   
   def after_sign_up_path_for(resource)

@@ -3,7 +3,10 @@
 							<div class="box-content-image">
 								<div class="box-heading">Хиты продаж</div>
 								<div class="box-product-2">
+								    
 									<ul>
+									<% if @bestsellers %>
+									
 										<% @bestsellers.each do |bs| %>
 										<li>
 											<div class="name maxheight-best"><%= link_to bs.name, bs %></div>
@@ -20,7 +23,12 @@
 											</div>
 										</li>
 										<% end %>
+										
+                                    <% else %>
+                                            <li>Данных недостаточно</li>
+                                    <% end %>
 									</ul>
+									    
 								</div>
 							</div>
 						</div>
