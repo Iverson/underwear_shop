@@ -10,10 +10,10 @@ ActiveAdmin.register Product do
   index do
     column :id
     column "Image" do |product|
-      link_to(image_tag(product.preview(:small)), admin_product_path(product))
+      link_to(image_tag(product.preview(:small)), edit_admin_product_path(product))
     end
     column :name do |product|
-      link_to product.name, admin_product_path(product)
+      link_to product.name, edit_admin_product_path(product)
     end
     column :price
     column :section
