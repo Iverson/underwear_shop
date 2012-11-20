@@ -23,7 +23,7 @@ body.active_admin form fieldset > ol > li fieldset ol li {
 	padding: 5px 0;
 }
 
-body.active_admin form .b-aa-sizes-form input {
+body.active_admin form .b-aa-sizes-form input, body.active_admin form .has_many_fields .numeric input, body.active_admin form .has_many_fields .string input {
 	width: 50px;
 }
 

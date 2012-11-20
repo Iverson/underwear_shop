@@ -1,24 +1,17 @@
 <div class="center-col">
     
-    <!--div class="slideshow">
-        <div id="slideshow0" class="nivoSlider" style="width: 260px; height: 372px;"> 
-            <a  href="index.php?route=product/category&amp;path=59">
-                <img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/slide-4-260x372.jpg" alt="" />
-            </a>
-            <a href="index.php?route=product/category&amp;path=99">
-                <img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/slide-3-260x372.jpg" alt="" />
-            </a>
-            <a href="index.php?route=product/category&amp;path=81">
-                <img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/slide-2-260x372.jpg" alt="" />
-            </a>
-            <a href="index.php?route=product/category&amp;path=69">
-                <img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/slide-5-260x372.jpg" alt="" />
-            </a>
-            <a href="index.php?route=product/category&amp;path=68">
-                <img src="http://livedemo00.template-help.com/opencart_38941/image/cache/data/slide-1-260x372.jpg" alt="" />
-            </a>
-        </div>
-    </div>
+	<div class="slideshow">
+		<div id="slideshow0" class="nivoSlider" style="width: 260px; height: 372px;">
+			
+			<% @promos.each do |promo | %>
+			<a  href="#">
+				<img title="&lt;div class=&quot;bann-price&quot;&gt; 	&lt;span class=&quot;second&quot;&gt;<%= promo.sum %>&lt;/span&gt; &lt;span class=&quot;first&quot;&gt;р&lt;/span&gt; &lt;span class=&quot;third&quot;&gt;&lt;/span&gt;&lt;span class=&quot;four&quot;&gt;скидка <%= promo.discount %>%&lt;/span&gt;     &lt;div class=&quot;name&quot;&gt; <%= promo.name %> &lt;/div&gt;     &lt;span&gt; <%= promo.text %> &lt;/span&gt;     &lt;div class=&quot;but-container&quot;&gt;     	&lt;a href=&quot;<%= section_path(Section.find(1)) %>&quot; class=&quot;banner-button&quot;&gt;Купить!&lt;/a&gt;     &lt;/div&gt; &lt;/div&gt;" src="<%= promo.promo_image.image.url(:slideshow) %>" />
+			</a>
+			<% end %>
+			
+
+		</div>
+	</div>
     <script type="text/javascript">
     $(document).ready(function() {
         $('#slideshow0').nivoSlider({
@@ -49,7 +42,7 @@
         });
 
     });
-    </script-->
+    </script>
 
     
     <div class="wrapper">

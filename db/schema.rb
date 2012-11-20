@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121117235904) do
+ActiveRecord::Schema.define(:version => 20121119230642) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -153,6 +153,34 @@ ActiveRecord::Schema.define(:version => 20121117235904) do
     t.string   "desc"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "promo_images", :force => true do |t|
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "promo_id"
+  end
+
+  create_table "promo_items", :force => true do |t|
+    t.integer  "promo_id",                  :null => false
+    t.integer  "product_id",                :null => false
+    t.integer  "count",      :default => 1, :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  create_table "promos", :force => true do |t|
+    t.string   "name",                                                      :null => false
+    t.decimal  "price",      :precision => 6, :scale => 2
+    t.string   "discount",                                 :default => "0", :null => false
+    t.text     "text",                                                      :null => false
+    t.integer  "state_id",                                 :default => 2,   :null => false
+    t.datetime "created_at",                                                :null => false
+    t.datetime "updated_at",                                                :null => false
   end
 
   create_table "sections", :force => true do |t|
