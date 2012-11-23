@@ -55,8 +55,10 @@ class OrdersController < ApplicationController
   def confirm
     @order = Order.find(@cart['order_id'])
     
-    @cart['items'].each do |id, cart_item|
-      OrderItem.create({:order_id => @cart['order_id'], :product_id => cart_item['id'], :name => cart_item['name'], :price => cart_item['price'], :count => cart_item['count']  })
+    @cart['items'].each do |id, product_item|
+      @cart['items'][id]['ins'].each do |i, cart_item|
+        OrderItem.create({:order_id => @cart['order_id'], :product_id => cart_item['id'], :name => cart_item['name'], :price => product_item['attrs']['price']*(100 - [product_item['attrs']['promo_discount'].to_i, product_item['attrs']['discount'].to_i].max)/100, :count => cart_item['count']  })
+      end
     end
     
     respond_to do |format|

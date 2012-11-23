@@ -10,6 +10,10 @@ class Order < ActiveRecord::Base
   accepts_nested_attributes_for :address
   
   def summ
-    self.order_items.sum(:price)
+    self.order_items.sum{|item| item.price*item.count}+self.delivery.price
+  end
+  
+  def count
+    self.order_items.sum(:count)
   end
 end
