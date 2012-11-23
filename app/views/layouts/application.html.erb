@@ -81,8 +81,10 @@
                         </div>
                     </div>
                     <script type="text/javascript">
-                        $(function(){
+                        $(function()
+						{
                             var cart = <%= @cart.to_json.html_safe %>
+console.log(cart);
                             $('.js-cart').empty().append( JST['templates/cart']({cart: cart}) );
                         });
                         

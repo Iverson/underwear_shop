@@ -9,6 +9,10 @@ class Promo < ActiveRecord::Base
   accepts_nested_attributes_for :promo_items, :allow_destroy => true
   
   def sum
-    self.promo_items.sum{|item| item.product.price}.to_i
+    if self.price
+      self.price.to_i
+    else
+      self.promo_items.sum{|item| item.product.price*item.count}.to_i*(100-self.discount.to_i)/100
+    end
   end
 end

@@ -15,7 +15,7 @@ $(function() {
 	});
 	
 	/* Cart */
-	
+    
 	var cart = $('#cart');
 	
 	function animateProduct(image,cart)

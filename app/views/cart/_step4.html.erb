@@ -17,18 +17,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% @cart['items'].each do |id, cart_item| %>
+                <% @cart['items'].each do |id, product_item| %>
+					<% @cart['items'][id]['ins'].each do |i, cart_item| %>
                     <tr>
                         <td class="name">
-                            <%= link_to( cart_item['name'], product_path(cart_item['id']) ) %>
+                            <%= link_to( product_item['attrs']['name'], product_path(product_item['attrs']['uri']) ) %>
                         </td>
-						<td class="ta-center"><%= cart_item['instance']['size'] %></td>
+						<td class="ta-center"><%= cart_item['size'] %></td>
                         <td class="model"><%= cart_item['id'] %></td>
                         <td class="quantity"><%= cart_item['count'] %></td>
-                        <td class="price"><%= cart_item['price'] %>р</td>
-                        <td class="total"><%= cart_item['price']*cart_item['count'] %>р</td>
+                        <td class="price">
+							<% if product_item['attrs']['promo'] %>
+								<%= price(product_item) %>р
+								<strike><%= product_item['attrs']['price'] %>р</strike>
+							<% else %>
+								<%= product_item['attrs']['price'] %>р
+							<% end %>
+						</td>
+                        <td class="total"><%= price(product_item)*cart_item['count'] %>р</td>
                     </tr>
-                    <% end %>
+					<% end %>
+                <% end %>
                 </tbody>
                 
                 <% if @order.delivery %>

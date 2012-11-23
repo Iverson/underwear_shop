@@ -3689,3 +3689,19 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
 	margin: 0 4px 0 0;
 	vertical-align:middle;
 }
+
+.red {
+	color:#ff0000;
+}
+
+sup {
+	vertical-align:top;
+	font-size: 11px;
+	margin-left: 3px;
+	position:relative;
+	top: -3px;
+}
+
+strike {
+	font-weight:normal;
+}

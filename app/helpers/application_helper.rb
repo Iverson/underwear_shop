@@ -48,5 +48,9 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+  
+  def price(item)
+    item['attrs']['price']*(100 - [item['attrs']['promo_discount'].to_i, item['attrs']['discount'].to_i].max)/100
+  end
 
 end

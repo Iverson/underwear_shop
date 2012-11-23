@@ -20,21 +20,28 @@
             <tbody>
 
 
-                <% @cart['items'].each do |id, cart_item| %>
+            <% @cart['items'].each do |id, product_item| %>
+				<% @cart['items'][id]['ins'].each do |i, cart_item| %>
+				
                 <tr>
                     <td class="image">
-                        <%= link_to(product_path(cart_item['uri'])) do %>
+                        <%= link_to(product_path(product_item['attrs']['uri'])) do %>
                         <%= image_tag( cart_item['img'], {:width => 70} ) %>
                         <% end %>
                     </td>
                     <td class="name">
-                        <%= link_to( cart_item['name'], product_path(cart_item['uri']) ) %>
+                        <%= link_to( product_item['attrs']['name'], product_path(product_item['attrs']['uri']) ) %>
+						
+						<% if product_item['attrs']['promo'] %>
+							<sup class="red">Акция</sup>
+						<% end %>
                     </td>
-                    <td class="size"><%= cart_item['instance']['size'] %></td>
+                    <td class="size"><%= cart_item['size'] %></td>
                     <td class="quantity">
                         <%= form_tag(:controller => "cart", :action => "update", :method => "post") do %>
                             <%= text_field_tag(:count, cart_item['count'], :size => 1, :class => "count") %>
-                            <%= text_field_tag(:id, cart_item['instance']['id'], :type => "hidden") %>
+                            <%= text_field_tag(:id, i, :type => "hidden") %>
+							<%= text_field_tag(:product_id, id, :type => "hidden") %>
                             <div class="wrapper mt5">
                                 <%= image_submit_tag("/assets/update.png", :class => 'b-cart-update-item') %>
                                 <%= image_tag( "/assets/remove.png", {:class => "b-cart-remove-item"} ) %>
@@ -42,13 +49,22 @@
                         <% end %>
                         <div>
                             
-                           <%= button_to "", { :action => "remove_item", :instance => cart_item['instance']['id'] }, {:confirm => "Вы уверены?", :method => :post, :class => "js-cartRemoveItemHidden hidden" } %>
+                           <%= button_to "", { :action => "remove_item", :instance => cart_item['id'] }, {:confirm => "Вы уверены?", :method => :post, :class => "js-cartRemoveItemHidden hidden" } %>
                         </div>
                     </td>
-                    <td class="price"><%= cart_item['price'] %>р</td>
-                    <td style="border-right:0;" class="total"><%= cart_item['price']*cart_item['count'] %>р</td>
+                    <td class="price">
+						<% if product_item['attrs']['promo'] %>
+							<%= price(product_item) %>р
+							<strike><%= product_item['attrs']['price'] %>р</strike>
+						<% else %>
+							<%= product_item['attrs']['price'] %>р
+						<% end %>
+						
+					</td>
+                    <td style="border-right:0;" class="total"><%= price(product_item)*cart_item['count'] %>р</td>
                 </tr>
-                <% end %>
+				<% end %>
+             <% end %>
 
             </tbody>
         </table>

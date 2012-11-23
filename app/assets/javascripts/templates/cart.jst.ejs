@@ -9,25 +9,38 @@
                 <table class="cart">
                     <tbody>
                         <% for (i in cart['items']) { %>
-                        
+                        	<% for (j in cart['items'][i]['ins']) { %>
                             <tr>
                                 <td class="image">
-                                    <a href="<%= Routes.product_path(cart['items'][i].uri) %>">
-                                        <img src="<%= cart['items'][i].img %>" width="70" alt="" />
+                                    <a href="<%= Routes.product_path(cart['items'][i]['attrs'].uri) %>">
+                                        <img src="<%= cart['items'][i]['ins'][j].img %>" width="70" alt="" />
                                     </a>
                                 </td>
                                 <td class="name">
-                                    <a href="<%= Routes.product_path(cart['items'][i].uri) %>"><%= cart['items'][i].name %></a>
-                                    <span class="quantity">x&nbsp;<%= cart['items'][i].count %></span> <span class="total"><%= cart['items'][i].price %>р</span>
-                                    <% if (cart['items'][i].instance.size != "all") { %>
-                                    <div class="">(<%= cart['items'][i].instance.size %>)</div>
+                                    <a href="<%= Routes.product_path(cart['items'][i]['attrs'].uri) %>"><%= cart['items'][i]['ins'][j].name %></a>
+                                    <span class="quantity">x&nbsp;<%= cart['items'][i]['ins'][j].count %></span>
+
+									<% if (cart['items'][i]['attrs']['promo']) { %>
+										<span class="total"><%= price(cart['items'][i]) %>р</span>
+										<strike><%= cart['items'][i]['attrs'].price %>р</strike>
+										<p><span class="red">Акция</span></p>
+									<% } else { %>
+										<span class="total"><%= price(cart['items'][i]) %>р</span>
+									<% } %>
+									
+									
+                                    <% if (cart['items'][i]['ins'][j].size != "all") { %>
+                                    <div class="">(<%= cart['items'][i]['ins'][j].size %>)</div>
                                     <% } %>
+
+									<div class=""><%= cart['promo'] %></div>
                                 </td>
                                     <!--td class="quantity">x&nbsp;</td--> 
                                     <!--td class="total"></td-->
-                                    <td class="remove"><span><img class="js-removeFromCart" rel="<%= cart['items'][i].instance.id %>" title="Удалить" alt="Удалить" src="/assets/close.png"></span>
+                                    <td class="remove"><span><img class="js-removeFromCart" rel="<%= cart['items'][i]['ins'][j].id %>" title="Удалить" alt="Удалить" src="/assets/close.png"></span>
                                 </td>
                             </tr>
+							<% } %>
                         <% } %>
                         
                     </tbody>
