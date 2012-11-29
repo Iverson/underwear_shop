@@ -3,7 +3,8 @@ set :stages, %w(staging production)
 set :default_stage, "staging"
 set :rvm_ruby_string, 'ruby 1.9.2-p320'
 require 'capistrano/ext/multistage'
-require "rvm/capistrano"                               # Load RVM's capistrano plugin.
+require "rvm/capistrano"                              # Load RVM's capistrano plugin.
+require "bundler/capistrano"
 
 default_run_options[:pty] = true
 
