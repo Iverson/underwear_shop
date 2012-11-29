@@ -154,10 +154,13 @@ console.log(cart);
                         <!--div class="box-heading">Search</div-->
 						<div class="box-content">
 							<div id="sidebarsearch">
-								<div class="button-sidebarsearch" ></div>
-								<span>
-									<input type="text" name="sidebar_name" value="Search"  onclick="this.value = '';" onkeydown="this.style.color = '#000000';" />
-								</span> 
+								<%= form_tag(search_path, :method => "get") do %>
+									<%= submit_tag "", :name => nil, :class => "button-sidebarsearch" %>
+									<span>
+										<%= text_field_tag :q, "Поиск", :class => "search" %>
+									</span>
+								<% end %>
+							 
 							</div>
 						</div>
 					</div>

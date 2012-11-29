@@ -1812,10 +1812,12 @@ ul{ list-style:none; margin:0; padding:0;}
 	width: 37px;
 	height: 51px;
 	cursor: pointer;
+	padding: 0;
+	border: none;
 	right:0;
 	top:0;
 }
-#sidebarsearch input {
+#sidebarsearch .search {
 	background:url("/assets/trans.png") repeat scroll 0 0 transparent;
 	padding: 4px 10px 5px 10px; 
 	width: 113px;

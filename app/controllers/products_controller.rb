@@ -107,4 +107,10 @@ class ProductsController < ApplicationController
     end
   end
   
+  def search
+    add_breadcrumb "Search", search_path
+    
+    @products = Product.search params[:q]
+  end
+  
 end

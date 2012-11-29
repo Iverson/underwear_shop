@@ -3,31 +3,44 @@ ActiveAdmin.register_page "Dashboard" do
   menu :priority => 1, :label => proc{ I18n.t("active_admin.dashboard") }
 
   content :title => proc{ I18n.t("active_admin.dashboard") } do
-    div :class => "blank_slate_container", :id => "dashboard_default_message" do
-      span :class => "blank_slate" do
-        span "Welcome to Active Admin. This is the default dashboard page."
-        small "To add dashboard sections, checkout 'app/admin/dashboards.rb'"
-      end
-    end
+    # div :class => "blank_slate_container", :id => "dashboard_default_message" do
+    #       span :class => "blank_slate" do
+    #         span "Welcome to Active Admin. This is the default dashboard page."
+    #         small "To add dashboard sections, checkout 'app/admin/dashboards.rb'"
+    #       end
+    #     end
 
     # Here is an example of a simple dashboard with columns and panels.
     #
-    # columns do
-    #   column do
-    #     panel "Recent Posts" do
-    #       ul do
-    #         Post.recent(5).map do |post|
-    #           li link_to(post.title, admin_post_path(post))
-    #         end
-    #       end
-    #     end
-    #   end
+    columns do
+      column do
+        panel I18n.t("active_admin.index.column1") do
+          table_for Order.all do |f|
+            f.column :id
+            f.column "User" do |o|
+              link_to o.user.fio, edit_admin_order_path(o)
+            end
+            f.column "Phone" do |o|
+              o.address.phone
+            end
+            f.column "Address" do |o|
+              o.address.address
+            end
+            f.column "Summ (RUR)" do |o|
+              o.summ
+            end
+            f.column "State" do |o|
+              link_to o.order_state.name, edit_admin_order_path(o)
+            end
+          end
+        end
+      end
 
-    #   column do
-    #     panel "Info" do
-    #       para "Welcome to ActiveAdmin."
-    #     end
-    #   end
-    # end
+      column do
+        panel I18n.t("active_admin.index.column2") do
+          para "Welcome to ActiveAdmin."
+        end
+      end
+    end
   end # content
 end

@@ -57,6 +57,9 @@ ru:
           attributes:
             # Overrides model and default messages.
     active_admin:
+        index:
+            column1: "Заказы"
+            column2: "Доставка"
         dashboard: Dashboard
         dashboard_welcome:
           welcome: "Добро пожаловать в Active Admin. Это стандартная страница управления сайтом."

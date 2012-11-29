@@ -19,6 +19,11 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :pictures, :allow_destroy => true
   accepts_nested_attributes_for :product_instances, :allow_destroy => true
   
+  define_index do
+    indexes name
+    
+  end
+  
   def preview(size)
     if pictures.exists?
       pictures.first.image(size)
