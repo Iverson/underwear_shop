@@ -5,6 +5,7 @@ set :rvm_ruby_string, 'ruby 1.9.2-p320'
 require 'capistrano/ext/multistage'
 require "rvm/capistrano"                              # Load RVM's capistrano plugin.
 require "bundler/capistrano"
+require 'thinking_sphinx/deploy/capistrano'
 
 default_run_options[:pty] = true
 
@@ -41,4 +42,16 @@ end
 # for some reason, this isn't enabled by default
 after "deploy", "deploy:cleanup"
 
-# here is an example task which uses rake, as defined above
+# Sphinx
+
+before 'deploy:update_code', 'thinking_sphinx:stop'
+after 'deploy:update_code', 'thinking_sphinx:start'
+
+namespace :sphinx do
+  desc "Symlink Sphinx indexes"
+  task :symlink_indexes, :roles => [:app] do
+    run "ln -nfs #{shared_path}/db/sphinx #{release_path}/db/sphinx"
+  end
+end
+
+after 'deploy:finalize_update', 'sphinx:symlink_indexes'

@@ -8,6 +8,7 @@
 db/*.sqlite3*
 log/*.log
 *.log
+log/*.pid
 /tmp/
 doc/
 *.swp
