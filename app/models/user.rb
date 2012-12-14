@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   
   after_create() do
     self.create_address({:address => "", :city => "Москва", :phone => self.phone, :email => self.email, :fio => self.first_name + " " + self.last_name, :user_id => self.id})
+    UserMailer.welcome_email(self).deliver
   end
   
   def fio

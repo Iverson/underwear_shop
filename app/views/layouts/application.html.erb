@@ -70,7 +70,7 @@
                         <div class="wrapper">
                             <div id="welcome">
                                 <% if user_signed_in? %>
-                                     <%= link_to current_user.first_name, edit_user_registration_path %>, мы рады видеть вас снова<br /> в магазине YoungLovers
+                                     <%= link_to current_user.first_name, edit_user_registration_path %>, мы рады видеть вас <br /> в магазине YoungLovers!
                                 <% else %>
                                     Добро пожаловать в магазин YoungLovers
                                     <p><%= link_to "Зарегистрируйтесь", new_user_registration_path %> чтобы делать покупки удобнее </p>
