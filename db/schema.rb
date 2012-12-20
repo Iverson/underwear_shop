@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121119230642) do
+ActiveRecord::Schema.define(:version => 20121220225117) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -67,10 +67,11 @@ ActiveRecord::Schema.define(:version => 20121119230642) do
   end
 
   create_table "countries", :force => true do |t|
-    t.string   "iso",        :null => false
-    t.string   "name",       :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string  "iso",                        :null => false
+    t.string  "name",                       :null => false
+    t.string  "name_en",                    :null => false
+    t.integer "_order",      :default => 0, :null => false
+    t.integer "independent", :default => 1, :null => false
   end
 
   create_table "deliveries", :force => true do |t|
@@ -101,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20121119230642) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "status"
   end
 
   create_table "orders", :force => true do |t|
@@ -195,6 +197,7 @@ ActiveRecord::Schema.define(:version => 20121119230642) do
 
   create_table "states", :force => true do |t|
     t.string   "name",       :null => false
+    t.string   "status",     :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

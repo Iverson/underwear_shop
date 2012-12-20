@@ -23,17 +23,23 @@
 									<% if (cart['items'][i]['attrs']['promo']) { %>
 										<span class="total"><%= price(cart['items'][i]) %>р</span>
 										<strike><%= cart['items'][i]['attrs'].price %>р</strike>
-										<p><span class="red">Акция</span></p>
+										<div class="promo"><span class="red">Акция</span></div>
 									<% } else { %>
 										<span class="total"><%= price(cart['items'][i]) %>р</span>
 									<% } %>
 									
-									
-                                    <% if (cart['items'][i]['ins'][j].size != "all") { %>
-                                    <div class="">(<%= cart['items'][i]['ins'][j].size %>)</div>
-                                    <% } %>
 
 									<div class=""><%= cart['promo'] %></div>
+									
+									<div>
+										<a href="<%= Routes.product_path(cart['items'][i]['attrs'].uri) %>">
+	                                        <%= cart['items'][i]['attrs'].name %>
+	                                    </a>
+									</div>
+									
+									<% if (cart['items'][i]['ins'][j].size != "all") { %>
+                                    <div class="size">Размер: <b><%= cart['items'][i]['ins'][j].size %></b></div>
+                                    <% } %>
                                 </td>
                                     <!--td class="quantity">x&nbsp;</td--> 
                                     <!--td class="total"></td-->

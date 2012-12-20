@@ -18,7 +18,7 @@ class CartController < ApplicationController
       product_item['attrs']['promo'] = false
     end
     
-    promos = Promo.all
+    promos = Promo.published
     
     promos.each do |promo|
       discount = true

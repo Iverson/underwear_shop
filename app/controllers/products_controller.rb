@@ -109,8 +109,11 @@ class ProductsController < ApplicationController
   
   def search
     add_breadcrumb "Search", search_path
-    
-    @products = Product.search params[:q]
+    if params[:q] != ""
+      @products = Product.search(params[:q]).compact
+    else
+      redirect_to :back
+    end
   end
   
 end

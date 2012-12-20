@@ -2,8 +2,7 @@
 
 
 OrderState.delete_all
-OrderState.create(:id=>1,:name=>"Создан")
-OrderState.create(:id=>2,:name=>"Принят")
-OrderState.create(:id=>3,:name=>"Подтвержден")
-OrderState.create(:id=>4,:name=>"Доставка")
-OrderState.create(:id=>5,:name=>"Оплачен")
+OrderState.create(:id=>1,:name=>"Создан", :status=>"created")
+OrderState.create(:id=>2,:name=>"Подтвержден", :status=>"confirmed")
+OrderState.create(:id=>3,:name=>"Доставка", :status=>"delivery")
+OrderState.create(:id=>4,:name=>"Оплачен", :status=>"paid")

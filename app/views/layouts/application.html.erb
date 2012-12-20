@@ -11,10 +11,7 @@
 
     <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/assets/ie.css" /><![endif]-->
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,800' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
     
     
@@ -34,7 +31,7 @@
                 <ul class="links">
                     <li class="first"><a href="/">Домой</a></li>
                     <li>
-                        <%= link_to (favorites_index_path) do %>
+                        <%= link_to (favorites_path) do %>
                             Избранное <span>
                             <% if user_signed_in? %>
                                 (<span class="js-favoritesCounter"><%= current_user.favorites.length %></span>)
@@ -56,8 +53,7 @@
                     
                 </ul>
                 <ul class="soc-links">
-                    <li class="first"><a href="https://twitter.com/akrasman">twitter</a></li>
-                    <li class="second"><a href="http://facebook.com/alexey.krasman">facebook</a></li>
+                    <li class="first"><img class="b-icon" src="/assets/telephone.png" /><span class="va-middle">+7(926)-021-74-49</span></li>
                 </ul>
                 
             </div>
@@ -84,7 +80,6 @@
                         $(function()
 						{
                             var cart = <%= @cart.to_json.html_safe %>
-console.log(cart);
                             $('.js-cart').empty().append( JST['templates/cart']({cart: cart}) );
                         });
                         
@@ -157,7 +152,7 @@ console.log(cart);
 								<%= form_tag(search_path, :method => "get") do %>
 									<%= submit_tag "", :name => nil, :class => "button-sidebarsearch" %>
 									<span>
-										<%= text_field_tag :q, "Поиск", :class => "search" %>
+										<%= text_field_tag :q, "", :class => "search", :placeholder => "Поиск" %>
 									</span>
 								<% end %>
 							 
@@ -185,47 +180,25 @@ console.log(cart);
 				<div class="footer-wrap">
 					<div id="footer">
 						<div class="wrapper">
-							<div class="column col-1">
-								<h3>Information</h3>
-								<ul>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=4">About</a></li>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=6">Delivery</a></li>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=3">Privacy Policy</a></li>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/information&amp;information_id=5">Terms &amp; Conditions</a></li>
-								</ul>
-							</div>
-							<div class="column col-2">
-								<h3>Customer Service</h3>
-								<ul>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/contact">Contact Us</a></li>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/return/insert">Returns</a></li>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=information/sitemap">Site Map</a></li>
-								</ul>
-							</div>
-							<div class="column col-3">
-								<h3>Extras</h3>
-								<ul>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/manufacturer">Brands</a></li>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/voucher">Gift Vouchers</a></li>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=affiliate/account">Affiliates</a></li>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=product/special">Specials</a></li>
-								</ul>
-							</div>
-							<div class="column col-4">
-								<h3>My Account</h3>
-								<ul>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/account">My Account</a></li>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/order">Order History</a></li>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/wishlist">Wish List</a></li>
-									<li><a href="http://livedemo00.template-help.com/opencart_38941/index.php?route=account/newsletter">Newsletter</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="wrapper">
-						<div id="powered">
 							<div class="footer-logo"></div>
-							<span>Powered By <a href="http://www.opencart.com">OpenCart</a> T-Shirt &copy; 2012</span></div>
+							
+							<div class="column col-1">
+								<h3>Информация</h3>
+								<ul>
+									<li><a href="/about">О магазине</a></li>
+									<li><a href="/delivery">Доставка</a></li>
+									<li><a href="/terms">Правилами пользования</a></li>
+								</ul>
+							</div>
+							
+							<div class="column col-4">
+								<h3>Мой профиль</h3>
+								<ul>
+									<li><%= link_to "Мои данные", edit_user_registration_path %></li>
+									<li><%= link_to "Мой адрес", users_address_path %></li>
+									<li><%= link_to "Мои заказы", orders_path %></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>

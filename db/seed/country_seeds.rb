@@ -2,254 +2,260 @@
 
 
 Country.delete_all
-Country.create(:id=>1,:iso=>"AD",:name=>"Andorra")
-Country.create(:id=>2,:iso=>"AE",:name=>"United Arab Emirates")
-Country.create(:id=>3,:iso=>"AF",:name=>"Afghanistan")
-Country.create(:id=>4,:iso=>"AG",:name=>"Antigua and Barbuda")
-Country.create(:id=>5,:iso=>"AI",:name=>"Anguilla")
-Country.create(:id=>6,:iso=>"AL",:name=>"Albania")
-Country.create(:id=>7,:iso=>"AM",:name=>"Armenia")
-Country.create(:id=>8,:iso=>"AO",:name=>"Angola")
-Country.create(:id=>9,:iso=>"AQ",:name=>"Antarctica")
-Country.create(:id=>10,:iso=>"AR",:name=>"Argentina")
-Country.create(:id=>11,:iso=>"AS",:name=>"American Samoa")
-Country.create(:id=>12,:iso=>"AT",:name=>"Austria")
-Country.create(:id=>13,:iso=>"AU",:name=>"Australia")
-Country.create(:id=>14,:iso=>"AW",:name=>"Aruba")
-Country.create(:id=>15,:iso=>"AX",:name=>"Aland Islands")
-Country.create(:id=>16,:iso=>"AZ",:name=>"Azerbaijan")
-Country.create(:id=>17,:iso=>"BA",:name=>"Bosnia and Herzegovina")
-Country.create(:id=>18,:iso=>"BB",:name=>"Barbados")
-Country.create(:id=>19,:iso=>"BD",:name=>"Bangladesh")
-Country.create(:id=>20,:iso=>"BE",:name=>"Belgium")
-Country.create(:id=>21,:iso=>"BF",:name=>"Burkina Faso")
-Country.create(:id=>22,:iso=>"BG",:name=>"Bulgaria")
-Country.create(:id=>23,:iso=>"BH",:name=>"Bahrain")
-Country.create(:id=>24,:iso=>"BI",:name=>"Burundi")
-Country.create(:id=>25,:iso=>"BJ",:name=>"Benin")
-Country.create(:id=>26,:iso=>"BL",:name=>"Saint Barthelemy")
-Country.create(:id=>27,:iso=>"BM",:name=>"Bermuda")
-Country.create(:id=>28,:iso=>"BN",:name=>"Brunei")
-Country.create(:id=>29,:iso=>"BO",:name=>"Bolivia")
-Country.create(:id=>30,:iso=>"BQ",:name=>"Bonaire, Saint Eustatius and Saba ")
-Country.create(:id=>31,:iso=>"BR",:name=>"Brazil")
-Country.create(:id=>32,:iso=>"BS",:name=>"Bahamas")
-Country.create(:id=>33,:iso=>"BT",:name=>"Bhutan")
-Country.create(:id=>34,:iso=>"BV",:name=>"Bouvet Island")
-Country.create(:id=>35,:iso=>"BW",:name=>"Botswana")
-Country.create(:id=>36,:iso=>"BY",:name=>"Belarus")
-Country.create(:id=>37,:iso=>"BZ",:name=>"Belize")
-Country.create(:id=>38,:iso=>"CA",:name=>"Canada")
-Country.create(:id=>39,:iso=>"CC",:name=>"Cocos Islands")
-Country.create(:id=>40,:iso=>"CD",:name=>"Democratic Republic of the Congo")
-Country.create(:id=>41,:iso=>"CF",:name=>"Central African Republic")
-Country.create(:id=>42,:iso=>"CG",:name=>"Republic of the Congo")
-Country.create(:id=>43,:iso=>"CH",:name=>"Switzerland")
-Country.create(:id=>44,:iso=>"CI",:name=>"Ivory Coast")
-Country.create(:id=>45,:iso=>"CK",:name=>"Cook Islands")
-Country.create(:id=>46,:iso=>"CL",:name=>"Chile")
-Country.create(:id=>47,:iso=>"CM",:name=>"Cameroon")
-Country.create(:id=>48,:iso=>"CN",:name=>"China")
-Country.create(:id=>49,:iso=>"CO",:name=>"Colombia")
-Country.create(:id=>50,:iso=>"CR",:name=>"Costa Rica")
-Country.create(:id=>51,:iso=>"CU",:name=>"Cuba")
-Country.create(:id=>52,:iso=>"CV",:name=>"Cape Verde")
-Country.create(:id=>53,:iso=>"CW",:name=>"Curacao")
-Country.create(:id=>54,:iso=>"CX",:name=>"Christmas Island")
-Country.create(:id=>55,:iso=>"CY",:name=>"Cyprus")
-Country.create(:id=>56,:iso=>"CZ",:name=>"Czech Republic")
-Country.create(:id=>57,:iso=>"DE",:name=>"Germany")
-Country.create(:id=>58,:iso=>"DJ",:name=>"Djibouti")
-Country.create(:id=>59,:iso=>"DK",:name=>"Denmark")
-Country.create(:id=>60,:iso=>"DM",:name=>"Dominica")
-Country.create(:id=>61,:iso=>"DO",:name=>"Dominican Republic")
-Country.create(:id=>62,:iso=>"DZ",:name=>"Algeria")
-Country.create(:id=>63,:iso=>"EC",:name=>"Ecuador")
-Country.create(:id=>64,:iso=>"EE",:name=>"Estonia")
-Country.create(:id=>65,:iso=>"EG",:name=>"Egypt")
-Country.create(:id=>66,:iso=>"EH",:name=>"Western Sahara")
-Country.create(:id=>67,:iso=>"ER",:name=>"Eritrea")
-Country.create(:id=>68,:iso=>"ES",:name=>"Spain")
-Country.create(:id=>69,:iso=>"ET",:name=>"Ethiopia")
-Country.create(:id=>70,:iso=>"FI",:name=>"Finland")
-Country.create(:id=>71,:iso=>"FJ",:name=>"Fiji")
-Country.create(:id=>72,:iso=>"FK",:name=>"Falkland Islands")
-Country.create(:id=>73,:iso=>"FM",:name=>"Micronesia")
-Country.create(:id=>74,:iso=>"FO",:name=>"Faroe Islands")
-Country.create(:id=>75,:iso=>"FR",:name=>"France")
-Country.create(:id=>76,:iso=>"GA",:name=>"Gabon")
-Country.create(:id=>77,:iso=>"GB",:name=>"United Kingdom")
-Country.create(:id=>78,:iso=>"GD",:name=>"Grenada")
-Country.create(:id=>79,:iso=>"GE",:name=>"Georgia")
-Country.create(:id=>80,:iso=>"GF",:name=>"French Guiana")
-Country.create(:id=>81,:iso=>"GG",:name=>"Guernsey")
-Country.create(:id=>82,:iso=>"GH",:name=>"Ghana")
-Country.create(:id=>83,:iso=>"GI",:name=>"Gibraltar")
-Country.create(:id=>84,:iso=>"GL",:name=>"Greenland")
-Country.create(:id=>85,:iso=>"GM",:name=>"Gambia")
-Country.create(:id=>86,:iso=>"GN",:name=>"Guinea")
-Country.create(:id=>87,:iso=>"GP",:name=>"Guadeloupe")
-Country.create(:id=>88,:iso=>"GQ",:name=>"Equatorial Guinea")
-Country.create(:id=>89,:iso=>"GR",:name=>"Greece")
-Country.create(:id=>90,:iso=>"GS",:name=>"South Georgia and the South Sandwich Islands")
-Country.create(:id=>91,:iso=>"GT",:name=>"Guatemala")
-Country.create(:id=>92,:iso=>"GU",:name=>"Guam")
-Country.create(:id=>93,:iso=>"GW",:name=>"Guinea-Bissau")
-Country.create(:id=>94,:iso=>"GY",:name=>"Guyana")
-Country.create(:id=>95,:iso=>"HK",:name=>"Hong Kong")
-Country.create(:id=>96,:iso=>"HM",:name=>"Heard Island and McDonald Islands")
-Country.create(:id=>97,:iso=>"HN",:name=>"Honduras")
-Country.create(:id=>98,:iso=>"HR",:name=>"Croatia")
-Country.create(:id=>99,:iso=>"HT",:name=>"Haiti")
-Country.create(:id=>100,:iso=>"HU",:name=>"Hungary")
-Country.create(:id=>101,:iso=>"ID",:name=>"Indonesia")
-Country.create(:id=>102,:iso=>"IE",:name=>"Ireland")
-Country.create(:id=>103,:iso=>"IL",:name=>"Israel")
-Country.create(:id=>104,:iso=>"IM",:name=>"Isle of Man")
-Country.create(:id=>105,:iso=>"IN",:name=>"India")
-Country.create(:id=>106,:iso=>"IO",:name=>"British Indian Ocean Territory")
-Country.create(:id=>107,:iso=>"IQ",:name=>"Iraq")
-Country.create(:id=>108,:iso=>"IR",:name=>"Iran")
-Country.create(:id=>109,:iso=>"IS",:name=>"Iceland")
-Country.create(:id=>110,:iso=>"IT",:name=>"Italy")
-Country.create(:id=>111,:iso=>"JE",:name=>"Jersey")
-Country.create(:id=>112,:iso=>"JM",:name=>"Jamaica")
-Country.create(:id=>113,:iso=>"JO",:name=>"Jordan")
-Country.create(:id=>114,:iso=>"JP",:name=>"Japan")
-Country.create(:id=>115,:iso=>"KE",:name=>"Kenya")
-Country.create(:id=>116,:iso=>"KG",:name=>"Kyrgyzstan")
-Country.create(:id=>117,:iso=>"KH",:name=>"Cambodia")
-Country.create(:id=>118,:iso=>"KI",:name=>"Kiribati")
-Country.create(:id=>119,:iso=>"KM",:name=>"Comoros")
-Country.create(:id=>120,:iso=>"KN",:name=>"Saint Kitts and Nevis")
-Country.create(:id=>121,:iso=>"KP",:name=>"North Korea")
-Country.create(:id=>122,:iso=>"KR",:name=>"South Korea")
-Country.create(:id=>123,:iso=>"XK",:name=>"Kosovo")
-Country.create(:id=>124,:iso=>"KW",:name=>"Kuwait")
-Country.create(:id=>125,:iso=>"KY",:name=>"Cayman Islands")
-Country.create(:id=>126,:iso=>"KZ",:name=>"Kazakhstan")
-Country.create(:id=>127,:iso=>"LA",:name=>"Laos")
-Country.create(:id=>128,:iso=>"LB",:name=>"Lebanon")
-Country.create(:id=>129,:iso=>"LC",:name=>"Saint Lucia")
-Country.create(:id=>130,:iso=>"LI",:name=>"Liechtenstein")
-Country.create(:id=>131,:iso=>"LK",:name=>"Sri Lanka")
-Country.create(:id=>132,:iso=>"LR",:name=>"Liberia")
-Country.create(:id=>133,:iso=>"LS",:name=>"Lesotho")
-Country.create(:id=>134,:iso=>"LT",:name=>"Lithuania")
-Country.create(:id=>135,:iso=>"LU",:name=>"Luxembourg")
-Country.create(:id=>136,:iso=>"LV",:name=>"Latvia")
-Country.create(:id=>137,:iso=>"LY",:name=>"Libya")
-Country.create(:id=>138,:iso=>"MA",:name=>"Morocco")
-Country.create(:id=>139,:iso=>"MC",:name=>"Monaco")
-Country.create(:id=>140,:iso=>"MD",:name=>"Moldova")
-Country.create(:id=>141,:iso=>"ME",:name=>"Montenegro")
-Country.create(:id=>142,:iso=>"MF",:name=>"Saint Martin")
-Country.create(:id=>143,:iso=>"MG",:name=>"Madagascar")
-Country.create(:id=>144,:iso=>"MH",:name=>"Marshall Islands")
-Country.create(:id=>145,:iso=>"MK",:name=>"Macedonia")
-Country.create(:id=>146,:iso=>"ML",:name=>"Mali")
-Country.create(:id=>147,:iso=>"MM",:name=>"Myanmar")
-Country.create(:id=>148,:iso=>"MN",:name=>"Mongolia")
-Country.create(:id=>149,:iso=>"MO",:name=>"Macao")
-Country.create(:id=>150,:iso=>"MP",:name=>"Northern Mariana Islands")
-Country.create(:id=>151,:iso=>"MQ",:name=>"Martinique")
-Country.create(:id=>152,:iso=>"MR",:name=>"Mauritania")
-Country.create(:id=>153,:iso=>"MS",:name=>"Montserrat")
-Country.create(:id=>154,:iso=>"MT",:name=>"Malta")
-Country.create(:id=>155,:iso=>"MU",:name=>"Mauritius")
-Country.create(:id=>156,:iso=>"MV",:name=>"Maldives")
-Country.create(:id=>157,:iso=>"MW",:name=>"Malawi")
-Country.create(:id=>158,:iso=>"MX",:name=>"Mexico")
-Country.create(:id=>159,:iso=>"MY",:name=>"Malaysia")
-Country.create(:id=>160,:iso=>"MZ",:name=>"Mozambique")
-Country.create(:id=>161,:iso=>"NA",:name=>"Namibia")
-Country.create(:id=>162,:iso=>"NC",:name=>"New Caledonia")
-Country.create(:id=>163,:iso=>"NE",:name=>"Niger")
-Country.create(:id=>164,:iso=>"NF",:name=>"Norfolk Island")
-Country.create(:id=>165,:iso=>"NG",:name=>"Nigeria")
-Country.create(:id=>166,:iso=>"NI",:name=>"Nicaragua")
-Country.create(:id=>167,:iso=>"NL",:name=>"Netherlands")
-Country.create(:id=>168,:iso=>"NO",:name=>"Norway")
-Country.create(:id=>169,:iso=>"NP",:name=>"Nepal")
-Country.create(:id=>170,:iso=>"NR",:name=>"Nauru")
-Country.create(:id=>171,:iso=>"NU",:name=>"Niue")
-Country.create(:id=>172,:iso=>"NZ",:name=>"New Zealand")
-Country.create(:id=>173,:iso=>"OM",:name=>"Oman")
-Country.create(:id=>174,:iso=>"PA",:name=>"Panama")
-Country.create(:id=>175,:iso=>"PE",:name=>"Peru")
-Country.create(:id=>176,:iso=>"PF",:name=>"French Polynesia")
-Country.create(:id=>177,:iso=>"PG",:name=>"Papua New Guinea")
-Country.create(:id=>178,:iso=>"PH",:name=>"Philippines")
-Country.create(:id=>179,:iso=>"PK",:name=>"Pakistan")
-Country.create(:id=>180,:iso=>"PL",:name=>"Poland")
-Country.create(:id=>181,:iso=>"PM",:name=>"Saint Pierre and Miquelon")
-Country.create(:id=>182,:iso=>"PN",:name=>"Pitcairn")
-Country.create(:id=>183,:iso=>"PR",:name=>"Puerto Rico")
-Country.create(:id=>184,:iso=>"PS",:name=>"Palestinian Territory")
-Country.create(:id=>185,:iso=>"PT",:name=>"Portugal")
-Country.create(:id=>186,:iso=>"PW",:name=>"Palau")
-Country.create(:id=>187,:iso=>"PY",:name=>"Paraguay")
-Country.create(:id=>188,:iso=>"QA",:name=>"Qatar")
-Country.create(:id=>189,:iso=>"RE",:name=>"Reunion")
-Country.create(:id=>190,:iso=>"RO",:name=>"Romania")
-Country.create(:id=>191,:iso=>"RS",:name=>"Serbia")
-Country.create(:id=>192,:iso=>"RU",:name=>"Russia")
-Country.create(:id=>193,:iso=>"RW",:name=>"Rwanda")
-Country.create(:id=>194,:iso=>"SA",:name=>"Saudi Arabia")
-Country.create(:id=>195,:iso=>"SB",:name=>"Solomon Islands")
-Country.create(:id=>196,:iso=>"SC",:name=>"Seychelles")
-Country.create(:id=>197,:iso=>"SD",:name=>"Sudan")
-Country.create(:id=>198,:iso=>"SE",:name=>"Sweden")
-Country.create(:id=>199,:iso=>"SG",:name=>"Singapore")
-Country.create(:id=>200,:iso=>"SH",:name=>"Saint Helena")
-Country.create(:id=>201,:iso=>"SI",:name=>"Slovenia")
-Country.create(:id=>202,:iso=>"SJ",:name=>"Svalbard and Jan Mayen")
-Country.create(:id=>203,:iso=>"SK",:name=>"Slovakia")
-Country.create(:id=>204,:iso=>"SL",:name=>"Sierra Leone")
-Country.create(:id=>205,:iso=>"SM",:name=>"San Marino")
-Country.create(:id=>206,:iso=>"SN",:name=>"Senegal")
-Country.create(:id=>207,:iso=>"SO",:name=>"Somalia")
-Country.create(:id=>208,:iso=>"SR",:name=>"Suriname")
-Country.create(:id=>209,:iso=>"ST",:name=>"Sao Tome and Principe")
-Country.create(:id=>210,:iso=>"SV",:name=>"El Salvador")
-Country.create(:id=>211,:iso=>"SX",:name=>"Sint Maarten")
-Country.create(:id=>212,:iso=>"SY",:name=>"Syria")
-Country.create(:id=>213,:iso=>"SZ",:name=>"Swaziland")
-Country.create(:id=>214,:iso=>"TC",:name=>"Turks and Caicos Islands")
-Country.create(:id=>215,:iso=>"TD",:name=>"Chad")
-Country.create(:id=>216,:iso=>"TF",:name=>"French Southern Territories")
-Country.create(:id=>217,:iso=>"TG",:name=>"Togo")
-Country.create(:id=>218,:iso=>"TH",:name=>"Thailand")
-Country.create(:id=>219,:iso=>"TJ",:name=>"Tajikistan")
-Country.create(:id=>220,:iso=>"TK",:name=>"Tokelau")
-Country.create(:id=>221,:iso=>"TL",:name=>"East Timor")
-Country.create(:id=>222,:iso=>"TM",:name=>"Turkmenistan")
-Country.create(:id=>223,:iso=>"TN",:name=>"Tunisia")
-Country.create(:id=>224,:iso=>"TO",:name=>"Tonga")
-Country.create(:id=>225,:iso=>"TR",:name=>"Turkey")
-Country.create(:id=>226,:iso=>"TT",:name=>"Trinidad and Tobago")
-Country.create(:id=>227,:iso=>"TV",:name=>"Tuvalu")
-Country.create(:id=>228,:iso=>"TW",:name=>"Taiwan")
-Country.create(:id=>229,:iso=>"TZ",:name=>"Tanzania")
-Country.create(:id=>230,:iso=>"UA",:name=>"Ukraine")
-Country.create(:id=>231,:iso=>"UG",:name=>"Uganda")
-Country.create(:id=>232,:iso=>"UM",:name=>"United States Minor Outlying Islands")
-Country.create(:id=>233,:iso=>"US",:name=>"United States")
-Country.create(:id=>234,:iso=>"UY",:name=>"Uruguay")
-Country.create(:id=>235,:iso=>"UZ",:name=>"Uzbekistan")
-Country.create(:id=>236,:iso=>"VA",:name=>"Vatican")
-Country.create(:id=>237,:iso=>"VC",:name=>"Saint Vincent and the Grenadines")
-Country.create(:id=>238,:iso=>"VE",:name=>"Venezuela")
-Country.create(:id=>239,:iso=>"VG",:name=>"British Virgin Islands")
-Country.create(:id=>240,:iso=>"VI",:name=>"U.S. Virgin Islands")
-Country.create(:id=>241,:iso=>"VN",:name=>"Vietnam")
-Country.create(:id=>242,:iso=>"VU",:name=>"Vanuatu")
-Country.create(:id=>243,:iso=>"WF",:name=>"Wallis and Futuna")
-Country.create(:id=>244,:iso=>"WS",:name=>"Samoa")
-Country.create(:id=>245,:iso=>"YE",:name=>"Yemen")
-Country.create(:id=>246,:iso=>"YT",:name=>"Mayotte")
-Country.create(:id=>247,:iso=>"ZA",:name=>"South Africa")
-Country.create(:id=>248,:iso=>"ZM",:name=>"Zambia")
-Country.create(:id=>249,:iso=>"ZW",:name=>"Zimbabwe")
-Country.create(:id=>250,:iso=>"CS",:name=>"Serbia and Montenegro")
-Country.create(:id=>251,:iso=>"AN",:name=>"Netherlands Antilles")
+#Country.create(:id=>1,:iso=>"AD",:name=>"Andorra")
+connection = ActiveRecord::Base.connection();
+connection.execute("
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (1,'Andorra','Андорра','AD',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (2,'United Arab Emirates','Объединенные Арабские Эмираты','AE',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (3,'Antigua and Barbuda','Антигуа и Барбуда','AG',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (4,'Anguilla','Ангилья','AI',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (5,'Albania','Албания','AL',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (6,'Armenia','Армения','AM',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (7,'Netherland Antilles','Антильские Острова','AN',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (8,'Angola','Ангола','AO',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (9,'Antarctica','Антарктика','AQ',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (10,'Argentina','Аргентина','AR',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (11,'American Samoa','Американское Самоа','AS',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (12,'Austria','Австрия','AT',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (13,'Australia','Австралия','AU',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (14,'Aruba','Аруба','AW',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (15,'Azerbaijan','Азербайджан','AZ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (16,'Bosnia-Herzegovina','Босния и Герцеговина','BA',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (17,'Barbados','Барбадос','BB',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (18,'Bangladesh','Бангладеш','BD',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (19,'Belgium','Бельгия','BE',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (20,'Burkina Faso','Буркина-Фасо','BF',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (21,'Bulgaria','Болгария','BG',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (22,'Bahrain','Бахрейн','BH',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (23,'Burundi','Бурунди','BI',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (24,'Benin','Бенин','BJ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (25,'Bermuda','Бермудские Острова','BM',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (26,'Brunei Darussalam','Бруней','BN',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (27,'Bolivia','Боливия','BO',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (28,'Brazil','Бразилия','BR',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (29,'Bahamas','Багамские Острова','BS',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (30,'Buthan','Бутан','BT',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (31,'Bouvet Island','Буве','BV',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (32,'Botswana','Ботсвана','BW',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (33,'Belarus','Беларусь','BY',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (34,'Belize','Белиз','BZ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (35,'Canada','Канада','CA',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (36,'Cocos (Keeling) Isl.','Кокосовые Острова','CC',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (37,'Central African Rep.','Центральноафриканская Республика','CF',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (38,'Republic of the Congo','Республика Конго','CG',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (39,'Switzerland','Швейцария','CH',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (40,'Ivory Coast','Кот-д\`Ивуар','CI',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (41,'Cook Islands','Кука острова','CK',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (42,'Chile','Чили','CL',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (43,'Cameroon','Камерун','CM',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (44,'China','Китай','CN',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (45,'Colombia','Колумбия','CO',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (46,'Costa Rica','Коста-Рика','CR',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (47,'Democratic Republic of the Congo','Конго, Демократическая Республика','CD',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (48,'Cuba','Куба','CU',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (49,'Cape Verde','Кабо-Верде','CV',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (50,'Christmas Island','Остров Рождества','CX',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (51,'Cyprus','Кипр','CY',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (52,'Czech Republic','Чехия','CZ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (53,'Germany','Германия','DE',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (54,'Djibouti','Джибути','DJ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (55,'Denmark','Дания','DK',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (56,'Dominica','Доминика','DM',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (57,'Dominican Republic','Доминиканская Республика','DO',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (58,'Algeria','Алжир','DZ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (59,'Ecuador','Эквадор','EC',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (60,'Estonia','Эстония','EE',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (61,'Egypt','Египет','EG',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (62,'Western Sahara','Западная Сахара','EH',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (63,'Spain','Испания','ES',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (64,'Ethiopia','Эфиопия','ET',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (65,'Finland','Финляндия','FI',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (66,'Fiji','Фиджи','FJ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (67,'Falkland Islands','Фолклендские (Мальвинские) острова','FK',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (68,'Micronesia','Микронезия','FM',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (69,'Faroe Islands','Фарерские Острова','FO',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (70,'France','Франция','FR',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (71,'French Polynesia','Французская Полинезия','PF',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (72,'Gabon','Габон','GA',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (73,'United Kingdom (Great Britain)','Великобритания','GB',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (74,'Grenada','Гренада','GD',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (75,'Georgia','Грузия','GE',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (76,'Guyana (Fr.)','Гайана','GF',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (77,'Ghana','Гана','GH',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (78,'Gibraltar','Гибралтар','GI',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (79,'Greenland','Гренландия','GL',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (80,'Gambia','Гамбия','GM',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (81,'Guinea','Гвинея','GN',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (82,'Guadeloupe (Fr.)','Гваделупа','GP',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (83,'Equatorial Guinea','Экваториальная Гвинея','GQ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (84,'Greece','Греция','GR',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (85,'Guatemala','Гватемала','GT',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (86,'Guam (US)','Гуам','GU',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (87,'Guinea Bissau','Гвинея-Бисау','GW',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (88,'Guyana','Гвиана','GY',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (89,'Hong Kong','Гонконг','HK',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (90,'Heard Island and McDonald Islands','Острова Херд и Макдональд','HM',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (91,'Honduras','Гондурас','HN',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (92,'Croatia','Хорватия','HR',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (93,'Haiti','Гаити','HT',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (94,'Hungary','Венгрия','HU',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (95,'Indonesia','Индонезия','ID',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (96,'Ireland','Ирландия','IE',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (97,'Israel','Израиль','IL',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (98,'India','Индия','IN',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (100,'Iraq','Ирак','IQ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (101,'Iran','Иран','IR',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (102,'Iceland','Исландия','IS',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (103,'Italy','Италия','IT',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (104,'Jamaica','Ямайка','JM',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (105,'Jordan','Иордания','JO',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (106,'Japan','Япония','JP',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (107,'Kenya','Кения','KE',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (108,'Kirgistan','Кыргызстан','KG',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (109,'Cambodia','Камбоджа','KH',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (110,'Kiribati','Кирибати','KI',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (111,'Comoros','Коморские Острова','KM',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (112,'St.Kitts Nevis Anguilla','Сент-Киттс и Невис','KN',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (113,'Korea (North)','Корея (Северная)','KP',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (114,'Korea (South)','Корея (Южная)','KR',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (115,'Kuwait','Кувейт','KW',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (116,'Cayman Islands','Каймановы Острова','KY',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (117,'Kazachstan','Казахстан','KZ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (118,'Laos','Лаос','LA',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (119,'Lebanon','Ливан','LB',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (120,'Saint Lucia','Сент-Люсия','LC',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (121,'Liechtenstein','Лихтенштейн','LI',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (122,'Sri Lanka','Шри-Ланка','LK',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (123,'Liberia','Либерия','LR',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (124,'Lesotho','Лесото','LS',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (125,'Lithuania','Литва','LT',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (126,'Luxembourg','Люксембург','LU',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (127,'Latvia','Латвия','LV',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (128,'Libya','Ливия','LY',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (129,'Morocco','Морокко','MA',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (130,'Monaco','Монако','MC',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (131,'Moldavia','Молдова','MD',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (132,'Madagascar','Мадагаскар','MG',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (133,'Marshall Islands','Маршалловы Острова','MH',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (134,'Mali','Мали','ML',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (135,'Myanmar','Мьянма','MM',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (136,'Mongolia','Монголия','MN',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (137,'Macau','Аомынь','MO',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (138,'Northern Mariana Isl.','Северные Марианские острова','MP',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (139,'Martinique (Fr.)','Мартиника','MQ',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (140,'Mauritania','Мавритания','MR',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (141,'Montserrat','Монтсеррат','MS',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (142,'Malta','Мальта','MT',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (143,'Mauritius','Маврикий','MU',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (144,'Maldives','Мальдивы','MV',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (145,'Malawi','Малави','MW',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (146,'Mexico','Мексика','MX',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (147,'Malaysia','Малайзия','MY',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (148,'Mozambique','Мозамбик','MZ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (149,'Namibia','Намибия','NA',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (150,'New Caledonia (Fr.)','Новая Каледония','NC',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (151,'Niger','Нигер','NE',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (152,'Norfolk Island','Норфолк','NF',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (153,'Nigeria','Нигерия','NG',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (154,'Nicaragua','Никарагуа','NI',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (155,'Netherlands','Нидерланды','NL',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (156,'Norway','Норвегия','NO',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (157,'Nepal','Непал','NP',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (158,'Nauru','Науру','NR',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (160,'Niue','Ниуэ','NU',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (161,'New Zealand','Новая Зеландия','NZ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (162,'Oman','Оман','OM',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (163,'Panama','Панама','PA',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (164,'Peru','Перу','PE',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (165,'French Southern and Antarctic Lands','Французские Южные и Антарктические Территории','TF',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (166,'Papua New','Папуа — Новая Гвинея','PG',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (167,'Philippines','Филиппины','PH',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (168,'Pakistan','Пакистан','PK',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (169,'Poland','Польша','PL',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (170,'St. Pierre & Miquelon','Сен-Пьер и Микелон','PM',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (171,'Pitcairn','Питкэрн','PN',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (172,'Puerto Rico','Пуэрто-Рико','PR',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (173,'Portugal','Португалия','PT',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (174,'Palau','Палау','PW',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (175,'Paraguay','Парагвай','PY',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (176,'Qatar','Катар','QA',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (177,'Reunion (Fr.)','Реюньон','RE',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (178,'Romania','Румыния','RO',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (179,'Russia','Россия','RU',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (180,'Rwanda','Руанда','RW',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (181,'Saudi Arabia','Саудовская Аравия','SA',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (182,'Solomon Islands','Соломоновы Острова','SB',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (183,'Seychelles','Сейшельские острова','SC',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (184,'Sudan','Судан','SD',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (185,'Sweden','Швеция','SE',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (186,'Singapore','Сингапур','SG',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (187,'St. Helena','Остров Святой Елены','SH',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (188,'Slovenia','Словения','SI',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (189,'Svalbard & Jan Mayen Is','Свальбард','SJ',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (190,'Slovak Republic','Словакия','SK',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (191,'Sierra Leone','Сьерра-Леоне','SL',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (192,'San Marino','Сан-Марино','SM',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (193,'Senegal','Сенегал','SN',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (194,'Somalia','Сомали','SO',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (195,'Suriname','Суринам','SR',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (196,'St. Tome and Principe','Сан-Томе и Принсипи','ST',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (197,'El Salvador','Сальвадор','SV',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (198,'Syria','Сирия','SY',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (199,'Swaziland','Свазиленд','SZ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (200,'Turks and Caicos Islands','Тёркс и Кайкос','TC',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (201,'Chad','Чад','TD',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (203,'Togo','Того','TG',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (204,'Thailand','Таиланд','TH',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (205,'Tadjikistan','Таджикистан','TJ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (206,'Tokelau','Токелау','TK',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (207,'Turkmenistan','Туркменистан','TM',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (208,'Tunisia','Тунис','TN',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (209,'Tonga','Тонга','TO',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (210,'East Timor','Восточный Тимор','TP',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (211,'Turkey','Турция','TR',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (212,'Trinidad & Tobago','Тринидад и Тобаго','TT',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (213,'Tuvalu','Тувалу','TV',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (214,'Taiwan','Тайвань','TW',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (215,'Tanzania','Танзания','TZ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (216,'Ukraine','Украина','UA',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (217,'Uganda','Уганда','UG',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (218,'United States Minor Outlying Islands','Внешние малые острова (США)','UM',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (219,'United States','Соединенные Штаты Америки','US',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (220,'Uruguay','Уругвай','UY',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (221,'Uzbekistan','Узбекистан','UZ',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (222,'Vatican City State','Ватикан','VA',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (223,'St.Vincent & Grenadines','Сент-Винсент и Гренадины','VC',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (224,'Venezuela','Венесуэла','VE',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (225,'Virgin Islands (British)','Виргинские Острова (Британские)','VG',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (226,'Virgin Islands (US)','Виргинские Острова (США)','VI',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (227,'Vietnam','Вьетнам','VN',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (228,'Vanuatu','Вануату','VU',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (229,'Wallis & Futuna Islands','Острова Уоллис и Футуна','WF',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (230,'Samoa','Самоа','WS',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (231,'Yemen','Йемен','YE',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (232,'Montenegro','Черногория','ME',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (233,'South Africa','Южно-Африканская Республика','ZA',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (234,'Zambia','Замбия','ZM',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (235,'Serbia','Сербия','RS',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (236,'Zimbabwe','Зимбабве','ZW',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (238,'Abkhazia','Абхазия','',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (239,'Azores','Азорские острова','PT',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (240,'Åland Islands','Аландские острова','AX',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (241,'Afghanistan','Афганистан','AF',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (242,'British Indian Ocean Territory','Британская территория в Индийском океане','IO',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (243,'Guernsey','Гернси','GG',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (244,'Jersey','Джерси','JE',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (245,'Kosovo','Косово','',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (246,'Mayotte','Майотта','YT',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (247,'Republic of Macedonia','Македония','MK',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (248,'Isle of Man','Остров Мэн','IM',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (249,'Nagorno-Karabakh Republic','Нагорно-Карабахская Республика','',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (250,'Palestine','Палестина','PS',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (251,'Transnistria','Приднестровье','',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (252,'Northern Cyprus','Турецкая Республика Северного Кипра','NC',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (253,'Republic of Somaliland','Сомалиленд','',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (254,'Tamil Eelam','Тамил-Илам','',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (255,'Eritrea','Эритрея','ER',0,1);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (256,'South Georgia and the South Sandwich Islands','Южная Георгия и Южные Сандвичевы острова','GS',0,0);
+INSERT INTO countries (id,name_en,name,iso,_order,independent) VALUES (257,'South Ossetia','Южная Осетия','',0,0);
+");

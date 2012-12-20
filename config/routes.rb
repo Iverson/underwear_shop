@@ -3,9 +3,6 @@ UnderwearShop::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-
-  get "favorites/index"
-
   devise_for :users, :controllers => { :registrations => "registrations" }
 
   resources :passwords, :only => [:edit, :update]
@@ -38,6 +35,8 @@ UnderwearShop::Application.routes.draw do
   post 'favorite/add' => 'products#to_favorite'
   
   resources :favorites, :only => [:index, :create, :destroy]
+  
+  get ':page' => 'static#show'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

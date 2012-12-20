@@ -2,11 +2,11 @@
     
     <% if !@promos.empty? %>
 	<div class="slideshow">
-		<div id="slideshow0" class="nivoSlider" style="width: 260px; height: 372px;">
+		<div id="slideshow0" class="nivoSlider" style="width: 300px; height: 400px;">
 			
 			<% @promos.each do |promo | %>
 			<a  href="#">
-				<img title="&lt;div class=&quot;bann-price&quot;&gt; 	&lt;span class=&quot;second&quot;&gt;<%= promo.sum %>&lt;/span&gt; &lt;span class=&quot;first&quot;&gt;р&lt;/span&gt; &lt;span class=&quot;third&quot;&gt;&lt;/span&gt;&lt;span class=&quot;four&quot;&gt;скидка <%= promo.discount %>%&lt;/span&gt;     &lt;div class=&quot;name&quot;&gt; <%= promo.name %> &lt;/div&gt;     &lt;span&gt; <%= promo.text %> &lt;/span&gt;     &lt;div class=&quot;but-container&quot;&gt;     	&lt;a href=&quot;<%= section_path(Section.find(1)) %>&quot; class=&quot;banner-button&quot;&gt;Купить!&lt;/a&gt;     &lt;/div&gt; &lt;/div&gt;" src="<%= promo.promo_image.image.url(:slideshow) %>" />
+				<img title="&lt;div class=&quot;bann-price&quot;&gt; 	&lt;span class=&quot;second&quot;&gt;<%= promo.sum %>&lt;/span&gt; &lt;span class=&quot;first&quot;&gt;р&lt;/span&gt; &lt;span class=&quot;third&quot;&gt;&lt;/span&gt;&lt;span class=&quot;four&quot;&gt;скидка <%= promo.discount %>%&lt;/span&gt;     &lt;div class=&quot;name&quot;&gt; <%= promo.name %> &lt;/div&gt;     &lt;span&gt; <%= promo.text %> &lt;/span&gt;     &lt;div class=&quot;but-container&quot;&gt;     	     &lt;/div&gt; &lt;/div&gt;" src="<%= promo.promo_image.image.url(:slideshow) %>" />
 			</a>
 			<% end %>
 			
@@ -31,19 +31,7 @@
     });
 
     </script> 
-    <!--script type="text/javascript">
-    $(document).ready(function(){
-        $(function(){
-            $('.nivo-controlNav a').eq(0).addClass('slide1');
-            $('.nivo-controlNav a').eq(1).addClass('slide2');
-            $('.nivo-controlNav a').eq(2).addClass('slide3');
-            $('.nivo-controlNav a').eq(3).addClass('slide4');
-            $('.nivo-controlNav a').eq(4).addClass('slide5');
-            $('.nivo-controlNav a').eq(5).addClass('slide6');
-        });
 
-    });
-    </script-->
     <% end %>
 
     

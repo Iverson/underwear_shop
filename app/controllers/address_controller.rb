@@ -1,4 +1,6 @@
 class AddressController < ApplicationController
+  before_filter :authenticate_user!
+  
   def edit
     @address = current_user.address
   end

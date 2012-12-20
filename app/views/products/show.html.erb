@@ -12,7 +12,7 @@
             <div id="gallery-<%= @product.id %>" class="image-additional">
 
                 <% @product.pictures.each_with_index do |img, i| %>
-                    <a href="<%= img.image.url(:detail) %>" title="<%= @product.name %>" rel="item-<%= @product.id %>" class="js-fancybox"></a>
+                    <a href="<%= img.image.url(:zoom) %>" title="<%= @product.name %>" rel="item-<%= @product.id %>" class="js-fancybox"></a>
                     <a href="javascript:void(0);" class="<% if i == 0 %>zoomThumbActive<% end %>" rel="{gallery: 'gal1', smallimage: '<%= img.image.url(:detail) %>',largeimage: '<%= img.image.url(:zoom) %>'}">
                         <%= image_tag img.image.url(:small) %>
                     </a>
@@ -74,16 +74,6 @@
                 </div>
                 <% end %>
             </div>
-<%
-=begin
-            <div class="review">
-                <div><img src="/assets/stars-0.png" alt="0 reviews" />&nbsp;&nbsp;<div class="btn-rew"></div></div>
-
-                <div class="share">
-                </div>
-            </div>
-=end 
-%>
         </div>
     </div>
 

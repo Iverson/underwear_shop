@@ -3,7 +3,7 @@ class PromoImage < ActiveRecord::Base
   belongs_to :promo
   
   has_attached_file :image,
-                    :styles => { :slideshow => "260x370#" },
+                    :styles => { :slideshow => "300x400#" },
                     :url  => "/system/promo/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/system/promo/:id/:style/:basename.:extension"
                     

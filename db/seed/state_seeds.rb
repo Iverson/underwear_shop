@@ -2,5 +2,5 @@
 
 
 State.delete_all
-State.create(:id=>1,:name=>"Unpublished")
-State.create(:id=>2,:name=>"Published")
+State.create(:id=>1,:name=>"Неопубликован", :status=>"unpublished")
+State.create(:id=>2,:name=>"Опубликован", :status=>"published")
