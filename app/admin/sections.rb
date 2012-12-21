@@ -1,4 +1,6 @@
 ActiveAdmin.register Section do
+  actions :all, :except => [:show]
+  
   around_filter do |controller, action|
     Section.class_eval do
       def to_param

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121220225117) do
+ActiveRecord::Schema.define(:version => 20121221160647) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20121220225117) do
     t.decimal  "price",      :precision => 6, :scale => 2, :default => 0.0, :null => false
     t.datetime "created_at",                                                :null => false
     t.datetime "updated_at",                                                :null => false
+    t.string   "code"
   end
 
   create_table "favorites", :force => true do |t|
@@ -96,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20121220225117) do
     t.integer  "count"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "size"
   end
 
   create_table "order_states", :force => true do |t|
@@ -135,19 +137,19 @@ ActiveRecord::Schema.define(:version => 20121220225117) do
   end
 
   create_table "products", :force => true do |t|
-    t.integer  "section_id",                                                     :null => false
-    t.integer  "brand_id",                                                       :null => false
-    t.decimal  "price",             :precision => 6, :scale => 2
-    t.string   "name",                                                           :null => false
+    t.integer  "section_id",                                                      :null => false
+    t.integer  "brand_id",                                                        :null => false
+    t.decimal  "price",             :precision => 10, :scale => 2
+    t.string   "name",                                                            :null => false
     t.text     "description"
-    t.integer  "discount",                                        :default => 0, :null => false
-    t.integer  "state_id",                                        :default => 2, :null => false
-    t.datetime "created_at",                                                     :null => false
-    t.datetime "updated_at",                                                     :null => false
-    t.decimal  "purchaise_price",   :precision => 6, :scale => 2
+    t.integer  "discount",                                         :default => 0, :null => false
+    t.integer  "state_id",                                         :default => 2, :null => false
+    t.datetime "created_at",                                                      :null => false
+    t.datetime "updated_at",                                                      :null => false
+    t.decimal  "purchaise_price",   :precision => 6,  :scale => 2
     t.integer  "country_id"
     t.string   "uri"
-    t.integer  "order_items_count",                               :default => 0
+    t.integer  "order_items_count",                                :default => 0
   end
 
   create_table "projects", :force => true do |t|

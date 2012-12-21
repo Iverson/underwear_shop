@@ -1,4 +1,6 @@
 ActiveAdmin.register Product do
+  actions :all, :except => [:show]
+  
   before_filter do
     Product.class_eval do
       def to_param

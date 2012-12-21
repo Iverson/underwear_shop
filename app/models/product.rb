@@ -49,8 +49,15 @@ class Product < ActiveRecord::Base
   end
   
   before_save() do
+    id = self.id
+    if self.new_record?
+      id = Product.last.id + 1
+    end
     if self.uri.empty?
       self.uri = "#{self.name}".parameterize
+    end
+    if Product.where("uri = '#{self.uri}' AND NOT id = #{id}").exists?
+      self.uri += "-#{id}"
     end
   end
   

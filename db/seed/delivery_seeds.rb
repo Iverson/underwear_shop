@@ -2,5 +2,4 @@
 
 
 Delivery.delete_all
-Delivery.create(:id=>1,:name=>"Курьером", :price=>250)
-Delivery.create(:id=>2,:name=>"Самовывоз")
+Delivery.create(:id=>1,:code=>"courier", :name=>"Курьером", :price=>250)

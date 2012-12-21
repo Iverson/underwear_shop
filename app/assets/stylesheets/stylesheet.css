@@ -1290,8 +1290,7 @@ a.button-2:hover {	background: url('/assets/button-bg.png') 0 bottom repeat-x #5
 a.button:hover {	color:#aee75c !important;}
 
 .buttons {
-	overflow: auto;
-	padding: 15px 0;
+	padding: 15px 0 0 0;
 	margin-bottom: 5px;
 	
 }
@@ -1423,13 +1422,13 @@ a.button:hover {	color:#aee75c !important;}
 	line-height: 16px;
 
 }
-.htabs a {
+.htabs .tab {
 	border-top: 1px solid #E7E7E7;
 	border-left: 1px solid #E7E7E7;
 	border-right: 1px solid #E7E7E7; 
 	border-bottom: 1px solid #E7E7E7; 
 	background: #FFFFFF;
-	padding:6px 10px 6px 10px;
+	padding:6px 10px 6px 13px;
 	float: left;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
@@ -1438,11 +1437,11 @@ a.button:hover {	color:#aee75c !important;}
 	text-decoration: none;
 	color: #737373;
 	margin-right:-1px;
-	display: none;
+	/*display: none;*/
 	border-radius:3px 3px 0 0;
 }
 #idTab1 p{ font-size:12px; color:#191919!important; font-weight:normal!important; line-height:20px; margin-bottom:5px;}
-.htabs a.selected {
+.htabs .tab.selected {
 	padding-bottom: 7px;
 	background: #FFFFFF;
 	border-bottom:0;
@@ -1453,11 +1452,9 @@ a.button:hover {	color:#aee75c !important;}
 	border-right: 1px solid #E7E7E7;
 	border-bottom: 1px solid #E7E7E7;
 	border-top: 1px solid #E7E7E7;
-	padding: 16px 18px 10px 18px;
+	padding: 16px 15px 10px 15px;
 	z-index: 2;
 	border-radius:0 3px 3px 3px;
-	float:left;
-	width:690px;
 	background:#FFF;
 }
 /* box */
@@ -2071,10 +2068,8 @@ background:url(/assets/tail-manuf.gif) 0px 0px repeat-x #f8f8f8;
     background: url("/assets/list_a.png") no-repeat scroll 0 top transparent;
     display: inline-block;
     height:24px;
-    margin-left:8px;
-    margin-right:5px;
+
     width:25px;
-	float:left;
 	cursor: auto;
 }
 #grid_a {
@@ -2084,17 +2079,17 @@ background:url(/assets/tail-manuf.gif) 0px 0px repeat-x #f8f8f8;
     text-indent: -9999px;
     width:25px;
 	cursor: pointer;
+	margin-left:8px;
+    margin-right:0px;
 }
 .product-filter .display b{float:left; padding-top:3px; font-size:11px; font-weight:bold;}
 #list_a {
     background: url("/assets/list_a.png") no-repeat scroll 0 bottom transparent;
     display: inline-block;
     height:24px;
-    margin-left:8px;
-    margin-right:5px;
+    
     text-indent: -9999px;
     width:25px;
-	float:left;
 	cursor: pointer;
 }
 #grid_a.active {
@@ -2372,6 +2367,7 @@ position:relative; margin-left:-5px;
 }
 .padd-avalib{ padding:15px 0 10px 0;}
 .product-info .description {
+	margin-bottom: 26px;
 	border-top: 1px solid #E7E7E7;
 	border-bottom: 1px solid #E7E7E7;
 	padding:15px 5px 10px 0px;
@@ -3109,7 +3105,7 @@ background: url(/assets/tail-manuf.gif) 0 0 repeat-x #F8F8F8;
     float: left;
     height: 233px;
     padding: 15px 20px 32px;
-    width: 295px;
+    width: 285px;
 }
 .checkout-content.opt .right {
     background: url("/assets/login-content-right.gif") no-repeat  0 0 #F8F8F8;
@@ -3401,7 +3397,10 @@ input#sub_category, input#description { position:relative; top:2px;}
 /* AJAX Add to Cart Confirm by Harryo*/
 .success, .warning, .attention, .information, .rev-success {
 	padding: 10px 10px 10px 10px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 	color: #555;
 }
 .success a, .warning a, .attention a, .information a {

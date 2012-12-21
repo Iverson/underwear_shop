@@ -61,7 +61,7 @@
         <div class="payment">
             <%= simple_form_for(@order, :as => "order", :url => "/order/confirm", :html => { :method => :post }) do |f| %>
             
-            <%= f.hidden_field :order_state_id, :value => 2 %>
+            <%= f.hidden_field :order_state_id, :value => OrderState.where(:status => "recived").first.id %>
             <div class="buttons">
                 <div class="right">
                     <%= f.button :submit, "Подтвердить заказ", :class => "b-btn" %>

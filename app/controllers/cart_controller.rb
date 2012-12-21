@@ -82,7 +82,7 @@ class CartController < ApplicationController
     self.check_promos
     
     respond_to do |format|
-      format.html { redirect_to cart_index_url, notice: 'Товар добавлен в корзину.' }
+      format.html { redirect_to cart_index_url }
       format.json { render json: @cart.to_json().html_safe }
     end
   end
@@ -156,7 +156,7 @@ class CartController < ApplicationController
       @order = Order.new
 
       if user_signed_in?
-        @order.build_address({:address => current_user.address.address, :phone => current_user.phone, :city => current_user.address.city, :fio => current_user.fio, :email => current_user.email})
+        @order.build_address({:address => current_user.address.address, :phone => current_user.phone, :city => current_user.address.city, :fio => current_user.first_name, :email => current_user.email})
       else
         @order.build_address()
       end

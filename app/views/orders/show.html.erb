@@ -1,2 +1,69 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<% @profile = true %>
+
+<% if @order %>
+<h1>Заказ №<%= @order.id %></h1>
+<% else %>
+<h1>Заказ не найден</h1>
+<% end %>
+<div class="box-container">
+    
+    <% if @order %>
+    <div class="count-item">
+        <div class="checkout-product">
+            <table>
+                <thead>
+                    <tr>
+                        <td class="name">Название</td>
+						<td class="ta-center">Размер</td>
+                        <td class="model">Артикул</td>
+                        <td class="quantity">Количество</td>
+                        <td class="price">Цена за шт.</td>
+                        <td class="total">Цена</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <% @order.order_items.each_with_index do |order_item, index| %>
+                    <tr>
+                        <td class="name">
+                            <%= link_to( order_item.product.name, product_path(order_item.product.uri) ) %>
+                        </td>
+						<td class="ta-center"><%#= order_item.size %></td>
+                        <td class="model"><%= order_item.product.id %></td>
+                        <td class="quantity"><%= order_item.count %></td>
+                        <td class="price">
+						    <%= order_item.product.price %>
+						</td>
+                        <td class="total"><%= order_item.product.price*order_item.count %>р</td>
+                    </tr>
+                <% end %>
+                </tbody>
+                
+                <% if @order.delivery %>
+                <tfoot>
+                    <tr>
+                        <td class="price" colspan="4"><b>Под-итог:</b></td>
+                        <td class="total"><%= @order.summ %>р</td>
+                    </tr>
+                    <tr>
+                        <td class="price" colspan="4"><b>Доставка:</b></td>
+                        <td class="total"><%= @order.delivery.price %>р</td>
+                    </tr>
+                    <tr>
+                        <td class="price" colspan="4"><b>Итого:</b></td>
+                        <td class="total"><%= @order.summ + @order.delivery.price %>р</td>
+                    </tr>
+                </tfoot>
+                <% end %>
+            </table>
+        </div>
+    	
+    </div>
+    
+    <% else %>
+        <div class="content">Заказа с данным номером не существует.</div>
+        
+        <div class="buttons">
+    		<div class="right"><%= link_to orders_path, :class => "button-inf-left" do %> <span>Перейти к списку заказов</span> <% end %></div>
+    	</div>
+   <% end %>
+</div>

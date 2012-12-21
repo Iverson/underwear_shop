@@ -16,4 +16,5 @@ class Order < ActiveRecord::Base
   def count
     self.order_items.sum(:count)
   end
+
 end

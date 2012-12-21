@@ -23,10 +23,10 @@
         <div class="extra-wrap">
             <h1><%= @product.name %></h1>
             <div class="description">
-
+                <span>Артикул:</span> <%= @product.brand.id %><br />
                 <span>Брэнд:</span> <a href="#"><%= @product.brand.name %></a><br />
                 <span>Производитель:</span> <%= @product.country.name %><br />
-                <span>Артикул:</span> <%= @product.brand.id %><br />
+                
 
                 <div class="padd-avalib"> <div class="extra-wrap"> <span class="prod-stock-2">Наличие:</span> <div class="prod-stock">На складе</div></div></div>
                 
@@ -74,20 +74,22 @@
                 </div>
                 <% end %>
             </div>
-        </div>
-    </div>
-
-    <div class="wrapper mb-1">
-        <div id="tabs" class="htabs">
-            <a href="#tab-description">Описание</a>
-        </div>
-    </div>
-    <div class="wrapper">
-        <div id="tab-description" class="tab-content">
-            <div class="std">
-                <%= @product.description %>
+            
+            <div class="wrapper mb-1">
+                <div id="tabs" class="htabs">
+                    <div class="tab selected">Описание</div>
+                </div>
             </div>
+            <div class="wrapper">
+                <div id="tab-description" class="tab-content">
+                    <div class="std">
+                        <%= @product.description %>
+                    </div>
 
+                </div>
+            </div>
         </div>
     </div>
+
+    
 </div>   

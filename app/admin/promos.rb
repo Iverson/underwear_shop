@@ -1,4 +1,5 @@
 ActiveAdmin.register Promo do
+  actions :all, :except => [:show]
   
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs "Promo", :multipart => true do

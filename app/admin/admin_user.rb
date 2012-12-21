@@ -1,4 +1,6 @@
-ActiveAdmin.register AdminUser do     
+ActiveAdmin.register AdminUser do
+  actions :all, :except => [:show]
+       
   index do                            
     column :email                     
     column :current_sign_in_at        
