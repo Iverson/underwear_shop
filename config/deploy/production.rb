@@ -1,16 +1,9 @@
-set :deploy_to, "/var/www/#{application}-prod"
+set :deploy_to, "/home/akrasman/#{application}-production"
+# My Rails app uses RJB, so it needs to know where Java lives
 set :domain, "62.76.186.158"
-set :user, "myuser"
+server domain, :app, :web, :db, :primary => true
+set :user, "akrasman"
 set :rails_env, "production"
-set :gem_home, "/home/myuser/ruby/gems/"
-
-# in a shared hosting environment, you often need to specify your own passenger configuration
-desc "copy the .htaccess file (passenger configuration); setup_load_paths.rb (sets GEM_HOME)"
-namespace :deploy do
-  task :copy_htaccess do
-    run "cp #{current_release}/config/htaccess_production #{current_release}/public/.htaccess"
-    run "mv #{current_release}/config/production_setup_load_paths.rb #{current_release}/config/setup_load_paths.rb"
-  end
-end
-
-after "deploy:update_code", "deploy:copy_htaccess"
+# I am root on my staging server and have all the right gems installed
+# so I don't need GEM_HOME to be overridden
+set :gem_home, nil
