@@ -42,7 +42,7 @@
                 <tfoot>
                     <tr>
                         <td class="price" colspan="4"><b>Под-итог:</b></td>
-                        <td class="total"><%= @order.summ %>р</td>
+                        <td class="total"><%= @order.summ-@order.delivery.price %>р</td>
                     </tr>
                     <tr>
                         <td class="price" colspan="4"><b>Доставка:</b></td>
@@ -50,7 +50,7 @@
                     </tr>
                     <tr>
                         <td class="price" colspan="4"><b>Итого:</b></td>
-                        <td class="total"><%= @order.summ + @order.delivery.price %>р</td>
+                        <td class="total"><%= @order.summ %>р</td>
                     </tr>
                 </tfoot>
                 <% end %>

@@ -51,7 +51,13 @@ class Product < ActiveRecord::Base
   before_save() do
     id = self.id
     if self.new_record?
-      id = Product.last.id + 1
+      
+      if Product.last
+        id = Product.last.id
+      else
+        id = 1
+      end
+      
     end
     if self.uri.empty?
       self.uri = "#{self.name}".parameterize

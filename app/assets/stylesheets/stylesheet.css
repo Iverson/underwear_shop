@@ -3086,12 +3086,13 @@ background: url(/assets/tail-manuf.gif) 0 0 repeat-x #F8F8F8;
 	text-align: right;
 }
 .about-page{ border-bottom:1px solid #E7E7E7; padding-bottom:20px; padding-top:16px; padding-left:14px;}
-.about-page h3{ font-size:15px; font-weight:600;font-family: 'Open Sans', sans-serif;color:#191919; margin:0; padding-bottom:13px;}
+.about-page h3{ font-size:18px; font-weight:600;font-family: 'Open Sans', sans-serif;color:#191919; margin:0; padding-bottom:13px;}
 .about-page-2{padding-bottom:20px; padding-top:16px; padding-left:14px;}
 .about-page-2 h3{ font-size:15px; font-weight:600;font-family: 'Open Sans', sans-serif;color:#191919; margin:0; padding-bottom:13px;}
-.about-page p{ font-size:12px; color:#737373; line-height:17px; margin-bottom:12px;}
-.about-page-2 p{ font-size:12px; color:#737373; line-height:17px; margin-bottom:12px;}
-.about-page ul li{ font-weight:bold; color:#626060; font-size:12px; margin-bottom:4px;background:url('/assets/marker-about.png') 0px 3px no-repeat; padding-left:16px;}
+.about-page p{  margin-bottom:12px;}
+.about-page-2 p{  margin-bottom:12px;}
+.about-page ul {padding-top: 10px;}
+.about-page ul li{ font-size: 12px; line-height: 1.26em;margin-bottom:14px;background:url('/assets/marker-about.png') 0px 3px no-repeat; padding-left:16px;}
 /* button */
 
 

@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :order_state_id, :user_id, :delivery_id, :address_attributes, :comment
+  attr_accessible :order_state_id, :user_id, :delivery_id, :address_attributes, :order_items_attributes, :comment
   
   belongs_to :order_state
   belongs_to :delivery
@@ -8,6 +8,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
   
   accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :order_items, :allow_destroy => true
   
   def summ
     self.order_items.sum{|item| item.price*item.count}+self.delivery.price

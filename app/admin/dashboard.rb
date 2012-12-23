@@ -18,7 +18,7 @@ ActiveAdmin.register_page "Dashboard" do
           table_for Order.all do |f|
             f.column :id
             f.column "User" do |o|
-              link_to o.user.fio, edit_admin_order_path(o)
+              link_to o.address.fio, admin_order_path(o)
             end
             f.column "Phone" do |o|
               o.address.phone
@@ -31,6 +31,7 @@ ActiveAdmin.register_page "Dashboard" do
             end
             f.column "State" do |o|
               link_to o.order_state.name, edit_admin_order_path(o)
+              
             end
           end
         end
