@@ -53,7 +53,7 @@ class Product < ActiveRecord::Base
     if self.new_record?
       
       if Product.last
-        id = Product.last.id
+        id = Product.last.id+1
       else
         id = 1
       end

@@ -1,6 +1,6 @@
 # coding: utf-8
 class OrdersController < ApplicationController
-  before_filter :authenticate_user!, :only => [:index]
+  before_filter :authenticate_user!, :only => [:index, :show]
   
   def index
     @orders = current_user.orders

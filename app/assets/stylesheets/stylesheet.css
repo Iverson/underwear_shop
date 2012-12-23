@@ -1292,7 +1292,8 @@ a.button:hover {	color:#aee75c !important;}
 .buttons {
 	padding: 15px 0 0 0;
 	margin-bottom: 5px;
-	
+	overflow:hidden;
+	zoom: 1;
 }
 .buttons .left {
 	float: left;

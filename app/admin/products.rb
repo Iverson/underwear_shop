@@ -47,6 +47,10 @@ ActiveAdmin.register Product do
         end 
       end
       
+      if f.object.new_record?
+        f.object.pictures.build()
+      end
+      
       f.inputs "Product images" do
         f.has_many :pictures do |p|
           p.input :image, :as => :file, :label => "Image",:hint => p.object.image.nil? ? p.template.content_tag(:span, "No Image Yet") : p.template.image_tag(p.object.image.url(:small))

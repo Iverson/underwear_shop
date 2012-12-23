@@ -43,7 +43,7 @@
                             </div>
                         </td>
                         <td class="action">
-                            <a href="#" class="button js-addToCart" rel="<%= item.product.id %>"><span>В корзину</span></a>
+                            <a href="#" class="button js-addToCart" data-product="<%= item.product.id %>" data-fastadd="<%= item.product.fast_to_cart %>"><span>В корзину</span></a>
                         </td>
                     </tr>
                     <% end %>

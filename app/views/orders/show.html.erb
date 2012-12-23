@@ -27,7 +27,7 @@
                         <td class="name">
                             <%= link_to( order_item.product.name, product_path(order_item.product.uri) ) %>
                         </td>
-						<td class="ta-center"><%#= order_item.size %></td>
+						<td class="ta-center"><%= order_item.size %></td>
                         <td class="model"><%= order_item.product.id %></td>
                         <td class="quantity"><%= order_item.count %></td>
                         <td class="price">
