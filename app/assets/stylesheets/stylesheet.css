@@ -353,7 +353,7 @@ label {
 #header #logo {
 	position: absolute;
 	top:90px;
-	left:0px;
+	left:-4px;
 }
 #language {
 	position: absolute;
@@ -2242,7 +2242,7 @@ position:relative; margin-left:-5px;
 .grid .b-section-products__item .name { 
 	text-align:center;
 	position:absolute;
-	width: 150px;
+	width: 145px;
 	left: 10px;
 	top: 15px;
 }
@@ -3354,8 +3354,8 @@ background: url(/assets/tail-manuf.gif)  0 0 repeat-x #F8F8F8;
 #powered span { float:left; display:block; margin-top:30px;}
 .footer-logo {
 	background:url(/assets/footer-logo.png) no-repeat;
-	width:219px;
-	height:47px;
+	width:220px;
+	height:52px;
 	float:left;
 	margin: 7px 175px 0 0;
 	
