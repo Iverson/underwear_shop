@@ -1,3 +1,4 @@
+# coding: utf-8
 class Promo < ActiveRecord::Base
   scope :published, :conditions => { :state_id => 2 }
   

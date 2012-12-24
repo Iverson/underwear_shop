@@ -837,10 +837,10 @@ label {
 .new-products ul li, .featured ul li {
 	display:inline-block;
 	width:160px;
-	margin-right:10px;
+	margin-right:17px;
 	text-align:left;
 	position:relative;
-	margin-bottom:10px;
+	margin-bottom:25px;
 	vertical-align:top;
 }
 .new-products ul li .image2, .featured ul li .image2 { }
