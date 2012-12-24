@@ -5,7 +5,7 @@ staging:
   searchd_file_path: /home/akrasman/younglovers-stage/shared/db/sphinx
 
 production:
-  port: 3312
+  port: 9313
   bin_path: "/usr/local/sphinx/bin"
   pid_file: /home/akrasman/younglovers-production/shared/tmp/searchd.pid
   searchd_file_path: /home/akrasman/younglovers-production/shared/db/sphinx
