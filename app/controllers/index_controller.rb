@@ -1,7 +1,7 @@
 class IndexController < ApplicationController
   
   def index
-    @products = Product.limit(6)
+    @products = Product.limit(8)
     @promos = Promo.published
 
     respond_to do |format|

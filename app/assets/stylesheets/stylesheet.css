@@ -1657,6 +1657,7 @@ filter: alpha(opacity=85);
 .box-product .image2 {
 	display: block;
 	text-align:center;
+	height: 245px;
 }
 .specials .name { padding-bottom:7px;}
 .center-col .box-product .image2 img { background:#f7f7f7; border-radius:5px 5px 0 0; }
@@ -2140,12 +2141,16 @@ position:relative; margin-left:-5px;
 	border:1px solid #E7E7E7;
 }
 
+.b-section-products.grid {
+	padding-right: 0;
+}
+
 .grid .b-section-products__item {
     display: inline-block;
-    margin: 0 10px 10px 0;
+    margin: 0 10px 20px 0;
     vertical-align: top;
     border: 1px solid #E7E7E7;
-    width:160px;
+    width:145px;
 	height: 354px;
     padding: 10px 10px 6px 10px;
 	border-radius: 3px;
@@ -2213,7 +2218,7 @@ position:relative; margin-left:-5px;
 
 	.b-section-products__item .image .zoom-top {
 		position:absolute;
-		right: 32px;
+		right: 24px;
 		top: 0;
 		margin: 0;
 		cursor: pointer;
