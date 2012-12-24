@@ -203,5 +203,8 @@
 					</div>
 				</div>
 			</div>
+		<% if Rails.env == 'production' %>
+			<%= render :partial => 'shared/counter' %>
+		<% end %>
 </body>
 </html>
