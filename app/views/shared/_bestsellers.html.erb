@@ -9,9 +9,9 @@
 									
 										<% @bestsellers.each do |bs| %>
 										<li>
-											<div class="name maxheight-best"><%= link_to bs.name, bs.uri %></div>
+											<div class="name maxheight-best"><%= link_to bs.name, product_path(bs.uri) %></div>
 											<div class="image">
-												<%= link_to bs do %>
+												<%= link_to product_path(bs.uri) do %>
 													<%= image_tag bs.preview(:small), :width => "50" %>
 												<% end %>
 											</div>
