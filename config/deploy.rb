@@ -55,3 +55,18 @@ namespace :sphinx do
 end
 
 after 'deploy:finalize_update', 'sphinx:symlink_indexes'
+
+# Swap in the maintenance page
+namespace :web do
+  desc "Up maintenance.html"
+  task :disable, :roles => :web do
+    on_rollback { run "rm #{shared_path}/system/maintenance.html" }
+
+    run "if [[ !(-f #{shared_path}/system/maintenance.html) ]] ; then ln -s #{shared_path}/system/maintenance.html.not_active #{shared_path}/system/maintenance.html ; else echo 'maintenance page already up'; fi"
+  end
+  
+  desc "Down maintenance.html"
+  task :enable, :roles => :web do
+    run "rm #{shared_path}/system/maintenance.html"
+  end
+end
