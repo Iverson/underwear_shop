@@ -19,7 +19,7 @@
     
 var checkoutStep = <%= @cart['checkout_step'] %>;
 
-$(document).ready(function() {
+$(window).load(function() {
 	
 	switch (checkoutStep) {
 		case 1:
@@ -36,6 +36,10 @@ $(document).ready(function() {
 		break
 		default:
 	}
+	
+});
+
+$(document).ready(function() {
     
     checkoutTabs = $('.js-checkoutStepCont');
     

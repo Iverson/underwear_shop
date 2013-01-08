@@ -21,7 +21,7 @@ class SectionsController < ApplicationController
     end
     
     @section = Section.where(:uri => params[:id]).first
-    @products = @section.products.order(params[:sort_by]).paginate(:page => params[:page], :per_page => @per_page)
+    @products = @section.products.order(params[:sort_by]).order("discount DESC").paginate(:page => params[:page], :per_page => @per_page)
     
     add_breadcrumb @section.name, section_url
 
