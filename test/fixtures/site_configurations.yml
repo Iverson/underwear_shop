@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  key: MyString
+  value: MyText
+  form_type: MyString
+  form_collection_command: MyString
+
+two:
+  key: MyString
+  value: MyText
+  form_type: MyString
+  form_collection_command: MyString

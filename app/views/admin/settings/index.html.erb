@@ -1,0 +1,11 @@
+<%= semantic_form_for :update_site_configuration, :url => admin_site_configuration_path(0), :method => :put do |form| %>
+	<%= form.inputs do %>
+		<% SiteConfiguration.all.each do |record| %>
+			<%= form.input record.key.to_sym, as: record.form_type.to_sym, input_html: {value: record.value}, :include_blank => false, collection: (options_from_collection_for_select(eval(record.form_collection_command), 'id', 'to_s', record.value) if record.form_collection_command.present?) %>
+		<% end %>
+	<% end %>
+	<%= form.actions do %>
+		<%= form.submit "Update Site Configuration" %>
+		<%#= link_to "Добавить поле", new_admin_site_configuration_path %>
+	<% end %>
+<% end %>

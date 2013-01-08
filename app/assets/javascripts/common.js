@@ -1,4 +1,11 @@
+var yaCounter19019545 = yaCounter19019545 || {reachGoal: function() {}};
+
 $(function() {
+    $('.js-orderConfirm').click(function()
+    {
+          yaCounter19019545.reachGoal('checkoutFinished');
+          return true;
+    });
 	
 	var token = $("meta[name='csrf-token']").attr("content");
 	
@@ -51,6 +58,8 @@ $(function() {
 			data: {instance: id},
 			success: function(data)
 			{
+			    yaCounter19019545.reachGoal('cartAddItem');
+			    
 				var img = $(sender).closest('.js-product').find(".js-productImage");
 				if ( img.length > 0 )
 				{

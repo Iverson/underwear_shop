@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121221160647) do
+ActiveRecord::Schema.define(:version => 20130107222855) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -196,6 +196,17 @@ ActiveRecord::Schema.define(:version => 20121221160647) do
   end
 
   add_index "sections", ["ancestry"], :name => "index_sections_on_ancestry"
+
+  create_table "site_configurations", :force => true do |t|
+    t.string   "key"
+    t.text     "value"
+    t.string   "form_type"
+    t.string   "form_collection_command"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "site_configurations", ["key"], :name => "index_site_configurations_on_key", :unique => true
 
   create_table "states", :force => true do |t|
     t.string   "name",       :null => false
