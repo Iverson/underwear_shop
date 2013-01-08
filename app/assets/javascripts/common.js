@@ -1,4 +1,4 @@
-var yaCounter19019545 = yaCounter19019545 || {reachGoal: function() {}};
+var yaCounter19019545 = yaCounter19019545 || {reachGoal: function() {console.log('yaCounter not loaded!')}};
 
 $(function() {
     $('.js-orderConfirm').click(function()

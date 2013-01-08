@@ -31,9 +31,9 @@
                         <td class="model"><%= order_item.product.id %></td>
                         <td class="quantity"><%= order_item.count %></td>
                         <td class="price">
-						    <%= order_item.product.price %>
+						    <%= order_item.price %>
 						</td>
-                        <td class="total"><%= order_item.product.price*order_item.count %>р</td>
+                        <td class="total"><%= order_item.price*order_item.count %>р</td>
                     </tr>
                 <% end %>
                 </tbody>

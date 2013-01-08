@@ -24,6 +24,10 @@ class Product < ActiveRecord::Base
     
   end
   
+  def final_price
+    self.price * (1 - self.discount.to_f / 100)
+  end
+  
   def preview(size)
     if pictures.exists?
       pictures.first.image(size)

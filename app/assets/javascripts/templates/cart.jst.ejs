@@ -20,7 +20,7 @@
                                     <a href="<%= Routes.product_path(cart['items'][i]['attrs'].uri) %>"><%= cart['items'][i]['ins'][j].name %></a>
                                     <span class="quantity">x&nbsp;<%= cart['items'][i]['ins'][j].count %></span>
 
-									<% if (cart['items'][i]['attrs']['promo']) { %>
+									<% if ( (cart['items'][i]['attrs']['promo']) || (cart['items'][i]['attrs']['discount'] > 0) ) { %>
 										<span class="total"><%= price(cart['items'][i]) %>р</span>
 										<strike><%= cart['items'][i]['attrs'].price %>р</strike>
 										<div class="promo"><span class="red">Акция</span></div>

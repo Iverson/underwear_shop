@@ -32,8 +32,7 @@
 
                 <div class="price">
                     <span class="text-price">Цена:</span>
-                    <span class="price-new"><%= @product.price %>р</span><!--span class="price-old">$13.75</span--> 
-                    <!--span class="reward"><small>Price in reward points: 400</small></span><br /-->
+                    <span class="price-new"><%= @product.final_price %>р</span><span class="price-old"><%= "#{@product.price}р" if @product.discount > 0 %></span>
                 </div>
                 <br />
                 <%= form_tag(:controller => "cart", :action => "add_item", :method => "post") do %>

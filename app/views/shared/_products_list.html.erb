@@ -7,6 +7,9 @@
     <% @products.each do |product| %>
     
     <div class="b-section-products__item js-product">
+		<% if product.discount > 0 %>
+		<div class="discount"><%= "-#{product.discount}%" %></div>
+		<% end %>
         <div class="image">
             <a href="<%= product_path(product.uri) %>">
                 <img class="js-productImage" src="<%= product.preview(:catalog) %>" alt="" />
@@ -23,7 +26,7 @@
         
         <div class="actions">
             <div class="price"> 
-                <span class="price-new"><%= product.price %>р</span> <!--span class="price-old">$100,000.00</span-->
+                <span class="price-new"><%= product.final_price %>р</span> <span class="price-old"><%= "#{product.price}р" if product.discount > 0 %></span>
             </div>
             <div class="actions-buttons">
                 <div class="cart">

@@ -851,6 +851,22 @@ label {
 	border-radius:10px;
 	
 }
+
+.new-products ul li .discount {
+    position:absolute;
+	right: -10px;
+	top: -10px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+    padding: 0 5px;
+    font-size: 16px;
+    line-height: 26px;
+    background: #8ab152;
+    color:#fff;
+    z-index: 4;
+}
+
 .featured .image { background:#FFF;}
 .featured .name, .new-products .name { padding:10px 10px 12px 14px; background:url(/assets/name-bg.gif) repeat-x #252525; height: 34px;}
 .featured .price-old { margin-top:-3px; }
@@ -1595,7 +1611,6 @@ filter: alpha(opacity=85);
     width: 38px; color:#fff; font-weight:normal;}
 .box-product {
 	width:100%;
-	overflow: auto;
 	margin:0; padding:0;
 	
 }
@@ -2118,7 +2133,7 @@ background:url(/assets/tail-manuf.gif) 0px 0px repeat-x #f8f8f8;
 }
 
 
-.list .b-section-products__item .price-old, .list .b-section-products__item .price-old { font-weight:normal;}
+.list .b-section-products__item .price-old, .list .b-section-products__item .price-old { font-weight:normal; font-size: 16px;}
 .list .b-section-products__item .price-tax {
 	font-size: 11px; color:#414141;
 	font-weight: normal; padding-top:5px; display:block;
@@ -2171,6 +2186,7 @@ position:relative; margin-left:-5px;
 	height: auto !important;
 	overflow:hidden;
 	margin: 0;
+    position:relative;
 	zoom: 1;
 }
 
@@ -2218,7 +2234,7 @@ position:relative; margin-left:-5px;
 
 	.b-section-products__item .image .zoom-top {
 		position:absolute;
-		right: 24px;
+		left: 24px;
 		top: 0;
 		margin: 0;
 		cursor: pointer;
@@ -2226,7 +2242,7 @@ position:relative; margin-left:-5px;
 	}
 	
 	.list .b-section-products__item .image .zoom-top {
-		right: 0;
+		left: 0;
 	}
 	
 	.b-section-products__item .image:hover .zoom-top {
@@ -2246,6 +2262,28 @@ position:relative; margin-left:-5px;
 	left: 10px;
 	top: 15px;
 }
+
+.b-section-products__item .discount { 
+	position:absolute;
+	right: 10px;
+	top: 51px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+    padding: 0 5px;
+    font-size: 16px;
+    line-height: 22px;
+    background: #D94574;
+    color:#fff;
+    z-index: 4;
+}
+
+.list .b-section-products__item .discount {
+    right: auto;
+    left: 82px;
+    top: 0;
+}
+
 .grid .b-section-products__item .name a:hover, .list .b-section-products__item .name a:hover{ text-decoration:underline;}
 .grid .b-section-products__item .name a, .list .b-section-products__item .name a {
 	color: #252525;

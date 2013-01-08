@@ -31,7 +31,7 @@
 								<%= price(product_item) %>р
 								<strike><%= product_item['attrs']['price'] %>р</strike>
 							<% else %>
-								<%= product_item['attrs']['price'] %>р
+								<%= price(product_item) %>р
 							<% end %>
 						</td>
                         <td class="total"><%= price(product_item)*cart_item['count'] %>р</td>

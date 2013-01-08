@@ -7,12 +7,15 @@
         <% products.each(function(product) { %>
         <li class="js-product">
             <div class="padd-both">
+				<% if (product.get('discount') > 0) { %>
+				<div class="discount">-<%= product.get('discount') %>%</div>
+				<% } %>
                 <div class="image2">
                     <a href="<%= Routes.product_path(product.get('uri')) %>">
                         <img class="js-productImage" src="<%= product.get('preview_medium') %>" alt="" />
                     </a>
                 </div>
-                <div class="price"> <%= product.get('price') %>р </div>
+                <div class="price"> <%= product.get('final_price') %>р </div>
                 <div class="name maxheight">
                     <a href="<%= Routes.product_path(product.get('uri')) %>"><%= product.get('name') %></a>
                     

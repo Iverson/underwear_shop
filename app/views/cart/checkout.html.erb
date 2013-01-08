@@ -19,27 +19,23 @@
     
 var checkoutStep = <%= @cart['checkout_step'] %>;
 
-switch (checkoutStep) {
-	case 1:
-		yaCounter19019545.reachGoal('checkoutStep1');
-		break
-	case 2:
-		yaCounter19019545.reachGoal('checkoutStep2');
-		break
-	case 3:
-		yaCounter19019545.reachGoal('checkoutStep3');
-		break
-	case 4:
-		yaCounter19019545.reachGoal('checkoutStep4');
-	break
-	default:
-}
-
-
-
-
 $(document).ready(function() {
-    
+	
+	switch (checkoutStep) {
+		case 1:
+			yaCounter19019545.reachGoal('checkoutStep1');
+			break
+		case 2:
+			yaCounter19019545.reachGoal('checkoutStep2');
+			break
+		case 3:
+			yaCounter19019545.reachGoal('checkoutStep3');
+			break
+		case 4:
+			yaCounter19019545.reachGoal('checkoutStep4');
+		break
+		default:
+	}
     
     checkoutTabs = $('.js-checkoutStepCont');
     
