@@ -882,7 +882,7 @@ label {
 	font-weight:700;
 	line-height:21px;
 	font-family:'Open Sans', sans-serif;
-	min-width:72px;
+	min-width:62px;
 	border-radius:5px 0 0 0;
 	}
 .new-products ul li:hover .price, .featured ul li:hover .price { background:#8ab152;}

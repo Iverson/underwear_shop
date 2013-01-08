@@ -65,7 +65,7 @@
                     <td class="price">
 						<% if product_item['attrs']['promo'] || product_item['attrs']['discount'] > 0 %>
 							<%= price(product_item) %>р
-							<strike><%= product_item['attrs']['price'] %>р</strike>
+							<strike><%= product_item['attrs']['price'].to_i %>р</strike>
 						<% else %>
 							<%= price(product_item) %>р
 						<% end %>

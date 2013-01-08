@@ -31,9 +31,9 @@
                         <td class="model"><%= order_item.product.id %></td>
                         <td class="quantity"><%= order_item.count %></td>
                         <td class="price">
-						    <%= order_item.price %>
+						    <%= order_item.price.to_i %>р
 						</td>
-                        <td class="total"><%= order_item.price*order_item.count %>р</td>
+                        <td class="total"><%= order_item.price.to_i*order_item.count %>р</td>
                     </tr>
                 <% end %>
                 </tbody>
@@ -42,15 +42,15 @@
                 <tfoot>
                     <tr>
                         <td class="price" colspan="4"><b>Под-итог:</b></td>
-                        <td class="total"><%= @order.summ-@order.delivery.price %>р</td>
+                        <td class="total"><%= @order.summ.to_i-@order.delivery.price.to_i %>р</td>
                     </tr>
                     <tr>
                         <td class="price" colspan="4"><b>Доставка:</b></td>
-                        <td class="total"><%= @order.delivery.price %>р</td>
+                        <td class="total"><%= @order.delivery.price.to_i %>р</td>
                     </tr>
                     <tr>
                         <td class="price" colspan="4"><b>Итого:</b></td>
-                        <td class="total"><%= @order.summ %>р</td>
+                        <td class="total"><%= @order.summ.to_i %>р</td>
                     </tr>
                 </tfoot>
                 <% end %>

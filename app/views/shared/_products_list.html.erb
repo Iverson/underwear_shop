@@ -26,7 +26,7 @@
         
         <div class="actions">
             <div class="price"> 
-                <span class="price-new"><%= product.final_price %>р</span> <span class="price-old"><%= "#{product.price}р" if product.discount > 0 %></span>
+                <span class="price-new"><%= product.final_price %>р</span> <span class="price-old"><%= "#{product.price.to_i}р" if product.discount > 0 %></span>
             </div>
             <div class="actions-buttons">
                 <div class="cart">

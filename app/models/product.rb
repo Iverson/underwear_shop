@@ -25,7 +25,7 @@ class Product < ActiveRecord::Base
   end
   
   def final_price
-    self.price * (1 - self.discount.to_f / 100)
+    (self.price*(1 - self.discount.to_f / 100)).to_i
   end
   
   def preview(size)

@@ -22,7 +22,7 @@
 
 									<% if ( (cart['items'][i]['attrs']['promo']) || (cart['items'][i]['attrs']['discount'] > 0) ) { %>
 										<span class="total"><%= price(cart['items'][i]) %>р</span>
-										<strike><%= cart['items'][i]['attrs'].price %>р</strike>
+										<strike><%= Math.round(cart['items'][i]['attrs'].price) %>р</strike>
 										<div class="promo"><span class="red">Акция</span></div>
 									<% } else { %>
 										<span class="total"><%= price(cart['items'][i]) %>р</span>
