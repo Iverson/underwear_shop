@@ -2281,6 +2281,10 @@ position:relative; margin-left:-5px;
 .list .b-section-products__item .discount {
     right: auto;
     left: 82px;
+    top: 14px;
+}
+
+.list .b-section-products__item:first-child .discount {
     top: 0;
 }
 
