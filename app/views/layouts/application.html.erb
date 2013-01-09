@@ -6,23 +6,23 @@
     <link href="/assets/favicon.ico" rel="icon" />
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
-    
+
     <%= csrf_meta_tags %>
 
     <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/assets/ie.css" /><![endif]-->
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
-    
-    
+
+
     <script type="text/javascript">
-        User = {
+    User = {
         <% if user_signed_in? %>
-            id: <%= current_user.id %>
+        id: <%= current_user.id %>
         <% end %>
-        }
+    }
     </script>
-    
+
 </head>
 <body class="">
     <div class="main-shining">
@@ -32,32 +32,34 @@
                     <li class="first"><a href="/">Домой</a></li>
                     <li>
                         <%= link_to (favorites_path) do %>
-                            Избранное <span>
+                        Избранное <span>
                             <% if user_signed_in? %>
-                                (<span class="js-favoritesCounter"><%= current_user.favorites.length %></span>)
+                            (<span class="js-favoritesCounter"><%= current_user.favorites.length %></span>)
                             <% else %>
-                                (0)
+                            (0)
                             <% end %>
-                            </span>
+                        </span>
                         <% end %>
                     </li>
                     <li><%= link_to 'Мой профиль', edit_user_registration_path %></li>
                     <li><%= link_to 'Корзина', cart_index_path %></li>
                     <li><%= link_to 'Заказать', order_checkout_path %></li>
-                    
-                <% if user_signed_in? %>
+
+                    <% if user_signed_in? %>
                     <li class="last"><%= link_to "Выйти", destroy_user_session_path, method: :delete %> </li>
-                <% else %>
+                    <% else %>
                     <li class="last"><%= link_to "Войти", new_user_session_path %> </li>
-                <% end %>
-                    
+                    <% end %>
+
                 </ul>
-				<% if SiteConfiguration.phone != "" %>
+                <% if SiteConfiguration.phone != "" %>
                 <ul class="soc-links">
-                    <li class="first"><img class="b-icon" src="/assets/telephone.png" /><span class="va-middle"><%= SiteConfiguration.phone %></span></li>
+                    <li class="first">
+                        <img class="b-icon" src="/assets/telephone.png" /><span class="va-middle"><%= SiteConfiguration.phone %></span>
+                    </li>
                 </ul>
-				<% end %>
-                
+                <% end %>
+
             </div>
         </div>
         <div class="main-container">
@@ -68,28 +70,28 @@
                         <div class="wrapper">
                             <div id="welcome">
                                 <% if user_signed_in? %>
-                                     <%= link_to current_user.first_name, edit_user_registration_path %>, мы рады видеть вас <br /> в магазине YoungLovers!
+                                <%= link_to current_user.first_name, edit_user_registration_path %>, мы рады видеть вас <br /> в магазине YoungLovers!
                                 <% else %>
-                                    Добро пожаловать в магазин YoungLovers
-                                    <p><%= link_to "Зарегистрируйтесь", new_user_registration_path %> чтобы делать покупки удобнее </p>
+                                Добро пожаловать в магазин YoungLovers
+                                <p><%= link_to "Зарегистрируйтесь", new_user_registration_path %> чтобы делать покупки удобнее </p>
                                 <% end %>
-                                
+
                             </div>
-                            
+
                         </div>
                     </div>
                     <script type="text/javascript">
-                        $(function()
-						{
-                            var cart = <%= @cart.to_json.html_safe %>
-                            $('.js-cart').empty().append( JST['templates/cart']({cart: cart}) );
-                        });
-                        
+                    $(function()
+                    {
+                        var cart = <%= @cart.to_json.html_safe %>
+                        $('.js-cart').empty().append( JST['templates/cart']({cart: cart}) );
+                    });
+
                     </script>
                     <div class="header-top1">
                         <div class="cart-position">
                             <div class="cart-inner js-cart">
-                               
+
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -100,18 +102,18 @@
                 <div id="container">
 
                     <div id="notification">
-                        
+
                     </div>
                     <% if notice %>
-                        <p class="attention"><%= notice %></p>
+                    <p class="attention"><%= notice %></p>
                     <% end %>
                     <% if alert %>
-                        <p class="warning"><%= alert %></p>
+                    <p class="warning"><%= alert %></p>
                     <% end %>
-                    
+
                     <div id="column-left">
                         <% if @profile %>
-                        <%= render "shared/profile_menu" %>
+                            <%= render "shared/profile_menu" %>
                         <% end %>
 
 
@@ -142,71 +144,73 @@
                                     <div class="box-category">
                                         <%= menu_sections_tree Section.arrange(:order => :id) %>
                                     </div>
-                                </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box sidebarsearch"> 
+
+                            <!--div class="box-heading">Search</div-->
+                            <div class="box-content">
+                                <div id="sidebarsearch">
+                                    <%= form_tag(search_path, :method => "get") do %>
+                                    <%= submit_tag "", :name => nil, :class => "button-sidebarsearch" %>
+                                    <span>
+                                        <%= text_field_tag :q, "", :class => "search", :placeholder => "Поиск" %>
+                                    </span>
+                                    <% end %>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <%= render :partial => 'shared/bestsellers' %>
+
+                    </div>
+
+                    <%= @right %>
+
+                    <% if @right %>
+                        <%= render 'shared/right_column' %>
+                    <% end %>
+
+                    <div id="content">
+
+                        <%= yield %> 
+
+                    </div>
+                    <div class="clear"></div>
+
+                    <div class="footer-wrap">
+                        <div id="footer">
+                            <div class="wrapper">
+                                <div class="footer-logo"></div>
+
+                                <div class="column col-1">
+                                    <h3>Информация</h3>
+                                    <ul>
+                                        <li><a href="/about">О магазине</a></li>
+                                        <li><a href="/delivery">Доставка</a></li>
+                                        <li><a href="/terms">Правилами пользования</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="column col-4">
+                                    <h3>Мой профиль</h3>
+                                    <ul>
+                                        <li><%= link_to "Мои данные", edit_user_registration_path %></li>
+                                        <li><%= link_to "Мой адрес", users_address_path %></li>
+                                        <li><%= link_to "Мои заказы", orders_path %></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="box sidebarsearch"> 
-
-                        <!--div class="box-heading">Search</div-->
-						<div class="box-content">
-							<div id="sidebarsearch">
-								<%= form_tag(search_path, :method => "get") do %>
-									<%= submit_tag "", :name => nil, :class => "button-sidebarsearch" %>
-									<span>
-										<%= text_field_tag :q, "", :class => "search", :placeholder => "Поиск" %>
-									</span>
-								<% end %>
-							 
-							</div>
-						</div>
-					</div>
-					
-					<%= render :partial => 'shared/bestsellers' %>
-
-				</div>
-				
-				<%= @right %>
-				
-				<% if @right %>
-					<%= render 'shared/right_column' %>
-				<% end %>
-
-				<div id="content">
-
-					<%= yield %> 
-
-				</div>
-				<div class="clear"></div>
-
-				<div class="footer-wrap">
-					<div id="footer">
-						<div class="wrapper">
-							<div class="footer-logo"></div>
-							
-							<div class="column col-1">
-								<h3>Информация</h3>
-								<ul>
-									<li><a href="/about">О магазине</a></li>
-									<li><a href="/delivery">Доставка</a></li>
-									<li><a href="/terms">Правилами пользования</a></li>
-								</ul>
-							</div>
-							
-							<div class="column col-4">
-								<h3>Мой профиль</h3>
-								<ul>
-									<li><%= link_to "Мои данные", edit_user_registration_path %></li>
-									<li><%= link_to "Мой адрес", users_address_path %></li>
-									<li><%= link_to "Мои заказы", orders_path %></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		<% if Rails.env == 'production' %>
-			<%= render :partial => 'shared/counter' %>
-		<% end %>
+                </div>
+                <% if Rails.env == 'production' %>
+                    <%= render :partial => 'shared/counter' %>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

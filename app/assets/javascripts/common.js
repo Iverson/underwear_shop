@@ -1,6 +1,14 @@
 var yaCounter19019545 = yaCounter19019545 || {reachGoal: function() {console.log('yaCounter not loaded!')}};
+var is_touch_device = 'ontouchstart' in document.documentElement;
+
 
 $(function() {
+	if (!is_touch_device)
+	{
+		$('body').addClass('has-mouse');
+	}
+	
+	
     $('.js-orderConfirm').click(function()
     {
           yaCounter19019545.reachGoal('checkoutFinished');
