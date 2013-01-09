@@ -4,7 +4,7 @@
 		<a class="#">Изменить »</a>
 	</div>
     <div class="checkout-content">
-        <%= simple_form_for(@order, :as => "order", :url => "/order/update", :html => { :method => :post }) do |f| %>
+        <%= simple_form_for(@order, :as => "order") do |f| %>
         
         <p>Выберите способ доставки вашего заказа.</p>
         <table class="radio">

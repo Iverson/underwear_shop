@@ -24,13 +24,13 @@ UnderwearShop::Application.routes.draw do
   post 'order/create' => 'orders#create'
   post 'order/update' => 'orders#update'
   post 'order/confirm' => 'orders#confirm'
+  get 'order/checkout' => 'orders#checkout'
+  
   get 'users/orders' => 'orders#index'
   
   post 'cart/add' => 'cart#add_item'
   post 'cart/remove' => 'cart#remove_item'
   post 'cart/update' => 'cart#update'
-  get 'cart/checkout' => 'cart#checkout'
-  get 'cart/finish' => 'cart#finish'
   
   post 'favorite/add' => 'products#to_favorite'
   

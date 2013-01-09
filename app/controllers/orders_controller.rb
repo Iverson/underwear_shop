@@ -15,22 +15,48 @@ class OrdersController < ApplicationController
     end
   end
   
+  def checkout
+    if @cart['count'] == 0
+      redirect_to(cart_index_url) and return
+    
+    end
+    
+    if @cart['order_id'] > 0
+      @order = Order.find(@cart['order_id'])
+    else
+      @order = Order.new
+
+      if user_signed_in?
+        @order.build_address({:address => current_user.address.address, :phone => current_user.phone, :city => current_user.address.city, :fio => current_user.first_name, :email => current_user.email})
+      else
+        @order.build_address()
+      end
+      
+    end
+    
+    respond_to do |format|
+      format.html
+    end
+    
+  end
+  
   def create
+    session[:cart]['checkout_step'] = 2
     @order = Order.new(params[:order])
     
     if user_signed_in?
       @order.user_id = current_user.id
     end
-
+    
     respond_to do |format|
       if @order.save
         session[:cart]['checkout_step'] = 3
         session[:cart]['order_id'] = @order.id
         
-        format.html { redirect_to cart_checkout_url }
+        format.html { render :checkout }
         format.json { render json: @order, status: :created, location: @order }
       else
-        format.html { redirect_to cart_checkout_url }
+        format.html { render :checkout }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
@@ -43,12 +69,18 @@ class OrdersController < ApplicationController
       if @order.update_attributes(params[:order])
         if @order.delivery_id != nil
           session[:cart]['checkout_step'] = 4
+        else
+          session[:cart]['checkout_step'] = 3
         end
         
-        format.html { redirect_to cart_checkout_url }
+        format.html { render :checkout }
         format.json { head :no_content }
       else
-        format.html { render action: "cart_checkout_url" }
+        if @order.delivery_id == nil
+          session[:cart]['checkout_step'] = 2
+        end
+        
+        format.html { render :checkout }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
@@ -75,7 +107,7 @@ class OrdersController < ApplicationController
         format.html { redirect_to root_url, notice: 'Ваш заказ принят, на ваш E-mail выслано письмо с инструкциями.' }
         format.json { head :no_content }
       else
-        format.html { render action: "cart_checkout_url" }
+        format.html { render :checkout }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end

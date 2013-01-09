@@ -5,12 +5,11 @@
 	</div>
 	<div class="checkout-content">
 	
-	<%= simple_form_for(@order, :as => "order", :url => @order_action, :html => { :method => :post }) do |f| %>
+	<%= simple_form_for(@order, :as => "order") do |f| %>
       <div class="left">
         <h2>Ваши персональные данные</h2>
         
         <%= f.fields_for :address do |address_fields| %>
-        
         
         <div class="b-input margin_b10">
             <%= address_fields.input :fio, :label => "Имя" %>

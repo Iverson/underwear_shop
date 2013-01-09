@@ -141,38 +141,4 @@ class CartController < ApplicationController
     
   end
   
-  def checkout
-    if @cart['count'] == 0
-      redirect_to(cart_index_url) and return
-    
-    end
-    
-    if @cart['order_id'] > 0
-      @order_action = "/order/update"
-      @order = Order.find(@cart['order_id'])
-    
-    else
-      @order_action = "/order/create"
-      @order = Order.new
-
-      if user_signed_in?
-        @order.build_address({:address => current_user.address.address, :phone => current_user.phone, :city => current_user.address.city, :fio => current_user.first_name, :email => current_user.email})
-      else
-        @order.build_address()
-      end
-      
-    end
-    
-    respond_to do |format|
-      format.html
-    end
-    
-  end
-  
-  def finish
-    respond_to do |format|
-      format.html
-    end
-  end
-  
 end
