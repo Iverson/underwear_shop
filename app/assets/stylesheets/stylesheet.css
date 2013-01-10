@@ -1260,7 +1260,7 @@ table.list .center {
 /* button */
 a.button {
 	display: inline-block;
-	text-decoration: none;
+	text-decoration: none !important;
 	cursor: pointer;
 	background: url('/assets/button-bg.png') repeat-x #252525;
 	-webkit-border-radius:3px;
@@ -1276,6 +1276,15 @@ a.button {
 	color: #FFFFFF !important;
 	padding:8px 10px 9px 9px;
 }
+
+.button_pink {
+    background: #D94574 !important;
+}
+
+body a.button_pink:hover {
+    color:#fff !important;
+}
+
 .new-products ul li a.button {
 	width:62px;
 	text-align:center;
@@ -3469,7 +3478,7 @@ input#sub_category, input#description { position:relative; top:2px;}
 .success a{ text-decoration:underline; color:#252525}
 .success span:hover img, .b-popup__close:hover img { margin-top:-11px;}
 .success p{ margin-bottom:11px; font-size:24px; color:#1b1b1b;}
-.success span, .b-popup__close { width:11px; height:11px; overflow:hidden; position:absolute; right:8px; top:8px;}
+.b-popup__close { width:11px; height:11px; overflow:hidden; position:absolute; right:8px; top:8px;}
 .b-popup__close img {float:left; cursor: pointer}
 .success, .b-popup {
 	width:170px;
@@ -3496,6 +3505,7 @@ input#sub_category, input#description { position:relative; top:2px;}
 	border-radius:6px 6px 6px 6px;
 	font-size:14px;
 }
+
 #wrap{ z-index:10!important;}
 .rev-success {
 	background: #EAF7D9 url('/assets/success.png') left no-repeat;
@@ -3739,14 +3749,55 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
 	width: 300px;
 	display:block;
 	margin-left: -150px;
+    margin-top: -90px;
+    box-shadow: 3px 3px 15px #222;
 }
+
+.b-popup_fadeIn {
+    display:none;
+}
+
+    .b-popup__product {
+        margin-bottom: 5px;
+        overflow:hidden;
+        zoom: 1;
+    }
+        
+        .b-popup__product__pic {
+            float:left;
+            width: 50px;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+        
+        .b-popup__product__t {
+            font-size: 14px;
+            margin-bottom: 5px;
+            font-family: 'Open Sans',sans-serif;
+            font-weight: 600;
+        }
+        
+        .b-popup__product__data {
+            color: #444444;
+            font-family: 'Open Sans',sans-serif;
+            font-size: 12px;
+            font-style: italic;
+        }
 
 	.b-popup__t {
 		color:#111;
-		font-size: 16px;
+		font-size: 14px;
 		line-height: 1.2em;
 		margin-bottom: 15px;
 	}
+	
+	    .b-popup__t a {
+	        font-size: 1em;
+	    }
+	
+	.b-popup .buttons {
+        margin-bottom: 0;
+    }
 
 	.b-popup__actions {
 		margin-top: 15px;

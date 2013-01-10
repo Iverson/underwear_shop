@@ -10,6 +10,8 @@ class CartController < ApplicationController
         
       end
     end
+    
+    @cart['summ'] = @cart['summ'].to_i
   end
   
   def check_promos
@@ -77,22 +79,23 @@ class CartController < ApplicationController
     end
     
     @cart['count'] += @count
-    @cart['summ'] += @cart['items'][@product.id]['attrs']['price']*@count
+    #@cart['summ'] += @cart['items'][@product.id]['attrs']['price']*@count
     
     self.check_promos
     
     respond_to do |format|
       format.html { redirect_to cart_index_url }
-      format.json { render json: @cart.to_json().html_safe }
+      format.json { render json: {cart: @cart, id: @product.id} }
     end
   end
   
   def remove_item
     @product_instance = ProductInstance.find(params[:instance])
     @product = @product_instance.product
+    @removed_item = Marshal.load(Marshal.dump(@cart['items'][@product.id]))
     
     @cart['count'] -= @cart['items'][@product.id]['ins'][params[:instance]]['count']
-    @cart['summ'] -= @cart['items'][@product.id]['attrs']['price']*@cart['items'][@product.id]['ins'][params[:instance]]['count']
+    #@cart['summ'] -= @cart['items'][@product.id]['attrs']['price']*@cart['items'][@product.id]['ins'][params[:instance]]['count']
     
     @cart['items'][@product.id]['ins'].delete(params[:instance])
     
@@ -104,7 +107,7 @@ class CartController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to cart_index_url, notice: 'Товар удален из корзины' }
-      format.json { render json: @cart.to_json.html_safe }
+      format.json { render json: {cart: @cart, product: @removed_item} }
     end
   end
   

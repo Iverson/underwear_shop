@@ -1,8 +1,46 @@
-<div class="success js-noti">
-    <% if (add) {%>
-        Товар добавлен в <a href="<%= Routes.cart_index_path() %>">корзину</a>.
+<div class="b-popup b-popup_fadeIn success js-noti">
+	<span class="close b-popup__close"><img class="close" alt="" src="/assets/close.png" /></span>
+	
+	<% if (add) {%>
+		
+		<div class="b-popup__t">
+			Товар добавлен в <a href="<%= Routes.cart_index_path() %>">корзину</a>.
+		</div>
+		
+		<div class="b-popup__product">
+			<img src="<%= item.ins[inst_id].img %>" alt="" class="b-popup__product__pic" />
+
+			<div class="b-popup__product__t"><%= item.attrs.name %></div>
+			<div class="b-popup__product__data">
+				Размер: <%= item.ins[inst_id].size %> <br />
+				Цена: <%= price(item) %>р <br />
+			</div>
+		</div>
+
+
+		<div class="buttons">
+			<div class="right">
+				<a class="button button_pink" href="<%= Routes.order_checkout_path() %>">Оформить заказать</a>
+			</div>
+			<div class=""><a href="#" class="button js-popupClose"><span>Продолжить покупки</span></a></div>
+		</div>
+        
     <% } else { %>
-        Товар удален из <a href="<%= Routes.cart_index_path() %>">корзины</a>.
+	
+		<div class="b-popup__t">
+			Товар удален из <a href="<%= Routes.cart_index_path() %>">корзины</a>.
+		</div>
+		
+		<div class="b-popup__product">
+			<img src="<%= item.ins[inst_id].img %>" alt="" class="b-popup__product__pic" />
+
+			<div class="b-popup__product__t"><%= item.attrs.name %></div>
+			<div class="b-popup__product__data">
+				Размер: <%= item.ins[inst_id].size %> <br />
+				Цена: <%= price(item) %>р <br />
+			</div>
+		</div>
+        
     <% } %>
-    <span class="close"><img class="close" alt="" src="/assets/close.png" /></span>
+	
 </div>

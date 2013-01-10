@@ -68,7 +68,8 @@ ActiveAdmin.register Order do
           
           p.input :product_id, :as => :select, :multiple => false, :collection => Product.all
           p.input :count
-          p.input :size
+          p.input :size, :hint => (p.template.image_tag(p.object.product.preview(:small)) if p.object.product)
+          
           p.input :_destroy, :as=>:boolean, :required => false, :label => 'Remove item'
         end 
       end
