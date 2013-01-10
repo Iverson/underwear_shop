@@ -61,7 +61,7 @@ $(document).ready(function() {
     });
     
     checkoutTabs.removeClass('active').eq(checkoutStep-2).addClass('active').find('.checkout-content').slideDown('slow');
-    for (i=0; i<checkoutStep; i++)
+    for (i=0; i<checkoutStep-1; i++)
     {
         $(checkoutTabs[i]).addClass('complete');
     }
