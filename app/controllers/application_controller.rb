@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def init_cart
     session[:cart] ||= {'summ' => 0, 'count' => 0, 'items' => {}, 'checkout_step' => 1, 'order_id' => 0, 'promos' => {}}
     
-    if user_signed_in? && session[:cart]['checkout_step'] < 2
+    if session[:cart]['checkout_step'] < 2
      
       session[:cart]['checkout_step'] = 2
 

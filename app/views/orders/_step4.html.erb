@@ -1,6 +1,6 @@
 <div id="confirm" class="js-checkoutStepCont">
     <div class="checkout-heading">
-        <div class="marker-chekout">Шаг 4: Подтверждение</div>
+        <div class="marker-chekout">Шаг 3: Подтверждение</div>
         <a class="#">Изменить »</a>
     </div>
     <div class="checkout-content">
@@ -48,11 +48,11 @@
                     </tr>
                     <tr>
                         <td class="price" colspan="4"><b>Доставка:</b></td>
-                        <td class="total"><%= @order.delivery.price %>р</td>
+                        <td class="total"><%= @order.delivery.price.to_i %>р</td>
                     </tr>
                     <tr>
                         <td class="price" colspan="4"><b>Итого:</b></td>
-                        <td class="total"><%= @cart['summ'] + @order.delivery.price %>р</td>
+                        <td class="total"><%= @cart['summ'] + @order.delivery.price.to_i %>р</td>
                     </tr>
                 </tfoot>
                 <% end %>

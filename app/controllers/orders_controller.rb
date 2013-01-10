@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
       if user_signed_in?
         @order.build_address({:address => current_user.address.address, :phone => current_user.phone, :city => current_user.address.city, :fio => current_user.first_name, :email => current_user.email})
       else
-        @order.build_address()
+        @order.build_address({:city => "Москва"})
       end
       
     end

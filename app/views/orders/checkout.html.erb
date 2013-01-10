@@ -4,7 +4,7 @@
 
 <div class="checkout">
 	
-	<%= render "step1" %>
+	<%#= render "step1" %>
 	
 	<%= render "step2" %>
 	
@@ -22,18 +22,15 @@ var checkoutStep = <%= @cart['checkout_step'] %>;
 $(window).load(function() {
 	
 	switch (checkoutStep) {
-		case 1:
+		case 2:
 			yaCounter19019545.reachGoal('checkoutStep1');
 			break
-		case 2:
+		case 3:
 			yaCounter19019545.reachGoal('checkoutStep2');
 			break
-		case 3:
+		case 4:
 			yaCounter19019545.reachGoal('checkoutStep3');
 			break
-		case 4:
-			yaCounter19019545.reachGoal('checkoutStep4');
-		break
 		default:
 	}
 	
@@ -63,7 +60,7 @@ $(document).ready(function() {
         $(this).parent().parent().addClass('active').find('.checkout-content').slideDown('slow');
     });
     
-    checkoutTabs.removeClass('active').eq(checkoutStep-1).addClass('active').find('.checkout-content').slideDown('slow');
+    checkoutTabs.removeClass('active').eq(checkoutStep-2).addClass('active').find('.checkout-content').slideDown('slow');
     for (i=0; i<checkoutStep; i++)
     {
         $(checkoutTabs[i]).addClass('complete');
