@@ -4,6 +4,8 @@ UnderwearShop::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users, :controllers => { :registrations => "registrations" }
+  
+  match 'csv' => 'products#export_csv', :as => :csv
 
   resources :passwords, :only => [:edit, :update]
   

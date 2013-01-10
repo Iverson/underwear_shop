@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  require 'csv'
   
   def index
     @products = Product.all
@@ -115,6 +116,20 @@ class ProductsController < ApplicationController
     else
       redirect_to :back
     end
+  end
+  
+  def export_csv
+    @products = Product.published
+    products_csv = CSV.generate do |csv|
+      # header row
+      csv << ["id", "type", "available", "url", "price", "currencyId", "category", "picture", "delivery", "local_delivery_cost", "name", "vendor", "model", "description"]
+      # data row
+      @products.each do |p|
+        csv << [p.id, "vendor.model", "true", product_url(p), p.final_price, "RUR", p.section.name, "#{request.protocol}#{request.host_with_port}#{p.preview(:zoom)}", "true", "250", p.name, p.brand.name, p.name, p.description]
+      end
+    end
+
+    send_data(products_csv, :type => 'test/csv', :filename => 'products.csv')
   end
   
 end
