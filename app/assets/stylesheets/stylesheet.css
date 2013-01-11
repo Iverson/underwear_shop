@@ -3837,3 +3837,8 @@ strike {
 .va-middle {
 	vertical-align:middle;
 }
+
+.b-address {
+	font-size: 11px;
+	line-height: 1.2em;
+}
