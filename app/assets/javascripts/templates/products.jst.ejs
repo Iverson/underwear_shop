@@ -21,10 +21,10 @@
                     
                 </div>
                 <div class="cart"> 
-                    <a href="#" class="button addToCart js-addToCart" data-product="<%= product.get('id') %>" data-fastadd="<%= product.get('fast_to_cart') %>"><span>В корзину</span></a>
-                    <a href="<%= Routes.product_path(product.get('uri')) %>" class="button details">
+                    <a href="<%= Routes.product_path(product.get('uri')) %>" class="button addToCart">
                         <span>Детально</span>
                     </a>
+					<a href="#" class="button details js-addToCart" data-product="<%= product.get('id') %>" data-fastadd="<%= product.get('fast_to_cart') %>"><span>В корзину</span></a>
                 </div>
             </div>
         </li>

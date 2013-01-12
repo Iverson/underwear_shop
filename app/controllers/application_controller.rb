@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :require_http_basic_auth if Rails.env == "staging"
   before_filter :init_cart
   before_filter :bestsellers
+  before_filter :top_promo
   
   add_breadcrumb I18n.t("breadcrumbs.homepage"), "/"
   
@@ -34,6 +35,10 @@ class ApplicationController < ActionController::Base
     authenticate_or_request_with_http_basic 'Staging' do |name, password|
       name == 'zeleniy' && password == 'slonik'
     end
+  end
+  
+  def top_promo
+    @top_promo = Promo.top.first
   end
   
 end

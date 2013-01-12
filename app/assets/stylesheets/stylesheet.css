@@ -3842,3 +3842,35 @@ strike {
 	font-size: 11px;
 	line-height: 1.2em;
 }
+
+.b-top-promo {
+    background: #ccc;
+    padding: 8px 8px 8px 10px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    margin-bottom: 10px;
+    overflow:hidden;
+    zoom: 1;
+}
+
+    .b-top-promo__pic {
+        float:right;
+        margin: 0 0 0 50px;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+    }
+    
+    .b-top-promo__h {
+        font-size: 18px;
+        line-height: 1.2em;
+        color:#1FA006;
+        margin: 0 0 10px 0;
+    }
+    
+    .b-top-promo__t {
+        font-size: 14px;
+        line-height: 1.2em;
+        margin-bottom: 0;
+    }

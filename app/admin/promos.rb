@@ -8,6 +8,7 @@ ActiveAdmin.register Promo do
       f.input :discount
       f.input :text
       f.input :state
+      f.input :top
       
       f.inputs "Promo image", :for => [:promo_image, f.object.promo_image || PromoImage.new] do |p|
         p.input :image, :as => :file, :label => "Image",:hint => p.object.image.nil? ? p.template.content_tag(:span, "No Image Yet") : p.template.image_tag(p.object.image.url(:slideshow))

@@ -1,0 +1,10 @@
+<% if @top_promo %>
+<div class="b-top-promo">
+	<a href="<%= @top_promo.promo_image.image.url(:slideshow) %>" title="<%= @top_promo.name %>" class="js-fancybox">
+		<%= image_tag @top_promo.promo_image.image.url(:slideshow), :height => 50, :class => "b-top-promo__pic" %>
+	</a>
+	
+	<p class="b-top-promo__h">Внимания акция!</p>
+	<p class="b-top-promo__t"><%= @top_promo.name %></p>
+</div>
+<% end %>

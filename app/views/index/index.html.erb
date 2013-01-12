@@ -65,10 +65,10 @@
                                         <%= link_to product.name, product %>
                                     </div>
                                     <div class="cart"> 
-                                        <a href="#" class="button addToCart js-addToCart" rel="<%= product.id %>"><span>В корзину</span></a>
-                                        <%= link_to(product, :class => "button details") do %>
+                                        <%= link_to(product, :class => "button addToCart") do %>
                                             <span>Детально</span>
                                         <% end %>
+										<a href="#" class="button details js-addToCart" rel="<%= product.id %>"><span>В корзину</span></a>
                                     </div>
                                 </div>
                             </li>
