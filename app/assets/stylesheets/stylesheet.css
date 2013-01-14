@@ -3881,7 +3881,7 @@ strike {
     }
 
 .b-vk-like {
-    margin: -5px 0 10px 0;
+    margin: -5px 0 5px 0;
     zoom: 1;
 }
 
@@ -3911,7 +3911,7 @@ strike {
     
 .b-head-noti {
     text-align:center;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.2em;
     text-transform:uppercase;
     
@@ -3922,7 +3922,7 @@ strike {
 }
 
     .b-head-noti a {
-        text-decoration:none;
+        color:#fff;
     }
 
     .b-head-noti span {
@@ -3932,5 +3932,4 @@ strike {
     }
 
 #vk_comments {
-    margin-top: -10px;
 }
