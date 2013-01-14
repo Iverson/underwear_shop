@@ -1,6 +1,12 @@
+<div class="b-head-noti">
+	<a href="#garant"><span>Платишь только после того как убедился в качестве вживую!</span></a>
+</div>
+
 <%= render "shared/breadcrumbs" %>
 
 <%= render "shared/top_promo" %>
+
+
 
 <div class="product-info">
     <div class="wrapper indent-bot">
@@ -72,7 +78,22 @@
                     </div>
                 </div>
                 <% end %>
+
+				<div class="b-vk-like">
+					<div id="vk_like"></div>
+					<script type="text/javascript">
+					VK.Widgets.Like("vk_like", {type: "button"});
+					</script>
+				</div>
             </div>
+			
+			<a name="garant"></a>
+			<ul class="b-features">
+				<li>Товар можно вернуть в течение 7 дней после получения.</li>
+				<li>Вы можете примерить одежду и поменять размер или отказать от покупки если вещь вам не подошла или не устроило качество.</li>
+				<li>Вы гарантировано получаете вещь как на фото.</li>
+				<li>Доставка на следующий день или другой выбранный вами день.</li>
+			</ul>
             
             <div class="wrapper mb-1">
                 <div id="tabs" class="htabs">
@@ -87,8 +108,12 @@
 
                 </div>
             </div>
+			
         </div>
     </div>
-
-    
+	
+    <div id="vk_comments"></div>
+	<script type="text/javascript">
+	VK.Widgets.Comments("vk_comments", {limit: 15, width: "718", attach: false});
+	</script>
 </div>   

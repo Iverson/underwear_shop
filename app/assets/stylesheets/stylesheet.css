@@ -164,7 +164,6 @@ td, th, input, textarea, select, a {
 	float:left;
 	margin-left:-2px;
 	margin-top:6px;
-	width: 100px;
 	height: 50px;
 }
 .soc-links li {
@@ -173,11 +172,17 @@ td, th, input, textarea, select, a {
 	line-height:1.2em;
 	font-family: 'Open Sans', sans-serif;
 	text-transform:uppercase;
-	padding-right:32px;
+	padding-right:12px;
 	white-space: nowrap;
 	color:#fff;
 }
 
+    .soc-links .hint {
+        white-space: normal;
+        font-size: 11px;
+        text-transform:none;
+    }
+    
 .soc-links li a {
 	color:#FFF;
 	text-decoration:none;
@@ -3874,3 +3879,58 @@ strike {
         line-height: 1.2em;
         margin-bottom: 0;
     }
+
+.b-vk-like {
+    margin: -5px 0 10px 0;
+    zoom: 1;
+}
+
+.b-features {
+    color:#777;
+    font-size: 11px;
+    line-height: 1.2em;
+    margin: -10px 0 15px 0;
+    background: #fff;
+    border: 1px solid #E7E7E7;
+    padding: 5px 0;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    zoom: 1;
+}
+
+    .b-features li {
+        padding: 3px 0 3px 15px;
+    }
+    
+    .b-features li:before {
+        position:absolute;
+        margin: 0 0 0 -0.7em;
+        content: "-";
+    }
+    
+.b-head-noti {
+    text-align:center;
+    font-size: 14px;
+    line-height: 1.2em;
+    text-transform:uppercase;
+    
+    position:relative;
+    margin-bottom: -17px;
+    top: -25px;
+    z-index: 100;
+}
+
+    .b-head-noti a {
+        text-decoration:none;
+    }
+
+    .b-head-noti span {
+        background: #000;
+        color:#1FA006;
+        padding: 2px 5px;
+    }
+
+#vk_comments {
+    margin-top: -10px;
+}

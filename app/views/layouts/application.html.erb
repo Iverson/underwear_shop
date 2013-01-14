@@ -13,7 +13,11 @@
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
-
+	<script type="text/javascript" src="//vk.com/js/api/openapi.js?75"></script>
+	<script type="text/javascript">
+	  VK.init({apiId: 3357479, onlyWidgets: true});
+	</script>
+	
 
     <script type="text/javascript">
     User = {
@@ -54,9 +58,14 @@
                 </ul>
                 <% if SiteConfiguration.phone != "" %>
                 <ul class="soc-links">
+					<li class="hint">
+						получить информацию, <br />
+						заказать по телефону
+					</li>
                     <li class="first">
                         <img class="b-icon" src="/assets/telephone.png" /><span class="va-middle"><%= SiteConfiguration.phone %></span>
                     </li>
+					
                 </ul>
                 <% end %>
 
@@ -97,6 +106,7 @@
                         </div>
                         <div id="logo"><a href="/"><img src="/assets/logo.png" title="YoungLovers" alt="YoungLovers" /></a></div>
                     </div>
+
                 </div>
 
                 <div id="container">
