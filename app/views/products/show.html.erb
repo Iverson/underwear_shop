@@ -41,7 +41,9 @@
                 <div class="price">
                     <span class="text-price">Цена:</span>
                     <span class="price-new"><%= @product.final_price %>р</span><span class="price-old"><%= "#{@product.price.to_i}р" if @product.discount > 0 %></span>
+                    
                 </div>
+                <div class="delivery">Доставка в пределах МКАД:&nbsp; 250р.</div>
                 <br />
                 <%= form_tag(:controller => "cart", :action => "add_item", :method => "post") do %>
                 <div class="b-sizes">

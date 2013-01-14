@@ -2457,6 +2457,11 @@ position:relative; margin-left:-5px;
 	font-size:22px;
 	color:#303030;
 }
+
+.product-info .delivery {
+	padding: 5px 0 0 0;
+	zoom: 1;
+}
 .product-info .price-old {
 	text-decoration: line-through;
 	color:#A6A4A4;
