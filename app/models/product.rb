@@ -54,6 +54,10 @@ class Product < ActiveRecord::Base
     end
   end
   
+  def select_title
+     "#{self.name} (#{self.id})"
+  end
+  
   before_save() do
     id = self.id
     if self.new_record?
