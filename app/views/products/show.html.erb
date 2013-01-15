@@ -83,13 +83,12 @@
 				
 				<a name="garant"></a>
 				<div class="b-vk-like">
-					<div id="vk_like"></div>
+					<div id="vk_like_<%= @product.id %>"></div>
 					<script type="text/javascript">
-					VK.Widgets.Like("vk_like", {type: "button"});
+					VK.Widgets.Like("vk_like_<%= @product.id %>", {type: "button", pageTitle: '<%= @product.name %>', pageDescription: '<%= @product.description %>', pageImage: "<%= "#{request.protocol}#{request.host_with_port}#{@product.preview(:small)}" %>"}, <%= @product.id %>);
 					</script>
 				</div>
             </div>
-			
 			
 			<ul class="b-features">
 				<li>Товар можно вернуть в течение 7 дней после получения.</li>
@@ -115,8 +114,8 @@
         </div>
     </div>
 	
-    <div id="vk_comments"></div>
+    <div id="vk_comments_<%= @product.id %>"></div>
 	<script type="text/javascript">
-	VK.Widgets.Comments("vk_comments", {limit: 15, width: "718", attach: false});
+	VK.Widgets.Comments("vk_comments_<%= @product.id %>", {limit: 15, width: "718", attach: false}, <%= @product.id %>);
 	</script>
 </div>   
