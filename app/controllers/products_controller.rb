@@ -122,10 +122,10 @@ class ProductsController < ApplicationController
     @products = Product.published
     products_csv = CSV.generate do |csv|
       # header row
-      csv << ["id", "type", "available", "url", "price", "currencyId", "category", "picture", "delivery", "local_delivery_cost", "vendor", "model", "description"]
+      csv << ["id", "type", "available", "url", "price", "currencyId", "category", "picture", "delivery", "local_delivery_cost", "typePrefix", "vendor", "model", "description"]
       # data row
       @products.each do |p|
-        csv << [p.id, "vendor.model", "true", product_url(p), p.final_price, "RUR", p.section.name, "#{request.protocol}#{request.host_with_port}#{p.preview(:zoom)}", "true", "250", p.brand.name, p.name, p.description]
+        csv << [p.id, "vendor.model", "true", product_url(p.uri), p.final_price, "RUR", p.section.name, "#{request.protocol}#{request.host_with_port}#{p.preview(:zoom)}", "true", "250", p.section.name, p.brand.name, p.name, p.description]
       end
     end
 
