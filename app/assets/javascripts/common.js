@@ -328,5 +328,36 @@ $(function() {
 	{
 		$(this).closest('form').submit();
 	});
+	
+	/* Quality features */
+	
+	var features = $('.b-features');
+	
+	$('.js-quality').click(function()
+	{
+		features.removeClass('b-features_light');
+		
+		var timer, hCounter = 0;
+		function highlight() {
+			hCounter += 1;
+			features.toggleClass('b-features_light');
+			clearTimeout(timer)
+			
+			if (hCounter <= 6)
+			{
+				timer = setTimeout(highlight, 100);
+			} else {
+				features.addClass('b-features_light');
+			}
+			
+		}
+		
+		$('html,body').animate({scrollTop: (features.offset().top-$('.top-bg').height()-15) + "px"}, 500, function()
+		{
+			highlight();
+		});
+		
+		return false;
+	});
 		
 });
