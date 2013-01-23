@@ -29,7 +29,7 @@ xml.yml_catalog(:date => Time.now.strftime("%Y-%m-%d %H:%M")) do
                   xml.picture "#{request.protocol}#{request.host_with_port}#{img.image.url(:zoom)}"
                 end
                 xml.store "false"
-                xml.pickup "true"
+                xml.pickup "false"
                 xml.delivery "true"
                 xml.local_delivery_cost "250"
                 xml.vendor product.brand.name

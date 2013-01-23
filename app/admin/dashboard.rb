@@ -14,7 +14,7 @@ ActiveAdmin.register_page "Dashboard" do
     #
     
     
-   para content_tag(:div, link_to('Export CSV', csv_path), :style => "text-align: right;")
+   para content_tag(:div, link_to('Export XML(YML)', "#{yml_path}.xml"), :style => "text-align: right;")
         
     columns do
       column do
