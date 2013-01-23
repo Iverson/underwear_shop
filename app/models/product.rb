@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   scope :published, :conditions => { :state_id => 2 }
   
-  attr_accessible :brand_id, :description, :discount, :name, :price, :purchaise_price, :section_id, :country_id, :state_id, :pictures_attributes, :product_instances_attributes, :uri
+  attr_accessible :brand_id, :description, :discount, :name, :price, :purchaise_price, :section_id, :country_id, :state_id, :pictures_attributes, :product_instances_attributes, :uri, :color
   
   belongs_to :country
   belongs_to :section

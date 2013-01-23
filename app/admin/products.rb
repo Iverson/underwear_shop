@@ -33,6 +33,7 @@ ActiveAdmin.register Product do
       f.input :section
       f.input :brand
       f.input :country
+      f.input :color
       f.input :description
       f.input :state
       

@@ -6,6 +6,7 @@ UnderwearShop::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => "registrations" }
   
   match 'csv' => 'products#export_csv', :as => :csv
+  match 'yml' => 'products#export_yml', :as => :yml
 
   resources :passwords, :only => [:edit, :update]
   

@@ -33,6 +33,7 @@ ActiveAdmin.register Section do
       f.input :name
       f.hidden_field :parent_id
       f.input :uri
+      f.input :yml_parent_id
     end
     f.buttons
   end

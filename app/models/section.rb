@@ -1,5 +1,5 @@
 class Section < ActiveRecord::Base
-  attr_accessible :name, :parent_id, :uri
+  attr_accessible :name, :parent_id, :uri, :yml_parent_id
   
   has_many :products, :dependent => :destroy
   

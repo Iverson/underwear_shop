@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   require 'csv'
   
+  before_filter :price_http_auth, :only => [:export_yml] if Rails.env == "production"
+  
   def index
     @products = Product.all
   end
@@ -130,6 +132,21 @@ class ProductsController < ApplicationController
     end
 
     send_data(products_csv, :type => 'test/csv', :filename => 'products.csv')
+  end
+  
+  def export_yml
+    @products = Product.published
+    @sections = Section.all
+    
+    respond_to do |format|
+      format.xml # index.xml.builder
+    end
+  end
+  
+  def price_http_auth
+    authenticate_or_request_with_http_basic 'YML Price' do |name, password|
+      name == 'yml_parser' && password == 'qAs2Mg2b3jK5q'
+    end
   end
   
 end
