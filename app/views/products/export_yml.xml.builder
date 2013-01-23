@@ -1,4 +1,5 @@
 xml.instruct!
+xml.declare! :DOCTYPE, :yml_catalog, :SYSTEM, "shops.dtd"
 xml.yml_catalog(:date => Time.now.strftime("%Y-%m-%d %H:%M")) do
     xml.shop do
         xml.name "Young Lovers"
