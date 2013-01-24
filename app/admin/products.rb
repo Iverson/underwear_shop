@@ -34,6 +34,7 @@ ActiveAdmin.register Product do
       f.input :brand
       f.input :country
       f.input :color
+      f.input :matter
       f.input :description
       f.input :state
       

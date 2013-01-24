@@ -1,7 +1,9 @@
 class Product < ActiveRecord::Base
+  RU_SIZES = {"M" => "48,50", "L" => "50,52", "XL" => "52,54"}
+  
   scope :published, :conditions => { :state_id => 2 }
   
-  attr_accessible :brand_id, :description, :discount, :name, :price, :purchaise_price, :section_id, :country_id, :state_id, :pictures_attributes, :product_instances_attributes, :uri, :color
+  attr_accessible :brand_id, :description, :discount, :name, :price, :purchaise_price, :section_id, :country_id, :state_id, :pictures_attributes, :product_instances_attributes, :uri, :color, :matter
   
   belongs_to :country
   belongs_to :section
@@ -79,6 +81,16 @@ class Product < ActiveRecord::Base
   
   def to_param
     "#{uri}"
+  end
+  
+  def ru_sizes
+    sizes = []
+    self.product_instances.each do |instance|
+      RU_SIZES[instance.size].split(',').each do |size|
+        sizes.push size if !sizes.include? size
+      end
+    end
+    sizes
   end
 
 end

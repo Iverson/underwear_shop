@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130123143943) do
+ActiveRecord::Schema.define(:version => 20130124085250) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -137,20 +137,21 @@ ActiveRecord::Schema.define(:version => 20130123143943) do
   end
 
   create_table "products", :force => true do |t|
-    t.integer  "section_id",                                                      :null => false
-    t.integer  "brand_id",                                                        :null => false
+    t.integer  "section_id",                                                             :null => false
+    t.integer  "brand_id",                                                               :null => false
     t.decimal  "price",             :precision => 10, :scale => 2
-    t.string   "name",                                                            :null => false
+    t.string   "name",                                                                   :null => false
     t.text     "description"
-    t.integer  "discount",                                         :default => 0, :null => false
-    t.integer  "state_id",                                         :default => 2, :null => false
-    t.datetime "created_at",                                                      :null => false
-    t.datetime "updated_at",                                                      :null => false
+    t.integer  "discount",                                         :default => 0,        :null => false
+    t.integer  "state_id",                                         :default => 2,        :null => false
+    t.datetime "created_at",                                                             :null => false
+    t.datetime "updated_at",                                                             :null => false
     t.decimal  "purchaise_price",   :precision => 6,  :scale => 2
     t.integer  "country_id"
     t.string   "uri"
     t.integer  "order_items_count",                                :default => 0
     t.string   "color"
+    t.string   "matter",                                           :default => "Хлопок", :null => false
   end
 
   create_table "projects", :force => true do |t|
@@ -190,12 +191,13 @@ ActiveRecord::Schema.define(:version => 20130123143943) do
   end
 
   create_table "sections", :force => true do |t|
-    t.string   "name",          :null => false
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.string   "name",                                  :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "ancestry"
     t.string   "uri"
     t.integer  "yml_parent_id"
+    t.string   "yml_category",  :default => "Футболки", :null => false
   end
 
   add_index "sections", ["ancestry"], :name => "index_sections_on_ancestry"

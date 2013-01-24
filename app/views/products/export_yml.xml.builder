@@ -9,9 +9,10 @@ xml.yml_catalog(:date => Time.now.strftime("%Y-%m-%d %H:%M")) do
           xml.currency(:id => "RUR", :rate => 1)
         end
         xml.categories do
-          xml.category("Мужская одежда", :id => 1)
-          xml.category("Одежда", :id => 2, :parentId => 1)
-          xml.category("Белье и пляжная мода", :id => 3, :parentId => 1)
+          xml.category("Одежда и обувь", :id => 1)
+          xml.category("Мужская одежда", :id => 2, :parentId => 1)
+          xml.category("Одежда", :id => 3, :parentId => 2)
+          xml.category("Белье и пляжная мода", :id => 4, :parentId => 2)
           @sections.each do |section|
             xml.category(section.name, :id => 100+section.id, :parentId => section.yml_parent_id)
           end
@@ -19,13 +20,13 @@ xml.yml_catalog(:date => Time.now.strftime("%Y-%m-%d %H:%M")) do
         xml.local_delivery_cost "250"
         xml.offers do
           @products.each do |product|
-            product.product_instances.each do |instance|
-              xml.offer(:id => instance.id, :type => "vendor.model", :available => "true") do
+            product.ru_sizes.each_with_index do |size, index|
+              xml.offer(:id => product.id+index, :type => "vendor.model", :available => "true", :group_id => product.id) do
                 xml.url product_url(product.uri)
                 xml.price product.final_price
                 xml.currencyId "RUR"
                 xml.categoryId 100+product.section.id
-                xml.market_category "Мужская одежда/#{product.section.yml_parent_id == 2 ? "Одежда" : "Белье и пляжная мода"}/#{product.section.name}"
+                xml.market_category "Одежда и обувь/Мужская одежда/#{product.section.yml_parent_id == 4 ? "Белье и пляжная мода" : "Одежда"}/#{product.section.yml_category}"
                 product.pictures.each do |img|
                   xml.picture "#{request.protocol}#{request.host_with_port}#{img.image.url(:zoom)}"
                 end
@@ -33,6 +34,7 @@ xml.yml_catalog(:date => Time.now.strftime("%Y-%m-%d %H:%M")) do
                 xml.pickup "false"
                 xml.delivery "true"
                 xml.local_delivery_cost "250"
+                xml.typePrefix product.section.yml_parent_id == 4 ? "Боксеры" : product.section.name
                 xml.vendor product.brand.name
                 xml.model product.name
                 xml.description product.description
@@ -40,9 +42,10 @@ xml.yml_catalog(:date => Time.now.strftime("%Y-%m-%d %H:%M")) do
                 if product.color?
                   xml.param(product.color, :name => "Цвет")
                 end
-                xml.param(instance.size, :name => "Размер", :unit => "INT")
+                xml.param(size, :name => "Размер", :unit => "RU")
                 xml.param("Мужской", :name => "Пол")
                 xml.param("Взрослый", :name => "Возраст")
+                xml.param(product.matter, :name => "Материал")
               end
             end
           end
