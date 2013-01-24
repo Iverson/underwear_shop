@@ -22,6 +22,7 @@ class SectionsController < ApplicationController
     
     @section = Section.where(:uri => params[:id]).first
     @products = @section.products.order(params[:sort_by]).order("discount DESC").paginate(:page => params[:page], :per_page => @per_page)
+    @title = "Купить мужские #{@section.name.mb_chars.downcase.to_s} в интернет-магазине YoungLovers.ru"
     
     add_breadcrumb @section.name, section_url
 

@@ -2,12 +2,14 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>YoungLovers - интернет-магазин модной одежды и нижнего белья.</title>
+    <title><%= @title ? @title : "Young Lovers - интернет-магазин модной одежды и нижнего белья." %></title>
     <link href="/assets/favicon.ico" rel="icon" />
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
 
     <%= csrf_meta_tags %>
+    <meta name="keywords" content="мужская одежда, мужские футболки, поло, мужские трусы, мужские майки, интернет-магазин нижнего белья, интернет-магазин одежды" />
+    <meta name="description" content="<%= @title ? @title : "В интернет-магазине Young Lovers вы можете купить лучшие модели мужской одежды и нижнего белья высокого качества от лучших мировых брендов!" %>" />
 
     <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/assets/ie.css" /><![endif]-->
 

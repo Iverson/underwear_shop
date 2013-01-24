@@ -1,3 +1,4 @@
+# coding: utf-8
 class ProductsController < ApplicationController
   require 'csv'
   
@@ -32,6 +33,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.where(:uri => params[:id]).first
+    @title = "#{@product.name} купить за #{@product.final_price} руб. в интернет-магазине Young Lovers с доставкой"
     
     add_breadcrumb @product.section.name, section_url(@product.section)
     add_breadcrumb @product.name, product_url
