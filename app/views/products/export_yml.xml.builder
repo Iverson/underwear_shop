@@ -19,9 +19,9 @@ xml.yml_catalog(:date => Time.now.strftime("%Y-%m-%d %H:%M")) do
         end
         xml.local_delivery_cost "250"
         xml.offers do
-          @products.each do |product|
+          @products.each_with_index do |product, i|
             product.ru_sizes.each_with_index do |size, index|
-              xml.offer(:id => product.id+index, :type => "vendor.model", :available => "true", :group_id => product.id) do
+              xml.offer(:id => i*10+index+1, :type => "vendor.model", :available => "true", :group_id => product.id) do
                 xml.url product_url(product.uri)
                 xml.price product.final_price
                 xml.currencyId "RUR"
