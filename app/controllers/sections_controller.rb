@@ -14,7 +14,7 @@ class SectionsController < ApplicationController
   # GET /sections/1
   # GET /sections/1.json
   def show
-    @per_page = params[:limit] || 10
+    @per_page = params[:limit] || 'all'
     
     if @per_page == 'all'
       @per_page = nil

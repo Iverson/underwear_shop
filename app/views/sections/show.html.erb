@@ -10,7 +10,7 @@
     </div>
     <div class="limit"><b>Показывать:</b>
         <select id="sags" class="js-limitFilter">
-            <%= options_for_select([['10', section_path(params.merge(:limit => 10))], ['20', section_path(params.merge(:limit => 20))], ['Все', section_path(params.merge(:limit => 'all'))]], section_path(params)) %>
+            <%= options_for_select([['Все', section_path(params.merge(:limit => 'all'))], ['10', section_path(params.merge(:limit => 10))], ['20', section_path(params.merge(:limit => 20))]], section_path(params)) %>
         </select>
     </div>
     <!--div class="product-compare"><a href="#" id="compare-total">Сравнить товары (0)</a></div-->

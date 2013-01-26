@@ -95,7 +95,7 @@ class OrdersController < ApplicationController
           UserMailer.order_email(@order).deliver
         end
         
-        format.html { redirect_to root_url, notice: 'Ваш заказ принят, на ваш E-mail выслано письмо с инструкциями.' }
+        format.html { redirect_to root_url, notice: 'Ваш заказ принят, оператор свяжется с вами по телефону в течение нескольких часов.' }
         format.json { head :no_content }
       else
         format.html { render :checkout }

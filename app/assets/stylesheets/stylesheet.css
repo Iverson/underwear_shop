@@ -1117,9 +1117,9 @@ label {
 	padding-left:30px!important;
 }
 .attention {
-	background: #FFF5CC url('/assets/attention.png') 10px center no-repeat;
+	background: #FFF5CC;
 	border: 1px solid #F2DD8C;
-	padding-left: 36px !important;
+	padding-left: 17px !important;
 }
 .success .close, .warning .close, .attention .close, .information .close {
 	float: right;
