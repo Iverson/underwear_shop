@@ -35,7 +35,7 @@
         <div class="top-bg">
             <div class="top-container">
                 <ul class="links">
-                    <li class="first"><a href="/">Домой</a></li>
+                    <li class="first"><a href="/">Главная</a></li>
                     <li>
                         <%= link_to (favorites_path) do %>
                         Избранное <span>
@@ -48,7 +48,6 @@
                         <% end %>
                     </li>
                     <li><%= link_to 'Мой профиль', edit_user_registration_path %></li>
-                    <li><%= link_to 'Корзина', cart_index_path %></li>
                     <li><%= link_to 'Заказать', order_checkout_path %></li>
 
                     <% if user_signed_in? %>

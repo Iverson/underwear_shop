@@ -27,9 +27,6 @@ ActiveAdmin.register_page "Dashboard" do
             f.column "Phone" do |o|
               o.address.phone
             end
-            f.column "Address" do |o|
-              o.address.address
-            end
             f.column "Summ (RUR)" do |o|
               o.summ
             end

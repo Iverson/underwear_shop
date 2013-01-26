@@ -25,13 +25,12 @@ class OrdersController < ApplicationController
       @order = Order.find(@cart['order_id'])
     else
       @order = Order.new
-
-      if user_signed_in?
-        @order.build_address({:address => current_user.address.address, :phone => current_user.phone, :city => current_user.address.city, :fio => current_user.first_name, :email => current_user.email})
-      else
-        @order.build_address({:city => "Москва"})
-      end
-      
+    end
+    
+    if user_signed_in?
+      @order.build_address({:address => current_user.address.address, :phone => current_user.phone, :city => current_user.address.city, :fio => current_user.first_name, :email => current_user.email})
+    else
+      @order.build_address({:city => "Москва"})
     end
     
     respond_to do |format|
@@ -67,18 +66,12 @@ class OrdersController < ApplicationController
     
     respond_to do |format|
       if @order.update_attributes(params[:order])
-        if @order.delivery_id != nil
-          session[:cart]['checkout_step'] = 4
-        else
-          session[:cart]['checkout_step'] = 3
-        end
+        session[:cart]['checkout_step'] = 3
         
         format.html { render :checkout }
         format.json { head :no_content }
       else
-        if @order.delivery_id == nil
-          session[:cart]['checkout_step'] = 2
-        end
+        session[:cart]['checkout_step'] = 2
         
         format.html { render :checkout }
         format.json { render json: @order.errors, status: :unprocessable_entity }
@@ -98,11 +91,9 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.update_attributes(params[:order])
         session[:cart] = nil
-        if user_signed_in? && current_user.address.address.empty?
-          current_user.address.address = @order.address.address
-          current_user.address.save
+        if @order.address.email?
+          UserMailer.order_email(@order).deliver
         end
-        UserMailer.order_email(@order).deliver
         
         format.html { redirect_to root_url, notice: 'Ваш заказ принят, на ваш E-mail выслано письмо с инструкциями.' }
         format.json { head :no_content }

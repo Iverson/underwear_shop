@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124085250) do
+ActiveRecord::Schema.define(:version => 20130126202523) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(:version => 20130124085250) do
   create_table "addresses", :force => true do |t|
     t.integer  "user_id"
     t.integer  "order_id"
-    t.text     "address",          :null => false
-    t.string   "city",             :null => false
+    t.string   "address"
+    t.string   "city"
     t.string   "phone",            :null => false
     t.string   "fio",              :null => false
     t.integer  "addressable_id"

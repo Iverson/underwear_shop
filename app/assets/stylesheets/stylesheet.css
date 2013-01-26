@@ -1286,7 +1286,7 @@ a.button {
     background: #D94574 !important;
 }
 
-body a.button_pink:hover {
+body .button_pink:hover {
     color:#fff !important;
 }
 
@@ -3251,12 +3251,21 @@ background: url(/assets/tail-manuf.gif)  0 0 repeat-x #F8F8F8;
 .checkout-content .right input.d1{ width:320px; margin-top:5px;}
 .checkout-content .right {
 	float: right;
-	width: 48%;
+	width: 46%;
+    margin-bottom: 15px;
 }
+
+.checkout-content .description {
+    color:#666;
+    font-size: 12px;
+    line-height: 1.4em;
+    padding-top: 21px;
+}
+
 .checkout-content .buttons .right input {  position:relative; top:2px;}
 .checkout-content .buttons {
 	clear: both;
-	margin-bottom:0;
+    text-align:center;
 }
 .checkout-product table  b{ color:#191919; font-weight:bold; font-family:Arial, Helvetica, sans-serif;}
 .checkout-product table {
@@ -3713,6 +3722,10 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
 
 .b-register-form {
 	width: 500px !important;
+}
+
+.b-btn_wide {
+    padding: 0 30px;
 }
 
 .button_to {
