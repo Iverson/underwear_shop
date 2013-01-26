@@ -22,7 +22,7 @@ ActiveAdmin.register Promo do
       f.inputs "Promo items" do
         f.has_many :promo_items, :class => "b-aa-sizes-form " do |p|
           
-          p.input :product_id, :as => :select, :multiple => false, :collection => Product.all
+          p.input :product_id, :as => :select, :multiple => false, :collection => Product.all.map { |a| [ a.select_title, a.id ]}
           p.input :count
           p.input :_destroy, :as=>:boolean, :required => false, :label => 'Remove item'
         end 
