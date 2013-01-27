@@ -31,7 +31,7 @@ module ApplicationHelper
         
       end.join.html_safe
       
-      return content_tag(:ul, html, :class => "b-sections-menu")
+      return html
     else
       return ''
     end

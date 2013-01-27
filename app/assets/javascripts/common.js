@@ -180,19 +180,6 @@ $(function() {
 	$('#cart .heading').live('click', function() {
 		$('#cart').toggleClass('active');
 	});
-	
-	/* Mega Menu */
-	$('#menu ul > li > a + div').each(function(index, element) {
-		
-		var menu = $('#menu').offset();
-		var dropdown = $(this).parent().offset();
-		
-		i = (dropdown.left + $(this).outerWidth()) - (menu.left + $('#menu').outerWidth());
-		
-		if (i > 0) {
-			$(this).css('margin-left', '-' + (i + 5) + 'px');
-		}
-	});
 
 	function removeNoti()
 	{
@@ -358,6 +345,15 @@ $(function() {
 		});
 		
 		return false;
+	});
+	
+	/* Submenu */
+	
+	$('.b-sections-menu__item_sub .section').click(function()
+	{
+	    $(this).closest('.b-sections-menu__item').find('.b-sections-menu').slideToggle(300);
+	    
+        return false; 
 	});
 		
 });

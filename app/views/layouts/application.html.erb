@@ -153,7 +153,19 @@
                                 <div class="box-content-image">
                                     <div class="box-heading">Каталог</div>
                                     <div class="box-category">
-                                        <%= menu_sections_tree Section.arrange(:order => :id) %>
+										<ul class="b-sections-menu">
+											<%= menu_sections_tree Section.arrange(:order => :id) %>
+											
+											<li class="b-sections-menu__item b-sections-menu__item_sub <%= "active" if @brand %>">
+												<span class="section">Брэнды</span>
+												<span class="act-cat"></span>
+												<ul class="b-sections-menu">
+												<% @brands.each do |brand| %>
+													<li><%= link_to brand.name, brand, :class => "subsection #{"active" if @brand && @brand == brand}" %></li>
+												<% end %>
+												</ul>
+											</li>
+										</ul>
                                     </div>
                                 </div>
                             </div>

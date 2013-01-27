@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :init_cart
   before_filter :bestsellers
   before_filter :top_promo
+  before_filter :brands
   
   add_breadcrumb I18n.t("breadcrumbs.homepage"), "/"
   
@@ -39,6 +40,10 @@ class ApplicationController < ActionController::Base
   
   def top_promo
     @top_promo = Promo.top.first
+  end
+  
+  def brands
+    @brands = Brand.all
   end
   
 end
