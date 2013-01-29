@@ -12,7 +12,7 @@ class BrandsController < ApplicationController
     
     @brand = Brand.find(params[:id])
     @products = @brand.products.order(params[:sort_by]).order("discount DESC").paginate(:page => params[:page], :per_page => @per_page)
-    @title = "Купить одежду #{@brand.name} в интернет-магазине YoungLovers.ru"
+    @title = "Купить мужскую одежду #{@brand.name} в интернет магазине YoungLovers.ru"
     
     add_breadcrumb @brand.name, brand_url
 

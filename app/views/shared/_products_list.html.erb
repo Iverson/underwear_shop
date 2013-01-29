@@ -12,7 +12,7 @@
 		<% end %>
         <div class="image">
             <a href="<%= product_path(product.uri) %>">
-                <img class="js-productImage" src="<%= product.preview(:catalog) %>" alt="" />
+                <img class="js-productImage" src="<%= product.preview(:catalog) %>" alt="<%= "Купить #{product.name}" %>" />
             </a>
             
             <a href="#" class="zoom-top js-productZoom" data-gallery="gallery-<%= product.id %>"></a>
@@ -27,6 +27,9 @@
         <div class="actions">
             <div class="price"> 
                 <span class="price-new"><%= product.final_price %>р</span> <span class="price-old"><%= "#{product.price.to_i}р" if product.discount > 0 %></span>
+            </div>
+            <div class="delivery">
+                Доставка <%= Delivery.courier.first.price_to_s %>
             </div>
             <div class="actions-buttons">
                 <div class="cart">

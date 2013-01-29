@@ -1,0 +1,18 @@
+<div class="wrapper mb-1">
+    <div id="tabs" class="htabs">
+        <div class="tab selected">С этим товаром так же смотрят</div>
+    </div>
+</div>
+<div class="b-similar-products">
+        <div class="b-similar-products__list">
+        <% @similar_products.each do |product| %>
+            <%= link_to product_path(product.uri), :class => "b-similar-products__item" do %>
+                <%= image_tag product.preview(:small), :alt => "Купить #{product.name}" %>
+                <p class="b-similar-products__item__t">
+                    <%= product.section.name %><br />
+                    <%= product.brand.name %>
+                </p>
+            <% end %>
+        <% end %>
+        </div>
+    </div>

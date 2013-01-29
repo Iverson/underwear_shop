@@ -14,7 +14,7 @@
             <div class="zoom-top js-productZoom" data-gallery="gallery-<%= @product.id %>"></div>
             <div class="image"> 
                 <a href="<%= @product.preview(:zoom) %>" class="js-jqzoom" title="<%= @product.name %>" rel="gal1">  
-                    <img src="<%= @product.preview(:detail) %>" title="IMAGE TITLE">  
+                    <img src="<%= @product.preview(:detail) %>"  alt="<%= "Купить #{@product.name}, доставка бесплатно" %>">  
                 </a>
             </div>
             <div id="gallery-<%= @product.id %>" class="image-additional">
@@ -22,7 +22,7 @@
                 <% @product.pictures.each_with_index do |img, i| %>
                     <a href="<%= img.image.url(:zoom) %>" title="<%= @product.name %>" rel="item-<%= @product.id %>" class="js-fancybox"></a>
                     <a href="javascript:void(0);" class="<% if i == 0 %>zoomThumbActive<% end %>" rel="{gallery: 'gal1', smallimage: '<%= img.image.url(:detail) %>',largeimage: '<%= img.image.url(:zoom) %>'}">
-                        <%= image_tag img.image.url(:small) %>
+                        <%= image_tag img.image.url(:small), :alt => "Купить #{@product.name}, доставка бесплатно" %>
                     </a>
                 <% end %>
             </div>
@@ -43,7 +43,7 @@
                     <span class="price-new"><%= @product.final_price %>р</span><span class="price-old"><%= "#{@product.price.to_i}р" if @product.discount > 0 %></span>
                     
                 </div>
-                <div class="delivery">Доставка в пределах МКАД:&nbsp; 250р.</div>
+                <div class="delivery">Доставка по Москве:&nbsp; <%= Delivery.courier.first.price_to_s %></div>
                 <br />
                 <%= form_tag(:controller => "cart", :action => "add_item", :method => "post") do %>
                 <div class="b-sizes">
@@ -91,10 +91,10 @@
             </div>
 			
 			<ul class="b-features">
-			    <li>Вы можете примерить одежду в день доставки, поменять размер или отказаться от покупки, если вещь вам не подошла или не устроило качество.</li>
-			    <li>Вы гарантированно получаете вещь как на фото.</li>
-				<li>Доставка на следующий день или любой другой.</li>
-				<li>Товар можно вернуть в течение 14 дней после получения.</li>
+			    <li>вы можете примерить одежду в день доставки, поменять размер или отказаться от покупки, если вещь вам не подошла или не устроило качество.</li>
+			    <li>вы гарантированно получаете вещь как на фото.</li>
+				<li>доставка на следующий день или любой другой.</li>
+				<li>товар можно вернуть в течение 14 дней после получения.</li>
 			</ul>
             
             <div class="wrapper mb-1">
@@ -113,6 +113,9 @@
 			
         </div>
     </div>
+	
+    <%= render :partial => 'similar_products' %>
+
 	
     <div id="vk_comments_<%= @product.id %>"></div>
 	<script type="text/javascript">

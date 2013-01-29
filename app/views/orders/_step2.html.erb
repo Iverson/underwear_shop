@@ -41,8 +41,8 @@
 							<label for="order_delivery_id_<%= d.id %>"><b><%= d.name %></b></label>
 						</p>
 					</td>
-					<td width="50"></td>
-					<td style="text-align: right;"><label for="flat.flat"><%= d.price %>руб</label></td>
+					<td width="40"></td>
+					<td style="text-align: right;"><label for="flat.flat"><%= d.price_to_s %></label></td>
 				</tr>
 				<% end %>
 			</table>

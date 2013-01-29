@@ -12,7 +12,7 @@
 											<div class="name maxheight-best"><%= link_to bs.name, product_path(bs.uri) %></div>
 											<div class="image">
 												<%= link_to product_path(bs.uri) do %>
-													<%= image_tag bs.preview(:small), :width => "50" %>
+													<%= image_tag bs.preview(:small), :width => "50", :alt => "Купить #{bs.name}, доставка бесплатно" %>
 												<% end %>
 											</div>
 											<div class="extra-wrap">

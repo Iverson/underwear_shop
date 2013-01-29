@@ -41,14 +41,6 @@
                 <div class="box-shining">
                     <div class="box-heading">Новинки</div>
                     
-                    <script type="text/javascript">
-                        $(function(){
-                            var Products = new ProductsCollection;
-                            Products.reset(<%= @products.to_json(:methods => [:preview_medium, :fast_to_cart, :final_price]).html_safe %>);
-                        });
-                        
-                    </script>
-                   
                     <div class="box-product">
                         <ul>
                             <% if @products.length == 0 %>
@@ -58,9 +50,11 @@
                             <li>
                                 <div class="padd-both">
                                     <div class="image2">
-                                        <a href="#"><%= image_tag( product.pictures.first.image.url(:medium) ) %></a>
+                                        <%= link_to product_path(product.uri) do %>
+                                            <%= image_tag product.preview(:medium), :alt => "Купить #{product.name}, доставка бесплатно"  %>
+                                        <% end %>
                                     </div>
-                                    <div class="price"> <%= product.price %>р </div>
+                                    <div class="price"> <%= product.final_price %>р </div>
                                     <div class="name maxheight">
                                         <%= link_to product.name, product %>
                                     </div>
@@ -68,7 +62,7 @@
                                         <%= link_to(product, :class => "button addToCart") do %>
                                             <span>Детально</span>
                                         <% end %>
-										<a href="#" class="button details js-addToCart" rel="<%= product.id %>"><span>В корзину</span></a>
+										<a href="#" class="button details js-addToCart" data-product="<%= product.id %>" data-fastadd="<%= product.fast_to_cart %>"><span>В корзину</span></a>
                                     </div>
                                 </div>
                             </li>

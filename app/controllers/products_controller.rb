@@ -33,7 +33,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.where(:uri => params[:id]).first
-    @title = "#{@product.name} купить за #{@product.final_price} руб. в интернет-магазине Young Lovers с доставкой"
+    @similar_products = @product.section.products.where("id != ?", @product.id).limit(6)
+    @title = "#{@product.name} купить за #{@product.final_price} руб. в интернет магазине Young Lovers, доставка бесплатно"
     
     add_breadcrumb @product.section.name, section_url(@product.section)
     add_breadcrumb @product.name, product_url

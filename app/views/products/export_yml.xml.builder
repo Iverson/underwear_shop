@@ -17,7 +17,7 @@ xml.yml_catalog(:date => Time.now.strftime("%Y-%m-%d %H:%M")) do
             xml.category(section.name, :id => 100+section.id, :parentId => section.yml_parent_id)
           end
         end
-        xml.local_delivery_cost "250"
+        xml.local_delivery_cost Delivery.courier.first.price.to_i
         xml.offers do
           @products.each_with_index do |product, i|
             product.ru_sizes.each_with_index do |size, index|
@@ -33,7 +33,7 @@ xml.yml_catalog(:date => Time.now.strftime("%Y-%m-%d %H:%M")) do
                 xml.store "false"
                 xml.pickup "false"
                 xml.delivery "true"
-                xml.local_delivery_cost "250"
+                xml.local_delivery_cost Delivery.courier.first.price.to_i
                 xml.typePrefix product.section.yml_parent_id == 4 ? "Боксеры" : product.section.name
                 xml.vendor product.brand.name
                 xml.model product.name

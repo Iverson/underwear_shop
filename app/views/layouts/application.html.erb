@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title><%= @title ? @title : "Young Lovers - интернет-магазин модной одежды и нижнего белья." %></title>
+    <title><%= @title ? @title : "Модная мужская одежда и нижнее белье в интернет магазине Young Lovers." %></title>
     <link href="/assets/favicon.ico" rel="icon" />
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
@@ -31,11 +31,16 @@
 
 </head>
 <body class="">
+    <% if @index %>
+    <h1 class="main_h1">Купить мужскую одежду от лучших мировых брендов с бесплатной доставкой и примеркой</h1>
+    <% end %>
     <div class="main-shining">
         <div class="top-bg">
             <div class="top-container">
                 <ul class="links">
                     <li class="first"><a href="/">Главная</a></li>
+                    
+                    <% if user_signed_in? %>
                     <li>
                         <%= link_to (favorites_path) do %>
                         Избранное <span>
@@ -47,6 +52,7 @@
                         </span>
                         <% end %>
                     </li>
+                    <% end %>
                     <li><%= link_to 'Мой профиль', edit_user_registration_path %></li>
                     <li><%= link_to 'Заказать', order_checkout_path %></li>
 
@@ -59,6 +65,7 @@
                 </ul>
                 <% if SiteConfiguration.phone != "" %>
                 <ul class="soc-links">
+                    
 					<li class="hint">
 						получить информацию, <br />
 						заказать по телефону
@@ -66,7 +73,7 @@
                     <li class="first">
                         <img class="b-icon" src="/assets/telephone.png" /><span class="va-middle"><%= SiteConfiguration.phone %></span>
                     </li>
-					
+					<li class="vk"><a target="_blank" href="http://vk.com/younglovers">группа в контакте</a></li>
                 </ul>
                 <% end %>
 
@@ -105,7 +112,7 @@
                             </div>
                             <div class="clear"></div>
                         </div>
-                        <div id="logo"><a href="/"><img src="/assets/logo.png" title="YoungLovers" alt="YoungLovers" /></a></div>
+                        <a href="/" id="logo">Модная мужская одежда в интернет магазине YoungLovers.ru</a>
                     </div>
 
                 </div>
@@ -119,7 +126,7 @@
                     <p class="attention"><%= notice %></p>
                     <% end %>
                     <% if alert %>
-                    <p class="warning"><%= alert %></p>
+                    <p class="attention"><%= alert %></p>
                     <% end %>
 
                     <div id="column-left">
@@ -227,6 +234,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div class="">
+                        
                     </div>
                 </div>
                 <% if Rails.env == 'production' %>
