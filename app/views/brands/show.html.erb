@@ -5,12 +5,12 @@
 <div class="product-filter">
     <div class="sort"><b>Сортировать:</b>
         <select id="sags" class="js-limitFilter">
-            <%= options_for_select([['', section_path(params.merge(:sort_by => ''))], ['По цене', section_path(params.merge(:sort_by => 'price'))], ['По имени', section_path(params.merge(:sort_by => 'name'))]], section_path(params)) %>
+            <%= options_for_select([['', brand_path(params.merge(:sort_by => ''))], ['По цене', brand_path(params.merge(:sort_by => 'price'))], ['По имени', brand_path(params.merge(:sort_by => 'name'))]], brand_path(params)) %>
         </select>
     </div>
     <div class="limit"><b>Показывать:</b>
         <select id="sags" class="js-limitFilter">
-            <%= options_for_select([['Все', section_path(params.merge(:limit => 'all'))], ['10', section_path(params.merge(:limit => 10))], ['20', section_path(params.merge(:limit => 20))]], section_path(params)) %>
+            <%= options_for_select([['Все', brand_path(params.merge(:limit => 'all'))], ['10', brand_path(params.merge(:limit => 10))], ['20', brand_path(params.merge(:limit => 20))]], brand_path(params)) %>
         </select>
     </div>
     <div class="display js-productsViewModeSelect">

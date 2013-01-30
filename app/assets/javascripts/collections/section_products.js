@@ -4,6 +4,6 @@ var SectionProductsCollection = Backbone.Collection.extend({
 
 	initialize: function() {
 		var sectionView = new SectionView({collection: this});
-	},
+	}
 
 });

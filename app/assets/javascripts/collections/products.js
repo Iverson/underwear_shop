@@ -4,6 +4,6 @@ var ProductsCollection = Backbone.Collection.extend({
 
 	initialize: function() {
 		var catalogView = new CatalogView({collection: this});
-	},
+	}
 
 });

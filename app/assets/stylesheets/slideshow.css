@@ -92,12 +92,12 @@ filter: alpha(opacity=100);}
 	margin:0;
 }
 .nivo-caption .bann-price {
-	margin-top: -20px;
+	margin-top: -2px;
 }
 .nivo-caption p span {  display:inline-block; }
 .nivo-caption p span.first { font-size:53px; line-height:64px; color:#fff; font-family:'Open Sans', sans-serif; font-weight:600px;}
 .nivo-caption p span.second { font-size:83px; line-height:100px; color:#fff; font-family:'Open Sans', sans-serif; font-weight:700px; letter-spacing:-3px;}
-.nivo-caption p span.third { font-size:45px; line-height:54px; color:#fff; font-family:'Open Sans', sans-serif; font-weight:600px; position:relative; top:-28px;}
+.nivo-caption p span.third { font-size:45px; line-height:54px; color:#fff; font-family:'Open Sans', sans-serif; font-weight:600px; position:relative; top:-28px; display:none;}
 .nivo-caption p span.four { font-size:24px; line-height:1.2em; color:#a1ddfc; font-family:'Open Sans', sans-serif; font-weight:600px; margin-left: 0; display: block; margin-bottom: 30px;}
 .nivo-caption p .name { font-size:23px; line-height:27px; color:#fa467f; font-family:'Open Sans', sans-serif; font-weight:600px; margin-bottom:16px;}
 .nivo-caption p span { line-height:1.35em; font-size: 15px;}

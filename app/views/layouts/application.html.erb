@@ -73,7 +73,7 @@
                     <li class="first">
                         <img class="b-icon" src="/assets/telephone.png" /><span class="va-middle"><%= SiteConfiguration.phone %></span>
                     </li>
-					<li class="vk"><a target="_blank" href="http://vk.com/younglovers">группа в контакте</a></li>
+					<li class="vk"><a target="_blank" href="http://vk.com/younglovers">группа вконтакте</a></li>
                 </ul>
                 <% end %>
 
@@ -246,6 +246,7 @@
             </div>
         </div>
     </div>
+    <% if Rails.env == 'production' %>
     <script type="text/javascript">
         var reformalOptions = {
             project_id: 89255,
@@ -265,5 +266,6 @@
             document.getElementsByTagName('head')[0].appendChild(script);
         })();
     </script><noscript><a href="http://reformal.ru"><img src="http://media.reformal.ru/reformal.png" /></a><a href="http://younglovers.reformal.ru">Oтзывы и предложения для younglovers.ru</a></noscript>
+    <% end %>
 </body>
 </html>

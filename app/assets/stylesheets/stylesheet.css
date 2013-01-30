@@ -194,7 +194,7 @@ td, th, input, textarea, select, a {
 	background: url(/assets/s_vk.png) 0 2px no-repeat;
 	font-size: 11px;
 	line-height: 1.2em;
-	padding: 0 0 5px 33px;
+	padding: 0 0 5px 32px;
 	text-transform: none;
 	white-space: normal;
 	width: 73px;
@@ -493,7 +493,7 @@ label {
 	-webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.3);
 	width:190px;
 }
-#header #cart .heading .fr { float:right; padding-right:34px;}
+#header #cart .heading .fr { float:right; padding-right:34px; white-space: nowrap;}
 #header #cart.active .content {
 	display: block;
 }
@@ -2037,12 +2037,13 @@ background:url(/assets/tail-manuf.gif) 0px 0px repeat-x #f8f8f8;
 	background:url(/assets/box-bg.png);
 	border-radius:10px;
 	padding:5px 6px 5px 11px;
-	overflow: auto;
+	overflow: hidden;
 	margin-bottom:10px;
 	border:1px solid #E7E7E7;
 }
 .product-filter .display {
 	float:right;
+	white-space: nowrap;
 	color: #333; height:24px;
 }
 .display ul li.list a {
@@ -2118,10 +2119,6 @@ background:url(/assets/tail-manuf.gif) 0px 0px repeat-x #f8f8f8;
 
 #list_a.active {
     background: url("/assets/list_a.png") no-repeat scroll 0 top transparent;
-    display: inline-block;
-    height:24px;
-
-    width:25px;
 	cursor: auto;
 }
 #grid_a {
@@ -2146,9 +2143,6 @@ background:url(/assets/tail-manuf.gif) 0px 0px repeat-x #f8f8f8;
 }
 #grid_a.active {
     background: url("/assets/grid_a.png") no-repeat scroll 0 top transparent;
-    display: inline-block;
-    height:24px;
-    width:25px;
 	cursor: auto;
 }
 
@@ -2809,6 +2803,7 @@ position:relative; margin-left:-5px;
 	background:url(/assets/box-bg.png);
 	border-radius:10px;
 	padding:15px;
+	zoom: 1;
 }
 .login-content .left  p + p { margin-bottom:16px;}
 .login-content .left  p{ margin-bottom:10px; line-height:17px;}
@@ -3184,7 +3179,7 @@ background: url(/assets/tail-manuf.gif) 0 0 repeat-x #F8F8F8;
 .cart-total table td{ padding:6px 10px 6px 10px; border-bottom:1px solid #E7E7E7;  font-weight:bold; color:#4d4949;}
 .cart-total table td b { font-family:Arial, Helvetica, sans-serif;}
 .row-table-2{ background:#f9f9f9;}
-.row-table-4{ background:#f9f9f9;}
+.row-table-4 td{ background:#f9f9f9;}
 .row-table-6{ background:#f9f9f9;}
 .row-table-8{ background:#f9f9f9;}
 .row-table-1{ background:#fff;}
@@ -3695,7 +3690,11 @@ input#sub_category, input#description { position:relative; top:2px;}
 	border-left:none;
 	border-right:none;
 	border-bottom:none;
+	zoom: 1;
 	}
+.cart-total {
+	zoom: 1;
+}
 .cart-bottom .buttons{ border:1px solid #f7f7f7; border-radius:5px; padding-bottom:8px; padding-top:8px; margin-bottom:0; padding-left:8px; padding-right:8px;background:#fff; margin-top:15px; }
 .shop-cart-content .highlight label { font-weight:bold;}
 #confirm .checkout-content {

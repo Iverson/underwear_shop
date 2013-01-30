@@ -1,6 +1,15 @@
-.product-info .image-additional a, .new-products ul li, .featured ul li, .b-btn, .b-cart-remove-item, .button_to, a.button {
+.product-info .image-additional a, .new-products ul li, .featured ul li, .b-btn, .b-cart-remove-item, .button_to, a.button, .nivo-caption p span, .grid .b-section-products__item, #grid_a, #list_a {
 	display: inline;
 	zoom: 1;
+}
+
+#list_a {
+	margin-left: 4px;
+}
+
+.b-input input {
+	padding-top: 8px;
+	height: 24px;
 }
 
 /*

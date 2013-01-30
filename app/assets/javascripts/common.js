@@ -1,4 +1,4 @@
-var yaCounter19019545 = yaCounter19019545 || {reachGoal: function() {console.log('yaCounter not loaded!')}};
+var yaCounter19019545 = yaCounter19019545 || {reachGoal: function() {/*console.log('yaCounter not loaded!')*/}};
 var is_touch_device = 'ontouchstart' in document.documentElement;
 
 
