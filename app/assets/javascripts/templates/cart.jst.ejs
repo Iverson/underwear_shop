@@ -1,9 +1,15 @@
 <div id="cart" class="">
-    <div class="heading"> <a><span class="sc-button"></span> <span class="fr">
-        <h4>Корзина</h4>
-        <span id="cart-total"><%= cart['count'] %> товар(ов) - <%= cart['summ'] %>р</span></span></a> </div>
-        <div class="content">
-            <% if (cart['count'] > 0) { %>
+    <div class="heading">
+        <i class="b-icon i-cart"></i>
+        <span class="sc-button"></span>
+        <span class="fr">
+            
+            <h4>Корзина</h4>
+            <span id="cart-total"><%= cart['count'] %> товар(ов) - <%= cart['summ'] %>р</span>
+        </span>
+    </div>
+    <div class="content">
+        <% if (cart['count'] > 0) { %>
             
             <div class="mini-cart-info">
                 <table class="cart">

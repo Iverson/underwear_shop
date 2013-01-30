@@ -200,11 +200,33 @@ td, th, input, textarea, select, a {
 	width: 73px;
 	margin-left: 40px;
 }
-/*
-.soc-links li.first a { background:url(/assets/twitter.png) 0 0px no-repeat;}
-.soc-links li.first a:hover { background-position:0 -41px; color:#4bacee;}
-.soc-links li.second a { background:url(/assets/facebook.png) 0 0px no-repeat; padding-left:28px;}
-.soc-links li.second a:hover { background-position:0 -40px; color:#185681;}*/
+
+
+.b-icon {
+	display:inline-block;
+	width: 32px;
+	height: 32px;
+	vertical-align:middle;
+	background: url(/assets/s_icon.png) no-repeat;
+}
+
+.i-delivery {
+	width: 35px;
+	background-position:0 0;
+}
+
+.i-try {
+	background-position:0 -41px;
+}
+
+.i-cart {
+	background-position:0 -82px;
+}
+
+img.b-icon {
+	height: auto;
+}
+
 .content-bg {
 	background:#fefefe;
 	width:950px;
@@ -448,7 +470,8 @@ label {
 #tab-review #captcha{ margin-top:10px;}
 
 /*********************************************************************************************header-cart*******************************************************************************************/
-.cart-inner{
+.cart-inner {
+	min-width: 203px;
 	height:56px;
 	background:url(/assets/cart-bg.png) repeat-x #070707;
 	float:right;
@@ -491,9 +514,9 @@ label {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.3);
 	-webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.3);
-	width:190px;
+	width:202px;
 }
-#header #cart .heading .fr { float:right; padding-right:34px; white-space: nowrap;}
+#header #cart .heading .fr { padding-right:34px; white-space: nowrap;}
 #header #cart.active .content {
 	display: block;
 }
@@ -591,18 +614,27 @@ label {
     text-transform: uppercase;
 }
 #header #cart .heading {
-	padding:0 0 0 12px;
+	cursor: pointer;
+	padding:0 0 0 49px;
 	position: relative; 
 	z-index: 1;
 	overflow:hidden;
+	width: 154px;
 }
+
+	#header #cart .heading .i-cart {
+		position:absolute;
+		left: 10px;
+		top: 13px;
+	}
+	
 .heading a { text-decoration:none;}
 .right-bg { margin-right:14px;}
 .cart-position { 
 	position:absolute; 
 	right:0; 
 	top:94px;
-	*width: 191px;
+	width: 580px;
 }
 /****************************************************************************************************************************************************************************************/
 #header #welcome a{ 
@@ -3893,7 +3925,7 @@ strike {
 	font-weight:normal;
 }
 
-.b-icon {
+.i-phone {
 	vertical-align:middle;
 	margin-right: 6px;
 }
@@ -4035,3 +4067,109 @@ strike {
 	margin: 0 0 -20px 0;
 	padding: 0;
 }
+
+.b-plus {
+	float:right;
+	margin-right: 12px;
+	position:relative;
+	text-decoration:none;
+}
+
+	.b-plus__h {
+		background: #2B2B2B;
+		border-radius: 11px;
+		-moz-border-radius: 11px;
+		-webkit-border-radius: 11px;
+		padding: 10px 30px 0 52px;
+		height: 46px;
+		cursor: pointer;
+	}
+	
+	.b-plus_delivery .b-plus__h {
+		padding-left: 60px;
+	}
+
+	.b-plus__icon {
+		position:absolute;
+		left: 13px;
+		top: 14px;
+	}
+	
+	.b-plus__t {
+		display:block;
+		color:#fff;
+		font-family: 'Open Sans',sans-serif;
+	    font-size: 15px;
+	    font-weight: 700;
+	    line-height: 18px;
+	    margin-bottom: 3px;
+	    text-transform: uppercase;
+		zoom: 1;
+	}
+	
+	.b-plus__text {
+		color: #72b141;
+		font-size:12px;
+		display:block;
+		line-height:15px;
+	}
+	
+	.b-plus__popup {
+		border-radius: 6px;
+		-moz-border-radius: 6px;
+		-webkit-border-radius: 6px;
+		display: none;
+		position: absolute;
+		top:100%;
+		left: 50%;
+		margin: 6px 0 0 -150px;
+		margin-top: 10px; 
+		background:#fff;
+		z-index:99999;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.3);
+		-webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.3);
+		width: 300px;
+	}
+	
+	.b-plus__popup:before {
+		display:block;
+		position:absolute;
+		font-size: 0;
+		content: "";
+		border-style: solid;
+		border-width: 6px 7px 6px 7px;
+		border-color: transparent transparent #fff transparent;
+		top: -12px;
+		left: 50%;
+		margin-left: -8px;
+	}
+	
+	.b-plus:hover .b-plus__popup {
+		display:block;
+	}
+	
+		.b-plus__popup__l {
+			padding:12px 15px;
+			zoom: 1;
+		}
+
+.b-about {
+	font-size: 10px;
+	line-height: 1.2em;
+	padding: 15px 14px 1px 14px;
+	color:#ddd;
+	text-align:center;
+	zoom: 1;
+}
+
+	.b-about p {
+		margin-bottom: 1.2em;
+	}
+
+	.b-about a, .b-about strong {
+		color:#ddd;
+		text-decoration:none;
+		font-size: 10px;
+		line-height: 1.2em;
+	}

@@ -131,7 +131,7 @@ $(function() {
 			data: {instance: id},
 			success: function(data)
 			{
-				$('.js-cart').empty().append( JST['templates/cart']({cart: data.cart}) ).ready(function()
+				$('.js-cart').html( JST['templates/cart']({cart: data.cart}) ).ready(function()
 				{
 					$('#cart').addClass('active');
 				});

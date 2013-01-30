@@ -71,7 +71,7 @@
 						заказать по телефону
 					</li>
                     <li class="first">
-                        <img class="b-icon" src="/assets/telephone.png" /><span class="va-middle"><%= SiteConfiguration.phone %></span>
+                        <img class="i-phone" src="/assets/telephone.png" /><span class="va-middle"><%= SiteConfiguration.phone %></span>
                     </li>
 					<li class="vk"><a target="_blank" href="http://vk.com/younglovers">группа вконтакте</a></li>
                 </ul>
@@ -83,25 +83,11 @@
             <p id="back-top"> <a href="#top"><span></span></a> </p>
             <div class="row-1">
                 <div id="header">
-                    <div class="header-top">
-                        <div class="wrapper">
-                            <div id="welcome">
-                                <% if user_signed_in? %>
-                                <%= link_to current_user.first_name, edit_user_registration_path %>, мы рады видеть вас <br /> в магазине YoungLovers!
-                                <% else %>
-                                Добро пожаловать в магазин YoungLovers
-                                <p><%= link_to "Зарегистрируйтесь", new_user_registration_path %> чтобы делать покупки удобнее </p>
-                                <% end %>
-
-                            </div>
-
-                        </div>
-                    </div>
                     <script type="text/javascript">
                     $(function()
                     {
                         var cart = <%= @cart.to_json.html_safe %>
-                        $('.js-cart').empty().append( JST['templates/cart']({cart: cart}) );
+                        $('.js-cart').html( JST['templates/cart']({cart: cart}) );
                     });
 
                     </script>
@@ -110,6 +96,30 @@
                             <div class="cart-inner js-cart">
 
                             </div>
+                            <a href="/delivery" class="b-plus">
+                                <div class="b-plus__h">
+                                    <i class="b-icon i-try b-plus__icon"></i>
+                                    <span class="b-plus__t">Примерка</span>
+                                    <span class="b-plus__text">Бесплатно</span>
+                                </div>
+                                <div class="b-plus__popup">
+                                    <div class="b-plus__popup__l">
+                                        Перед тем, как принять окончательное решение о покупке Вы можете бесплатно примерить одежду в день доставки.
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/delivery" class="b-plus b-plus_delivery">
+                                <div class="b-plus__h">
+                                    <i class="b-icon i-delivery b-plus__icon"></i>
+                                    <span class="b-plus__t">Доставка</span>
+                                    <span class="b-plus__text">Бесплатно</span>
+                                </div>
+                                <div class="b-plus__popup">
+                                    <div class="b-plus__popup__l">
+                                        Бесплатная доставка курьером по Москве независимо от суммы заказа.
+                                    </div>
+                                </div>
+                            </a>
                             <div class="clear"></div>
                         </div>
                         <a href="/" id="logo">Модная мужская одежда в интернет магазине YoungLovers.ru</a>
@@ -236,9 +246,7 @@
                         </div>
                     </div>
                     
-                    <div class="">
-                        
-                    </div>
+                    <%= yield :seo_text %>
                 </div>
                 <% if Rails.env == 'production' %>
                     <%= render :partial => 'shared/counter' %>
