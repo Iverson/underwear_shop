@@ -216,7 +216,7 @@ td, th, input, textarea, select, a {
 }
 
 .i-try {
-	background-position:0 -41px;
+	background-position:-1px -41px;
 }
 
 .i-cart {
