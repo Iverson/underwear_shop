@@ -50,17 +50,13 @@ ActiveAdmin.register Order do
       f.input :comment
       
       if f.object.new_record?
-        f.object.address.build()
+        f.object.build_address()
       end
 
       f.inputs "Адрес" do
         f.semantic_fields_for :address do |meta_form|
           meta_form.inputs :fio, :phone, :email, :city, :address
         end
-      end
-      
-      if f.object.new_record?
-        f.object.order_items.build({:count => 1, :size => "M"})
       end
       
       f.inputs "Товары" do
