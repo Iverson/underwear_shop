@@ -1,5 +1,12 @@
 ActiveAdmin.register Product do
+  menu :label => proc{ I18n.t("active_admin.products") }, :parent => I18n.t("active_admin.products"), :priority => 1
+  
   actions :all, :except => [:show]
+  
+  scope :all, :default => true
+  Section.all.each do |section|
+    scope section.name
+  end
   
   before_filter do
     Product.class_eval do

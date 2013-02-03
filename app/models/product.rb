@@ -2,6 +2,9 @@ class Product < ActiveRecord::Base
   RU_SIZES = {"M" => "48,50", "L" => "50,52", "XL" => "52,54"}
   
   scope :published, :conditions => { :state_id => 2 }
+  Section.all.each do |section|
+    scope section.name, where(:section_id => section.id)
+  end
   
   attr_accessible :brand_id, :description, :discount, :name, :price, :purchaise_price, :section_id, :country_id, :state_id, :pictures_attributes, :product_instances_attributes, :uri, :color, :matter
   

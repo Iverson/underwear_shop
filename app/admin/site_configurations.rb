@@ -1,4 +1,5 @@
 ActiveAdmin.register SiteConfiguration do
+  menu :label => proc{ I18n.t("active_admin.site_configuration") }, :parent => I18n.t("active_admin.site_configuration"), :priority => 10
   actions :all, :except => [:show]
  
   before_filter do

@@ -10,6 +10,10 @@ class Order < ActiveRecord::Base
   accepts_nested_attributes_for :address
   accepts_nested_attributes_for :order_items, :allow_destroy => true
   
+  OrderState.all.each do |state|
+    scope state.name, where(:order_state_id => state.id)
+  end
+  
   def summ
     self.order_items.sum{|item| item.price*item.count}+self.delivery.price
   end

@@ -1,4 +1,5 @@
 ActiveAdmin.register Promo do
+  menu :label => proc{ I18n.t("active_admin.promo") }, :parent => I18n.t("active_admin.products"), :priority => 4
   actions :all, :except => [:show]
   
   form :html => { :enctype => "multipart/form-data" } do |f|

@@ -1,4 +1,6 @@
 ActiveAdmin.register Section do
+  menu :label => proc{ I18n.t("active_admin.sections") }, :parent => I18n.t("active_admin.products"), :priority => 2
+  
   actions :all, :except => [:show]
   
   around_filter do |controller, action|

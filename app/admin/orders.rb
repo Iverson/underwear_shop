@@ -1,5 +1,12 @@
 # coding: utf-8
 ActiveAdmin.register Order do
+  menu :label => proc{ I18n.t("active_admin.orders") }, :parent => I18n.t("active_admin.orders")
+  
+  scope :all, :default => true
+  OrderState.all.each do |state|
+    scope state.name
+  end
+  
   show do |order|
     attributes_table do
       row :order_state_id
