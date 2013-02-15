@@ -37,6 +37,7 @@ ActiveAdmin.register Section do
       f.input :uri
       f.input :yml_parent_id
       f.input :yml_category
+      f.input :description
     end
     f.buttons
   end
