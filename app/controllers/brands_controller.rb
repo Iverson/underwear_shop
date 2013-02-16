@@ -11,8 +11,10 @@ class BrandsController < ApplicationController
     end
     
     @brand = Brand.find(params[:id])
+    brand_sections_ids = @brand.products.group(:section_id).pluck(:section_id)
+    brand_sections = Section.all.select { |section| brand_sections_ids.include?(section.id) }
     @products = @brand.products.order(params[:sort_by]).order("discount DESC").paginate(:page => params[:page], :per_page => @per_page)
-    @title = "Купить мужскую одежду #{@brand.name} в интернет магазине YoungLovers.ru"
+    @title = "#{@brand.name} | #{brand_sections.map{|s| s.name.mb_chars.downcase.to_s}.join(", ")} #{@brand.name} в интернет магазине YoungLovers.ru"
     
     add_breadcrumb @brand.name, brand_url
 

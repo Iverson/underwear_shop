@@ -265,6 +265,7 @@ h1 {
 h2 {
 	color: #191919;font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
+    line-height: 1.2em;
 	margin-top: 0px;
 	margin-bottom: 5px;
 }
@@ -1822,6 +1823,8 @@ ul{ list-style:none; margin:0; padding:0;}
 
 .b-sections-menu__item .section {
 	text-decoration: none; 
+    position:relative;
+    z-index: 2;
 	display:block;
 	cursor: pointer;
 	padding:0 0 0 0px;
@@ -4155,13 +4158,19 @@ strike {
 		}
 
 .b-about {
-	font-size: 10px;
+	font-size: 11px;
 	line-height: 1.2em;
 	padding: 15px 14px 1px 14px;
 	color:#ddd;
-	text-align:center;
 	zoom: 1;
 }
+
+    .b-about h2 {
+        padding-right: 100px;
+        color:#ddd;
+        margin-bottom: 1em;
+        margin-top: 0.5em;
+    }
 
 	.b-about p {
 		margin-bottom: 1.2em;

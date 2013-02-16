@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title><%= @title ? @title : "Модная мужская одежда и нижнее белье в интернет магазине Young Lovers." %></title>
+    <title><%= @title ? @title : "Купить мужскую одежду и нижнее белье с бесплатной доставкой." %></title>
     <link href="/assets/favicon.ico" rel="icon" />
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
 
     <%= csrf_meta_tags %>
-    <meta name="keywords" content="мужская одежда, мужские футболки, поло, мужские трусы, мужские майки, интернет-магазин нижнего белья, интернет-магазин одежды" />
-    <meta name="description" content="<%= @title ? @title : "В интернет-магазине Young Lovers вы можете купить лучшие модели мужской одежды и нижнего белья высокого качества от лучших мировых брендов!" %>" />
+    <meta name="keywords" content="купить мужскую одежду, мужские футболки, поло, мужские трусы, мужские майки, интернет-магазин нижнего белья, интернет-магазин одежды, мужская одежда с бесплатной доставкой" />
+    <meta name="description" content="<%= @title ? @title : "Мужская одежда и нижнее белье высокого качества от лучших мировых брендов в интернет-магазине Young Lovers." %>" />
 
     <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/assets/ie.css" /><![endif]-->
 
@@ -32,7 +32,7 @@
 </head>
 <body class="">
     <% if @index %>
-    <h1 class="main_h1">Купить мужскую одежду от лучших мировых брендов с бесплатной доставкой и примеркой</h1>
+    <h1 class="main_h1">Купить мужскую одежду с бесплатной доставкой и примеркой от лучших мировых брендов.</h1>
     <% end %>
     <div class="main-shining">
         <div class="top-bg">
@@ -122,7 +122,7 @@
                             </a>
                             <div class="clear"></div>
                         </div>
-                        <a href="/" id="logo">Модная мужская одежда в интернет магазине YoungLovers.ru</a>
+                        <a href="/" id="logo">Модная мужская одежда с доставкой в интернет магазине YoungLovers.ru</a>
                     </div>
 
                 </div>
@@ -144,27 +144,6 @@
                             <%= render "shared/profile_menu" %>
                         <% end %>
 
-
-                        <script type="text/javascript">
-                        $(document).ready(function(){
-                            $(".act-cat").toggle( 
-                                function() { 
-                                    $(this).next('.b-sections-menu').slideToggle("slow"),{
-                                        duration: 'slow',
-                                        easing: 'easeOutBounce'
-                                    };
-                                }, 
-                                function() { 
-                                    $(this).next('.b-sections-menu').slideToggle("slow"),{
-                                        duration: 'slow',
-                                        easing: 'easeOutBounce'
-                                    };
-                                } 
-                            );
-
-                        });
-
-                        </script>
                         <div class="box category">
                             <div class="box-content">
                                 <div class="box-content-image">
@@ -256,26 +235,5 @@
             </div>
         </div>
     </div>
-    <% if Rails.env == 'production' %>
-    <script type="text/javascript">
-        var reformalOptions = {
-            project_id: 89255,
-            project_host: "younglovers.reformal.ru",
-            tab_orientation: "left",
-            tab_indent: "50%",
-            tab_bg_color: "#7d7d7d",
-            tab_border_color: "#FFFFFF",
-            tab_image_url: "http://tab.reformal.ru/T9GC0LfRi9Cy0Ysg0Lgg0L%252FRgNC10LTQu9C%252B0LbQtdC90LjRjw==/FFFFFF/4bfb34d91c8d7fb481972ca3c84aec38/left/0/tab.png",
-            tab_border_width: 2
-        };
-
-        (function() {
-            var script = document.createElement('script');
-            script.type = 'text/javascript'; script.async = true;
-            script.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'media.reformal.ru/widgets/v3/reformal.js';
-            document.getElementsByTagName('head')[0].appendChild(script);
-        })();
-    </script><noscript><a href="http://reformal.ru"><img src="http://media.reformal.ru/reformal.png" /></a><a href="http://younglovers.reformal.ru">Oтзывы и предложения для younglovers.ru</a></noscript>
-    <% end %>
 </body>
 </html>
