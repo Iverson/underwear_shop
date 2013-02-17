@@ -10,7 +10,7 @@ class BrandsController < ApplicationController
       @per_page = nil
     end
     
-    @brand = Brand.find(params[:id])
+    @brand = Brand.where(:uri => params[:id]).first
     brand_sections_ids = @brand.products.group(:section_id).pluck(:section_id)
     brand_sections = Section.all.select { |section| brand_sections_ids.include?(section.id) }
     @products = @brand.products.order(params[:sort_by]).order("discount DESC").paginate(:page => params[:page], :per_page => @per_page)

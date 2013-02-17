@@ -28,7 +28,10 @@
             <h1><%= @product.name %></h1>
             <div class="description">
                 <span>Артикул:</span> <%= @product.brand.id %><br />
-                <span>Брэнд:</span> <a href="#"><%= @product.brand.name %></a><br />
+                <span>Брэнд:</span> <%= link_to @product.brand.name, @product.brand  %></a><br />
+				<% if @product.color? %>
+				<span>Цвет:</span> <%= @product.color %><br />
+				<% end %>
 
                 <div class="padd-avalib"> <div class="extra-wrap"> <span class="prod-stock-2">Наличие:</span> <div class="prod-stock">На складе</div></div></div>
                 

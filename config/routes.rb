@@ -13,14 +13,14 @@ UnderwearShop::Application.routes.draw do
   get 'users/address' => 'address#edit'
   put 'users/address' => 'address#update'
   
-  resources :sections, :only => [:show]
+  resources :sections, :only => [:show], :path => "muzhskaya-odezhda"
   resources :pictures
   resources :index, :only => [:index]
   resources :brands, :only => [:show]
   
   get 'products/instances' => 'products#instances'
   get 'search' => 'products#search'
-  resources :products
+  resources :products, :path => "product"
   
   resources :orders
   resources :cart, :only => [:index]

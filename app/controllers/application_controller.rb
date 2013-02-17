@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
   end
   
   def brands
-    @brands = Brand.all
+    @brands_all = Brand.all
   end
   
 end

@@ -157,7 +157,7 @@
 												<span class="section">Бренды</span>
 												<span class="act-cat"></span>
 												<ul class="b-sections-menu">
-												<% @brands.each do |brand| %>
+												<% @brands_all.each do |brand| %>
 													<li><%= link_to brand.name, brand, :class => "subsection #{"active" if @brand && @brand == brand}" %></li>
 												<% end %>
 												</ul>
