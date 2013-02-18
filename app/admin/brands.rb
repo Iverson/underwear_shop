@@ -20,4 +20,13 @@ ActiveAdmin.register Brand do
       end
     end
   end
+  
+  index do
+    column :id
+    column :name do |brand|
+      link_to brand.name, edit_admin_brand_path(brand)
+    end
+    column :created_at
+    default_actions
+  end
 end

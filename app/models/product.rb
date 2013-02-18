@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   RU_SIZES = {"M" => "48,50", "L" => "50,52", "XL" => "52,54"}
   
-  scope :published, :conditions => { :state_id => 2 }
+  default_scope :conditions => { :state_id => 2 }
   Section.all.each do |section|
     scope section.name, where(:section_id => section.id)
   end
@@ -88,7 +88,7 @@ class Product < ActiveRecord::Base
   
   def ru_sizes
     sizes = []
-    self.product_instances.each do |instance|
+    self.product_instances.in_stock.each do |instance|
       RU_SIZES[instance.size].split(',').each do |size|
         sizes.push size if !sizes.include? size
       end

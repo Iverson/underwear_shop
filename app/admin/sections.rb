@@ -24,7 +24,7 @@ ActiveAdmin.register Section do
   index do
     column :id
     column :name do |section|
-      link_to section.name, admin_section_path(section)
+      link_to section.name, edit_admin_section_path(section)
     end
     column :created_at
     default_actions

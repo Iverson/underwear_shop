@@ -1,3 +1,4 @@
+# encoding: utf-8
 ActiveAdmin.register Product do
   menu :label => proc{ I18n.t("active_admin.products") }, :parent => I18n.t("active_admin.products"), :priority => 1
   
@@ -8,6 +9,14 @@ ActiveAdmin.register Product do
     scope section.name
   end
   
+  scope_to do
+    Class.new do
+      def self.products
+        Product.unscoped
+      end
+    end
+  end
+  
   before_filter do
     Product.class_eval do
       def to_param
@@ -16,7 +25,16 @@ ActiveAdmin.register Product do
     end
   end
   
+  controller do
+    def update
+      update! do |format|
+        format.html { redirect_to edit_admin_product_path }
+      end
+    end
+  end
+  
   index do
+    selectable_column
     column :id
     column "Image" do |product|
       link_to(image_tag(product.preview(:small)), edit_admin_product_path(product))
@@ -24,7 +42,9 @@ ActiveAdmin.register Product do
     column :name do |product|
       link_to product.name, edit_admin_product_path(product)
     end
-    column :price
+    column :price do |product|
+      product.final_price
+    end
     column :section
     column :brand
     column :description
@@ -36,7 +56,7 @@ ActiveAdmin.register Product do
       f.input :name
       f.input :uri
       f.input :price
-      f.input :discount
+      f.input :discount, :hint => "Конечная цена: #{f.object.final_price}"
       f.input :section
       f.input :brand
       f.input :country

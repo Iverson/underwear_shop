@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
     @title = "#{@product.name} купить за #{@product.final_price} руб. в интернет магазине Young Lovers, доставка бесплатно"
     
     add_breadcrumb @product.section.name, section_url(@product.section)
-    add_breadcrumb @product.name, product_url
+    add_breadcrumb "<span>#{@product.name}</span>", product_url
     
     respond_to do |format|
       format.html { render :layout => "application" } # show.html.erb
@@ -106,7 +106,7 @@ class ProductsController < ApplicationController
   end
   
   def instances
-    @product_instances = ProductInstance.where(:product_id => params[:id])
+    @product_instances = ProductInstance.in_stock.where(:product_id => params[:id])
     
     respond_to do |format|
       format.json { render json: @product_instances }
@@ -138,7 +138,7 @@ class ProductsController < ApplicationController
   end
   
   def export_yml
-    @products = Product.published
+    @products = Product.all
     @sections = Section.all
     
     respond_to do |format|

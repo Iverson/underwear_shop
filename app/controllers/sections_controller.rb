@@ -27,7 +27,7 @@ class SectionsController < ApplicationController
     #section_brands = @brands.select { |brand| section_brands_ids.include?(brand.id) }
     @title = "Купить мужские #{@section.name.mb_chars.downcase.to_s} с бесплатной доставкой в интернет магазине YoungLovers.ru"
     
-    add_breadcrumb @section.name, section_url
+    add_breadcrumb "<span>#{@section.name}</span>", section_url
 
     respond_to do |format|
       format.html { render :layout => "application" } # show.html.erb

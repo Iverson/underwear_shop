@@ -183,11 +183,16 @@ td, th, input, textarea, select, a {
         text-transform:none;
     }
     
+        .soc-links .hint span {
+            letter-spacing: 0.5px;
+        }
+
+.soc-links .market {
+    margin: -1px 0 0 -15px;
+}
+    
 .soc-links li a {
-	color:#FFF;
-	text-decoration:none;
-	padding:6px 0 6px 40px;
-	display:block;
+	
 }
 
 .soc-links .vk a {
@@ -199,6 +204,9 @@ td, th, input, textarea, select, a {
 	white-space: normal;
 	width: 73px;
 	margin-left: 40px;
+	color:#FFF;
+	text-decoration:none;
+	display:block;
 }
 
 
@@ -1138,7 +1146,7 @@ label {
 .box-product.spec-box ul li{ float:left; width:170px; margin-right:10px; border:1px solid #dfe1e4; border-radius:5px; padding:16px 9px 6px 9px;}
 .box-product.spec-box ul li .description{ font-size:11px; color:#414141; line-height:17px;}
 .box-product.spec-box ul li.last{ margin-right:0;}
-.breadcrumb a.last{ font-weight:bold;}
+.breadcrumb a.last, .breadcrumb span { font-weight:bold;}
 .breadcrumb a{ font-size:12px; color:#191919; text-decoration:none; font-weight:normal;}
 .breadcrumb {
 	background: url('/assets/box-heading.jpg') left top repeat-x #D6D3CC;

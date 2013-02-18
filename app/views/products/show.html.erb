@@ -48,7 +48,7 @@
                 <div class="b-sizes">
                     <span>Выберите размер:</span>
                     <% if @product.sizes? %>
-                        <% @product.product_instances.each_with_index do |size, i| %>
+                        <% @product.product_instances.in_stock.each_with_index do |size, i| %>
                             <%= label_tag "instance_#{size.id}", :class => "b-sizes__item" do %>
                                 <%= radio_button_tag :instance, size.id, i==0 ? true : false %> <%= size.size %>
                             <% end %>

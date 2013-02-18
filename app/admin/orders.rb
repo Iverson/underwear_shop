@@ -7,6 +7,26 @@ ActiveAdmin.register Order do
     scope state.name
   end
   
+  index do
+    selectable_column
+    column :id
+    column "User" do |o|
+      link_to o.address.fio, admin_order_path(o)
+    end
+    column "Summ (RUR)" do |o|
+      o.summ
+    end
+    column "Phone" do |o|
+      o.address.phone
+    end
+    column "State" do |o|
+      link_to o.order_state.name, edit_admin_order_path(o)
+      
+    end
+    column :created_at
+    default_actions
+  end
+  
   show do |order|
     attributes_table do
       row :order_state_id

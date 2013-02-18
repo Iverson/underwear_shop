@@ -15,7 +15,7 @@ class Order < ActiveRecord::Base
   end
   
   def summ
-    self.order_items.sum{|item| item.price*item.count}+self.delivery.price
+    self.order_items.sum{|item| item.price*item.count}.to_i+self.delivery.price.to_i
   end
   
   def count

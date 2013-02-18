@@ -2,6 +2,19 @@ ActiveAdmin.register Promo do
   menu :label => proc{ I18n.t("active_admin.promo") }, :parent => I18n.t("active_admin.products"), :priority => 4
   actions :all, :except => [:show]
   
+  index do
+    column :id
+    column :name do |promo|
+      link_to promo.name, edit_admin_promo_path(promo)
+    end
+    column :price
+    column :discount
+    column :text
+    column :top
+    column :created_at
+    default_actions
+  end
+  
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs "Promo", :multipart => true do
       f.input :name

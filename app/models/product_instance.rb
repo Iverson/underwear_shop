@@ -6,4 +6,6 @@ class ProductInstance < ActiveRecord::Base
   
   validates :size, :presence => true
   validates :count, :presence => true
+  
+  scope :in_stock, where('count > 0')
 end

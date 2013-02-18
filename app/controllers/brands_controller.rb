@@ -16,7 +16,7 @@ class BrandsController < ApplicationController
     @products = @brand.products.order(params[:sort_by]).order("discount DESC").paginate(:page => params[:page], :per_page => @per_page)
     @title = "#{@brand.name} | #{brand_sections.map{|s| s.name.mb_chars.downcase.to_s}.join(", ")} #{@brand.name} в интернет магазине YoungLovers.ru"
     
-    add_breadcrumb @brand.name, brand_url
+    add_breadcrumb "<span>#{@brand.name}</span>", brand_url
 
     respond_to do |format|
       format.html { render :layout => "application" } # show.html.erb
