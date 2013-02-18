@@ -99,7 +99,7 @@ class OrdersController < ApplicationController
           UserMailer.order_email(@order).deliver
         end
         
-        format.html { redirect_to root_url, notice: 'Ваш заказ принят, оператор свяжется с вами по телефону в течение нескольких часов.<br /> <a targer="_blank" href="http://market.yandex.ru/shop-opinions.xml?shop_id=136639">Оценить</a> работу магазина. Вступить в нашу <a targer="_blank" href="http://vk.com/younglovers">группу Вконтакте</a>.' }
+        format.html { redirect_to root_url, notice: 'Ваш заказ принят, оператор свяжется с вами по телефону в течение нескольких часов.<br /> <a target="_blank" href="http://market.yandex.ru/shop-opinions.xml?shop_id=136639">Оценить</a> работу магазина. Вступить в нашу <a target="_blank" href="http://vk.com/younglovers">группу Вконтакте</a>.' }
         format.json { head :no_content }
       else
         format.html { render :checkout }
