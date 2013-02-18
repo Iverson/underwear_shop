@@ -76,6 +76,7 @@ class CartController < ApplicationController
       @cart['items'][@product.id]['ins'][params[:instance]] = @product_instance.attributes
       @cart['items'][@product.id]['ins'][params[:instance]]['count'] = @count
       @cart['items'][@product.id]['ins'][params[:instance]]['img'] = @product.pictures.first.image.url(:medium)
+      @cart['items'][@product.id]['ins'][params[:instance]]['color'] = @product.color if @product.color?
     end
     
     @cart['count'] += @count

@@ -25,12 +25,13 @@ class OrdersController < ApplicationController
       @order = Order.find(@cart['order_id'])
     else
       @order = Order.new
-    end
-    
-    if user_signed_in?
-      @order.build_address({:phone => current_user.phone, :fio => current_user.first_name})
-    else
-      @order.build_address({:city => "Москва"})
+      
+      if user_signed_in?
+        @order.build_address({:phone => current_user.phone, :fio => current_user.first_name})
+      else
+        @order.build_address({:city => "Москва"})
+      end
+      
     end
     
     respond_to do |format|
@@ -98,7 +99,7 @@ class OrdersController < ApplicationController
           UserMailer.order_email(@order).deliver
         end
         
-        format.html { redirect_to root_url, notice: 'Ваш заказ принят, оператор свяжется с вами по телефону в течение нескольких часов.' }
+        format.html { redirect_to root_url, notice: 'Ваш заказ принят, оператор свяжется с вами по телефону в течение нескольких часов.<br /> <a targer="_blank" href="http://market.yandex.ru/shop-opinions.xml?shop_id=136639">Оценить</a> работу магазина. Вступить в нашу <a targer="_blank" href="http://vk.com/younglovers">группу Вконтакте</a>.' }
         format.json { head :no_content }
       else
         format.html { render :checkout }

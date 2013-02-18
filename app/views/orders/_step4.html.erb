@@ -8,9 +8,11 @@
             <table>
                 <thead>
                     <tr>
+                        
                         <td class="name">Название</td>
 						<td class="ta-center">Размер</td>
-                        <td class="model">Артикул</td>
+						<td class="ta-center">Цвет</td>
+                        <td class="model" width="55">Артикул</td>
                         <td class="quantity">Количество</td>
                         <td class="price">Цена за шт.</td>
                         <td class="total">Цена</td>
@@ -20,10 +22,12 @@
                 <% @cart['items'].each do |id, product_item| %>
 					<% @cart['items'][id]['ins'].each do |i, cart_item| %>
                     <tr>
+                        
                         <td class="name">
                             <%= link_to( product_item['attrs']['name'], product_path(product_item['attrs']['uri']) ) %>
                         </td>
 						<td class="ta-center"><%= cart_item['size'] %></td>
+						<td class="ta-center"><%= cart_item['color'] %></td>
                         <td class="model"><%= cart_item['id'] %></td>
                         <td class="quantity"><%= cart_item['count'] %></td>
                         <td class="price">
@@ -34,7 +38,7 @@
 								<%= price(product_item) %>р
 							<% end %>
 						</td>
-                        <td class="total"><%= price(product_item)*cart_item['count'] %>р</td>
+                        <td class="price"><%= price(product_item)*cart_item['count'] %>р</td>
                     </tr>
 					<% end %>
                 <% end %>
@@ -43,15 +47,15 @@
                 <% if @order.delivery %>
                 <tfoot>
                     <tr>
-                        <td class="price" colspan="4"><b>Под-итог:</b></td>
+                        <td class="price" colspan="6"><b>Под-итог:</b></td>
                         <td class="total"><%= @cart['summ'] %>р</td>
                     </tr>
                     <tr>
-                        <td class="price" colspan="4"><b>Доставка:</b></td>
+                        <td class="price" colspan="6"><b>Доставка:</b></td>
                         <td class="total"><%= @order.delivery.price.to_i %>р</td>
                     </tr>
                     <tr>
-                        <td class="price" colspan="4"><b>Итого:</b></td>
+                        <td class="price" colspan="6"><b>Итого:</b></td>
                         <td class="total"><%= @cart['summ'] + @order.delivery.price.to_i %>р</td>
                     </tr>
                 </tfoot>

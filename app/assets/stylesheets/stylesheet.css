@@ -1165,10 +1165,17 @@ label {
 	padding-left:30px!important;
 }
 .attention {
+	font-size: 14px;
+	line-height: 1.4em;
 	background: #FFF5CC;
 	border: 1px solid #F2DD8C;
 	padding-left: 17px !important;
 }
+	
+	.attention a {
+		font-size: 14px;
+	}
+	
 .success .close, .warning .close, .attention .close, .information .close {
 	float: right;
 	cursor: pointer;

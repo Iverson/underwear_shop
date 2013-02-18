@@ -134,7 +134,7 @@
 
                     </div>
                     <% if notice %>
-                    <p class="attention"><%= notice %></p>
+                    <p class="attention"><%= notice.html_safe %></p>
                     <% end %>
                     <% if alert %>
                     <p class="attention"><%= alert %></p>
