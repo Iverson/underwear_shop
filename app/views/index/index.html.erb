@@ -56,10 +56,10 @@
                                     </div>
                                     <div class="price"> <%= product.final_price %>р </div>
                                     <div class="name maxheight">
-                                        <%= link_to product.name, product %>
+                                        <%= link_to product.name, product_path(product.uri) %>
                                     </div>
                                     <div class="cart"> 
-                                        <%= link_to(product, :class => "button addToCart") do %>
+                                        <%= link_to(product_path(product.uri), :class => "button addToCart") do %>
                                             <span>Детально</span>
                                         <% end %>
 										<a href="#" class="button details js-addToCart" data-product="<%= product.id %>" data-fastadd="<%= product.fast_to_cart %>"><span>В корзину</span></a>
