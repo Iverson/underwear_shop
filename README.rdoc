@@ -1,3 +1,7 @@
 == Getting Started
 
 brew install imagemagick
+
+== Rake tasks
+
+rake db:import                         # Import DB from production
