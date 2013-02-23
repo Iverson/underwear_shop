@@ -31,6 +31,11 @@ $(function() {
 	
 	/* Cart */
     
+    $('.b-section-products__item_nostock a.button').click(function()
+    {
+        return false;
+    });
+    
 	var cart = $('#cart');
 	
 	function animateProduct(image,cart)

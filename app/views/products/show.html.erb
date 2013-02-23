@@ -33,7 +33,16 @@
 				<span>Цвет:</span> <%= @product.color %><br />
 				<% end %>
 
-                <div class="padd-avalib"> <div class="extra-wrap"> <span class="prod-stock-2">Наличие:</span> <div class="prod-stock">На складе</div></div></div>
+                <div class="padd-avalib"> 
+					<div class="extra-wrap"> 
+						<span class="prod-stock-2">Наличие:</span> 
+						<% if @product.in_stock? %>
+						<div class="prod-stock">На складе</div>
+						<% else %>
+						<div class="prod-stock-2 no_stock">нет в наличии</div> 
+						<% end %>
+					</div>
+				</div>
                 
                 
 
@@ -44,6 +53,9 @@
                 </div>
                 <div class="delivery">Доставка по Москве:&nbsp; <%= Delivery.courier.first.price_to_s %></div>
                 <br />
+
+				<% if @product.in_stock? %>
+				
                 <%= form_tag(:controller => "cart", :action => "add_item", :method => "post") do %>
                 <div class="b-sizes">
                     <span>Выберите размер:</span>
@@ -79,6 +91,7 @@
                     </div>
                 </div>
                 <% end %>
+				<% end %>
 				
 				<a name="garant"></a>
 				<div class="b-vk-like">

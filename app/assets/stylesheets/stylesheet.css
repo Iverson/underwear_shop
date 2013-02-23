@@ -2250,6 +2250,11 @@ position:relative; margin-left:-5px;
 	position:relative;
 }
 
+.b-section-products__item_nostock {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+
 .has-mouse .grid .b-section-products__item:hover {
 	border-color:#888;
 }
@@ -2274,7 +2279,17 @@ position:relative; margin-left:-5px;
 }
 
 .b-section-products__item .delivery {
-	color:#D94574;
+	color:#72B141;
+	font-size: 12px;
+	line-height: 1.2em;
+}
+
+.no_stock {
+    color:#D94574;
+}
+
+.b-section-products__item .no_stock {
+    color:#D94574;
 	font-size: 12px;
 	line-height: 1.2em;
 }
@@ -4197,3 +4212,8 @@ strike {
 		font-size: 10px;
 		line-height: 1.2em;
 	}
+
+.b-section-products__item_nostock a.button {
+    cursor: default;
+    color:#fff !important;
+}

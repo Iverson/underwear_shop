@@ -2,6 +2,7 @@ class Product < ActiveRecord::Base
   RU_SIZES = {"M" => "48,50", "L" => "50,52", "XL" => "52,54"}
   
   default_scope :conditions => { :state_id => 2 }
+  
   Section.all.each do |section|
     scope section.name, where(:section_id => section.id)
   end
@@ -57,6 +58,10 @@ class Product < ActiveRecord::Base
     else
       true
     end
+  end
+  
+  def in_stock?
+    product_instances.sum(:count) > 0
   end
   
   def select_title

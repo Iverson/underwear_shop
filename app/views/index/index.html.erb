@@ -43,10 +43,12 @@
                     
                     <div class="box-product">
                         <ul>
-                            <% if @products.length == 0 %>
-                                Товары в каталоге отсутствуют.
-                            <% end %>
-                            <% @products.each do |product| %>
+						<% if @products.length == 0 %>
+							Товары в каталоге отсутствуют.
+						<% end %>
+                        <% @products.each do |product| %>
+							<% if product.in_stock? && @rendered < 8 %>
+							<% @rendered += 1 %>
                             <li>
                                 <div class="padd-both">
                                     <div class="image2">
@@ -66,7 +68,8 @@
                                     </div>
                                 </div>
                             </li>
-                            <% end %>
+							<% end %>
+                        <% end %>
                         </ul>
                     </div>
                 </div>

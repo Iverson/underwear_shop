@@ -6,7 +6,7 @@
 
     <% @products.each do |product| %>
     
-    <div class="b-section-products__item js-product">
+    <div class="b-section-products__item <%= !product.in_stock? ? "b-section-products__item_nostock" : "" %> js-product">
 		<% if product.discount > 0 %>
 		<div class="discount"><%= "-#{product.discount}%" %></div>
 		<% end %>
@@ -29,12 +29,17 @@
                 <span class="price-new"><%= product.final_price %>р</span> <span class="price-old"><%= "#{product.price.to_i}р" if product.discount > 0 %></span>
             </div>
             <div class="delivery">
+				<% if product.in_stock? %>
                 Доставка <%= Delivery.courier.first.price_to_s %>
+				<% else %>
+				<span class="no_stock">нет в наличии</span>
+				<% end %>
             </div>
             <div class="actions-buttons">
                 <div class="cart">
-                    <a href="#" class="button js-addToCart" data-product="<%= product.id %>" data-fastadd="<%= product.fast_to_cart %>" rel=""><span>В корзину</span></a>
+                    <a href="#" class="button <%= product.in_stock? ? "js-addToCart" : "" %>" data-product="<%= product.id %>" data-fastadd="<%= product.fast_to_cart %>" rel=""><span>В корзину</span></a>
                 </div>
+				
                 <div class="wishlist"><a class="tip js-AddToFavorite" rel="<%= product.id %>">В избранное</a><span class="tooltip">В избранное</span></div>
                 <!--div class="compare"><a class="tip2"  onclick="addToCompare('44');">Сравнить</a><span class="tooltip2">Сравнить</span></div-->
             </div>
