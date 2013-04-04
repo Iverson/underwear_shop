@@ -57,7 +57,7 @@ ActiveAdmin.register Product do
       f.input :uri
       f.input :price
       f.input :purchaise_price
-      f.input :discount, :hint => "Конечная цена: #{f.object.final_price}"
+      f.input :discount, :hint => "Конечная цена: #{f.object.final_price}" if !f.object.new_record?
       f.input :section
       f.input :brand
       f.input :country
