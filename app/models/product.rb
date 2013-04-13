@@ -94,7 +94,7 @@ class Product < ActiveRecord::Base
   def ru_sizes
     sizes = []
     self.product_instances.in_stock.each do |instance|
-      RU_SIZES[instance.size].split(',').each do |size|
+      RU_SIZES[instance.size].gsub(/\s+/, "").split(',').each do |size|
         sizes.push size if !sizes.include? size
       end
     end
