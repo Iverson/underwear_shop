@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  RU_SIZES = {"M" => "48,50", "L" => "50,52", "XL" => "52,54"}
+  RU_SIZES = {"S" => "46, 48", "M" => "48,50", "L" => "50,52", "XL" => "52,54", "XXL" => "54,56"}
   
   default_scope :conditions => { :state_id => 2 }
   
