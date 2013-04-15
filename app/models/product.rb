@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
   default_scope :conditions => { :state_id => 2 }
   
   Section.all.each do |section|
-    scope section.name, where(:section_id => section.id)
+    scope section.name.gsub(/\s+/, "_"), where(:section_id => section.id)
   end
   
   attr_accessible :brand_id, :description, :discount, :name, :price, :purchaise_price, :section_id, :country_id, :state_id, :pictures_attributes, :product_instances_attributes, :uri, :color, :matter
