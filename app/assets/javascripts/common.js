@@ -1,4 +1,4 @@
-var yaCounter19019545 = yaCounter19019545 || {reachGoal: function() {/*console.log('yaCounter not loaded!')*/}};
+var yaCounter19019545 = yaCounter19019545 || {reachGoal: function(param) {/*console.log(param);*/}};
 var is_touch_device = 'ontouchstart' in document.documentElement;
 
 
@@ -8,12 +8,10 @@ $(function() {
 		$('body').addClass('has-mouse');
 	}
 	
-	
-    $('.js-orderConfirm').click(function()
-    {
-          yaCounter19019545.reachGoal('checkoutFinished');
-          return true;
-    });
+	if (User.orderFinished)
+	{
+		yaCounter19019545.reachGoal('checkoutFinished');
+	}
 	
 	var token = $("meta[name='csrf-token']").attr("content");
 	

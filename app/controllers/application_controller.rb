@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
   add_breadcrumb I18n.t("breadcrumbs.homepage"), "/"
   
   def init_cart
+    if session[:cart] && session[:cart][:order_finished]
+      @order_finished = true
+      session[:cart] = nil
+    end
+    
     session[:cart] ||= {'summ' => 0, 'count' => 0, 'items' => {}, 'checkout_step' => 1, 'order_id' => 0, 'promos' => {}}
     
     if session[:cart]['checkout_step'] < 2

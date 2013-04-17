@@ -24,9 +24,8 @@
 
     <script type="text/javascript">
     User = {
-        <% if user_signed_in? %>
-        id: <%= current_user.id %>
-        <% end %>
+        id           : <%= user_signed_in? ? current_user.id : "null" %>,
+        orderFinished: <%= @order_finished ? "true" : "false" %>
     }
     </script>
 
@@ -39,7 +38,7 @@
         <div class="top-bg">
             <div class="top-container">
                 <ul class="links">
-                    <li class="first"><a href="/">Главная</a></li>
+                    
                     
                     <% if user_signed_in? %>
                     <li>
@@ -53,6 +52,8 @@
                         </span>
                         <% end %>
                     </li>
+                    <% else %>
+                    <li class="first"><a href="/">Главная</a></li>
                     <% end %>
                     <li><%= link_to 'Мой профиль', edit_user_registration_path %></li>
                     <li><%= link_to 'Заказать', order_checkout_path %></li>

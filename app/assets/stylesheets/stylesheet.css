@@ -163,6 +163,7 @@ td, th, input, textarea, select, a {
 .soc-links {
 	float:left;
 	margin-left:-2px;
+	margin-right: -15px;
 	margin-top:6px;
 	height: 50px;
 }

@@ -94,7 +94,8 @@ class OrdersController < ApplicationController
     
     respond_to do |format|
       if @order.update_attributes(params[:order])
-        session[:cart] = nil
+        session[:cart][:order_finished] = true
+        
         if @order.address.email?
           UserMailer.order_email(@order).deliver
         end
