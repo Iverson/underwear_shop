@@ -5,7 +5,7 @@
 		<div id="slideshow0" class="nivoSlider" style="width: 350px; height: 300px;">
 			
 			<% @promos.each do |promo | %>
-			<a  href="#">
+			<a href="<%= promo.link? ? promo.link : "#" %>">
 				<img title="&lt;div class=&quot;bann-price&quot;&gt; 	<% if promo.price != 0 %>&lt;span class=&quot;second&quot;&gt;<%= promo.sum %>&lt;/span&gt; &lt;span class=&quot;first&quot;&gt;р&lt;/span&gt;<% end %> &lt;span class=&quot;third&quot;&gt;&lt;/span&gt;&lt;span class=&quot;four&quot;&gt;<% if promo.discount.to_i != 0 %>скидка <%= promo.discount %>%<% else %>ПОДАРОК!<% end %>&lt;/span&gt;     &lt;div class=&quot;name&quot;&gt; <%= promo.name %> &lt;/div&gt;     &lt;span&gt; <%= promo.text %> &lt;/span&gt;     &lt;div class=&quot;but-container&quot;&gt;     	     &lt;/div&gt; &lt;/div&gt;" src="<%= promo.promo_image.image.url(:slideshow) %>" />
 			</a>
 			<% end %>

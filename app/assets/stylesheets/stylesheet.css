@@ -2407,11 +2407,12 @@ position:relative; margin-left:-5px;
 	font-weight:bold;
 }
 .grid .b-section-products__item .description { 
-	height:33px; overflow:hidden; margin-bottom:10px;
+	height:30px; overflow:hidden; margin-bottom:10px;
 	position:absolute;
 	width: 150px;
 	left: 10px;
-	top: 302px;
+	top: 304px;
+    font-size: 12px;
 	line-height: 1.2em;
 }
 
@@ -2443,6 +2444,7 @@ position:relative; margin-left:-5px;
 .list .b-section-products__item .price-new, .b-section-products .price-new {
 	display:block; 
 	float:left;
+    font-size: 18px;
 }
 .b-section-products .price .price-tax {
 	display: none;
@@ -2469,6 +2471,11 @@ position:relative; margin-left:-5px;
 	border-radius:10px;
 	margin-bottom:10px;
 	border:1px solid #e7e7e7;
+}
+
+.product-info-right {
+    float:right;
+    width: 382px;
 }
 
 .product-info .wrapper .left {
@@ -3863,6 +3870,65 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 }
+
+.b-sizes {
+    position:relative;
+    padding-bottom: 10px;
+    zoom: 1;
+}
+
+    .b-sizes__define {
+        font-size: 11px;
+        left: 147px;
+        font-weight: normal !important;
+        position: absolute;
+        top: 18px;
+    }
+    
+        .b-sizes__define span {
+            font-weight: normal !important;
+        }
+    
+    .b-sizes__table {
+        position:absolute;
+        bottom: 100%;
+        margin-bottom: 2px;
+        right: -100px;
+        background: #fff;
+        padding: 10px 15px 15px 15px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.35);
+        border-radius: 3px;
+        display:none;
+    }
+    
+    .b-sizes__define.active {
+        z-index: 10;
+    }
+    
+    .b-sizes__define.active .b-sizes__table {
+        display:block;
+    }
+    
+    .b-sizes__table:before {
+        width: 0;
+        font-size: 0;
+        position:absolute;
+        top: 100%;
+        right: 145px;
+        content: "";
+        border: 6px solid;
+        border-color:#fff transparent transparent transparent;
+    }
+    
+        .b-sizes__table .t {
+            margin-bottom: 12px;
+            font-size: 14px;
+            font-weight:bold;
+        }
+    
+        .b-sizes__table .img {
+            display:block;
+        }
 
 .b-sizes__item {
 	font-weight:normal;

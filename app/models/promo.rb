@@ -3,7 +3,7 @@ class Promo < ActiveRecord::Base
   scope :published, :conditions => { :state_id => 2 }
   scope :top, :conditions => { :top => true, :state_id => 2 }
   
-  attr_accessible :discount, :name, :price, :state_id, :top, :text, :promo_image_attributes, :promo_items_attributes
+  attr_accessible :discount, :name, :price, :state_id, :top, :text, :promo_image_attributes, :promo_items_attributes, :link
   
   belongs_to :state
   has_one :promo_image, :dependent => :destroy

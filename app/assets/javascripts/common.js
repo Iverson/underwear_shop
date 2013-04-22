@@ -358,5 +358,15 @@ $(function() {
 	    
         return false; 
 	});
+	
+	/* Sizes */
+	
+	$('.b-sizes__define').click(function()
+	{
+	   $(this).toggleClass('active'); 
+	}).mouseleave   (function()
+   	{
+   	   $(this).removeClass('active'); 
+   	});
 		
 });

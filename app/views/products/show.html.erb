@@ -24,7 +24,7 @@
             </div>
 
         </div>
-        <div class="extra-wrap">
+        <div class="product-info-right">
             <h1><%= @product.name %></h1>
             <div class="description">
                 <span>Артикул:</span> <%= @product.brand.id %><br />
@@ -58,6 +58,15 @@
 				
                 <%= form_tag(:controller => "cart", :action => "add_item", :method => "post") do %>
                 <div class="b-sizes">
+					<div class="b-sizes__define dotted">
+						<span>узнать свой размер</span>
+						
+						<div class="b-sizes__table">
+							<p class="t">Размерная сетка мужской одежды:</p>
+							
+							<img class="img" src="/assets/sizes/mens.png" alt="" />
+						</div>
+					</div>
                     <span>Выберите размер:</span>
                     <% if @product.sizes? %>
                         <% @product.product_instances.in_stock.each_with_index do |size, i| %>

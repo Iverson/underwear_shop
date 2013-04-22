@@ -21,6 +21,7 @@ ActiveAdmin.register Promo do
       f.input :price
       f.input :discount
       f.input :text
+      f.input :link
       f.input :state
       f.input :top
       
