@@ -18,3 +18,10 @@ namespace :db do
     puts "Finished!"
   end
 end
+
+desc "Import Static from production"
+task :static do
+  puts "Rsync..."
+  %x(rsync --progress -zvr akrasman@62.76.186.158:/home/akrasman/younglovers-production/shared/system/ public/system/)
+  puts "Finished!"
+end

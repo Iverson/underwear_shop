@@ -27,7 +27,7 @@
         <div class="product-info-right">
             <h1><%= @product.name %></h1>
             <div class="description">
-                <span>Артикул:</span> <%= @product.brand.id %><br />
+                <span>Артикул:</span> <%= @product.id %><br />
                 <span>Брэнд:</span> <%= link_to @product.brand.name, @product.brand  %></a><br />
 				<% if @product.color? %>
 				<span>Цвет:</span> <%= @product.color %><br />
@@ -106,7 +106,7 @@
 				<div class="b-vk-like">
 					<div id="vk_like_<%= @product.id %>"></div>
 					<script type="text/javascript">
-					VK.Widgets.Like("vk_like_<%= @product.id %>", {type: "button", pageTitle: '<%= @product.name %>', pageDescription: '<%= @product.description %>', pageImage: "<%= "#{request.protocol}#{request.host_with_port}#{@product.preview(:small)}" %>"}, <%= @product.id %>);
+					VK.Widgets.Like("vk_like_<%= @product.id %>", {type: "button", pageTitle: '<%= @product.name %>', pageDescription: '<%= @product.description.delete("\n").delete("\r") %>', pageImage: "<%= "#{request.protocol}#{request.host_with_port}#{@product.preview(:small)}" %>"}, <%= @product.id %>);
 					</script>
 				</div>
             </div>
