@@ -24,6 +24,8 @@
 	
 
     <script type="text/javascript">
+    App = {};
+    
     App.User = {
         id           : <%= user_signed_in? ? current_user.id : "null" %>,
         orderFinished: <%= @order_finished ? "true" : "false" %>
