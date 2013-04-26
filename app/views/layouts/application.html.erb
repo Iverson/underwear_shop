@@ -16,17 +16,18 @@
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
-	<script type="text/javascript" src="//vk.com/js/api/openapi.js?75"></script>
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?95"></script>
+
 	<script type="text/javascript">
-	  VK.init({apiId: 3357479, onlyWidgets: true});
-	</script>
+      VK.init({apiId: 3357479, onlyWidgets: true});
+    </script>
 	
 
     <script type="text/javascript">
-    User = {
-        id           : <%= user_signed_in? ? current_user.id : "null" %>,
-        orderFinished: <%= @order_finished ? "true" : "false" %>
-    }
+    // App.User = {
+    //         id           : <%= user_signed_in? ? current_user.id : "null" %>,
+    //         orderFinished: <%= @order_finished ? "true" : "false" %>
+    //     }
     </script>
 
 </head>
