@@ -8,7 +8,7 @@ $(function() {
 		$('body').addClass('has-mouse');
 	}
 	
-	if (User.orderFinished)
+	if (App.User.orderFinished)
 	{
 		yaCounter19019545.reachGoal('checkoutFinished');
 	}
@@ -150,14 +150,14 @@ $(function() {
 	
 	$('.js-AddToFavorite').live('click', function()
 	{
-		if (User.id)
+		if (App.User.id)
 		{
 		
 		var sender = this;
 		
 		$.ajax({
 			url: Routes.favorite_add_path({format: 'json'}),
-			data: {params: {product_id: $(this).attr('rel'), user_id: User.id}},
+			data: {params: {product_id: $(this).attr('rel'), user_id: App.User.id}},
 			success: function(data)
 			{
 				if (data.add)
