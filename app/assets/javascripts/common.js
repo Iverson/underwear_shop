@@ -1,16 +1,18 @@
-var yaCounter19019545 = yaCounter19019545 || {reachGoal: function(param) {/*console.log(param);*/}};
+var yaCounter19019545 = yaCounter19019545 || {reachGoal: function(param) {console.log(param);}};
 var is_touch_device = 'ontouchstart' in document.documentElement;
 
+$(window).load(function()
+{
+	if (App.User.orderFinished)
+	{
+		yaCounter19019545.reachGoal('checkoutFinished');
+	}
+});
 
 $(function() {
 	if (!is_touch_device)
 	{
 		$('body').addClass('has-mouse');
-	}
-	
-	if (App.User.orderFinished)
-	{
-		yaCounter19019545.reachGoal('checkoutFinished');
 	}
 	
 	var token = $("meta[name='csrf-token']").attr("content");
