@@ -65,7 +65,7 @@ class Product < ActiveRecord::Base
   end
   
   def select_title
-     "#{self.name} (#{self.id})"
+     "(#{self.id}) #{self.name}. #{self.color}"
   end
   
   before_save() do

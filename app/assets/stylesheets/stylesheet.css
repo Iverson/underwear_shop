@@ -178,6 +178,12 @@ td, th, input, textarea, select, a {
 	color:#fff;
 }
 
+    .soc-links li sup {
+        font-size: 10px;
+        top: -3px;
+        color:#aaa;
+    }
+
     .soc-links .hint {
         white-space: normal;
         font-size: 11px;

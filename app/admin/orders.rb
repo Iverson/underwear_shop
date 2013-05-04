@@ -89,7 +89,7 @@ ActiveAdmin.register Order do
       f.inputs "Товары" do
         f.has_many :order_items, :class => "b-aa-sizes-form " do |p|
           
-          p.input :product_id, :as => :select, :multiple => false, :collection => Product.all.map { |a| [ a.select_title, a.id ]}
+          p.input :product_id, :as => :select, :multiple => false, :collection => Product.order(:id).map { |a| [ a.select_title, a.id ]}
           p.input :count
           p.input :size, :hint => (p.template.image_tag(p.object.product.preview(:small)) if p.object.product)
           
