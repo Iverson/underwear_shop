@@ -3,7 +3,7 @@ body {
 	font-family: Arial,Helvetica,sans-serif;
 	margin: 0px;
 	padding: 0px;
-	background:url(/assets/body-bg.jpg) fixed #000000;
+	background:url(/assets/body-bg.jpg) fixed #000;
 	font-size:14px;
 	line-height:1.3em;
 	min-width:970px;
@@ -4046,11 +4046,12 @@ strike {
 }
 
 .b-top-promo {
-    background: #ccc;
+    background: #fff;
     padding: 8px 8px 8px 10px;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+	border: 2px solid #FFAD01;
     margin-bottom: 10px;
     overflow:hidden;
     zoom: 1;
