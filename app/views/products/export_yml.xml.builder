@@ -9,10 +9,12 @@ xml.yml_catalog(:date => Time.now.strftime("%Y-%m-%d %H:%M")) do
           xml.currency(:id => "RUR", :rate => 1)
         end
         xml.categories do
-          xml.category("Одежда и обувь", :id => 1)
-          xml.category("Мужская одежда", :id => 2, :parentId => 1)
-          xml.category("Одежда", :id => 3, :parentId => 2)
+          xml.category("Одежда и обувь",       :id => 1)
+          xml.category("Мужская одежда",       :id => 2, :parentId => 1)
+          xml.category("Одежда",               :id => 3, :parentId => 2)
           xml.category("Белье и пляжная мода", :id => 4, :parentId => 2)
+          xml.category("Мужская обувь",        :id => 5, :parentId => 2)
+          
           @sections.each do |section|
             xml.category(section.name, :id => 100+section.id, :parentId => section.yml_parent_id)
           end
@@ -26,7 +28,7 @@ xml.yml_catalog(:date => Time.now.strftime("%Y-%m-%d %H:%M")) do
                 xml.price product.final_price
                 xml.currencyId "RUR"
                 xml.categoryId 100+product.section.id
-                xml.market_category "Одежда и обувь/Мужская одежда/#{product.section.yml_parent_id == 4 ? "Белье и пляжная мода" : "Одежда"}/#{product.section.yml_category}"
+                xml.market_category "Одежда, обувь и аксессуары/#{product.section.yml_category}"
                 product.pictures.each do |img|
                   xml.picture "#{request.protocol}#{request.host_with_port}#{img.image.url(:zoom)}"
                 end
