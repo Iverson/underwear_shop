@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130422204510) do
+ActiveRecord::Schema.define(:version => 20130531100658) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -137,6 +137,9 @@ ActiveRecord::Schema.define(:version => 20130422204510) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "product_instances", ["product_id"], :name => "index_product_instances_on_product_id"
+  add_index "product_instances", ["state_id"], :name => "index_product_instances_on_state_id"
+
   create_table "products", :force => true do |t|
     t.integer  "section_id",                                                             :null => false
     t.integer  "brand_id",                                                               :null => false
@@ -154,6 +157,11 @@ ActiveRecord::Schema.define(:version => 20130422204510) do
     t.string   "color"
     t.string   "matter",                                           :default => "Хлопок", :null => false
   end
+
+  add_index "products", ["brand_id"], :name => "index_products_on_brand_id"
+  add_index "products", ["name"], :name => "index_products_on_name"
+  add_index "products", ["section_id"], :name => "index_products_on_section_id"
+  add_index "products", ["state_id"], :name => "index_products_on_state_id"
 
   create_table "projects", :force => true do |t|
     t.string   "name"
