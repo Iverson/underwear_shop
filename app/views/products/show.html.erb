@@ -32,6 +32,9 @@
 				<% if @product.color? %>
 				<span>Цвет:</span> <%= @product.color %><br />
 				<% end %>
+				<% if @product.matter? %>
+				<span>Материал:</span> <%= @product.matter %><br />
+				<% end %>
 
                 <div class="padd-avalib"> 
 					<div class="extra-wrap"> 
@@ -57,7 +60,9 @@
 				<% if @product.in_stock? %>
 				
                 <%= form_tag(:controller => "cart", :action => "add_item", :method => "post") do %>
+
                 <div class="b-sizes">
+					<% if @product.section.id != 6 %>
 					<div class="b-sizes__define dotted">
 						<span>узнать свой размер</span>
 						
@@ -67,6 +72,7 @@
 							<img class="img" src="/assets/sizes/mens.png" alt="" />
 						</div>
 					</div>
+					<% end %>
                     <span>Выберите размер:</span>
                     <% if @product.sizes? %>
                         <% @product.product_instances.in_stock.each_with_index do |size, i| %>
