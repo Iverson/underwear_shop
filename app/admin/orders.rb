@@ -50,7 +50,7 @@ ActiveAdmin.register Order do
     panel "Товары" do
       table_for(order.order_items) do
         column "Название" do |item| 
-          item.name
+          "#{item.name} (#{item.product.color})"
         end
         column "Цена" do |item| 
           item.price

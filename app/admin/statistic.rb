@@ -52,7 +52,7 @@ ActiveAdmin.register_page "Statistics" do
       
     end
     
-    total = orders.joins(:order_items).sum(:price)
+    total = orders.sum{|item| item.summ}
     purchaise_total = orders.joins(:order_items => :product).sum(:purchaise_price)
     
     panel "Итого" do
