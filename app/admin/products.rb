@@ -65,6 +65,7 @@ ActiveAdmin.register Product do
       f.input :matter
       f.input :description
       f.input :state
+      f.input :top
       
       if f.object.new_record?
         f.object.product_instances.build(:size => "all")

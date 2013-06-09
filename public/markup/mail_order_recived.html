@@ -13,7 +13,7 @@
 						<tr style="margin:0;padding:0;border-collapse:collapse;">
 							<td width="20"></td>
 							<td style="border-collapse:collapse;">
-								<a target="_blank" href="<%= @url %>"><%= image_tag asset_path("footer-logo.png"), :width => 160 %></a>
+								<a href="#"><img width="160" src="/assets/footer-logo.png" alt="" /></a>
 							</td>
 							<td style="border-collapse:collapse;">
 								<div style="border-collapse:collapse;">
@@ -26,7 +26,7 @@
 									<table style="margin:0;padding:0;border-collapse:collapse;">
 										<tr style="margin:0;padding:0;border-collapse:collapse;">
 											<td style="margin:0;padding:0 7px 0 0;border-collapse:collapse; text-align: right;"><a href="#">
-												<a href="http://vk.com/younglovers" target="_blank"><img style="margin:0;padding:19px 0 15px;border-collapse:collapse;" src="<%= asset_path("s_vk.png") %>"></a>
+												<img style="margin:0;padding:19px 0 15px;border-collapse:collapse;" src="/assets/s_vk.png">
 											</a></td>
 											
 										</tr>
@@ -40,26 +40,39 @@
 		</table>
 		<br />
 		<div style="font-family:Arial;font-size:18px;color:#000;">
-			<%= @order.address.fio %>, благодарим вас за то что вы сделали заказ в магазине <a href="<%= @url %>" style="color:#2E83C3;" target="_blank">YoungLovers.ru</a>!
+			Алексей, благодарим вас за то что вы сделали заказ в магазине YoungLovers.ru!
 		</div>
 		<br />
 		<div style="font-family:Arial;font-size:14px;color:#000;">
-			Сумма заказа: <b><%= @order.summ %> руб.</b> <br /><br /><br />
+			Сумма заказа: <b>3400 руб.</b> <br /><br />
 			
 			Ваш заказ: <br /><br />
 			
 			<table style="border-collapse:collapse;" width="100%" border="0" cellspacing="0" cellpadding="0">
-			<% @order.order_items.each do |item| %>
 				<tr>
+					<td width="85" valign="top" style="padding-bottom: 10px;">
+						<img src="http://localhost:3000/system/products/100/medium/DSC03833.JPG?1366654983" width="70" />
+					</td>
 					<td width="205" valign="top" style="padding-top: 10px">
-						<font style="font-size: 18px;"><%= item.product.name %> x <%= item.count %></font> <br /> 
-						Размер: <%= item.size %>
+						<font style="font-size: 18px;">Кардиган Armani</font> <br /> 
+						Размер: L
 					</td>
 					<td width="" valign="top" style="padding-top: 14px">
-						<b><%= item.price %></b>
+						<b>2400 р.</b>
 					</td>
 				</tr>
-			<% end %>
+				<tr>
+					<td width="85" valign="top" style="padding-bottom: 10px;">
+						<img src="http://localhost:3000/system/products/100/medium/DSC03833.JPG?1366654983" width="70" />
+					</td>
+					<td width="205" valign="top" style="padding-top: 10px">
+						<font style="font-size: 18px;">Кардиган Armani</font> <br /> 
+						Размер: L
+					</td>
+					<td width="" valign="top">
+						<b>2400</b>
+					</td>
+				</tr>
 			</table>
 			
 			<br />
@@ -69,7 +82,7 @@
 			<br />
 			<div style="background: #252525; height: 3px;" />
 			<br />
-			Команда <b>YoungLovers.ru</b> | <a style="color:#2E83C3;" href="mailto:info@younglovers.ru">info@younglovers.ru</a>
+			Команда <b>YoungLovers.ru</b> | <a href="#">info@younglovers.ru</a>
 		</div>
 	</div>
 </body>

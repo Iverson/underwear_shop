@@ -4,10 +4,14 @@ class Address < ActiveRecord::Base
   belongs_to :addressable, :polymorphic => true
   
   validates :phone, :presence => true, 
-                      :length => {:minimum => 5, :maximum => 20},
+                      :length => {:minimum => 10, :maximum => 20},
                       :format => {:with => /^([0-9\(\)\/\+ \-]*)$/}
                       
   validates :fio,  :presence => true, 
-                      :length => {:minimum => 1, :maximum => 100}
+                      :length => {:minimum => 3, :maximum => 50}
+  
+  validates :email, 
+  :length => {:minimum => 5, :maximum => 100, :if => :email? },
+  :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :if => :email? }
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130531100658) do
+ActiveRecord::Schema.define(:version => 20130609152616) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -156,6 +156,7 @@ ActiveRecord::Schema.define(:version => 20130531100658) do
     t.integer  "order_items_count",                                :default => 0
     t.string   "color"
     t.string   "matter",                                           :default => "Хлопок", :null => false
+    t.integer  "top",                                              :default => 0,        :null => false
   end
 
   add_index "products", ["brand_id"], :name => "index_products_on_brand_id"

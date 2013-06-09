@@ -48,6 +48,7 @@ group :development do
   gem "capistrano"
   gem 'capistrano-ext'
   gem "rvm-capistrano"
+  gem "letter_opener"
 end
 
 # To use debugger

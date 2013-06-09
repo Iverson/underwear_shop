@@ -2,12 +2,14 @@ class Product < ActiveRecord::Base
   RU_SIZES = {"S" => "46, 48", "M" => "48,50", "L" => "50,52", "XL" => "52,54", "XXL" => "54,56"}
   
   default_scope :conditions => { :state_id => 2 }
+  scope :top, order('top DESC')
   
   Section.all.each do |section|
     scope section.name.gsub(/\s+/, "_"), where(:section_id => section.id)
   end
   
-  attr_accessible :brand_id, :description, :discount, :name, :price, :purchaise_price, :section_id, :country_id, :state_id, :pictures_attributes, :product_instances_attributes, :uri, :color, :matter
+  attr_accessible :brand_id, :description, :discount, :name, :price, :purchaise_price, :section_id, 
+  :country_id, :state_id, :pictures_attributes, :product_instances_attributes, :uri, :color, :matter, :top
   
   belongs_to :country
   belongs_to :section
