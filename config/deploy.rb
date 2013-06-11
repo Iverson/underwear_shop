@@ -49,6 +49,7 @@ after "deploy", "deploy:cleanup"
 # Sphinx
 
 before 'deploy:update_code', 'thinking_sphinx:stop'
+after 'deploy:update_code', 'thinking_sphinx:index'
 after 'deploy:update_code', 'thinking_sphinx:start'
 
 namespace :sphinx do
