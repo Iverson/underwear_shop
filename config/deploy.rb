@@ -2,10 +2,13 @@ set :rvm_type, :user
 set :stages, %w(staging production)
 set :default_stage, "staging"
 set :rvm_ruby_string, 'ruby 1.9.2-p320'
+set :whenever_environment, defer { stage }
+set :whenever_identifier, defer { "#{application}_#{stage}" }
 require 'capistrano/ext/multistage'
 require "rvm/capistrano"                              # Load RVM's capistrano plugin.
 require "bundler/capistrano"
 require 'thinking_sphinx/deploy/capistrano'
+require "whenever/capistrano"
 
 default_run_options[:pty] = true
 

@@ -18,3 +18,4 @@ doc/
 public/system/*
 db/sphinx/*
 config/*.sphinx.conf
+sitemap.xml
