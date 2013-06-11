@@ -13,7 +13,7 @@
 #   rake "some:great:rake:task"
 # end
 #
-every 1.minute do
+every 1.day do
   rake "sitemap:generate"
 end
 
