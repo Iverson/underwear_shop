@@ -1,76 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-</head>
+<div style="font-family:Arial;font-size:18px;color:#000;">
+	<%= @order.address.fio %>, благодарим вас за то что вы сделали заказ в магазине <a href="<%= @root_url %>" style="color:#2E83C3;" target="_blank">YoungLovers.ru</a>!
+</div>
+<br />
 
-<body>
-	<div class="" style="margin:0 auto;padding:0;border-collapse:collapse;width:750px;">
-		<table width="100%">
-			<tr bgcolor="#252525" style="margin:0;padding:0;border-collapse:collapse;">
-				<td style="margin:0;padding: 0;border-collapse:collapse;">
-					<table width="100%" style="margin:0;padding:0;border-collapse:collapse;">
-						<tr style="margin:0;padding:0;border-collapse:collapse;">
-							<td width="20"></td>
-							<td style="border-collapse:collapse;">
-								<a target="_blank" href="<%= @url %>"><%= image_tag asset_path("footer-logo.png"), :width => 160, :alt => "YoungLovers" %></a>
-							</td>
-							<td style="border-collapse:collapse;">
-								<div style="border-collapse:collapse;">
-									<div style="margin:0;padding:0;border-collapse:collapse;font-family:Arial;font-size:24px;color:#fff;"><span>8 495 508-28-20</span></div>
-									<div style="margin:0 0 0;padding:0;border-collapse:collapse;font-family:Arial;font-size:11px;color:#ccc;">консультация по любым вопросам</div>
-								</div>
-							</td>
-							<td style="margin:0;padding:0 0 15px 0;border-collapse:collapse;">
-								<div>
-									<table style="margin:0;padding:0;border-collapse:collapse;">
-										<tr style="margin:0;padding:0;border-collapse:collapse;">
-											<td style="margin:0;padding:0 7px 0 0;border-collapse:collapse; text-align: right;"><a href="#">
-												<a href="http://vk.com/younglovers" target="_blank"><img style="margin:0;padding:19px 0 15px;border-collapse:collapse;" src="<%= asset_path("s_vk.png") %>" alt="Мы в Контакте" /></a>
-											</a></td>
-											
-										</tr>
-									</table>
-								</div>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<br />
-		<div style="font-family:Arial;font-size:18px;color:#000;">
-			<%= @order.address.fio %>, благодарим вас за то что вы сделали заказ в магазине <a href="<%= @url %>" style="color:#2E83C3;" target="_blank">YoungLovers.ru</a>!
-		</div>
-		<br />
-		<div style="font-family:Arial;font-size:14px;color:#000;">
-			Сумма заказа: <b><%= @order.summ %> руб.</b> <br /><br /><br />
-			
-			Ваш заказ: <br /><br />
-			
-			<table style="border-collapse:collapse;" width="100%" border="0" cellspacing="0" cellpadding="0">
-			<% @order.order_items.each do |item| %>
-				<tr>
-					<td width="205" valign="top" style="padding-top: 10px">
-						<font style="font-size: 18px;"><%= item.product.name %> x <%= item.count %></font> <br /> 
-						Размер: <%= item.size %>
-					</td>
-					<td width="" valign="top" style="padding-top: 14px">
-						<b><%= item.price %></b>
-					</td>
-				</tr>
-			<% end %>
-			</table>
-			
-			<br />
-			<div>
-				В течении суток с вами свяжется по телефону наш оператор для подтверждения заказа.
-			</div>
-			<br />
-			<div style="background: #252525; height: 3px;"></div>
-			<br />
-			Команда <b>YoungLovers.ru</b> | <a style="color:#2E83C3;" href="mailto:info@younglovers.ru">info@younglovers.ru</a>
-		</div>
+<div style="font-family:Arial;font-size:14px;color:#000;">
+	Сумма заказа: <b><%= @order.summ %> руб.</b> <br /><br /><br />
+	
+	Ваш заказ: <br /><br />
+	
+	<table style="border-collapse:collapse;" width="100%" border="0" cellspacing="0" cellpadding="0">
+	<% @order.order_items.each do |item| %>
+		<tr>
+			<td width="205" valign="top" style="padding-top: 10px">
+				<font style="font-size: 18px;"><%= item.product.name %> x <%= item.count %></font> <br /> 
+				Размер: <%= item.size %>
+			</td>
+			<td width="" valign="top" style="padding-top: 14px">
+				<b><%= item.price %></b>
+			</td>
+		</tr>
+	<% end %>
+	</table>
+	
+	<br />
+	
+	<div>
+		В течении суток с вами свяжется по телефону наш оператор для подтверждения заказа.
 	</div>
-</body>
-</html>
+</div>

@@ -11,6 +11,9 @@ end
 
 module UnderwearShop
   class Application < Rails::Application
+    
+    config.yandex_market_raiting_page = 'http://market.yandex.ru/shop/136639/reviews'
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
