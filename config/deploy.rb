@@ -10,6 +10,7 @@ set :whenever_command, "bundle exec whenever"
 require 'capistrano/ext/multistage'
 require "rvm/capistrano"                              # Load RVM's capistrano plugin.
 require 'thinking_sphinx/deploy/capistrano'
+require "whenever/capistrano"
 
 default_run_options[:pty] = true
 
