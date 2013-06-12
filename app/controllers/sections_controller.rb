@@ -20,7 +20,7 @@ class SectionsController < ApplicationController
       @per_page = nil
     end
     
-    @section = Section.where(:uri => params[:id]).first
+    @section = Section.where(:uri => params[:id]).first || not_found
     @seo_key = "мужские #{@section.name.mb_chars.downcase.to_s}"
     @products = @section.products.top.order(params[:sort_by]).paginate(:page => params[:page], :per_page => @per_page)
     #section_brands_ids = @section.products.group(:brand_id).pluck(:brand_id)

@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.where(:uri => params[:id]).first
+    @product = Product.where(:uri => params[:id]).first || not_found
     @similar_products = @product.section.products.where("id != ?", @product.id).limit(6)
     @title = "#{@product.name} купить за #{@product.final_price} руб. в интернет магазине Young Lovers, доставка бесплатно"
     

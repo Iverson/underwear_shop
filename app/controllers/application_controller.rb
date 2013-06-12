@@ -51,4 +51,8 @@ class ApplicationController < ActionController::Base
     @brands_all = Brand.all
   end
   
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
+  
 end
