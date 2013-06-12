@@ -4291,3 +4291,11 @@ strike {
     cursor: default;
     color:#fff !important;
 }
+
+.l-error {
+    background-position:0 -30px;
+}
+
+.l-error .main-shining {
+    padding-top: 120px;
+}
