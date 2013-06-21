@@ -1,7 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  id: 1
+  name: Создан
+  status: created
 
-two:
-  name: MyString
+wto:
+  id: 2
+  name: Получен
+  status: recived
+
+three:
+  id: 3
+  name: Подтвержден
+  status: confirmed
+  
+four:
+  id: 4
+  name: Доставка
+  status: delivery
+
+five:
+  id: 5
+  name: Оплачен
+  status: paid
+  
+six:
+  id: 6
+  name: Отменен
+  status: canceled

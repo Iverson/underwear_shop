@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+first:
   product_id: 1
-  size: MyString
-  color: MyString
+  size: M
+  color: 
   count: 1
-  state_id: 1
+  state_id: 2
 
 two:
-  product_id: 1
+  product_id: 2
   size: MyString
   color: MyString
   count: 1
-  state_id: 1
+  state_id: 2

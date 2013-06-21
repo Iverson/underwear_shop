@@ -1,19 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   section_id: 1
   brand_id: 1
-  price: 9.99
-  name: MyString
-  description: MyText
-  discount: 1
-  state_id: 1
+  price: 520.0
+  name: Polo Lacoste
+  description: Original polo by Lacoste
+  discount: 0
+  state_id: 2
+  uri: polo-lacoste
 
 two:
+  id: 2
   section_id: 1
   brand_id: 1
   price: 9.99
   name: MyString
   description: MyText
-  discount: 1
-  state_id: 1
+  discount: 0
+  state_id: 2
+  uri: polo-lacoste2

@@ -1,6 +1,9 @@
 development:
     default_host: localhost:3000
 
+test:
+    default_host: localhost:3000
+
 staging:
     default_host: test.younglovers.ru
 
