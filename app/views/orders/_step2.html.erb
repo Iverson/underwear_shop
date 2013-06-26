@@ -46,7 +46,7 @@
 						</p>
 					</td>
 					<td width="40"></td>
-					<td style="text-align: right;"><label for="flat.flat"><%= d.price_to_s %></label></td>
+					<td style="text-align: right;"><label for="flat.flat"><%= d.price_to_s(@cart['summ']) %></label></td>
 				</tr>
 				<% end %>
 			</table>

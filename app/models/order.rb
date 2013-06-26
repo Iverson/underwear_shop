@@ -17,7 +17,12 @@ class Order < ActiveRecord::Base
   after_update :send_email_if_paid
   
   def summ
-    self.order_items.sum{|item| item.price*item.count}.to_i+self.delivery.price.to_i
+    total = self.order_items.sum{|item| item.price*item.count}.to_i
+  end
+  
+  def total
+    summ = self.summ
+    summ + self.delivery.calc_price(summ).to_i
   end
   
   def count

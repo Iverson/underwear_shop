@@ -95,12 +95,13 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.update_attributes(params[:order])
         session[:cart][:order_finished] = true
+        init_cart
         
         if @order.address.email?
           UserMailer.order_email(@order).deliver
         end
         
-        format.html { redirect_to root_url, notice: 'Ваш заказ принят, оператор свяжется с вами по телефону в течение нескольких часов.<br /> <a target="_blank" href="http://market.yandex.ru/shop-opinions.xml?shop_id=136639">Оценить</a> работу магазина. Вступить в нашу <a target="_blank" href="http://vk.com/younglovers">группу Вконтакте</a>.' }
+        format.html { render :finish }
         format.json { head :no_content }
       else
         format.html { render :checkout }

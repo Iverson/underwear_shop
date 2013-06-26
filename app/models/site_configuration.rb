@@ -28,7 +28,9 @@ class SiteConfiguration < ActiveRecord::Base
  
   # Define settings by listing them here
   if self.table_exists?
-    setting :phone,    '"+7(926)-021-74-49"',  :string
+    setting :phone,                    '"+7(926)-021-74-49"',  :string
+    setting :free_shipping_minimum,    1000,                   :string
+    setting :shipping_price,           250,                    :string
   end
  
   # Ensure all the defaults are created when the class file is read

@@ -28,7 +28,7 @@ ActiveAdmin.register_page "Dashboard" do
               o.address.phone
             end
             f.column "Summ (RUR)" do |o|
-              o.summ
+              o.total
             end
             f.column "Date" do |o|
               o.created_at

@@ -52,11 +52,11 @@
                     </tr>
                     <tr>
                         <td class="price" colspan="6"><b>Доставка:</b></td>
-                        <td class="total"><%= @order.delivery.price.to_i %>р</td>
+                        <td class="total"><%= @order.delivery.calc_price(@cart['summ']).to_i %>р</td>
                     </tr>
                     <tr>
                         <td class="price" colspan="6"><b>Итого:</b></td>
-                        <td class="total"><%= @cart['summ'] + @order.delivery.price.to_i %>р</td>
+                        <td class="total"><%= @cart['summ'] + @order.delivery.calc_price(@cart['summ']).to_i %>р</td>
                     </tr>
                 </tfoot>
                 <% end %>

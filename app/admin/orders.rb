@@ -14,7 +14,7 @@ ActiveAdmin.register Order do
       link_to o.address.fio, admin_order_path(o)
     end
     column "Summ (RUR)" do |o|
-      o.summ
+      o.total
     end
     column "Phone" do |o|
       o.address.phone
@@ -62,9 +62,9 @@ ActiveAdmin.register Order do
           item.count
         end
       end
-      para "Доставка: #{order.delivery.price}"
+      para "Доставка: #{order.delivery.calc_price(order.summ)}"
       
-      para "Итого: #{order.summ}"
+      para "Итого: #{order.total}"
     end
     
     active_admin_comments

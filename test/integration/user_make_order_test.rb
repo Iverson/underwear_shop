@@ -39,15 +39,15 @@ class UserMakeOrderTest < ActionDispatch::IntegrationTest
     
     created_order = Order.find(session[:cart]['order_id'])
     
-    assert_equal created_order.address.fio, "Hank"
+    assert_equal "Hank", created_order.address.fio
     
     post_via_redirect "/order/confirm", order: { order_state_id: 2 }
     last_mail = ActionMailer::Base.deliveries.last
     
     assert_response :success
     assert_template "index"
-    assert_equal     last_mail.to, ["moody@gmail.com"]
-    assert_equal     session[:cart]['count'], 0
+    assert_equal     ["moody@gmail.com"], last_mail.to
+    assert_equal     0, session[:cart]['count']
     
     
   end
