@@ -35,6 +35,7 @@ gem "meta_search",    '>= 1.1.0.pre'
 gem 'thinking-sphinx', '2.0.10'
 gem 'sitemap'
 gem 'whenever', :require => false
+gem 'airbrake'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

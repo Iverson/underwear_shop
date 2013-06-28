@@ -76,3 +76,6 @@ namespace :web do
     run "rm #{shared_path}/system/maintenance.html"
   end
 end
+
+        require './config/boot'
+        require 'airbrake/capistrano'
