@@ -22,9 +22,7 @@ class SectionsController < ApplicationController
     
     @section = Section.where(:uri => params[:id]).first || not_found
     @seo_key = "мужские #{@section.name.mb_chars.downcase.to_s}"
-    @products = @section.products.top.order(params[:sort_by]).paginate(:page => params[:page], :per_page => @per_page)
-    #section_brands_ids = @section.products.group(:brand_id).pluck(:brand_id)
-    #section_brands = @brands.select { |brand| section_brands_ids.include?(brand.id) }
+    @products = @section.products.includes(:pictures, :product_instances).top.order(params[:sort_by]).paginate(:page => params[:page], :per_page => @per_page)
     @title = "Купить мужские #{@section.name.mb_chars.downcase.to_s} с бесплатной доставкой в интернет магазине YoungLovers.ru"
     
     add_breadcrumb "<span>#{@section.name}</span>", section_url

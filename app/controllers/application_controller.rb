@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   
   def bestsellers
     if OrderItem.count > 0
-      @bestsellers = Product.order('order_items_count desc').limit(3)
+      @bestsellers = Product.includes(:pictures, :section).order('order_items_count desc').limit(3)
     end
     
   end
@@ -49,6 +49,7 @@ class ApplicationController < ActionController::Base
   
   def brands
     @brands_all = Brand.all
+    @delivery_by_courier = Delivery.courier.first
   end
   
   def not_found

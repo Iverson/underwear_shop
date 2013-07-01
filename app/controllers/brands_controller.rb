@@ -13,7 +13,7 @@ class BrandsController < ApplicationController
     @brand = Brand.where(:uri => params[:id]).first || not_found
     brand_sections_ids = @brand.products.group(:section_id).pluck(:section_id)
     brand_sections = Section.all.select { |section| brand_sections_ids.include?(section.id) }
-    @products = @brand.products.order(params[:sort_by]).order("price DESC, discount DESC").paginate(:page => params[:page], :per_page => @per_page)
+    @products = @brand.products.includes(:pictures, :product_instances).order(params[:sort_by]).order("price DESC, discount DESC").paginate(:page => params[:page], :per_page => @per_page)
     @title = "#{@brand.name} | #{brand_sections.map{|s| s.name.mb_chars.downcase.to_s}.join(", ")} #{@brand.name} в интернет магазине YoungLovers.ru"
     
     add_breadcrumb "<span>#{@brand.name}</span>", brand_url

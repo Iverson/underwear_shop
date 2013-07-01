@@ -39,9 +39,7 @@ class Product < ActiveRecord::Base
   end
   
   def preview(size)
-    if pictures.exists?
-      pictures.first.image(size)
-    end
+    pictures.first.image(size)
   end
   
   def preview_medium

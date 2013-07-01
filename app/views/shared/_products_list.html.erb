@@ -31,7 +31,7 @@
             <div class="delivery">
 			<% if product.in_stock? %>
 				<% if product.final_price > 1000 %>
-                Доставка <%= Delivery.courier.first.price_to_s %>
+                Доставка <%= @delivery_by_courier.price_to_s %>
                 <% end %>
 			<% else %>
 				<span class="no_stock">нет в наличии</span>
