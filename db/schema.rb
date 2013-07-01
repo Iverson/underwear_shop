@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612151045) do
+ActiveRecord::Schema.define(:version => 20130701134933) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -101,6 +101,9 @@ ActiveRecord::Schema.define(:version => 20130612151045) do
     t.string   "size"
   end
 
+  add_index "order_items", ["order_id"], :name => "index_order_items_on_order_id"
+  add_index "order_items", ["product_id"], :name => "index_order_items_on_product_id"
+
   create_table "order_states", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -118,6 +121,10 @@ ActiveRecord::Schema.define(:version => 20130612151045) do
     t.boolean  "can_send_email", :default => true, :null => false
   end
 
+  add_index "orders", ["delivery_id"], :name => "index_orders_on_delivery_id"
+  add_index "orders", ["order_state_id"], :name => "index_orders_on_order_state_id"
+  add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
+
   create_table "pictures", :force => true do |t|
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
@@ -127,6 +134,8 @@ ActiveRecord::Schema.define(:version => 20130612151045) do
     t.datetime "image_updated_at"
     t.integer  "product_id"
   end
+
+  add_index "pictures", ["product_id"], :name => "index_pictures_on_product_id"
 
   create_table "product_instances", :force => true do |t|
     t.integer  "product_id"
@@ -182,6 +191,8 @@ ActiveRecord::Schema.define(:version => 20130612151045) do
     t.integer  "promo_id"
   end
 
+  add_index "promo_images", ["promo_id"], :name => "index_promo_images_on_promo_id"
+
   create_table "promo_items", :force => true do |t|
     t.integer  "promo_id",                  :null => false
     t.integer  "product_id",                :null => false
@@ -201,6 +212,9 @@ ActiveRecord::Schema.define(:version => 20130612151045) do
     t.boolean  "top",                                      :default => false, :null => false
     t.string   "link"
   end
+
+  add_index "promos", ["state_id"], :name => "index_promos_on_state_id"
+  add_index "promos", ["top"], :name => "index_promos_on_top"
 
   create_table "sections", :force => true do |t|
     t.string   "name",                                  :null => false
@@ -232,6 +246,8 @@ ActiveRecord::Schema.define(:version => 20130612151045) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "states", ["status"], :name => "index_states_on_status"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
