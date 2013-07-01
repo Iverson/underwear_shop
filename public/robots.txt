@@ -1,5 +1,19 @@
 # See http://www.robotstxt.org/wc/norobots.html for documentation on how to use the robots.txt file
 #
 # To ban all spiders from the entire site uncomment the next two lines:
-# User-Agent: *
-# Disallow: /
+
+User-agent: Yandex
+Disallow: /users/sign_up
+Disallow: /cart
+Disallow: /terms
+Disallow: /users/sign_in
+Disallow: /users/password/new
+Host: younglovers.ru
+Sitemap: http://younglovers.ru/sitemap.xml
+
+User-agent: *
+Disallow: /users/sign_up
+Disallow: /cart
+Disallow: /terms
+Disallow: /users/sign_in
+Disallow: /users/password/new
