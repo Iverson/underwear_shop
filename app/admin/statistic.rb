@@ -37,31 +37,40 @@ ActiveAdmin.register_page "Statistics" do
     end
     
     para month_html.html_safe
-    
-    table_for orders do |f|
-      f.column :id
-      f.column "User" do |o|
-        link_to o.address.fio, admin_order_path(o)
+  
+    if orders.empty?
+      
+      para "<b>Нет заказов</b>".html_safe
+    else
+      
+      table_for orders do |f|
+        f.column :id
+        f.column "User" do |o|
+          link_to o.address.fio, admin_order_path(o)
+        end
+        f.column "Date" do |o|
+          o.created_at.strftime("%d-%b")
+        end
+        f.column "Summ (RUR)" do |o|
+          o.summ
+        end
+
       end
-      f.column "Date" do |o|
-        o.created_at.strftime("%d-%b")
-      end
-      f.column "Summ (RUR)" do |o|
-        o.summ
+      
+      total = orders.sum{|item| item.summ}
+      purchaise_total = orders.joins(:order_items => :product).sum(:purchaise_price)
+
+      panel "Итого" do
+        para "<b>Заказов:</b> #{orders.count}".html_safe
+        para "<b>Оборот:</b> #{total.to_i}".html_safe
+        para "<b>Закупочная цена:</b> #{purchaise_total.to_i}".html_safe
+        para "<b>Прибыль:</b> #{total.to_i - purchaise_total.to_i}".html_safe
+        para "<b>Средний заказ:</b> #{total.to_i / orders.count}".html_safe
       end
       
     end
     
-    total = orders.sum{|item| item.summ}
-    purchaise_total = orders.joins(:order_items => :product).sum(:purchaise_price)
     
-    panel "Итого" do
-      para "<b>Заказов:</b> #{orders.count}".html_safe
-      para "<b>Оборот:</b> #{total.to_i}".html_safe
-      para "<b>Закупочная цена:</b> #{purchaise_total.to_i}".html_safe
-      para "<b>Прибыль:</b> #{total.to_i - purchaise_total.to_i}".html_safe
-      para "<b>Средний заказ:</b> #{total.to_i / orders.count}".html_safe
-    end
     
   end
 end
