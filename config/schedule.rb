@@ -17,4 +17,8 @@ every 1.day do
   rake "sitemap:generate"
 end
 
+every 60.minutes do
+  rake "ts:index"
+end
+
 # Learn more: http://github.com/javan/whenever

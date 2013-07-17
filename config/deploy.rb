@@ -49,8 +49,6 @@ after "deploy", "deploy:cleanup"
 
 # Sphinx
 
-after 'deploy:update_code', 'thinking_sphinx:index'
-
 namespace :sphinx do
   desc "Symlink Sphinx indexes"
   task :symlink_indexes, :roles => [:app] do
