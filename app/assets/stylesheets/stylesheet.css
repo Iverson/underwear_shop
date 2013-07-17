@@ -4304,3 +4304,8 @@ strike {
 .l-error .main-shining {
     padding-top: 120px;
 }
+
+.b-market-rating {
+    float: right;
+    margin: 15px 20px 0 0;
+}
