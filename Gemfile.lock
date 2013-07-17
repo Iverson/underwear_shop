@@ -194,6 +194,9 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    turbo-sprockets-rails3 (0.2.13)
+      railties (>= 3.1.0, < 3.2.9)
+      sprockets (>= 2.0.0)
     tzinfo (0.3.33)
     uglifier (1.2.6)
       execjs (>= 0.3.0)
@@ -237,6 +240,7 @@ DEPENDENCIES
   sqlite3
   therubyracer
   thinking-sphinx (= 2.0.10)
+  turbo-sprockets-rails3
   uglifier (>= 1.0.3)
   unicorn
   whenever
