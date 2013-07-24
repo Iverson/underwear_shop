@@ -4,7 +4,7 @@
     
 <% else %>
 
-    <% @products.each do |product| %>
+    <% @products.compact.each do |product| %>
     
     <div class="b-section-products__item <%= !product.in_stock? ? "b-section-products__item_nostock" : "" %> js-product">
 		<% if product.discount > 0 %>
