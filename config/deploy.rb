@@ -2,7 +2,7 @@ require "bundler/capistrano"
 set :rvm_type, :user
 set :stages, %w(staging production)
 set :default_stage, "staging"
-set :rvm_ruby_string, 'ruby 1.9.2-p320'
+set :rvm_ruby_string, 'ruby-1.9.3-p327'
 set :whenever_environment, defer { stage }
 set :whenever_identifier, defer { "#{application}_#{stage}" }
 set :whenever_roles, "app"
