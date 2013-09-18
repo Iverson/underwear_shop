@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  cache_sweeper :product_sweeper
+  
   protect_from_forgery
   
   before_filter :require_http_basic_auth if Rails.env == "staging"
@@ -28,7 +30,7 @@ class ApplicationController < ActionController::Base
   
   def bestsellers
     if OrderItem.count > 0
-      @bestsellers = Product.includes(:pictures, :section).order('order_items_count desc').limit(3)
+      @bestsellers = Product.puplished.includes(:pictures, :section).order('order_items_count desc').limit(3)
     end
     
   end

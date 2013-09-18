@@ -1,7 +1,8 @@
 class Product < ActiveRecord::Base
   RU_SIZES = {"S" => "46, 48", "M" => "48,50", "L" => "50,52", "XL" => "52,54", "XXL" => "54,56"}
   
-  default_scope :conditions => { :state_id => 2 }
+  #default_scope :conditions => { :state_id => 2 }
+  scope :puplished, where(:state_id => 2)
   scope :top, order('top DESC')
   
   Section.all.each do |section|

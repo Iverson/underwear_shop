@@ -9,14 +9,6 @@ ActiveAdmin.register Product do
     scope section.name.gsub(/\s+/, "_")
   end
   
-  scope_to do
-    Class.new do
-      def self.products
-        Product.unscoped
-      end
-    end
-  end
-  
   before_filter do
     Product.class_eval do
       def to_param
