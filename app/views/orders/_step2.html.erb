@@ -13,23 +13,30 @@
 				<%= address_fields.input :fio, :label => "Имя" %>
 			</div>
 
-			<div class="b-input margin_b10">
+			<div class="b-input margin_b30">
 				<%= address_fields.input :phone, :label => "Телефон" %>
 			</div>
 			
-			<div class="b-input ">
-				<%= address_fields.input :email, :label => "Email" %>
-			</div>
+			<%= f.button :submit, "Продолжить", :class => "b-btn b-btn_wide button_pink" %>
 			
 		</div>
 		<div class="right">
 			<!--div class="description">
 				После заполнения формы и отправки заказа с вами в течении нескольких часов по телефону свяжется сотрудник магазина для подтверждения заказа и уточнения адреса и даты доставки.
 			</div-->
+			
+			<div class="b-input margin_b10">
+				<%= address_fields.input :email, :label => "Email" %>
+			</div>
+			
 			<div class="b-input margin_b15">
+				<%= address_fields.input :address, :label => "Адрес доставки" %>
+			</div>
+			
+			<div class="b-input margin_b10">
 				<label>Доставка:</label>
 			</div>
-			<table class="radio margin_b30">
+			<table class="radio">
 				<% Delivery.all.each_with_index do |d, i| %>
 
 				<tr class="highlight">
@@ -50,7 +57,7 @@
 				</tr>
 				<% end %>
 			</table>
-			<%= f.button :submit, "Продолжить", :class => "b-btn b-btn_wide button_pink" %>
+			
 		</div>
 		<div class="clearer"></div>
 		<% end %>
