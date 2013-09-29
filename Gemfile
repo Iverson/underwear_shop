@@ -37,6 +37,7 @@ gem 'thinking-sphinx', '2.0.10'
 gem 'sitemap'
 gem 'whenever', :require => false
 gem 'airbrake'
+gem 'state_machine'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

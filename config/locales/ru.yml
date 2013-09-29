@@ -11,6 +11,15 @@ ru:
         profile: "Профиль"
         cart: "Корзина"
     activerecord:
+      state_machines:
+        order:
+          state:
+            states:
+              created: "Создан"
+              recived: "Получен"
+              confirmed: "Подтвержден"
+              paid: "Оплачен"
+              canceled: "Отменен"
         errors:
           # The values :model, :attribute and :value are always available for interpolation
           # The value :count is available when applicable. Can be used for pluralization.

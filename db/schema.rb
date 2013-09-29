@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130701134933) do
+ActiveRecord::Schema.define(:version => 20130929150214) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(:version => 20130701134933) do
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
     t.boolean  "can_send_email", :default => true, :null => false
+    t.string   "state"
   end
 
   add_index "orders", ["delivery_id"], :name => "index_orders_on_delivery_id"

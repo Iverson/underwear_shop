@@ -3,8 +3,9 @@ ActiveAdmin.register Order do
   menu :label => proc{ I18n.t("active_admin.orders") }, :parent => I18n.t("active_admin.orders")
   
   scope :all, :default => true
-  OrderState.all.each do |state|
-    scope state.name
+  
+  Order.state_machine.states.each do |state|
+    scope state.human_name
   end
   
   index do
@@ -20,7 +21,7 @@ ActiveAdmin.register Order do
       o.address.phone
     end
     column "State" do |o|
-      link_to o.order_state.name, edit_admin_order_path(o)
+      link_to o.human_state_name, edit_admin_order_path(o)
       
     end
     column :created_at
@@ -29,7 +30,9 @@ ActiveAdmin.register Order do
   
   show do |order|
     attributes_table do
-      row :order_state_id
+      row "Статус заказа" do
+        order.human_state_name
+      end
       row "Заказчик" do
         order.address.fio
       end
@@ -72,7 +75,9 @@ ActiveAdmin.register Order do
   
   form do |f|
     f.inputs "Заказ" do
-      f.input :order_state
+      
+      #f.input :state
+      f.input :state_event, :label => 'State', :as => :select, :collection => f.object.state_transitions.map{|s| [s.human_to_name , s.event]}, :include_blank => f.object.human_state_name
       f.input :delivery
       f.input :comment
       

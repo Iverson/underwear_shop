@@ -61,8 +61,12 @@ class Product < ActiveRecord::Base
     end
   end
   
+  def stock
+    product_instances.sum(:count)
+  end
+  
   def in_stock?
-    product_instances.sum(:count) > 0
+    stock > 0
   end
   
   def select_title

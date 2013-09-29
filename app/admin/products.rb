@@ -37,9 +37,14 @@ ActiveAdmin.register Product do
     column :price do |product|
       product.final_price
     end
+    column "Stock" do |product|
+      product.stock
+    end
     column :section
     column :brand
-    column :description
+    column :description do |p|
+      truncate(p.description, :length => 100)
+    end
     default_actions
   end
   
@@ -47,9 +52,9 @@ ActiveAdmin.register Product do
     f.inputs "Product", :multipart => true do
       f.input :name
       f.input :uri
-      f.input :price
-      f.input :purchaise_price
-      f.input :discount, :hint => "Конечная цена: #{f.object.final_price}" if !f.object.new_record?
+      f.input :price, :as => :string
+      f.input :purchaise_price, :as => :string
+      f.input :discount, :as => :string, :hint => "Конечная цена: #{f.object.final_price}" if !f.object.new_record?
       f.input :section
       f.input :brand
       f.input :country
@@ -57,7 +62,7 @@ ActiveAdmin.register Product do
       f.input :matter
       f.input :description
       f.input :state
-      f.input :top
+      f.input :top, :as => :string
       
       if f.object.new_record?
         f.object.product_instances.build(:size => "all")
@@ -65,8 +70,8 @@ ActiveAdmin.register Product do
       
       f.inputs "Sizes" do
         f.has_many :product_instances, :class => "b-aa-sizes-form " do |p|
-          p.input :size
-          p.input :count
+          p.input :size, :as => :string
+          p.input :count, :as => :string
         end 
       end
       
