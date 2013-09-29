@@ -19,7 +19,7 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column do
         panel I18n.t("active_admin.index.column1") do
-          table_for Order.where(:order_state_id => 2) do |f|
+          table_for Order.where(:state => :recived) do |f|
             f.column :id
             f.column "User" do |o|
               link_to o.address.fio, admin_order_path(o)
@@ -34,7 +34,7 @@ ActiveAdmin.register_page "Dashboard" do
               o.created_at
             end
             f.column "State" do |o|
-              link_to o.order_state.name, edit_admin_order_path(o)
+              link_to o.human_state_name, edit_admin_order_path(o)
               
             end
           end
@@ -43,7 +43,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel I18n.t("active_admin.index.column2") do
-          table_for Order.where(:order_state_id => 3) do |f|
+          table_for Order.where(:state => :confirmed) do |f|
             f.column :id
             f.column "User" do |o|
               link_to o.address.fio, admin_order_path(o)
@@ -61,7 +61,7 @@ ActiveAdmin.register_page "Dashboard" do
               o.created_at
             end
             f.column "State" do |o|
-              link_to o.order_state.name, edit_admin_order_path(o)
+              link_to o.human_state_name, edit_admin_order_path(o)
               
             end
           end
