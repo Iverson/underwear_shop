@@ -17,7 +17,7 @@ ActiveAdmin.register_page "Statistics" do
       to_date = end_date
     end
     
-    orders = Order.where(:order_state_id => 5, :created_at => from_date..to_date).order(:id)
+    orders = Order.where(:state => :paid, :created_at => from_date..to_date).order(:id)
     
     month_html = ""
     
