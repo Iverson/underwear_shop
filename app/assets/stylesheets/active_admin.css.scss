@@ -27,6 +27,10 @@ body.active_admin form .b-aa-sizes-form input, body.active_admin form .has_many_
 	width: 50px;
 }
 
+body.active_admin .print-css {
+  display:none;
+}
+
 // Notice that Active Admin CSS rules are nested within a
 // 'body.active_admin' selector to prevent conflicts with
 // other pages in the app. It is best to wrap your changes in a 
