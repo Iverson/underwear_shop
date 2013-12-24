@@ -8,14 +8,14 @@ class Delivery < ActiveRecord::Base
   validates :name, :presence => true
   
   def calc_price(cart_summ)
-    if cart_summ >= SiteConfiguration.free_shipping_minimum
+    if cart_summ >= SiteConfiguration.free_shipping_minimum.to_i
       0
     else
-      SiteConfiguration.shipping_price
+      SiteConfiguration.shipping_price.to_i
     end
   end
   
-  def price_to_s(cart_summ=SiteConfiguration.free_shipping_minimum)
+  def price_to_s(cart_summ=SiteConfiguration.free_shipping_minimum.to_i)
     
     if self.calc_price(cart_summ) > 0
       "#{self.calc_price(cart_summ).to_i} руб."
