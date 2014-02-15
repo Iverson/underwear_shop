@@ -66,6 +66,7 @@ ru:
           attributes:
             # Overrides model and default messages.
     active_admin:
+        pages: "Страницы"
         statistics: "Отчеты"
         brands: "Бренды"
         products: "Товары"

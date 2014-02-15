@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :bestsellers
   before_filter :top_promo
   before_filter :brands
+  before_filter :get_page_content
   
   add_breadcrumb I18n.t("breadcrumbs.homepage"), "/"
   
@@ -56,6 +57,10 @@ class ApplicationController < ActionController::Base
   
   def not_found
     raise ActionController::RoutingError.new('Not Found')
+  end
+  
+  def get_page_content
+    @page = Page.find_by_uri(request.path)
   end
   
 end

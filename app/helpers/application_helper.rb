@@ -52,5 +52,13 @@ module ApplicationHelper
   def price(item)
     (item['attrs']['price']*(100 - [item['attrs']['promo_discount'].to_i, item['attrs']['discount'].to_i].max)/100).to_i
   end
+  
+  def get_content(page, block)
+    if page
+      page[block].html_safe
+    else
+      "Content not found..."
+    end
+  end
 
 end
