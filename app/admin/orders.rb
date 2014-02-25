@@ -39,8 +39,8 @@ ActiveAdmin.register Order do
       row "Телефон" do
         order.address.phone
       end
-      row "Город" do
-        order.address.city
+      row "Метро" do
+        order.address.metro
       end
       row "Адрес" do
         order.address.address
@@ -90,7 +90,7 @@ ActiveAdmin.register Order do
 
       f.inputs "Адрес" do
         f.semantic_fields_for :address do |meta_form|
-          meta_form.inputs :fio, :phone, :email, :city, :address
+          meta_form.inputs :fio, :phone, :email, :metro, :address
         end
       end
       

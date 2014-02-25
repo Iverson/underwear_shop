@@ -64,7 +64,7 @@
         </div>
         <div class="payment">
             <%= simple_form_for(@order, :as => "order", :url => "/order/confirm", :html => { :method => :post }) do |f| %>
-            <%= @order.errors.full_messages %>
+            
             <%= f.hidden_field :state_event, :value => "recive" %>
             <div class="buttons">
                     <%= f.button :submit, "Оформить заказ", :class => "b-btn b-btn_wide button_pink js-orderConfirm" %>

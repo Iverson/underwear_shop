@@ -1,5 +1,5 @@
 class Address < ActiveRecord::Base
-  attr_accessible :address, :city, :fio, :phone, :email, :user_id, :order_id
+  attr_accessible :address, :city, :fio, :phone, :email, :user_id, :order_id, :metro
   
   belongs_to :addressable, :polymorphic => true
   
