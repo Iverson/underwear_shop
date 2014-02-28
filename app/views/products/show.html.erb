@@ -67,17 +67,7 @@
                 <%= form_tag(:controller => "cart", :action => "add_item", :method => "post") do %>
 
                 <div class="b-sizes">
-					<% if @product.section.id != 6 %>
-					<div class="b-sizes__define dotted">
-						<span>узнать свой размер</span>
-						
-						<div class="b-sizes__table">
-							<p class="t">Размерная сетка мужской одежды:</p>
-							
-							<img class="img" src="/assets/sizes/mens.png" alt="" />
-						</div>
-					</div>
-					<% end %>
+					
                     <span>Выберите размер:</span>
                     <% if @product.sizes? %>
                         <% @product.product_instances.in_stock.each_with_index do |size, i| %>
@@ -89,6 +79,22 @@
                     <% else %>
                         размер единый
                         <%= radio_button_tag :instance, @product.product_instances.first.id, true, :class => "hidden"  %>
+                    <% end %>
+
+                    <% if @product.section.id != 6 %>
+                    <div class="b-sizes__define dotted">
+                        <span>узнать свой размер</span>
+                        
+                        <div class="b-sizes__table">
+                            <p class="t">Размерная сетка мужской одежды:</p>
+                            
+                            <img class="img" src="/assets/sizes/mens.png" alt="" />
+                        </div>
+                    </div>
+                    <% else %>
+                    <div class="b-sizes__define ">
+                        <span>Указан русский размер!</span>
+                    </div>
                     <% end %>
                 </div>
                 

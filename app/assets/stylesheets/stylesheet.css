@@ -3888,6 +3888,11 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
     zoom: 1;
 }
 
+	.b-sizes__hint {
+		font-size: 12px;
+		padding-top: 5px;
+	}
+
     .b-sizes__define {
         font-size: 11px;
         left: 147px;
