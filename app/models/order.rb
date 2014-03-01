@@ -13,7 +13,7 @@ class Order < ActiveRecord::Base
   after_update :send_email_if_paid
   
   state_machine :state, :initial => :created do
-    after_transition :on => :pay, :do => :stock_items_decrement
+    after_transition :on => :confirm, :do => :stock_items_decrement
     after_transition :on => :cashback, :do => :stock_items_increment
     
     state :created
@@ -35,11 +35,11 @@ class Order < ActiveRecord::Base
     end
     
     event :cancel do
-      transition all - [:canceled, :paid] => :canceled
+      transition all - [:canceled, :confirmed] => :canceled
     end
     
     event :cashback do
-      transition :paid => :canceled
+      transition :confirmed => :canceled
     end
     
   end
