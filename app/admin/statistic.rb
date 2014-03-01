@@ -7,21 +7,35 @@ ActiveAdmin.register_page "Statistics" do
     
     start_date = Order.order(:created_at).first.created_at
     end_date = Date.current
+    show_all = false
     
     if params[:from_date] && params[:to_date]
       from_date = Date.parse(params[:from_date])
       to_date = Date.parse(params[:to_date])
     else
-      show_all = true
-      from_date = start_date
+      from_date = Date.new(end_date.year, end_date.month)
       to_date = end_date
     end
     
     orders = Order.where(:state => :paid, :created_at => from_date..to_date).order(:id)
     
-    month_html = ""
+    years_html = ""
     
     (start_date.year..end_date.year).each do |y|
+      if y == from_date.year && y == to_date.year
+        years_html += "<b>#{y}</b>"
+      else
+        years_html += link_to y, "?from_date=#{Date.new(y, 1).strftime("%Y-%m-%d")}&to_date=#{(Date.new(y, 1)+ 1.month).strftime("%Y-%m-%d")}"
+      end
+    
+      years_html += "&nbsp;&nbsp;&nbsp;"
+    end
+    
+    para years_html.html_safe
+    
+    month_html = ""
+    
+    (from_date.year..to_date.year).each do |y|
        mo_start = (start_date.year == y) ? start_date.month : 1
        mo_end = (end_date.year == y) ? end_date.month : 12
 
@@ -29,7 +43,7 @@ ActiveAdmin.register_page "Statistics" do
           if y == from_date.year && m == from_date.month && !show_all
             month_html += "<b>#{Date::MONTHNAMES[m]}</b>"
           else
-            month_html += link_to Date::MONTHNAMES[m], "?from_date=#{Date.new(y, m).strftime("%Y-%m-%d")}&to_date=#{(Date.new(y, m)+ 1.month).strftime("%Y-%m-%d")}"
+            month_html += link_to Date::MONTHNAMES[m], "?from_date=#{Date.new(y, m).strftime("%Y-%m-%d")}&to_date=#{(Date.new(y, m)+ 1.month - 1.day).strftime("%Y-%m-%d")}"
           end
            
            month_html += "&nbsp;&nbsp;&nbsp;"
