@@ -35,11 +35,11 @@ class Order < ActiveRecord::Base
     end
     
     event :cancel do
-      transition all - [:canceled, :confirmed] => :canceled
+      transition all - [:canceled, :confirmed, :paid] => :canceled
     end
     
     event :cashback do
-      transition :confirmed => :canceled
+      transition [:confirmed, :paid] => :canceled
     end
     
   end
