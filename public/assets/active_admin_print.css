@@ -1,0 +1,15 @@
+body.active_admin .print-css {
+  display:block;
+}
+
+.comments {
+  display:none;
+}
+
+body.active_admin .customer_signature {
+  float:right;
+  width: 300px;
+}
+
+.small {
+}
