@@ -40,7 +40,7 @@ class Product < ActiveRecord::Base
   end
   
   def preview(size)
-    pictures.first.image(size) if pictures.first
+    img = pictures.first ? pictures.first.image(size) : "/assets/nophoto.jpg" 
   end
   
   def preview_medium
