@@ -3904,6 +3904,11 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
         position: absolute;
         top: 18px;
     }
+
+    .b-sizes__define.right {
+    	left: auto;
+    	right: 0;
+    }
     
         .b-sizes__define span {
             font-weight: normal !important;

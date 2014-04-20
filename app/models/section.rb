@@ -1,5 +1,7 @@
 class Section < ActiveRecord::Base
-  attr_accessible :name, :parent_id, :uri, :yml_parent_id, :yml_category, :description
+  attr_accessible :name, :parent_id, :uri, :yml_parent_id, :yml_category, :description, :top
+  
+  scope :top, order('top DESC')
   
   has_many :products, :dependent => :destroy
   

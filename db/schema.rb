@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225082917) do
+ActiveRecord::Schema.define(:version => 20140420123513) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -239,6 +239,7 @@ ActiveRecord::Schema.define(:version => 20140225082917) do
     t.integer  "yml_parent_id"
     t.string   "yml_category",  :default => "Футболки", :null => false
     t.text     "description"
+    t.integer  "top",           :default => 0,          :null => false
   end
 
   add_index "sections", ["ancestry"], :name => "index_sections_on_ancestry"
