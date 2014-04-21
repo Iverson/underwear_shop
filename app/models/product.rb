@@ -99,9 +99,14 @@ class Product < ActiveRecord::Base
   def ru_sizes
     sizes = []
     self.product_instances.in_stock.each do |instance|
+      size_s = instance.size
+      size_range = size_s.slice(/(\d+-\d+)/)
+      size_int = size_s.to_i.to_s
       
-      if instance.size.to_i.to_s == instance.size
+      if size_int == instance.size
         sizes.push instance.size
+      elsif size_range
+        sizes.push size_range
       else
         RU_SIZES[instance.size].gsub(/\s+/, "").split(',').each do |size|
           sizes.push size if !sizes.include? size
