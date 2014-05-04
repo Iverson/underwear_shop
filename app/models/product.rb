@@ -106,7 +106,7 @@ class Product < ActiveRecord::Base
       if size_int == instance.size
         sizes.push instance.size
       elsif size_range
-        sizes.push size_range
+        sizes.push size_range if !sizes.include? size_range
       else
         RU_SIZES[instance.size].gsub(/\s+/, "").split(',').each do |size|
           sizes.push size if !sizes.include? size
