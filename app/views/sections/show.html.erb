@@ -10,11 +10,16 @@
             <%= options_for_select([['', section_path(params.merge(:sort_by => ''))], ['По цене', section_path(params.merge(:sort_by => 'price'))], ['По имени', section_path(params.merge(:sort_by => 'name'))]], section_path(params)) %>
         </select>
     </div>
+    <% 
+=begin %>
+
     <div class="limit"><b>Показывать:</b>
         <select id="sags" class="js-limitFilter">
             <%= options_for_select([['Все', section_path(params.merge(:limit => 'all'))], ['10', section_path(params.merge(:limit => 10))], ['20', section_path(params.merge(:limit => 20))]], section_path(params)) %>
         </select>
     </div>
+<% 
+=end %>
     <!-- <div class="display js-productsViewModeSelect">
             <b>Вид:</b>
             
@@ -36,7 +41,7 @@
 <%= render "shared/top_promo" %>
 
 <div class="b-section-products js-productsList grid">
-    <% cache("section_#{@section.id}") do %>
-        <%= render "shared/products_list" %>
-    <% end %>
+    <%# cache("section_#{@section.id}") do %>
+    <%# end %>
+    <%= render "shared/products_list" %>
 </div>
