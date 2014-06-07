@@ -1872,7 +1872,7 @@ ul{ list-style:none; margin:0; padding:0;}
 }
 .b-sections-menu__item strong { display:none;}
 .b-sections-menu__item:first-child{ padding-top:1px;}
-.b-sections-menu__item .b-sections-menu { padding-bottom:5px; padding-left:0px; display:none; margin-top:2px; padding-top:3px;}
+.b-sections-menu__item .b-sections-menu { padding-bottom:0px; padding-left:0px; display:none;}
 .b-sections-menu__item.active .b-sections-menu { display:block;}
 .b-sections-menu__item .act-cat{background:url(/assets/nolines_minus.png) 0px 0px no-repeat; width:10px; height:10px; float:right; margin-right:0px; margin-top:0px; }
 .has-mouse .b-sections-menu__item .act-cat:hover{ cursor:pointer;}
@@ -1885,6 +1885,12 @@ ul{ list-style:none; margin:0; padding:0;}
 .b-sections-menu__item ul > li {
 	padding:3px 5px 0px 0px;
 }
+
+.b-sections-menu__item_sub ul > li:first-child {
+	padding-top: 6px;
+	margin-top: 2px;
+}
+
 .b-sections-menu__item ul > li > a:hover{ color:#e04475;}
 .b-sections-menu__item .subsection {
 	text-decoration: none;

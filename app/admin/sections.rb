@@ -33,7 +33,7 @@ ActiveAdmin.register Section do
   form do |f|
     f.inputs "New section" do
       f.input :name
-      f.hidden_field :parent_id
+      f.input :parent_id, :as => :select, :collection => Section.roots().top().map{|s| [s.name , s.id]}
       f.input :uri
       f.input :yml_parent_id
       f.input :yml_category

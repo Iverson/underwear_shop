@@ -23,11 +23,19 @@ module ApplicationHelper
     
   end
   
-  def menu_sections_tree(sections)
+  def menu_sections_tree(sections, active_section_id, active_parent_id)
     if sections.length > 0
       html = sections.map do |section, sub_sections|
-        
-          '<li class="b-sections-menu__item">' + render(:partial => 'shared/menu_item', :locals => {:section => section, :sub_sections => sub_sections}) + menu_sections_tree(sub_sections) + "</li>"
+          klass = ""
+          klass = "b-sections-menu__item" if section.parent == nil
+          klass += " b-sections-menu__item_sub" if sub_sections.length > 0
+          klass += " active" if section.id == active_section_id || section.id == active_parent_id
+
+          p "______________"
+          p active_section_id
+          p active_parent_id
+
+          "<li class='#{klass}'>" + render(:partial => 'shared/menu_item', :locals => {:section => section, :sub_sections => sub_sections, :active_section_id => active_section_id}) + '<ul class="b-sections-menu">' + menu_sections_tree(sub_sections, active_section_id, active_parent_id) + "</ul>" + "</li>"
         
       end.join.html_safe
       

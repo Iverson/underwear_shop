@@ -6,6 +6,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.puplished.where(:uri => params[:id]).first || not_found
+    @section = @product.section
+    @active_section_id = @section.id
+    @active_parent_id  = @section.parent.try(:id)
     @similar_products = @product.section.products.where("id != ?", @product.id).limit(6)
     @title = "#{@product.name} купить за #{@product.final_price} руб. в интернет магазине Young Lovers, доставка бесплатно"
     
