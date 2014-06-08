@@ -161,7 +161,7 @@
 										<ul class="b-sections-menu">
 											<%= menu_sections_tree(Section.top().arrange(), @active_section_id, @active_parent_id) %>
 											
-											<li class="b-sections-menu__item b-sections-menu__item_sub <%= "active" if @brand %>">
+											<li class="b-sections-menu__item b-sections-menu__item_sub accordion <%= "active" if @brand %>">
 												<span class="section">Бренды</span>
 												<span class="act-cat"></span>
 												<ul class="b-sections-menu">

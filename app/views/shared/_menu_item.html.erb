@@ -1,7 +1,1 @@
-    
-    <% if sub_sections.length > 0 %>
-        <span class="section"><%= section.name %></span>
-        <span class="act-cat"></span>
-    <% else %>
-        <%= link_to section.name, section, :class => (section.parent ? "subsection" : "section") + (section.id == active_section_id ? " active" : "") %>
-    <% end %>
+    <%= link_to section.name, section, :class => (section.parent ? "subsection" : "section") + (section.id == active_section_id ? " active" : "") %>

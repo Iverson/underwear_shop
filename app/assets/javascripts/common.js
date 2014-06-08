@@ -354,7 +354,7 @@ $(function() {
 	
 	/* Submenu */
 	
-	$('.b-sections-menu__item_sub .section').click(function()
+	$('.b-sections-menu__item_sub.accordion .section').click(function()
 	{
 	    $(this).closest('.b-sections-menu__item').find('.b-sections-menu').slideToggle(300);
 	    

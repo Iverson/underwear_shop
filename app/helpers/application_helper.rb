@@ -31,10 +31,6 @@ module ApplicationHelper
           klass += " b-sections-menu__item_sub" if sub_sections.length > 0
           klass += " active" if section.id == active_section_id || section.id == active_parent_id
 
-          p "______________"
-          p active_section_id
-          p active_parent_id
-
           "<li class='#{klass}'>" + render(:partial => 'shared/menu_item', :locals => {:section => section, :sub_sections => sub_sections, :active_section_id => active_section_id}) + '<ul class="b-sections-menu">' + menu_sections_tree(sub_sections, active_section_id, active_parent_id) + "</ul>" + "</li>"
         
       end.join.html_safe
