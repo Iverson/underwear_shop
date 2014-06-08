@@ -26,6 +26,7 @@ xml.yml_catalog(:date => Time.now.strftime("%Y-%m-%d %H:%M")) do
               xml.offer(:id => i*10+index+1, :type => "vendor.model", :available => "true", :group_id => product.id) do
                 xml.url product_url(product.uri)
                 xml.price product.final_price
+                xml.oldprice product.price
                 xml.currencyId "RUR"
                 xml.categoryId 100+product.section.id
                 xml.market_category "Одежда, обувь и аксессуары/#{product.section.yml_category}"
