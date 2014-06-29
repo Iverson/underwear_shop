@@ -6,7 +6,7 @@ class Product < ActiveRecord::Base
   scope :top, order('top DESC')
   
   Section.all.each do |section|
-    scope section.name.gsub(/\s+/, "_"), where(:section_id => section.id)
+    scope section.name.gsub(/\s+/, "_"), -> { section.has_children? ? where(:section_id => section.child_ids.push(section.id)) : where(:section_id => section.id) }
   end
   
   attr_accessible :brand_id, :description, :discount, :name, :price, :purchaise_price, :section_id, 
