@@ -6,7 +6,7 @@ ActiveAdmin.register Product do
   
   scope :all, :default => true
   Section.all.each do |section|
-    scope section.name.gsub(/\s+/, "_")
+    scope section.name.gsub(/\s+/, "_").gsub(/\.+/, "_")
   end
   
   before_filter do
