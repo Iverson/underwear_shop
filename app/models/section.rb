@@ -17,7 +17,7 @@ class Section < ActiveRecord::Base
   
   before_save() do
     if self.uri.empty?
-      self.uri = "#{self.name}".parameterize
+      self.uri = "#{self.name}".parameterize.gsub(/\.+/, "_")
     end
   end
 end
