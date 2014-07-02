@@ -90,7 +90,7 @@ class Product < ActiveRecord::Base
       
     end
     if self.uri.empty?
-      self.uri = "#{self.name}".parameterize
+      self.uri = "#{self.name}".parameterize.gsub(/\.+/, "_")
     end
     if Product.where("uri = '#{self.uri}' AND NOT id = #{id}").exists?
       self.uri += "-#{id}"
