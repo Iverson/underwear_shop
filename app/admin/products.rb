@@ -1,7 +1,22 @@
 # encoding: utf-8
 ActiveAdmin.register Product do
   menu :label => proc{ I18n.t("active_admin.products") }, :parent => I18n.t("active_admin.products"), :priority => 1
-  
+
+  filter :by_section, :as => :select, :collection => Section.all, :label => "Section"
+  filter :state
+  filter :brand
+  filter :country
+  filter :price
+  filter :name
+  filter :description
+  filter :discount
+  filter :created_at
+  filter :updated_at
+  filter :uri
+  filter :color
+  filter :matter
+  filter :top
+
   actions :all, :except => [:show]
   
   scope :all, :default => true

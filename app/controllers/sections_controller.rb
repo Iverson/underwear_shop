@@ -13,14 +13,16 @@ class SectionsController < ApplicationController
     @section = Section.where(:uri => params[:id]).first || not_found
     @active_section_id = @section.id
     @active_parent_id  = @section.parent.try(:id)
-    @seo_key = "мужские #{@section.name.mb_chars.downcase.to_s}"
+    @seo_key = @section.name.mb_chars.downcase.to_s
 
-    if @section.has_children?
-      subsections_ids = @section.child_ids.push(@section.id)
-      @products = Product.where(section_id: subsections_ids)
-    else
-      @products = @section.products
-    end
+    # if @section.has_children?
+    #   subsections_ids = @section.child_ids.push(@section.id)
+    #   @products = Product.where(section_id: subsections_ids)
+    # else
+    #   @products = @section.products
+    # end
+    
+    @products = Product.by_section_eq(@active_section_id)
 
     @products = @products.puplished.includes(:pictures, :product_instances).top.order(params[:sort_by]).paginate(:page => params[:page], :per_page => @per_page)
 

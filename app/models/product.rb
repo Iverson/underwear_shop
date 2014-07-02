@@ -4,6 +4,11 @@ class Product < ActiveRecord::Base
   #default_scope :conditions => { :state_id => 2 }
   scope :puplished, where(:state_id => 2)
   scope :top, order('top DESC')
+  scope :by_section_eq, (lambda do |section_id|
+    section = Section.find(section_id)
+    section.has_children? ? where(:section_id => section.child_ids.push(section.id)) : where(:section_id => section.id) 
+  end)
+  search_method :by_section_eq
   
   Section.all.each do |section|
     scope section.name.gsub(/\s+/, "_").gsub(/\.+/, "_"), -> { section.has_children? ? where(:section_id => section.child_ids.push(section.id)) : where(:section_id => section.id) }
