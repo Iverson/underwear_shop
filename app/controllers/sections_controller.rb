@@ -6,9 +6,9 @@ class SectionsController < ApplicationController
   def show
     @per_page = params[:limit] || 'all'
     
-    if @per_page == 'all'
-      @per_page = nil
-    end
+    # if @per_page == 'all'
+    # end
+    @per_page = 100
     
     @section = Section.where(:uri => params[:id]).first || not_found
     @active_section_id = @section.id
