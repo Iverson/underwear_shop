@@ -70,7 +70,8 @@ class Order < ActiveRecord::Base
   
   def total
     summ = self.summ
-    summ + self.delivery.calc_price(summ).to_i
+     summ += self.delivery.calc_price(summ).to_i if self.delivery
+     summ
   end
   
   def count
