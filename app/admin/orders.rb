@@ -52,6 +52,9 @@ ActiveAdmin.register Order do
 
     panel "Товары" do
       table_for(order.order_items) do
+        column "Артикул" do |item| 
+          item.id
+        end
         column "Название" do |item| 
           "#{item.name} (#{item.product.color})"
         end
