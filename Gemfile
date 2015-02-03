@@ -33,7 +33,7 @@ gem 'russian'
 gem 'will_paginate'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
-gem 'thinking-sphinx', '2.0.10'
+# gem 'thinking-sphinx', '2.0.10'
 gem 'sitemap'
 gem 'whenever', :require => false
 gem 'airbrake'
