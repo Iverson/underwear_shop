@@ -76,7 +76,7 @@ ActiveAdmin.register Order do
       para "<div class='print-css'><br /></div>".html_safe
     end
     
-    active_admin_comments
+    # active_admin_comments
   end
   
   form do |f|

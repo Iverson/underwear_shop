@@ -98,7 +98,7 @@ class OrdersController < ApplicationController
         init_cart
         
         if @order.address.email?
-          UserMailer.order_email(@order).deliver
+          # UserMailer.order_email(@order).deliver
         end
         
         format.html { render :finish }
