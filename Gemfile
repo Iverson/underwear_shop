@@ -33,7 +33,7 @@ gem 'russian'
 gem 'will_paginate'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
-gem 'thinking-sphinx', '2.0.10'
+# gem 'thinking-sphinx', '2.0.10'
 gem 'sitemap'
 gem 'whenever', :require => false
 gem 'airbrake'
@@ -46,13 +46,14 @@ gem 'state_machine'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'unicorn'
+gem 'puma'
 
 # Deploy with Capistrano
 group :development do
-  gem "capistrano"
-  gem 'capistrano-ext'
-  gem "rvm-capistrano"
+  gem 'capistrano',         require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
   gem "letter_opener"
 end
 

@@ -53,6 +53,7 @@ UnderwearShop::Application.configure do
   
   config.action_mailer.default_url_options = { :host => 'younglovers.ru' }
   config.action_mailer.asset_host = "http://younglovers.ru"
+  config.action_mailer.delivery_method = :sendmail
 
   # Enable threaded mode
   # config.threadsafe!

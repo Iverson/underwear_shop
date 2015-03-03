@@ -35,10 +35,10 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :pictures, :allow_destroy => true
   accepts_nested_attributes_for :product_instances, :allow_destroy => true
   
-  define_index do
-    indexes name
+  # define_index do
+  #   indexes name
     
-  end
+  # end
   
   def final_price
     (self.price*(1 - self.discount.to_f / 100)).to_i

@@ -19,7 +19,7 @@ UnderwearShop::Application.routes.draw do
   resources :brands, :only => [:show]
   
   get 'products/instances' => 'products#instances'
-  get 'search' => 'products#search'
+  # get 'search' => 'products#search'
   resources :products, :path => "product"
   
   resources :orders
