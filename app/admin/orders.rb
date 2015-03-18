@@ -70,7 +70,7 @@ ActiveAdmin.register Order do
       end
       para "<div class='print-css customer_signature'><span>После оплаты товара претензии не принимаются. В случае обмена или возврата товара оплачивается доставка по тарифу - 300 руб.</span><br /><br /><br />Подпись клиента: </div>".html_safe
       
-      para "Доставка: #{order.delivery.calc_price(order.summ)}"
+      para "Доставка: #{order.delivery ? order.delivery.calc_price(order.summ) : 'не указана'}"
       
       para "Итого: #{order.total}"
       para "<div class='print-css'><br /></div>".html_safe
