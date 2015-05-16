@@ -28,7 +28,7 @@ staging:
 production:
   adapter: postgresql
   encoding: unicode
-  database: younglovers
+  database: app_younglovers
   pool: 5
   username: deploy
   password:
