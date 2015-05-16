@@ -5,7 +5,7 @@ set :repo_url, 'https://github.com/Iverson/underwear_shop.git'
 set :deploy_to, '/www/younglovers'
 set :log_level, :debug
 set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{tmp/sockets log config/puma public/younglovers}
+set :linked_dirs, %w{tmp/sockets log config/puma public/younglovers public/system}
 set :sockets_path, Pathname.new("#{fetch(:deploy_to)}/shared/tmp/sockets/")
 
 # Deploy to Vagrant box.
