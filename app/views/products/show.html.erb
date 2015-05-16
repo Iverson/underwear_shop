@@ -82,7 +82,7 @@
                         <%= radio_button_tag :instance, @product.product_instances.first.id, true, :class => "hidden"  %>
                     <% end %>
 
-                    <% if ![6, 7].include?(@product.section.id) && ![6, 7].include?(@product.section.parent_id) %>
+                    <% if ![6, 7, 17].include?(@product.section.id) && ![6, 7, 17].include?(@product.section.parent_id) %>
                     <div class="b-sizes__define dotted">
                         <span>узнать свой размер</span>
                         
@@ -94,7 +94,7 @@
                     </div>
                     <% end %>
 
-                    <% if [@product.section.id, @product.section.parent_id].include?(6) %>
+                    <% if [6, 17].include?(@product.section.id) || [6, 17].include?(@product.section.parent_id) %>
                     <div class="b-sizes__define right">
                         <span>Указан русский размер!</span>
                     </div>
