@@ -159,7 +159,7 @@
                                     <div class="box-heading">Каталог</div>
                                     <div class="box-category">
 										<ul class="b-sections-menu">
-											<%= menu_sections_tree(Section.top().arrange(), @active_section_id, @active_parent_id) %>
+											<%= menu_sections_tree(Section.arrange(:order => :top), @active_section_id, @active_parent_id) %>
 											
 											<li class="b-sections-menu__item b-sections-menu__item_sub accordion <%= "active" if @brand %>">
 												<span class="section">Бренды</span>
