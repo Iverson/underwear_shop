@@ -11,7 +11,7 @@ class Product < ActiveRecord::Base
   search_method :by_section_eq
   
   Section.all.each do |section|
-    scope section.name.gsub(/\s+/, "_").gsub(/\.+/, "_"), -> { section.has_children? ? where(:section_id => section.child_ids.push(section.id)) : where(:section_id => section.id) }
+    scope section.name.parameterize.gsub(/\-+/, "_"), -> { section.has_children? ? where(:section_id => section.child_ids.push(section.id)) : where(:section_id => section.id) }
   end
   
   attr_accessible :brand_id, :description, :discount, :name, :price, :purchaise_price, :section_id, 
